@@ -1,0 +1,27 @@
+{
+  "format": "PixelHero-v91-BuildManifest-1",
+  "version": "v.91",
+  "status": "player build",
+  "sourceV89WasmSHA256": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+  "newNativeWasmSHA256": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+  "nativeChange": "The armed source108 call distinguishes a missing overlay slot from a failed capture. Function 71935 restores the v.89 source-aware underlay and samples the verified Dracula highlight from the live atlas.",
+  "unityAssets": {
+    "Build/WebGL.wasm": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "1c986c65f12c62d83a53e51d1a31ecc991250ae831280a79fa8427792a49dc29",
+    "Build/WebGL.loader.js": "5d4dfe5b1b1748fc794365ea7b8f5ca4c713d6c3aea92078b712a4a87c233901"
+  },
+  "activeScripts": {
+    "offline-ui.js": "1334bf03166525f7f921c53da8dc4a62ecc2d4f948ea52269cc7231222c30850",
+    "phm-sprite-atlas.js": "a6e289c885b9e878a580d604156ff833109a20b79903d36f26b6180968654d4e",
+    "phm-static-idle.js": "cccbed7deff8aec68b9bd99a43b46e91f34f9d6a16f4844ac5b41c517933ef08"
+  },
+  "activeCss": {
+    "TemplateData/style.css": "516028e9b619fc17245a0de692ba617c70c3d0feb442b22e1b05b1082a21645a",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "86a9fd795388c2e28d59be3eb3c0e1a57e630fafbf1a8b2de925ae844ee3aba5",
+  "sourceV90CandidateWasmSHA256": "ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd",
+  "sourceV90PlayerWasmSHA256": "95c4ec1e0d6d187868cd83ff671c71b0fcf721cb530f4d65255511d2630b5912",
+  "underlayHelperWasmSHA256": "b85fcf6370519e55aaf18301a099cb56f01647c1912cf37aada1db7243d029e5"
+}

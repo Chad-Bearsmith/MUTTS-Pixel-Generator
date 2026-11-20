@@ -1,3 +1,10 @@
+Pixel Hero Maker [v.91] — Firearm hand color and equipment underlays
+- The armed hand-color routine now distinguishes a missing Armor overlay slot from a failed pixel capture. A verified missing slot uses the current eligible arm reference, while a fresh glove or sleeve supplies its own color.
+- Restored guarded v.88/v.89 source-layer recognition, including the four companion-layer fixes for Alien Armor, Dracula Armor, Apache Armor, and Furry Body.
+- Dracula Armor's source-layer correction samples its exact highlight from the current swatch-adjusted atlas. It skips that pixel when neither the atlas sample nor the stock palette can be verified.
+- Retained the Alien Armor Body-tail correction and the local-only player. Unsupported source arrangements still skip the underlay.
+- The four restored underlays passed the original native fixtures. Chromium Unity runs verified the Cape and Back hand fix, a genuine glove swatch, three Dracula swatches, and SpriteSheet.png exports with Alien Armor in both firearm states. The Windows launcher cross-compiled. Windows GUI testing is pending.
+
 Pixel Hero Maker [v.90] — Player build
 - Removed the diagnostic panel, tracing, reference manifest, and diagnostic native exports from the player.
 - Retained the Alien Armor Body-tail correction and accepted hand-color routines. Restored the v.87 firearm underlay and retired the experimental v.88/v.89 source-layer matching.

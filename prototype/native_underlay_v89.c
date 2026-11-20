@@ -1431,7 +1431,23 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
      {const u32 at=index_for(25,15);if((gp[at]>>24)==0u){if(jobsCount>=96)return -10; jobs[jobsCount++]=(V88Patch){pixels(slots[d6]),at,c6_0};confirmed++;}}
 
+#ifdef PHM_EXACT_DRACULA_HIGHLIGHT
+     // Dracula's verified donor (sharedassets0.assets #147) has the same
+     // highlight in another atlas tile at top-down (29,338). Read its live
+     // swatch from this donor. The original red pair also covers older
+     // captures which contain only the idle tile.
+     const u32 highlight=pixels(slots[d6])[(927u-338u)*576u+29u];
+     const u32 stock_highlight=(c6_0==0xff000000u && c6_1==0xff3024c4u)?0xff3c32eau:0u;
+     const u32 bright=clean_source(highlight)?highlight:stock_highlight;
+     const u32 at=index_for(26,15);
+     if(bright && (gp[at]>>24)==0u){
+      if(jobsCount>=96)return -10;
+      jobs[jobsCount++]=(V88Patch){pixels(slots[d6]),at,bright};
+      confirmed++;
+     }
+#else
      {const u32 at=index_for(26,15);if((gp[at]>>24)==0u){if(jobsCount>=96)return -10; jobs[jobsCount++]=(V88Patch){pixels(slots[d6]),at,dracula_bright_from_dark(pixels(slots[d6])[index_for(27,22)])};confirmed++;}}
+#endif
 
      {const u32 at=index_for(37,15);if((gp[at]>>24)==0u){if(jobsCount>=96)return -10; jobs[jobsCount++]=(V88Patch){pixels(slots[d6]),at,c6_1};confirmed++;}}
 

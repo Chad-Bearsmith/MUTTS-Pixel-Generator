@@ -12,7 +12,8 @@ async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
     assert.deepEqual(scripts, ['offline-ui.js', 'phm-static-idle.js', 'phm-sprite-atlas.js']);
-    assert(index.includes('<title>Pixel Hero Maker [v.90]</title>'));
+    const version = process.argv[2] || 'v.90';
+    assert(index.includes(`<title>Pixel Hero Maker [${version}]</title>`));
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
     assert(index.includes('name="referrer" content="no-referrer"'));

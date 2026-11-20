@@ -19,7 +19,7 @@ Read `docs/CODEX_HANDOFF.md`, `docs/BUILD_AND_TEST.md`, and `PIXEL_HERO_MAKER_PR
 
 1. State the targeted problem and identify the exact baseline, test fixtures, and files before editing.
 2. Reproduce the failing native/helper/atlas case from `diagnostics` or ask for missing exact evidence instead of guessing equipment IDs.
-3. Work in a feature branch. Make the smallest reviewed change; add negative tests and ensure firearm source buffers remain unchanged.
+3. Commit directly on `main` and push tested changes to `origin/main`. GitHub Pages deploys from `main`. Make the smallest reviewed change, add negative tests, and verify firearm source buffers.
 4. Run `python scripts/verify_repository.py`, `python scripts/run_tests.py --smoke`, and, for native changes, `python scripts/run_tests.py --full` when environment permits.
 5. If a native patch changes, compare WASM function bodies and preserve functions 71933/71934 unless in a separately approved hand-color fix.
 6. Only produce Windows/Web release ZIPs after following all release gates. Do not commit generated `*.exe` or release ZIPs to source control.

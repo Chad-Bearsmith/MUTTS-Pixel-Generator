@@ -23,7 +23,10 @@ async function scenario(name,options={}){
  put(ctx+409664,tags.length);put(ctx+409672,0x50363956);
  tags.forEach(([tag,p],i)=>{put(ctx+409680+i*20,tag);put(ctx+409692+i*20,p)});
  // Real native helper consults fresh source flags and these source buffers.
- put(ctx+446608,1);put(ctx+446612,o.arm108!=null?1:0);if(o.arm108==null)put(ctx+411668,1);
+ put(ctx+446608,1);put(ctx+446612,o.arm108!=null?1:0);
+ if(o.absenceTag){e.test(0,310,ctx);}
+ else if(o.rejectedOverlay){e.test(0,308,ctx);}
+ else if(o.arm108==null){put(ctx+411668,1);}
  if(o.arm104!=null)put(ctx+2584832+REF*4,o.arm104);
  if(o.arm108!=null)put(ctx+4722944+REF*4,o.arm108);
  const gunBefore=new Uint8Array(e.memory.buffer,ptr.gun+16,PIXELS*4).slice();
@@ -53,6 +56,12 @@ async function scenario(name,options={}){
  await scenario('Cape and Back behind opaque body',{layers:['back','cape','body','gun'],expectedReference:c.green,expectedOriginal:c.green});
  await scenario('104 current arm-source swatch overrides body', {arm104:c.orange,expectedReference:c.orange,expectedOriginal:c.orange});
  await scenario('108 current glove-source swatch overrides arm', {arm104:c.green,arm108:c.gray,expectedReference:c.gray,expectedOriginal:c.gray});
+ await scenario('absent overlay reported by native lookup uses current arm swatch', {
+   arm104:c.green2,absenceTag:true,expectedReference:c.green2,expectedOriginal:c.green2,
+ });
+ await scenario('failed selected overlay capture still skips', {
+   arm104:c.green2,rejectedOverlay:true,expectedStatus:2,
+ });
  await scenario('genuinely opaque black body remains black',{ref:{body:c.black,back:c.blue,cape:c.red},expectedReference:c.black,expectedOriginal:c.red});
  await scenario('different body color swatch',{ref:{body:c.green2,back:c.blue,cape:c.red},expectedReference:c.green2,expectedOriginal:c.red});
  await scenario('unrelated layer remains eligible for reference',{layers:['back','body','other','gun'],ref:{body:c.green,back:c.blue,other:c.orange},expectedReference:c.orange,expectedOriginal:c.orange});

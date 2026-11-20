@@ -35,8 +35,8 @@ def sections(data):
  assert pos==len(data)
  return out
 
-def body_from_helper():
- w=HELPER.read_bytes();ss=sections(w)
+def body_from_helper(path=HELPER):
+ w=path.read_bytes();ss=sections(w)
  for sid,value in ss:
   if sid in [9,11]:
    n,_=ul(value,0);assert n==0,'No data or element segments allowed'
