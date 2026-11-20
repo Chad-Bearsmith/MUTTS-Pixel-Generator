@@ -1,0 +1,60 @@
+{
+  "format": "PixelHero-v86-SwatchFurryWerewolf-1",
+  "previousHelperC_SHA256": "cdbbe6c62bee789c68b76af6890bae292e9c09875c7618999fe25c655acf9edb",
+  "relaxedSitesXY": [
+    [
+      29,
+      9
+    ],
+    [
+      30,
+      10
+    ],
+    [
+      30,
+      11
+    ],
+    [
+      35,
+      10
+    ],
+    [
+      35,
+      11
+    ]
+  ],
+  "relaxedFingerprints": {
+    "7 Furry Body": "0x8c47b2b6",
+    "10 Werewolf Body": "0x31102402"
+  },
+  "collisionsAmong12": {
+    "0x3140a249": [
+      1,
+      6
+    ],
+    "0xe2f1d61a": [
+      3,
+      4
+    ]
+  },
+  "liveReproductions": [
+    {
+      "file": "SpriteSheet.png",
+      "item": 7,
+      "offsetXY": [
+        22,
+        5
+      ]
+    },
+    {
+      "file": "SpriteSheet (1).png",
+      "item": 10,
+      "offsetXY": [
+        22,
+        4
+      ]
+    }
+  ],
+  "unchanged": "All original exact/swatch paths, target/source alpha and firearm tests",
+  "limitations": "Only 5 confirmed swatch-sensitive equality sites relaxed for Furry/Werewolf; other unsupported combinations still fail closed"
+}

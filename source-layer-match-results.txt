@@ -1,0 +1,62 @@
+source textures 365
+
+ PixelHero-v87-IdleAutoHandTrace (1).json
+ slot 0 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 1 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 2 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 3 total 167 matches [(np.float64(0.7845303867403315), 142, 156, 'PumpkinHead', 10), (np.float64(0.7845303867403315), 142, 156, 'Panda', 106), (np.float64(0.7365269461077845), 123, 123, 'ExecutionerHood', 196), (np.float64(0.7321428571428571), 123, 124, 'DeathHood', 233), (np.float64(0.7313432835820896), 147, 181, 'Gladiator', 61)]
+
+ PixelHero-v87-IdleAutoHandTrace (2).json
+ slot 0 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 1 total 73 matches [(np.float64(0.9102564102564102), 71, 76, 'Furry', 157), (np.float64(0.88), 66, 68, 'Werewolf', 66), (np.float64(0.684931506849315), 50, 50, 'ZombieB', 341), (np.float64(0.684931506849315), 50, 50, 'ZombieA', 366), (np.float64(0.684931506849315), 50, 50, 'Vampire', 321)]
+ slot 2 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 3 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 4 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]
+
+ PixelHero-v87-IdleAutoHandTrace (3).json
+ slot 0 total 35 matches [(np.float64(1.0), 35, 35, 'Cape', 203), (np.float64(0.5869565217391305), 27, 38, 'Box', 290), (np.float64(0.543859649122807), 31, 53, 'Dracula', 147), (np.float64(0.5434782608695652), 25, 36, 'Squaw', 274), (np.float64(0.5333333333333333), 24, 34, 'Maid', 282)]
+ slot 1 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 2 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 3 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 4 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]
+
+ PixelHero-v87-IdleAutoHandTrace (4).json
+ slot 0 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 1 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 2 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 3 total 65 matches [(np.float64(1.0), 65, 65, 'AnimeMask', 67), (np.float64(0.8484848484848485), 56, 57, 'IronMask', 111), (np.float64(0.8169014084507042), 58, 64, 'PlagueDoctorMask', 115), (np.float64(0.7303370786516854), 65, 89, 'Skeleton', 295), (np.float64(0.725), 58, 73, 'Furry', 176)]
+ slot 4 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]
+
+ PixelHero-v87-IdleAutoHandTrace (5).json
+ slot 0 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 1 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 2 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 3 total 51 matches [(np.float64(1.0), 51, 51, 'Dracula', 204), (np.float64(0.7142857142857143), 50, 69, 'Hair2', 201), (np.float64(0.6097560975609756), 50, 81, 'Hair9', 37), (np.float64(0.6081081081081081), 45, 68, 'Hair13', 185), (np.float64(0.6071428571428571), 34, 39, 'Hair4', 384)]
+ slot 4 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]
+
+ PixelHero-v87-IdleAutoHandTrace (7).json
+ slot 0 total 37 matches [(np.float64(1.0), 37, 37, 'BackSword', 141), (np.float64(0.4634146341463415), 19, 23, 'LeatherQuiver', 165), (np.float64(0.46296296296296297), 25, 42, 'WideDagger', 175), (np.float64(0.40816326530612246), 20, 32, 'ShortDagger', 220), (np.float64(0.39655172413793105), 23, 44, 'RustedHammer', 276)]
+ slot 1 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 2 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 3 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 4 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]
+
+ PixelHero-v87-IdleAutoHandTrace (8).json
+ slot 0 total 35 matches [(np.float64(1.0), 35, 35, 'Cape', 203), (np.float64(0.5869565217391305), 27, 38, 'Box', 290), (np.float64(0.543859649122807), 31, 53, 'Dracula', 147), (np.float64(0.5434782608695652), 25, 36, 'Squaw', 274), (np.float64(0.5333333333333333), 24, 34, 'Maid', 282)]
+ slot 1 total 50 matches [(np.float64(1.0), 50, 50, 'ZombieB', 341), (np.float64(1.0), 50, 50, 'ZombieA', 366), (np.float64(1.0), 50, 50, 'Vampire', 321), (np.float64(1.0), 50, 50, 'TravelerTunic', 21), (np.float64(1.0), 50, 50, 'ThiefTunic', 275)]
+ slot 2 total 41 matches [(np.float64(1.0), 41, 41, 'FarmerClothes', 26), (np.float64(1.0), 41, 41, 'BanditTunic', 178), (np.float64(0.8723404255319149), 41, 47, 'Overalls', 393), (np.float64(0.8723404255319149), 41, 47, 'MinerArmour', 58), (np.float64(0.8723404255319149), 41, 47, 'Executioner', 247)]
+ slot 3 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 4 total 8 matches [(np.float64(1.0), 8, 8, 'Skeleton', 154), (np.float64(1.0), 8, 8, 'Human', 62), (np.float64(1.0), 8, 8, 'Elf', 163), (np.float64(1.0), 8, 8, 'DarkElf', 79), (np.float64(0.7272727272727273), 8, 11, 'Glass', 29)]
+
+ PixelHero-v87-IdleAutoHandTrace (9).json
+ slot 0 total 55 matches [(np.float64(0.9821428571428571), 55, 56, 'SmallBackpack', 319), (np.float64(0.7534246575342466), 55, 73, 'LargeBackpack', 287), (np.float64(0.4264705882352941), 29, 42, 'WideDagger', 175), (np.float64(0.39436619718309857), 28, 44, 'RustedHammer', 276), (np.float64(0.38461538461538464), 25, 35, 'Cape', 203)]
+ slot 1 total 50 matches [(np.float64(1.0), 50, 50, 'ZombieB', 341), (np.float64(1.0), 50, 50, 'ZombieA', 366), (np.float64(1.0), 50, 50, 'Vampire', 321), (np.float64(1.0), 50, 50, 'TravelerTunic', 21), (np.float64(1.0), 50, 50, 'ThiefTunic', 275)]
+ slot 2 total 41 matches [(np.float64(1.0), 41, 41, 'FarmerClothes', 26), (np.float64(1.0), 41, 41, 'BanditTunic', 178), (np.float64(0.8723404255319149), 41, 47, 'Overalls', 393), (np.float64(0.8723404255319149), 41, 47, 'MinerArmour', 58), (np.float64(0.8723404255319149), 41, 47, 'Executioner', 247)]
+ slot 3 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 4 total 8 matches [(np.float64(1.0), 8, 8, 'Skeleton', 154), (np.float64(1.0), 8, 8, 'Human', 62), (np.float64(1.0), 8, 8, 'Elf', 163), (np.float64(1.0), 8, 8, 'DarkElf', 79), (np.float64(0.7272727272727273), 8, 11, 'Glass', 29)]
+
+ PixelHero-v87-IdleAutoHandTrace.json
+ slot 0 total 57 matches [(np.float64(1.0), 57, 57, 'Merman', 74), (np.float64(0.8771929824561403), 50, 50, 'ZombieB', 341), (np.float64(0.8771929824561403), 50, 50, 'ZombieA', 366), (np.float64(0.8771929824561403), 50, 50, 'Vampire', 321), (np.float64(0.8771929824561403), 50, 50, 'TravelerTunic', 21)]
+ slot 1 total 83 matches [(np.float64(1.0), 83, 83, 'ZombieB', 70), (np.float64(1.0), 83, 83, 'ZombieA', 361), (np.float64(1.0), 83, 83, 'Orc', 378), (np.float64(1.0), 83, 83, 'Merman', 11), (np.float64(1.0), 83, 83, 'Human', 19)]
+ slot 2 total 12 matches [(np.float64(1.0), 12, 12, 'Merman', 288), (np.float64(1.0), 12, 12, 'Furry', 78), (np.float64(0.6666666666666666), 8, 8, 'Vampire', 15), (np.float64(0.6666666666666666), 8, 8, 'Skeleton', 154), (np.float64(0.6666666666666666), 8, 8, 'Human', 62)]
+ slot 3 total 16 matches [(np.float64(1.0), 16, 16, 'Merman', 257), (np.float64(0.7777777777777778), 14, 16, 'Goblin', 246), (np.float64(0.6842105263157895), 13, 16, 'Vampire', 22), (np.float64(0.6842105263157895), 13, 16, 'DarkElf', 213), (np.float64(0.6111111111111112), 11, 13, 'Elf', 296)]

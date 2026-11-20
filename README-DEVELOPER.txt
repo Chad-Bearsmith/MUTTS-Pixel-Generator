@@ -1,0 +1,1 @@
+Pixel Hero Maker [v.89] experimental source. Four item-unique donor masks can act alone when companion buffers are omitted. Use patch_source_companions_v89.py, compile prototype/native_underlay_v89.c, patch native function 71935 via patch_native_underlay_v89.py, test and build. Cape/Back hand status 2 is NOT yet repaired. See game/PixelHero-v89-Technical-Reference.md.

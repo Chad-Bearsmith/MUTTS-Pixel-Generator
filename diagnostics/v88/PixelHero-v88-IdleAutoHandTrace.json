@@ -1,0 +1,653 @@
+{
+  "format": "PixelHero-v88-AutomaticIdleTrace-1",
+  "capturedAt": "2026-11-20T18:59:54.535Z",
+  "result": {
+    "available": true,
+    "build": "Pixel Hero Maker [v.88]",
+    "mode": "native-automatic-idle-only",
+    "excludedReferenceCategories": [
+      "Back",
+      "Cape"
+    ],
+    "status": 1,
+    "statusDescription": "Idle hand markers recolored from current Cape/Back-excluded body/arm reference",
+    "idleFrame": "64x64 tile at Unity atlas x=0,y=64; all other tiles excluded",
+    "referencePixelOneBased": [
+      28,
+      20
+    ],
+    "referencePixelZeroBased": [
+      27,
+      19
+    ],
+    "referenceColor": [
+      199,
+      207,
+      221,
+      255
+    ],
+    "observedSpriteAtlas": {
+      "available": true,
+      "atlasTextureId": 547,
+      "atlasHash": "7c18fcba",
+      "alpha254IdleMarkers": 7,
+      "markerColors": [
+        {
+          "rgba": [
+            199,
+            207,
+            221,
+            254
+          ],
+          "pixels": 7
+        }
+      ],
+      "allObservedMarkersMatchNativeReference": true,
+      "caveat": "GPU texture upload observation may not be from the same rebuild as the last native status. Rebuild before recording."
+    },
+    "firearmLayerSlot": 4,
+    "detectedMarkers": 7,
+    "changedMarkerPixels": 7,
+    "acceptedMarkerPixels": 7,
+    "freshArm104": true,
+    "freshArm108": false,
+    "optionalArm108Absent": true,
+    "reconstructedAtlasStatus": 1,
+    "reconstructedFirstFrameReference": [
+      199,
+      207,
+      221,
+      255
+    ],
+    "experimentalUnderlay": {
+      "available": true,
+      "status": -3,
+      "description": "Skipped: current first idle does not match known exact or palette-invariant reference structure",
+      "firearm": null,
+      "correctedItemCode": null,
+      "matchMode": null,
+      "experimental": true,
+      "scope": "12 item templates; 24 firearm IDs/25 source masks; source-layer recognition is experimental with added equipment",
+      "note": "v88 invokes source-layer matching only when the previously accepted exact and swatch-aware paths reject a valid firearm state. It reads original swatch-adjusted item arrays and writes within those same arrays at the item layer depth, never the firearm. Codes 8001-8012 represent Bolt source matches; 8099 represents multiple items. Other source-recognized firearms may use a higher code. Unsupported source arrangements still skip. The independent v80 hand-color source108 failure is NOT repaired."
+    },
+    "underlaySourceLayers": {
+      "available": true,
+      "serial": 79,
+      "firearmSlot": 4,
+      "layerCount": 5,
+      "source": "Existing read-only native first-idle layer snapshot and append-site pointer identities",
+      "alphaMaskEncoding": "64x64 top-down alpha nonzero; bit k uses byte floor(k/8), bit (k%8), row-major; hexadecimal bytes",
+      "layers": [
+        {
+          "slot": 0,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001000000000000c003000000000000c003000000000000c0f30f0000000000c0f70f000000000080f70f000000000000f70f000000000000f00f000000000000700e000000000000300c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 76,
+          "rgbaFnv1a32": "4177e2c9",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                66,
+                76,
+                110,
+                255
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e007000000000000f00f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f01f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 73,
+          "rgbaFnv1a32": "153ca6cb",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00c000000000000c00c000000000000c00c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 12,
+          "rgbaFnv1a32": "6834b9c1",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                19,
+                19,
+                19,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f000000000000f81f000000000000fc3f000000000000fe7f000000000000feff000000000000ffff000000000000ffff000000000000ffff000000000000feff000000000000feff000000000000fc7f000000000000e83f000000000000c01f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 167,
+          "rgbaFnv1a32": "bbffdab7",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "firearm": true,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0ff030000000000c0ff070000000000c0ff030000000000c0ff010000000000c0df000000000000800d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 61,
+          "rgbaFnv1a32": "ce23a549",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "appendEvents": [
+        {
+          "tag": 103,
+          "matchingSlots": []
+        },
+        {
+          "tag": 105,
+          "matchingSlots": []
+        },
+        {
+          "tag": 109,
+          "matchingSlots": []
+        },
+        {
+          "tag": 112,
+          "matchingSlots": []
+        },
+        {
+          "tag": 114,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        }
+      ],
+      "appendTraceOverflow": false,
+      "caveat": "Tags are native append sites, NOT proven UI category names. Combine comparative captures to assign category provenance; source-layer matching is not yet a live geometry fix."
+    },
+    "nativeArmSourceEvidence": {
+      "available": true,
+      "source104Fresh": true,
+      "source108Fresh": false,
+      "source108OptionalAbsentProven": true,
+      "source108SelectedButUnavailable": false,
+      "source104Samples": [
+        {
+          "xy": [
+            27,
+            19
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        },
+        {
+          "xy": [
+            28,
+            19
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        },
+        {
+          "xy": [
+            26,
+            21
+          ],
+          "rgba": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "xy": [
+            27,
+            20
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        }
+      ],
+      "source108Samples": null,
+      "caveat": "Observational samples from the most recent native arm source copies only. A missing selected 108 source cannot safely be replaced by guessing skin or armor color. Values must be paired with a fresh rebuilt hand-color status."
+    },
+    "requiresManualUnarmedCapture": false,
+    "oldColorGuessingEnabled": false,
+    "otherFramesChangedByThisFix": false,
+    "caveat": "Reports the most recent normal Unity rebuild; native WebGL gameplay and exported SpriteSheet.png still need verification."
+  }
+}

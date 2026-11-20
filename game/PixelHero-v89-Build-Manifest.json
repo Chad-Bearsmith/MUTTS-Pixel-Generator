@@ -1,0 +1,223 @@
+{
+  "format": "PixelHero-v89-BuildManifest-1",
+  "version": "v.89",
+  "baseline": "Exact v88 game baseline, four unique-donor optional companion fallback; native game SHA256 anchored",
+  "nativeChange": "Only function 71935 modified: four uniquely identified primary donors (Apache, Alien, Dracula, Furry) can correct absent optional companion layouts. All existing operations/guards preserved.",
+  "sourceV88WasmSHA256": "12e3640b5f08041ed6fcaa2630bd08c7a09bec3e833dfa543055200a73dd3b73",
+  "newNativeWasmSHA256": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+  "weaponMasks": [
+    {
+      "id": 0,
+      "name": "Bolt",
+      "alphaHash": "0x3dbe5bbd",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 1,
+      "name": "2-Shotgun",
+      "alphaHash": "0xb739dd6b",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 2,
+      "name": "6-MachineGun",
+      "alphaHash": "0xb53b9051",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 3,
+      "name": "6-MiniMachineGun",
+      "alphaHash": "0xbb38ddad",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 4,
+      "name": "AK-47",
+      "alphaHash": "0x6482d900",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 5,
+      "name": "AimBolt",
+      "alphaHash": "0x34316c13",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 6,
+      "name": "Bazuka",
+      "alphaHash": "0x65ebb6c2",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 7,
+      "name": "DLT-19",
+      "alphaHash": "0xeac21292",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 8,
+      "name": "E-11",
+      "alphaHash": "0xb92bc587",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 9,
+      "name": "GoldenEagle",
+      "alphaHash": "0xb0995dc5",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 10,
+      "name": "HKG36",
+      "alphaHash": "0x0b9ac9b1",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 11,
+      "name": "Launcher",
+      "alphaHash": "0x1e1f366c",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 12,
+      "name": "M-16",
+      "alphaHash": "0x5fe65d47",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 13,
+      "name": "MachineGun",
+      "alphaHash": "0x3ac28527",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 14,
+      "name": "Pistol",
+      "alphaHash": "0x894c19cb",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 15,
+      "name": "PowerBazuka",
+      "alphaHash": "0x58f03ba8",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 16,
+      "name": "Revolver",
+      "alphaHash": "0x026236c2",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 17,
+      "name": "SAWN-OFF",
+      "alphaHash": "0x55389cbc",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 18,
+      "name": "SVD",
+      "alphaHash": "0xd19e7a37",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 19,
+      "name": "Shotgun",
+      "alphaHash": "0x8b4dc278",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 20,
+      "name": "Sniper1",
+      "alphaHash": "0x4d812c43",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 21,
+      "name": "Sniper2",
+      "alphaHash": "0x3f01d93b",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 22,
+      "name": "StelsPistol",
+      "alphaHash": "0x379133d2",
+      "variant": "resources.assets"
+    },
+    {
+      "id": 23,
+      "name": "Crossbow",
+      "alphaHash": "0x0175df7a",
+      "variant": "sharedassets0.assets/\u0421rossbow (Cyrillic capital Es)"
+    },
+    {
+      "id": 19,
+      "name": "Shotgun",
+      "alphaHash": "0xcc087534",
+      "variant": "sharedassets0.assets/Shotgun, marked live variant"
+    }
+  ],
+  "uniqueWeaponIds": 24,
+  "verifiedSourceMaskVariants": 25,
+  "itemStatuses": {
+    "1": "Cape",
+    "2": "Fire Lizard",
+    "3": "Apache Armor",
+    "4": "Alien Armor",
+    "5": "Angel Armor",
+    "6": "Dracula Armor",
+    "7": "Furry Body",
+    "8": "Lizard Body",
+    "9": "Merman Body",
+    "10": "Werewolf Body",
+    "11": "Hellsing Helmet",
+    "12": "Snow Rider Helmet"
+  },
+  "guard": "Original exact and swatch-aware behavior first; 4-item unique primary source fallback only after -3/-7. Preserve firearm and overlapping equipment. Other combinations fail closed.",
+  "newDiagnostics": {
+    "underlaySourceCodeOffset": 8000,
+    "nativeArmSourceEvidence": "Read-only source104/108 freshness, reference and neighboring samples, selected-but-unavailable overlay flag"
+  },
+  "limitations": [
+    "Selected arm overlay source108 status2 in Armor+Cape/Back combinations is NOT repaired; no guessed color fallback",
+    "Live v89 Unity exports NOT TESTED",
+    "Nonunique source masks continue to skip",
+    "Dracula unusual swatch highlight inference from inherited v85 logic remains experimental"
+  ],
+  "unityAssets": {
+    "Build/WebGL.wasm": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "cea957b06039153986a56865bc2ef8eff6327897e41a01e385e377a3b7fdd48a",
+    "Build/WebGL.loader.js": "b57c4a7714dc15be07103018586feb336f49eb09f3805716e91046db2ff34ec6"
+  },
+  "activeScripts": {
+    "offline-ui.js": "3eafaa385289b31d0e01323ccef08e657401a778e404558c2c81f7351fb94089",
+    "phm-compositor-probe.js": "f8015746ac6a875f7a160b7e209030a85e9413ee0e479ff196c0bada8968926e",
+    "phm-diagnostics-ui.js": "bd11fd29c8a35d39fd2d8b73488c97355d334e066e7dd5684546cc330bff15d2",
+    "phm-preview-inline.js": "a60973fc6646f5e9d9f4a86237a72ae1211612dfd151a997add1526a193b42c9",
+    "phm-static-idle.js": "744ba8caf36360c1ab6b5090c0920b79e2e38cf9ee2528f00292894ec0e63c7f",
+    "phm-v76-layer-provenance.js": "dfa90172fbb49379f21ba331338e052416c068f2c2861b6e3a8d616cdb207e70"
+  },
+  "activeCss": {
+    "phm-diagnostics-ui.css": "c5a3b7100422db563602d2c71de2cb9b502892e79593157b8664c3240dab6f81",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "148f707fa4b0718530e5a881e97fe54c7780776890ef5b5f70126c3b84271152",
+  "validation": {
+    "nativeOriginalItemFixtureAssertions": 126,
+    "nativeUserTraceEquippedCases": 8,
+    "nativeV88NewUploadedCases": 5,
+    "nativeInheritedRealExports": 54,
+    "nativeInheritedSwatchChecks": 1802,
+    "nativeInheritedCrossFirearm": 305,
+    "nativeHandPipelineCases": 6,
+    "nativeCapeBackCases": 17,
+    "readOnlyNativeLayerJSFixture": "PASS",
+    "readOnlyArmSourceJSFixture": "PASS",
+    "nativeWebAssembly": "PASS",
+    "liveV88Unity": "NOT TESTED",
+    "handStatus2Fix": "NOT FIXED",
+    "nativeWindowsLiveExecution": "NOT TESTED",
+    "browserSavedZipBasename": "NOT TESTED"
+  }
+}

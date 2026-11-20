@@ -1,0 +1,51 @@
+{
+  "format": "PixelHero-v82-BuildManifest-1",
+  "version": "v.82",
+  "baseline": "User-accepted Pixel Hero Maker [v.81] (Cape, Fire Lizard, Apache)",
+  "codeChange": "Only native WebAssembly function 71935 body extended; all existing builder, native hand routines, Unity assets and preview flow unchanged",
+  "sourceV81WasmSHA256": "e168c5eb402cbf1589b427b9cd83a72b6a099c857f74ab5604710dd7f11519e3",
+  "newNativeWasmSHA256": "c0f31dba2a77be97ccc30a678ea07261705e0ab379bd6d9356a109d402e54747",
+  "nativePatchStatuses": {
+    "1": "Cape",
+    "2": "Fire Lizard",
+    "3": "Apache Armor",
+    "4": "Alien Armor",
+    "5": "Angel Armor",
+    "6": "Dracula Armor",
+    "7": "Furry Body",
+    "8": "Lizard Body",
+    "9": "Merman Body",
+    "10": "Werewolf Body",
+    "11": "Hellsing Helmet",
+    "12": "Snow Rider Helmet"
+  },
+  "guard": "Bolt full first-idle alpha mask and exact normalized reference current sprite hash; unsupported combinations fail closed",
+  "unityAssets": {
+    "Build/WebGL.wasm": "c0f31dba2a77be97ccc30a678ea07261705e0ab379bd6d9356a109d402e54747",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "cea957b06039153986a56865bc2ef8eff6327897e41a01e385e377a3b7fdd48a",
+    "Build/WebGL.loader.js": "b57c4a7714dc15be07103018586feb336f49eb09f3805716e91046db2ff34ec6"
+  },
+  "activeScripts": {
+    "offline-ui.js": "3eafaa385289b31d0e01323ccef08e657401a778e404558c2c81f7351fb94089",
+    "phm-compositor-probe.js": "f8015746ac6a875f7a160b7e209030a85e9413ee0e479ff196c0bada8968926e",
+    "phm-diagnostics-ui.js": "d75fd02762ff5708f9e3a3d574d8a972baa0626d87a59633c222408bb436951b",
+    "phm-preview-inline.js": "a60973fc6646f5e9d9f4a86237a72ae1211612dfd151a997add1526a193b42c9",
+    "phm-static-idle.js": "403a78e612d6f4a3c2342689c5e4f2fc00c088352c597727af307db53140a654",
+    "phm-v76-layer-provenance.js": "c711cf5d8631422e1bb4f10eb7157fa2b756d4b6271aa0c5c9fd2a85dd58f7d3"
+  },
+  "activeCss": {
+    "phm-diagnostics-ui.css": "c5a3b7100422db563602d2c71de2cb9b502892e79593157b8664c3240dab6f81",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "60d1ef28acc3f6e3736b09c2d69df6f9f821b5080609ee9378071f892b8981cc",
+  "validation": {
+    "nativeReferenceFixtureTests": 37,
+    "nativeHandPipelineFixtures": 6,
+    "nativeCapeBackFixtures": 17,
+    "liveV81PreviouslyAcceptedByUser": "3 of 12",
+    "newV82CasesLiveAcceptance": "NOT TESTED",
+    "nativeWindowsLiveExecution": "NOT TESTED",
+    "browserSavedZipBasename": "NOT TESTED"
+  }
+}

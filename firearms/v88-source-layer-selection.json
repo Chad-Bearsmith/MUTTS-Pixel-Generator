@@ -1,0 +1,1343 @@
+{
+  "format": "v88-alpha-source-item-provenance",
+  "source": "Original Unity compiled texture source atlas first idle alpha mask; no RGB guessing",
+  "items": {
+    "1": {
+      "name": "Cape",
+      "sentinel": [
+        "0x55c92166"
+      ],
+      "donor": "0x55c92166",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          203
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        203
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            234,
+            50,
+            60,
+            255
+          ],
+          "sample": [
+            27,
+            19
+          ]
+        }
+      ]
+    },
+    "2": {
+      "name": "Fire Lizard",
+      "sentinel": [
+        "0x548aabc8"
+      ],
+      "donor": "0x47132dd3",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          35
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        86
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            198,
+            69,
+            36,
+            255
+          ],
+          "after": [
+            255,
+            200,
+            37,
+            255
+          ],
+          "sample": [
+            25,
+            20
+          ]
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            255,
+            200,
+            37,
+            255
+          ],
+          "sample": [
+            25,
+            20
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            255,
+            200,
+            37,
+            255
+          ],
+          "after": [
+            237,
+            118,
+            20,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            237,
+            118,
+            20,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            255,
+            200,
+            37,
+            255
+          ],
+          "after": [
+            237,
+            118,
+            20,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        }
+      ]
+    },
+    "3": {
+      "name": "Apache Armor",
+      "sentinel": [
+        "0xf332657f",
+        "0x7e3fff48"
+      ],
+      "donor": "0xf332657f",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          325
+        ],
+        [
+          "sharedassets0.assets",
+          358
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        325
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sample": null
+        }
+      ]
+    },
+    "4": {
+      "name": "Alien Armor",
+      "sentinel": [
+        "0xacbc220",
+        "0x4106c419"
+      ],
+      "donor": "0xacbc220",
+      "sentinelTex": [
+        [
+          "resources.assets",
+          166
+        ],
+        [
+          "resources.assets",
+          238
+        ]
+      ],
+      "donorTex": [
+        "resources.assets",
+        166
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            42,
+            47,
+            78,
+            255
+          ],
+          "sample": [
+            26,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            42,
+            47,
+            78,
+            255
+          ],
+          "sample": [
+            26,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 21,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    },
+    "5": {
+      "name": "Angel Armor",
+      "sentinel": [
+        "0xa1fe314d"
+      ],
+      "donor": "0xa1fe314d",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          16
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        16
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            199,
+            207,
+            221,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            246,
+            202,
+            159,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            246,
+            202,
+            159,
+            255
+          ],
+          "after": [
+            146,
+            161,
+            185,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        }
+      ]
+    },
+    "6": {
+      "name": "Dracula Armor",
+      "sentinel": [
+        "0x532c80de",
+        "0x7c2f32cf"
+      ],
+      "donor": "0x532c80de",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          147
+        ],
+        [
+          "sharedassets0.assets",
+          205
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        147
+      ],
+      "changes": [
+        {
+          "x": 26,
+          "y": 14,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 37,
+          "y": 14,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 25,
+          "y": 15,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 15,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            234,
+            50,
+            60,
+            255
+          ],
+          "sample": null
+        },
+        {
+          "x": 37,
+          "y": 15,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 38,
+          "y": 15,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 25,
+          "y": 16,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 16,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 27,
+          "y": 16,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 37,
+          "y": 16,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 38,
+          "y": 16,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        },
+        {
+          "x": 27,
+          "y": 21,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            196,
+            36,
+            48,
+            255
+          ],
+          "sample": [
+            27,
+            22
+          ]
+        }
+      ]
+    },
+    "7": {
+      "name": "Furry Body",
+      "sentinel": [
+        "0x57d31d68"
+      ],
+      "donor": "0x4647633f",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          64
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        157
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            66,
+            76,
+            110,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            66,
+            76,
+            110,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    },
+    "8": {
+      "name": "Lizard Body",
+      "sentinel": [
+        "0x5f1aa2a0"
+      ],
+      "donor": "0x47132dd3",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          303
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        50
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            19,
+            76,
+            76,
+            255
+          ],
+          "after": [
+            51,
+            152,
+            75,
+            255
+          ],
+          "sample": [
+            25,
+            20
+          ]
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            51,
+            152,
+            75,
+            255
+          ],
+          "sample": [
+            25,
+            20
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            51,
+            152,
+            75,
+            255
+          ],
+          "after": [
+            30,
+            111,
+            80,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "after": [
+            30,
+            111,
+            80,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            51,
+            152,
+            75,
+            255
+          ],
+          "after": [
+            30,
+            111,
+            80,
+            255
+          ],
+          "sample": [
+            29,
+            19
+          ]
+        }
+      ]
+    },
+    "9": {
+      "name": "Merman Body",
+      "sentinel": [
+        "0xbed8b438"
+      ],
+      "donor": "0xbed8b438",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          74
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        74
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            152,
+            220,
+            255
+          ],
+          "sample": [
+            26,
+            21
+          ]
+        },
+        {
+          "x": 27,
+          "y": 21,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    },
+    "10": {
+      "name": "Werewolf Body",
+      "sentinel": [
+        "0x8a51fb4e"
+      ],
+      "donor": "0xd4b908d9",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          40
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        66
+      ],
+      "changes": [
+        {
+          "x": 26,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 18,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            66,
+            76,
+            110,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 19,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            66,
+            76,
+            110,
+            255
+          ],
+          "sample": [
+            25,
+            19
+          ]
+        },
+        {
+          "x": 26,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    },
+    "11": {
+      "name": "Hellsing Helmet",
+      "sentinel": [
+        "0x915ed4df"
+      ],
+      "donor": "0x1c8a9fb9",
+      "sentinelTex": [
+        [
+          "sharedassets0.assets",
+          383
+        ]
+      ],
+      "donorTex": [
+        "sharedassets0.assets",
+        212
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    },
+    "12": {
+      "name": "Snow Rider Helmet",
+      "sentinel": [
+        "0x1c976d8e"
+      ],
+      "donor": "0xec693b27",
+      "sentinelTex": [
+        [
+          "resources.assets",
+          236
+        ]
+      ],
+      "donorTex": [
+        "resources.assets",
+        15
+      ],
+      "changes": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "sample": [
+            28,
+            19
+          ]
+        }
+      ]
+    }
+  }
+}

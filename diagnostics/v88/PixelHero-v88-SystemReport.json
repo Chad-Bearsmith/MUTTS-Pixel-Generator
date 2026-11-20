@@ -1,0 +1,5749 @@
+{
+  "format": "PixelHero-v88-SystemReport-1",
+  "build": "Pixel Hero Maker [v.88]",
+  "at": "2026-11-20T19:00:13.056Z",
+  "nativeIdleHand": {
+    "available": true,
+    "build": "Pixel Hero Maker [v.88]",
+    "mode": "native-automatic-idle-only",
+    "excludedReferenceCategories": [
+      "Back",
+      "Cape"
+    ],
+    "status": 1,
+    "statusDescription": "Idle hand markers recolored from current Cape/Back-excluded body/arm reference",
+    "idleFrame": "64x64 tile at Unity atlas x=0,y=64; all other tiles excluded",
+    "referencePixelOneBased": [
+      28,
+      20
+    ],
+    "referencePixelZeroBased": [
+      27,
+      19
+    ],
+    "referenceColor": [
+      199,
+      207,
+      221,
+      255
+    ],
+    "observedSpriteAtlas": {
+      "available": true,
+      "atlasTextureId": 547,
+      "atlasHash": "7c18fcba",
+      "alpha254IdleMarkers": 7,
+      "markerColors": [
+        {
+          "rgba": [
+            199,
+            207,
+            221,
+            254
+          ],
+          "pixels": 7
+        }
+      ],
+      "allObservedMarkersMatchNativeReference": true,
+      "caveat": "GPU texture upload observation may not be from the same rebuild as the last native status. Rebuild before recording."
+    },
+    "firearmLayerSlot": 4,
+    "detectedMarkers": 7,
+    "changedMarkerPixels": 7,
+    "acceptedMarkerPixels": 7,
+    "freshArm104": true,
+    "freshArm108": false,
+    "optionalArm108Absent": true,
+    "reconstructedAtlasStatus": 1,
+    "reconstructedFirstFrameReference": [
+      199,
+      207,
+      221,
+      255
+    ],
+    "experimentalUnderlay": {
+      "available": true,
+      "status": -3,
+      "description": "Skipped: current first idle does not match known exact or palette-invariant reference structure",
+      "firearm": null,
+      "correctedItemCode": null,
+      "matchMode": null,
+      "experimental": true,
+      "scope": "12 item templates; 24 firearm IDs/25 source masks; source-layer recognition is experimental with added equipment",
+      "note": "v88 invokes source-layer matching only when the previously accepted exact and swatch-aware paths reject a valid firearm state. It reads original swatch-adjusted item arrays and writes within those same arrays at the item layer depth, never the firearm. Codes 8001-8012 represent Bolt source matches; 8099 represents multiple items. Other source-recognized firearms may use a higher code. Unsupported source arrangements still skip. The independent v80 hand-color source108 failure is NOT repaired."
+    },
+    "underlaySourceLayers": {
+      "available": true,
+      "serial": 79,
+      "firearmSlot": 4,
+      "layerCount": 5,
+      "source": "Existing read-only native first-idle layer snapshot and append-site pointer identities",
+      "alphaMaskEncoding": "64x64 top-down alpha nonzero; bit k uses byte floor(k/8), bit (k%8), row-major; hexadecimal bytes",
+      "layers": [
+        {
+          "slot": 0,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001000000000000c003000000000000c003000000000000c0f30f0000000000c0f70f000000000080f70f000000000000f70f000000000000f00f000000000000700e000000000000300c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 76,
+          "rgbaFnv1a32": "4177e2c9",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                66,
+                76,
+                110,
+                255
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e007000000000000f00f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f01f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 73,
+          "rgbaFnv1a32": "153ca6cb",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00c000000000000c00c000000000000c00c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 12,
+          "rgbaFnv1a32": "6834b9c1",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                19,
+                19,
+                19,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                255,
+                235,
+                87,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "firearm": false,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f000000000000f81f000000000000fc3f000000000000fe7f000000000000feff000000000000ffff000000000000ffff000000000000ffff000000000000feff000000000000feff000000000000fc7f000000000000e83f000000000000c01f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 167,
+          "rgbaFnv1a32": "bbffdab7",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                255
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "firearm": true,
+          "matchingAppendTags": [],
+          "alphaMask64x64Hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0ff030000000000c0ff070000000000c0ff030000000000c0ff010000000000c0df000000000000800d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "opaqueOrTranslucentPixels": 61,
+          "rgbaFnv1a32": "ce23a549",
+          "sampleCoordsZeroBased": [
+            {
+              "xy": [
+                27,
+                17
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                18
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                26,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                27,
+                20
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                25,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "xy": [
+                28,
+                19
+              ],
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "appendEvents": [
+        {
+          "tag": 103,
+          "matchingSlots": []
+        },
+        {
+          "tag": 105,
+          "matchingSlots": []
+        },
+        {
+          "tag": 109,
+          "matchingSlots": []
+        },
+        {
+          "tag": 112,
+          "matchingSlots": []
+        },
+        {
+          "tag": 114,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        },
+        {
+          "tag": 119,
+          "matchingSlots": []
+        }
+      ],
+      "appendTraceOverflow": false,
+      "caveat": "Tags are native append sites, NOT proven UI category names. Combine comparative captures to assign category provenance; source-layer matching is not yet a live geometry fix."
+    },
+    "nativeArmSourceEvidence": {
+      "available": true,
+      "source104Fresh": true,
+      "source108Fresh": false,
+      "source108OptionalAbsentProven": true,
+      "source108SelectedButUnavailable": false,
+      "source104Samples": [
+        {
+          "xy": [
+            27,
+            19
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        },
+        {
+          "xy": [
+            28,
+            19
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        },
+        {
+          "xy": [
+            26,
+            21
+          ],
+          "rgba": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "xy": [
+            27,
+            20
+          ],
+          "rgba": [
+            199,
+            207,
+            221,
+            255
+          ]
+        }
+      ],
+      "source108Samples": null,
+      "caveat": "Observational samples from the most recent native arm source copies only. A missing selected 108 source cannot safely be replaced by guessing skin or armor color. Values must be paired with a fresh rebuilt hand-color status."
+    },
+    "requiresManualUnarmedCapture": false,
+    "oldColorGuessingEnabled": false,
+    "otherFramesChangedByThisFix": false,
+    "caveat": "Reports the most recent normal Unity rebuild; native WebGL gameplay and exported SpriteSheet.png still need verification."
+  },
+  "experimentalUnderlay": {
+    "available": true,
+    "status": -3,
+    "description": "Skipped: current first idle does not match known exact or palette-invariant reference structure",
+    "firearm": null,
+    "correctedItemCode": null,
+    "matchMode": null,
+    "experimental": true,
+    "scope": "12 item templates; 24 firearm IDs/25 source masks; source-layer recognition is experimental with added equipment",
+    "note": "v88 invokes source-layer matching only when the previously accepted exact and swatch-aware paths reject a valid firearm state. It reads original swatch-adjusted item arrays and writes within those same arrays at the item layer depth, never the firearm. Codes 8001-8012 represent Bolt source matches; 8099 represents multiple items. Other source-recognized firearms may use a higher code. Unsupported source arrangements still skip. The independent v80 hand-color source108 failure is NOT repaired."
+  },
+  "layerComparison": {
+    "autoIdle": {
+      "available": true,
+      "build": "Pixel Hero Maker [v.88]",
+      "mode": "native-automatic-idle-only",
+      "excludedReferenceCategories": [
+        "Back",
+        "Cape"
+      ],
+      "status": 1,
+      "statusDescription": "Idle hand markers recolored from current Cape/Back-excluded body/arm reference",
+      "idleFrame": "64x64 tile at Unity atlas x=0,y=64; all other tiles excluded",
+      "referencePixelOneBased": [
+        28,
+        20
+      ],
+      "referencePixelZeroBased": [
+        27,
+        19
+      ],
+      "referenceColor": [
+        199,
+        207,
+        221,
+        255
+      ],
+      "observedSpriteAtlas": {
+        "available": true,
+        "atlasTextureId": 547,
+        "atlasHash": "7c18fcba",
+        "alpha254IdleMarkers": 7,
+        "markerColors": [
+          {
+            "rgba": [
+              199,
+              207,
+              221,
+              254
+            ],
+            "pixels": 7
+          }
+        ],
+        "allObservedMarkersMatchNativeReference": true,
+        "caveat": "GPU texture upload observation may not be from the same rebuild as the last native status. Rebuild before recording."
+      },
+      "firearmLayerSlot": 4,
+      "detectedMarkers": 7,
+      "changedMarkerPixels": 7,
+      "acceptedMarkerPixels": 7,
+      "freshArm104": true,
+      "freshArm108": false,
+      "optionalArm108Absent": true,
+      "reconstructedAtlasStatus": 1,
+      "reconstructedFirstFrameReference": [
+        199,
+        207,
+        221,
+        255
+      ],
+      "experimentalUnderlay": {
+        "available": true,
+        "status": -3,
+        "description": "Skipped: current first idle does not match known exact or palette-invariant reference structure",
+        "firearm": null,
+        "correctedItemCode": null,
+        "matchMode": null,
+        "experimental": true,
+        "scope": "12 item templates; 24 firearm IDs/25 source masks; source-layer recognition is experimental with added equipment",
+        "note": "v88 invokes source-layer matching only when the previously accepted exact and swatch-aware paths reject a valid firearm state. It reads original swatch-adjusted item arrays and writes within those same arrays at the item layer depth, never the firearm. Codes 8001-8012 represent Bolt source matches; 8099 represents multiple items. Other source-recognized firearms may use a higher code. Unsupported source arrangements still skip. The independent v80 hand-color source108 failure is NOT repaired."
+      },
+      "underlaySourceLayers": {
+        "available": true,
+        "serial": 79,
+        "firearmSlot": 4,
+        "layerCount": 5,
+        "source": "Existing read-only native first-idle layer snapshot and append-site pointer identities",
+        "alphaMaskEncoding": "64x64 top-down alpha nonzero; bit k uses byte floor(k/8), bit (k%8), row-major; hexadecimal bytes",
+        "layers": [
+          {
+            "slot": 0,
+            "firearm": false,
+            "matchingAppendTags": [],
+            "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008001000000000000c003000000000000c003000000000000c0f30f0000000000c0f70f000000000080f70f000000000000f70f000000000000f00f000000000000700e000000000000300c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "opaqueOrTranslucentPixels": 76,
+            "rgbaFnv1a32": "4177e2c9",
+            "sampleCoordsZeroBased": [
+              {
+                "xy": [
+                  27,
+                  17
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  18
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  26,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  255
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  20
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  25,
+                  19
+                ],
+                "rgba": [
+                  66,
+                  76,
+                  110,
+                  255
+                ]
+              },
+              {
+                "xy": [
+                  28,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  255
+                ]
+              }
+            ]
+          },
+          {
+            "slot": 1,
+            "firearm": false,
+            "matchingAppendTags": [],
+            "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e007000000000000f00f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f81f000000000000f01f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "opaqueOrTranslucentPixels": 73,
+            "rgbaFnv1a32": "153ca6cb",
+            "sampleCoordsZeroBased": [
+              {
+                "xy": [
+                  27,
+                  17
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  18
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  26,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  20
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  25,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  28,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "slot": 2,
+            "firearm": false,
+            "matchingAppendTags": [],
+            "alphaMask64x64Hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00c000000000000c00c000000000000c00c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "opaqueOrTranslucentPixels": 12,
+            "rgbaFnv1a32": "6834b9c1",
+            "sampleCoordsZeroBased": [
+              {
+                "xy": [
+                  27,
+                  17
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  18
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  26,
+                  19
+                ],
+                "rgba": [
+                  19,
+                  19,
+                  19,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  19
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  20
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  25,
+                  19
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  28,
+                  19
+                ],
+                "rgba": [
+                  255,
+                  235,
+                  87,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "slot": 3,
+            "firearm": false,
+            "matchingAppendTags": [],
+            "alphaMask64x64Hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f000000000000f81f000000000000fc3f000000000000fe7f000000000000feff000000000000ffff000000000000ffff000000000000ffff000000000000feff000000000000feff000000000000fc7f000000000000e83f000000000000c01f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "opaqueOrTranslucentPixels": 167,
+            "rgbaFnv1a32": "bbffdab7",
+            "sampleCoordsZeroBased": [
+              {
+                "xy": [
+                  27,
+                  17
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  255
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  18
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  26,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  20
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  25,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  28,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "slot": 4,
+            "firearm": true,
+            "matchingAppendTags": [],
+            "alphaMask64x64Hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0ff030000000000c0ff070000000000c0ff030000000000c0ff010000000000c0df000000000000800d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "opaqueOrTranslucentPixels": 61,
+            "rgbaFnv1a32": "ce23a549",
+            "sampleCoordsZeroBased": [
+              {
+                "xy": [
+                  27,
+                  17
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  18
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  26,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  27,
+                  20
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  25,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "xy": [
+                  28,
+                  19
+                ],
+                "rgba": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "appendEvents": [
+          {
+            "tag": 103,
+            "matchingSlots": []
+          },
+          {
+            "tag": 105,
+            "matchingSlots": []
+          },
+          {
+            "tag": 109,
+            "matchingSlots": []
+          },
+          {
+            "tag": 112,
+            "matchingSlots": []
+          },
+          {
+            "tag": 114,
+            "matchingSlots": []
+          },
+          {
+            "tag": 119,
+            "matchingSlots": []
+          },
+          {
+            "tag": 119,
+            "matchingSlots": []
+          },
+          {
+            "tag": 119,
+            "matchingSlots": []
+          }
+        ],
+        "appendTraceOverflow": false,
+        "caveat": "Tags are native append sites, NOT proven UI category names. Combine comparative captures to assign category provenance; source-layer matching is not yet a live geometry fix."
+      },
+      "nativeArmSourceEvidence": {
+        "available": true,
+        "source104Fresh": true,
+        "source108Fresh": false,
+        "source108OptionalAbsentProven": true,
+        "source108SelectedButUnavailable": false,
+        "source104Samples": [
+          {
+            "xy": [
+              27,
+              19
+            ],
+            "rgba": [
+              199,
+              207,
+              221,
+              255
+            ]
+          },
+          {
+            "xy": [
+              28,
+              19
+            ],
+            "rgba": [
+              199,
+              207,
+              221,
+              255
+            ]
+          },
+          {
+            "xy": [
+              26,
+              21
+            ],
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "xy": [
+              27,
+              20
+            ],
+            "rgba": [
+              199,
+              207,
+              221,
+              255
+            ]
+          }
+        ],
+        "source108Samples": null,
+        "caveat": "Observational samples from the most recent native arm source copies only. A missing selected 108 source cannot safely be replaced by guessing skin or armor color. Values must be paired with a fresh rebuilt hand-color status."
+      },
+      "requiresManualUnarmedCapture": false,
+      "oldColorGuessingEnabled": false,
+      "otherFramesChangedByThisFix": false,
+      "caveat": "Reports the most recent normal Unity rebuild; native WebGL gameplay and exported SpriteSheet.png still need verification."
+    },
+    "unarmed": null,
+    "armed": null,
+    "lastError": null
+  },
+  "renderer": {
+    "version": "v45-native-scene-probe",
+    "purpose": "Read-only renderer diagnostic; optional user-initiated outfit-reference capture is separate",
+    "manifestEntries": 564,
+    "manifestError": null,
+    "spriteTextureCandidates": [],
+    "spriteDrawTextureIds": [
+      {
+        "id": 547,
+        "count": 9127,
+        "lastAt": 184973.59999990463
+      },
+      {
+        "id": 1114,
+        "count": 1621,
+        "lastAt": 184973.59999990463
+      },
+      {
+        "id": 1110,
+        "count": 107,
+        "lastAt": 153540.89999961853
+      },
+      {
+        "id": 1109,
+        "count": 74,
+        "lastAt": 151757.39999961853
+      },
+      {
+        "id": 1108,
+        "count": 113,
+        "lastAt": 150524.59999990463
+      },
+      {
+        "id": 1104,
+        "count": 53,
+        "lastAt": 148574.5
+      },
+      {
+        "id": 1103,
+        "count": 43,
+        "lastAt": 147690.5
+      },
+      {
+        "id": 1102,
+        "count": 58,
+        "lastAt": 146974
+      },
+      {
+        "id": 1098,
+        "count": 57,
+        "lastAt": 145957.89999961853
+      },
+      {
+        "id": 1097,
+        "count": 36,
+        "lastAt": 145007.89999961853
+      },
+      {
+        "id": 1096,
+        "count": 75,
+        "lastAt": 144407.5
+      },
+      {
+        "id": 1092,
+        "count": 102,
+        "lastAt": 143090.89999961853
+      },
+      {
+        "id": 1091,
+        "count": 43,
+        "lastAt": 141390.69999980927
+      },
+      {
+        "id": 1090,
+        "count": 51,
+        "lastAt": 140674.59999990463
+      },
+      {
+        "id": 1087,
+        "count": 102,
+        "lastAt": 139791
+      },
+      {
+        "id": 1086,
+        "count": 73,
+        "lastAt": 138090.39999961853
+      },
+      {
+        "id": 1085,
+        "count": 213,
+        "lastAt": 136874.69999980927
+      },
+      {
+        "id": 1082,
+        "count": 79,
+        "lastAt": 133290.69999980927
+      },
+      {
+        "id": 1078,
+        "count": 185,
+        "lastAt": 131908
+      },
+      {
+        "id": 1074,
+        "count": 1540,
+        "lastAt": 128757.89999961853
+      },
+      {
+        "id": 1070,
+        "count": 29,
+        "lastAt": 103024.7999997139
+      },
+      {
+        "id": 1066,
+        "count": 189,
+        "lastAt": 102474.7999997139
+      },
+      {
+        "id": 1062,
+        "count": 45,
+        "lastAt": 99257.59999990463
+      },
+      {
+        "id": 1058,
+        "count": 1590,
+        "lastAt": 98441.2999997139
+      },
+      {
+        "id": 1057,
+        "count": 9,
+        "lastAt": 71941.09999990463
+      },
+      {
+        "id": 1056,
+        "count": 241,
+        "lastAt": 71790.69999980927
+      },
+      {
+        "id": 1055,
+        "count": 7,
+        "lastAt": 67774.5
+      },
+      {
+        "id": 1054,
+        "count": 2,
+        "lastAt": 67661.89999961853
+      },
+      {
+        "id": 1053,
+        "count": 1,
+        "lastAt": 67630.89999961853
+      },
+      {
+        "id": 1052,
+        "count": 3,
+        "lastAt": 67592.09999990463
+      },
+      {
+        "id": 1051,
+        "count": 73,
+        "lastAt": 67540.89999961853
+      },
+      {
+        "id": 1050,
+        "count": 1750,
+        "lastAt": 66334.5
+      },
+      {
+        "id": 1048,
+        "count": 43,
+        "lastAt": 37124
+      },
+      {
+        "id": 1046,
+        "count": 7,
+        "lastAt": 36390.89999961853
+      },
+      {
+        "id": 1044,
+        "count": 1,
+        "lastAt": 36270.2999997139
+      },
+      {
+        "id": 549,
+        "count": 28,
+        "lastAt": 3106.699999809265
+      }
+    ],
+    "spriteLayerAssessment": {
+      "primaryTextureId": 547,
+      "observedSpriteTextureCount": 0,
+      "distinctSecondaryCount": 0,
+      "secondaryObserved": false,
+      "note": "No distinct secondary SpriteRenderer texture observed in the captured draw groups. This does not prove none exists outside the capture."
+    },
+    "distinctSecondarySpriteCandidates": [],
+    "readbackAttempts": [],
+    "activeSpriteAtlas": {
+      "id": 547,
+      "fullBufferAvailable": true,
+      "hash": "7c18fcba",
+      "cacheCount": 12
+    },
+    "summary": {
+      "uploads": 8355,
+      "atlasUploads": 574,
+      "atlasExactMatches": 0,
+      "atlasContentUnmatched": 574,
+      "atlasUnreadable": 0,
+      "drawsObserved": 0,
+      "drawsRecorded": 0,
+      "errors": 0,
+      "lastError": null,
+      "uniqueTextures": 1114,
+      "uniquePrograms": 4,
+      "capturedIntervalUploads": 8355,
+      "capturedIntervalAtlasUploads": 574,
+      "capturedIntervalDraws": 0
+    },
+    "programs": [
+      {
+        "id": 1,
+        "kind": "other",
+        "uniforms": [
+          {
+            "name": "hlslcc_mtx4x4unity_ObjectToWorld[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_MatrixVP[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "_MainTex_ST",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_MainTex",
+            "type": 35678,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "kind": "unity-sprite",
+        "uniforms": [
+          {
+            "name": "_Flip",
+            "type": 35664,
+            "size": 1
+          },
+          {
+            "name": "_RendererColor",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_Color",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_ObjectToWorld[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_MatrixVP[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "_MainTex",
+            "type": 35678,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "kind": "unity-ui",
+        "uniforms": [
+          {
+            "name": "_Color",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_ScreenParams",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_ObjectToWorld[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4glstate_matrix_projection[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_MatrixVP[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "_ClipRect",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_MainTex_ST",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_UIMaskSoftnessX",
+            "type": 5126,
+            "size": 1
+          },
+          {
+            "name": "_UIMaskSoftnessY",
+            "type": 5126,
+            "size": 1
+          },
+          {
+            "name": "_TextureSampleAdd",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_MainTex",
+            "type": 35678,
+            "size": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "kind": "unity-ui",
+        "uniforms": [
+          {
+            "name": "_Color",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_ScreenParams",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_ObjectToWorld[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4glstate_matrix_projection[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "hlslcc_mtx4x4unity_MatrixVP[0]",
+            "type": 35666,
+            "size": 4
+          },
+          {
+            "name": "_ClipRect",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_MainTex_ST",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_UIMaskSoftnessX",
+            "type": 5126,
+            "size": 1
+          },
+          {
+            "name": "_UIMaskSoftnessY",
+            "type": 5126,
+            "size": 1
+          },
+          {
+            "name": "_TextureSampleAdd",
+            "type": 35666,
+            "size": 1
+          },
+          {
+            "name": "_MainTex",
+            "type": 35678,
+            "size": 1
+          }
+        ]
+      }
+    ],
+    "sampledAtlasTextures": [],
+    "atlasCatalog": [
+      {
+        "id": 22,
+        "hash": "5258d5c7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 1
+      },
+      {
+        "id": 23,
+        "hash": "2c65a00e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 2
+      },
+      {
+        "id": 24,
+        "hash": "18661cb0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 3
+      },
+      {
+        "id": 25,
+        "hash": "bc96fab4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 4
+      },
+      {
+        "id": 26,
+        "hash": "126a55d3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 5
+      },
+      {
+        "id": 27,
+        "hash": "ecd55408",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 6
+      },
+      {
+        "id": 28,
+        "hash": "1b781350",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 7
+      },
+      {
+        "id": 29,
+        "hash": "5194c3ce",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 8
+      },
+      {
+        "id": 30,
+        "hash": "eef283bb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 9
+      },
+      {
+        "id": 32,
+        "hash": "22a17a8b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 10
+      },
+      {
+        "id": 33,
+        "hash": "50ea00da",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 11
+      },
+      {
+        "id": 34,
+        "hash": "0ab84bff",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 12
+      },
+      {
+        "id": 35,
+        "hash": "335ef936",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 13
+      },
+      {
+        "id": 36,
+        "hash": "d112e067",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 14
+      },
+      {
+        "id": 37,
+        "hash": "6e64772e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 15
+      },
+      {
+        "id": 38,
+        "hash": "4cc6a1e5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 16
+      },
+      {
+        "id": 39,
+        "hash": "12c319a2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 17
+      },
+      {
+        "id": 40,
+        "hash": "43bc5602",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 18
+      },
+      {
+        "id": 41,
+        "hash": "5d8be33c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 19
+      },
+      {
+        "id": 42,
+        "hash": "dbec2ef4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 20
+      },
+      {
+        "id": 43,
+        "hash": "b1a6859b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 21
+      },
+      {
+        "id": 44,
+        "hash": "db1bdf54",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 22
+      },
+      {
+        "id": 45,
+        "hash": "860860be",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 23
+      },
+      {
+        "id": 46,
+        "hash": "37cacf3f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 24
+      },
+      {
+        "id": 47,
+        "hash": "22e7236d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 25
+      },
+      {
+        "id": 48,
+        "hash": "6cdc7af3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 26
+      },
+      {
+        "id": 50,
+        "hash": "f9ac57b7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 27
+      },
+      {
+        "id": 52,
+        "hash": "87978189",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 28
+      },
+      {
+        "id": 53,
+        "hash": "1f37f78c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 29
+      },
+      {
+        "id": 54,
+        "hash": "5c39df00",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 30
+      },
+      {
+        "id": 55,
+        "hash": "613f274b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 31
+      },
+      {
+        "id": 56,
+        "hash": "47bc42f3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 32
+      },
+      {
+        "id": 57,
+        "hash": "f22f0948",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 33
+      },
+      {
+        "id": 58,
+        "hash": "2f579f43",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 34
+      },
+      {
+        "id": 59,
+        "hash": "a9a615ab",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 35
+      },
+      {
+        "id": 61,
+        "hash": "02adb228",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 36
+      },
+      {
+        "id": 62,
+        "hash": "5ae10962",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 37
+      },
+      {
+        "id": 63,
+        "hash": "8ffdd4e0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 38
+      },
+      {
+        "id": 64,
+        "hash": "c8d4f813",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 39
+      },
+      {
+        "id": 65,
+        "hash": "ba53b590",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 40
+      },
+      {
+        "id": 66,
+        "hash": "dac26102",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 41
+      },
+      {
+        "id": 67,
+        "hash": "789ee383",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 42
+      },
+      {
+        "id": 68,
+        "hash": "a7754544",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 43
+      },
+      {
+        "id": 69,
+        "hash": "3f427342",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 44
+      },
+      {
+        "id": 70,
+        "hash": "3bfeefb4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 45
+      },
+      {
+        "id": 71,
+        "hash": "3b1d88d0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 46
+      },
+      {
+        "id": 72,
+        "hash": "d4bee37f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 47
+      },
+      {
+        "id": 73,
+        "hash": "3bbb61e4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 48
+      },
+      {
+        "id": 74,
+        "hash": "45347d08",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 49
+      },
+      {
+        "id": 75,
+        "hash": "342613c8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 50
+      },
+      {
+        "id": 76,
+        "hash": "782b490b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 51
+      },
+      {
+        "id": 78,
+        "hash": "146e4083",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 52
+      },
+      {
+        "id": 79,
+        "hash": "a93ad3c0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 53
+      },
+      {
+        "id": 80,
+        "hash": "90935a76",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 54
+      },
+      {
+        "id": 81,
+        "hash": "545614f0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 55
+      },
+      {
+        "id": 82,
+        "hash": "b403be28",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 56
+      },
+      {
+        "id": 83,
+        "hash": "5111d6e1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 57
+      },
+      {
+        "id": 84,
+        "hash": "1724e451",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 58
+      },
+      {
+        "id": 85,
+        "hash": "e469426e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 59
+      },
+      {
+        "id": 86,
+        "hash": "45511333",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 60
+      },
+      {
+        "id": 87,
+        "hash": "67be4705",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 61
+      },
+      {
+        "id": 88,
+        "hash": "8286f5db",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 62
+      },
+      {
+        "id": 89,
+        "hash": "e129cdb9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 63
+      },
+      {
+        "id": 90,
+        "hash": "8392c31b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 64
+      },
+      {
+        "id": 91,
+        "hash": "89e1cdcd",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 65
+      },
+      {
+        "id": 92,
+        "hash": "7d3d816f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 66
+      },
+      {
+        "id": 93,
+        "hash": "04d1ea81",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 67
+      },
+      {
+        "id": 94,
+        "hash": "f4af9490",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 68
+      },
+      {
+        "id": 95,
+        "hash": "e1ce8ee8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 69
+      },
+      {
+        "id": 96,
+        "hash": "5e31d96f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 70
+      },
+      {
+        "id": 97,
+        "hash": "8fcc31db",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 71
+      },
+      {
+        "id": 98,
+        "hash": "9383b62e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 72
+      },
+      {
+        "id": 99,
+        "hash": "e47488db",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 73
+      },
+      {
+        "id": 100,
+        "hash": "8896e260",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 74
+      },
+      {
+        "id": 101,
+        "hash": "346ffc5f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 75
+      },
+      {
+        "id": 102,
+        "hash": "78e4e432",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 76
+      },
+      {
+        "id": 103,
+        "hash": "4b6dac4e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 77
+      },
+      {
+        "id": 104,
+        "hash": "318a0700",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 78
+      },
+      {
+        "id": 106,
+        "hash": "5c8eb8c0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 79
+      },
+      {
+        "id": 107,
+        "hash": "51a151ec",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 80
+      },
+      {
+        "id": 108,
+        "hash": "676c6569",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 81
+      },
+      {
+        "id": 111,
+        "hash": "a555ddd1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 82
+      },
+      {
+        "id": 112,
+        "hash": "35fc858a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 83
+      },
+      {
+        "id": 113,
+        "hash": "37580fbc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 84
+      },
+      {
+        "id": 115,
+        "hash": "cb7c1c80",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 85
+      },
+      {
+        "id": 116,
+        "hash": "a8591a0d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 86
+      },
+      {
+        "id": 117,
+        "hash": "f735afb7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 87
+      },
+      {
+        "id": 118,
+        "hash": "120ccb61",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 88
+      },
+      {
+        "id": 119,
+        "hash": "11027374",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 89
+      },
+      {
+        "id": 120,
+        "hash": "93a06831",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 90
+      },
+      {
+        "id": 121,
+        "hash": "5e251e6e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 91
+      },
+      {
+        "id": 122,
+        "hash": "d08e0fea",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 92
+      },
+      {
+        "id": 123,
+        "hash": "48f34658",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 93
+      },
+      {
+        "id": 124,
+        "hash": "476467f3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 94
+      },
+      {
+        "id": 125,
+        "hash": "176491f1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 95
+      },
+      {
+        "id": 126,
+        "hash": "4585d00e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 96
+      },
+      {
+        "id": 127,
+        "hash": "2030949b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 97
+      },
+      {
+        "id": 128,
+        "hash": "2fe67ed1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 98
+      },
+      {
+        "id": 129,
+        "hash": "d4ce4d80",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 99
+      },
+      {
+        "id": 130,
+        "hash": "b3400be2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 100
+      },
+      {
+        "id": 131,
+        "hash": "2028bf8c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 101
+      },
+      {
+        "id": 132,
+        "hash": "d2a5ca38",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 102
+      },
+      {
+        "id": 133,
+        "hash": "35e3af37",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 103
+      },
+      {
+        "id": 134,
+        "hash": "58fcbfc9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 104
+      },
+      {
+        "id": 135,
+        "hash": "63d35bf2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 105
+      },
+      {
+        "id": 136,
+        "hash": "08221474",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 106
+      },
+      {
+        "id": 137,
+        "hash": "5e5df514",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 107
+      },
+      {
+        "id": 138,
+        "hash": "cda8d40b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 108
+      },
+      {
+        "id": 139,
+        "hash": "85c7a29b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 109
+      },
+      {
+        "id": 140,
+        "hash": "55c5bd47",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 110
+      },
+      {
+        "id": 141,
+        "hash": "a7f62b61",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 111
+      },
+      {
+        "id": 143,
+        "hash": "89f90e88",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 112
+      },
+      {
+        "id": 144,
+        "hash": "a368c093",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 113
+      },
+      {
+        "id": 145,
+        "hash": "57f01f57",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 114
+      },
+      {
+        "id": 146,
+        "hash": "e6ce33de",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 115
+      },
+      {
+        "id": 147,
+        "hash": "91df4419",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 116
+      },
+      {
+        "id": 148,
+        "hash": "7213c7ab",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 117
+      },
+      {
+        "id": 149,
+        "hash": "797d0f1a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 118
+      },
+      {
+        "id": 150,
+        "hash": "9d027335",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 119
+      },
+      {
+        "id": 151,
+        "hash": "390d6a44",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 120
+      },
+      {
+        "id": 152,
+        "hash": "2e1bb181",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 121
+      },
+      {
+        "id": 153,
+        "hash": "e062a21e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 122
+      },
+      {
+        "id": 155,
+        "hash": "fb79c5b7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 123
+      },
+      {
+        "id": 156,
+        "hash": "51e9e9b2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 124
+      },
+      {
+        "id": 157,
+        "hash": "4fd04ab5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 125
+      },
+      {
+        "id": 158,
+        "hash": "12bf58b0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 126
+      },
+      {
+        "id": 159,
+        "hash": "20ebc900",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 127
+      },
+      {
+        "id": 161,
+        "hash": "fa35ac89",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 128
+      },
+      {
+        "id": 162,
+        "hash": "6d0de78c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 129
+      },
+      {
+        "id": 163,
+        "hash": "08abafe3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 130
+      },
+      {
+        "id": 164,
+        "hash": "54da6102",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 131
+      },
+      {
+        "id": 165,
+        "hash": "0793d1f4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 132
+      },
+      {
+        "id": 166,
+        "hash": "f9f0a48b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 133
+      },
+      {
+        "id": 167,
+        "hash": "1a8cf95c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 134
+      },
+      {
+        "id": 168,
+        "hash": "2901060b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 135
+      },
+      {
+        "id": 169,
+        "hash": "6e51c4b7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 136
+      },
+      {
+        "id": 170,
+        "hash": "1ac37b06",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 137
+      },
+      {
+        "id": 171,
+        "hash": "69787ebb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 138
+      },
+      {
+        "id": 172,
+        "hash": "fb7bbb49",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 139
+      },
+      {
+        "id": 173,
+        "hash": "9e52e8ef",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 140
+      },
+      {
+        "id": 174,
+        "hash": "f4b2d8b8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 141
+      },
+      {
+        "id": 175,
+        "hash": "c9d53856",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 142
+      },
+      {
+        "id": 176,
+        "hash": "9668377d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 143
+      },
+      {
+        "id": 177,
+        "hash": "4568c3e4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 144
+      },
+      {
+        "id": 178,
+        "hash": "b72e2433",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 145
+      },
+      {
+        "id": 179,
+        "hash": "d88b1d1c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 146
+      },
+      {
+        "id": 180,
+        "hash": "717cdff3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 147
+      },
+      {
+        "id": 181,
+        "hash": "de724944",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 148
+      },
+      {
+        "id": 182,
+        "hash": "3268e460",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 149
+      },
+      {
+        "id": 183,
+        "hash": "c42adca4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 150
+      },
+      {
+        "id": 184,
+        "hash": "bb76595b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 151
+      },
+      {
+        "id": 185,
+        "hash": "0de39195",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 152
+      },
+      {
+        "id": 186,
+        "hash": "7a56212c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 153
+      },
+      {
+        "id": 187,
+        "hash": "e30e4640",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 154
+      },
+      {
+        "id": 188,
+        "hash": "3ae4bf46",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 155
+      },
+      {
+        "id": 189,
+        "hash": "99e893ba",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 156
+      },
+      {
+        "id": 190,
+        "hash": "d7d183df",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 157
+      },
+      {
+        "id": 191,
+        "hash": "d9f8d8f5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 158
+      },
+      {
+        "id": 192,
+        "hash": "d3c95ba3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 159
+      },
+      {
+        "id": 193,
+        "hash": "5787addb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 160
+      },
+      {
+        "id": 194,
+        "hash": "120be671",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 161
+      },
+      {
+        "id": 196,
+        "hash": "a5b9b4f7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 162
+      },
+      {
+        "id": 197,
+        "hash": "9ed4c5aa",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 163
+      },
+      {
+        "id": 199,
+        "hash": "770f87cb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 164
+      },
+      {
+        "id": 200,
+        "hash": "318bbbce",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 165
+      },
+      {
+        "id": 201,
+        "hash": "dc262f80",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 166
+      },
+      {
+        "id": 202,
+        "hash": "864413b4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 167
+      },
+      {
+        "id": 203,
+        "hash": "067c1e19",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 168
+      },
+      {
+        "id": 204,
+        "hash": "90883f08",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 169
+      },
+      {
+        "id": 205,
+        "hash": "afa7c4e0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 170
+      },
+      {
+        "id": 206,
+        "hash": "a202efe3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 171
+      },
+      {
+        "id": 207,
+        "hash": "001f2d27",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 172
+      },
+      {
+        "id": 208,
+        "hash": "1cafafba",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 173
+      },
+      {
+        "id": 209,
+        "hash": "85c6c8b8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 174
+      },
+      {
+        "id": 210,
+        "hash": "9d53749b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 175
+      },
+      {
+        "id": 211,
+        "hash": "d3fb353d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 176
+      },
+      {
+        "id": 212,
+        "hash": "3fed5f38",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 177
+      },
+      {
+        "id": 214,
+        "hash": "80c4d9fb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 178
+      },
+      {
+        "id": 215,
+        "hash": "49ec1a13",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 179
+      },
+      {
+        "id": 216,
+        "hash": "e4acb533",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 180
+      },
+      {
+        "id": 217,
+        "hash": "317d0632",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 181
+      },
+      {
+        "id": 218,
+        "hash": "aceb786b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 182
+      },
+      {
+        "id": 219,
+        "hash": "2b81bf97",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 183
+      },
+      {
+        "id": 220,
+        "hash": "2b6e0cca",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 184
+      },
+      {
+        "id": 221,
+        "hash": "9c497378",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 185
+      },
+      {
+        "id": 222,
+        "hash": "118b1e8f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 186
+      },
+      {
+        "id": 223,
+        "hash": "1e5d86c6",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 187
+      },
+      {
+        "id": 224,
+        "hash": "b9a51049",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 188
+      },
+      {
+        "id": 225,
+        "hash": "d966975b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 189
+      },
+      {
+        "id": 226,
+        "hash": "08fe80cc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 190
+      },
+      {
+        "id": 227,
+        "hash": "2a187526",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 191
+      },
+      {
+        "id": 228,
+        "hash": "684a6312",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 192
+      },
+      {
+        "id": 229,
+        "hash": "a8147dbc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 193
+      },
+      {
+        "id": 231,
+        "hash": "08f3f769",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 194
+      },
+      {
+        "id": 232,
+        "hash": "6eee1271",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 195
+      },
+      {
+        "id": 233,
+        "hash": "bb816dcb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 196
+      },
+      {
+        "id": 234,
+        "hash": "04988744",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 197
+      },
+      {
+        "id": 235,
+        "hash": "cd46eb1e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 198
+      },
+      {
+        "id": 236,
+        "hash": "c1becfdc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 199
+      },
+      {
+        "id": 237,
+        "hash": "b436fe78",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 200
+      },
+      {
+        "id": 238,
+        "hash": "01f878f7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 201
+      },
+      {
+        "id": 240,
+        "hash": "7d4a7074",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 202
+      },
+      {
+        "id": 241,
+        "hash": "6ac75beb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 203
+      },
+      {
+        "id": 242,
+        "hash": "e6bf906f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 204
+      },
+      {
+        "id": 243,
+        "hash": "7a217401",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 205
+      },
+      {
+        "id": 244,
+        "hash": "21fc4889",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 206
+      },
+      {
+        "id": 245,
+        "hash": "b44c22ce",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 207
+      },
+      {
+        "id": 246,
+        "hash": "de3d7234",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 208
+      },
+      {
+        "id": 247,
+        "hash": "59ce15da",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 209
+      },
+      {
+        "id": 248,
+        "hash": "203afaed",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 210
+      },
+      {
+        "id": 249,
+        "hash": "ee642390",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 211
+      },
+      {
+        "id": 250,
+        "hash": "8225ac9a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 212
+      },
+      {
+        "id": 251,
+        "hash": "7c154b64",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 213
+      },
+      {
+        "id": 252,
+        "hash": "85332778",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 214
+      },
+      {
+        "id": 253,
+        "hash": "8f0065f5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 215
+      },
+      {
+        "id": 254,
+        "hash": "99aa10ff",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 216
+      },
+      {
+        "id": 255,
+        "hash": "d0ae540c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 217
+      },
+      {
+        "id": 256,
+        "hash": "47a8a73a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 218
+      },
+      {
+        "id": 257,
+        "hash": "21453e18",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 219
+      },
+      {
+        "id": 259,
+        "hash": "a791323b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 220
+      },
+      {
+        "id": 260,
+        "hash": "768326d7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 221
+      },
+      {
+        "id": 261,
+        "hash": "cdd1d5ab",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 222
+      },
+      {
+        "id": 262,
+        "hash": "0c9d61ba",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 223
+      },
+      {
+        "id": 263,
+        "hash": "645784d9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 224
+      },
+      {
+        "id": 264,
+        "hash": "ed82dfea",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 225
+      },
+      {
+        "id": 265,
+        "hash": "ab3c68ac",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 226
+      },
+      {
+        "id": 266,
+        "hash": "6bba3e01",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 227
+      },
+      {
+        "id": 267,
+        "hash": "3d26f167",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 228
+      },
+      {
+        "id": 268,
+        "hash": "881d1d4a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 229
+      },
+      {
+        "id": 269,
+        "hash": "b0d1f298",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 230
+      },
+      {
+        "id": 270,
+        "hash": "1b0f9e20",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 231
+      },
+      {
+        "id": 271,
+        "hash": "600b4ac3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 232
+      },
+      {
+        "id": 272,
+        "hash": "e08d069b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 233
+      },
+      {
+        "id": 273,
+        "hash": "6333beae",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 234
+      },
+      {
+        "id": 274,
+        "hash": "c80680d4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 235
+      },
+      {
+        "id": 275,
+        "hash": "a43b2ad4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 236
+      },
+      {
+        "id": 276,
+        "hash": "57f01f57",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 237
+      },
+      {
+        "id": 277,
+        "hash": "4b4e8991",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 238
+      },
+      {
+        "id": 278,
+        "hash": "15462dbc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 239
+      },
+      {
+        "id": 279,
+        "hash": "39301d24",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 240
+      },
+      {
+        "id": 280,
+        "hash": "8a12ed55",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 241
+      },
+      {
+        "id": 281,
+        "hash": "964b6a6a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 242
+      },
+      {
+        "id": 283,
+        "hash": "a949b993",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 243
+      },
+      {
+        "id": 284,
+        "hash": "985a5210",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 244
+      },
+      {
+        "id": 285,
+        "hash": "529a3419",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 245
+      },
+      {
+        "id": 286,
+        "hash": "7cbc4d3f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 246
+      },
+      {
+        "id": 287,
+        "hash": "640d42f4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 247
+      },
+      {
+        "id": 288,
+        "hash": "15ec5cef",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 248
+      },
+      {
+        "id": 289,
+        "hash": "f0431ace",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 249
+      },
+      {
+        "id": 290,
+        "hash": "466b2443",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 250
+      },
+      {
+        "id": 291,
+        "hash": "955e8811",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 251
+      },
+      {
+        "id": 292,
+        "hash": "ed4af10d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 252
+      },
+      {
+        "id": 293,
+        "hash": "8433417d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 253
+      },
+      {
+        "id": 294,
+        "hash": "83790080",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 254
+      },
+      {
+        "id": 295,
+        "hash": "df975b30",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 255
+      },
+      {
+        "id": 296,
+        "hash": "dc71a7ff",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 256
+      },
+      {
+        "id": 297,
+        "hash": "e9d2bef5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 257
+      },
+      {
+        "id": 298,
+        "hash": "caa5cd20",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 258
+      },
+      {
+        "id": 299,
+        "hash": "b0608c57",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 259
+      },
+      {
+        "id": 301,
+        "hash": "6baab26b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 260
+      },
+      {
+        "id": 302,
+        "hash": "d20a2638",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 261
+      },
+      {
+        "id": 303,
+        "hash": "47418391",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 262
+      },
+      {
+        "id": 304,
+        "hash": "31a0f5ae",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 263
+      },
+      {
+        "id": 305,
+        "hash": "4d528495",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 264
+      },
+      {
+        "id": 306,
+        "hash": "eacc9e11",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 265
+      },
+      {
+        "id": 307,
+        "hash": "e9976446",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 266
+      },
+      {
+        "id": 308,
+        "hash": "480800f6",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 267
+      },
+      {
+        "id": 309,
+        "hash": "4716bdcf",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 268
+      },
+      {
+        "id": 310,
+        "hash": "51dea17b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 269
+      },
+      {
+        "id": 311,
+        "hash": "e910e540",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 270
+      },
+      {
+        "id": 312,
+        "hash": "2cb126f9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 271
+      },
+      {
+        "id": 313,
+        "hash": "0e497843",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 272
+      },
+      {
+        "id": 314,
+        "hash": "a7f7071a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 273
+      },
+      {
+        "id": 315,
+        "hash": "d998db72",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 274
+      },
+      {
+        "id": 316,
+        "hash": "8f665369",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 275
+      },
+      {
+        "id": 317,
+        "hash": "b2393a55",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 276
+      },
+      {
+        "id": 318,
+        "hash": "2463bbcd",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 277
+      },
+      {
+        "id": 320,
+        "hash": "00c54c89",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 278
+      },
+      {
+        "id": 321,
+        "hash": "cd6cd522",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 279
+      },
+      {
+        "id": 322,
+        "hash": "5ba9e390",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 280
+      },
+      {
+        "id": 323,
+        "hash": "22250a92",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 281
+      },
+      {
+        "id": 325,
+        "hash": "ff6bec48",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 282
+      },
+      {
+        "id": 326,
+        "hash": "2c31f181",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 283
+      },
+      {
+        "id": 327,
+        "hash": "5b4fb891",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 284
+      },
+      {
+        "id": 328,
+        "hash": "569428cd",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 285
+      },
+      {
+        "id": 329,
+        "hash": "bf0dded4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 286
+      },
+      {
+        "id": 330,
+        "hash": "0b2dcc2a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 287
+      },
+      {
+        "id": 331,
+        "hash": "15a77987",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 288
+      },
+      {
+        "id": 333,
+        "hash": "907b4084",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 289
+      },
+      {
+        "id": 334,
+        "hash": "a9228a98",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 290
+      },
+      {
+        "id": 335,
+        "hash": "8f0065f5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 291
+      },
+      {
+        "id": 336,
+        "hash": "e88168c1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 292
+      },
+      {
+        "id": 338,
+        "hash": "03be3901",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 293
+      },
+      {
+        "id": 339,
+        "hash": "7f3d678a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 294
+      },
+      {
+        "id": 340,
+        "hash": "d67ac3bb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 295
+      },
+      {
+        "id": 341,
+        "hash": "d3c9b8c4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 296
+      },
+      {
+        "id": 342,
+        "hash": "7eb396c3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 297
+      },
+      {
+        "id": 343,
+        "hash": "8ec86ddb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 298
+      },
+      {
+        "id": 344,
+        "hash": "a50ecd1b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 299
+      },
+      {
+        "id": 345,
+        "hash": "adda26c7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 300
+      },
+      {
+        "id": 347,
+        "hash": "1915d8a4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 301
+      },
+      {
+        "id": 348,
+        "hash": "01034454",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 302
+      },
+      {
+        "id": 349,
+        "hash": "423e2a58",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 303
+      },
+      {
+        "id": 350,
+        "hash": "0ffb2598",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 304
+      },
+      {
+        "id": 351,
+        "hash": "d2c65d62",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 305
+      },
+      {
+        "id": 353,
+        "hash": "2517f73e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 306
+      },
+      {
+        "id": 354,
+        "hash": "2766d5a7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 307
+      },
+      {
+        "id": 355,
+        "hash": "8b8ebdd8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 308
+      },
+      {
+        "id": 356,
+        "hash": "2ba15a2c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 309
+      },
+      {
+        "id": 357,
+        "hash": "1b64f635",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 310
+      },
+      {
+        "id": 358,
+        "hash": "1eaa1ab7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 311
+      },
+      {
+        "id": 359,
+        "hash": "5194c3ce",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 312
+      },
+      {
+        "id": 360,
+        "hash": "98a3da5b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 313
+      },
+      {
+        "id": 361,
+        "hash": "8dba55c1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 314
+      },
+      {
+        "id": 362,
+        "hash": "a0e801f0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 315
+      },
+      {
+        "id": 363,
+        "hash": "122eaf4c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 316
+      },
+      {
+        "id": 364,
+        "hash": "b6b79e45",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 317
+      },
+      {
+        "id": 365,
+        "hash": "43c7785f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 318
+      },
+      {
+        "id": 366,
+        "hash": "e4b37a66",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 319
+      },
+      {
+        "id": 367,
+        "hash": "86f84a36",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 320
+      },
+      {
+        "id": 368,
+        "hash": "f7133994",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 321
+      },
+      {
+        "id": 369,
+        "hash": "2cf32518",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 322
+      },
+      {
+        "id": 370,
+        "hash": "d7b812b2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 323
+      },
+      {
+        "id": 371,
+        "hash": "3586abc4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 324
+      },
+      {
+        "id": 372,
+        "hash": "1455c069",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 325
+      },
+      {
+        "id": 373,
+        "hash": "6e0d1df9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 326
+      },
+      {
+        "id": 374,
+        "hash": "ea10512e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 327
+      },
+      {
+        "id": 375,
+        "hash": "72fd541d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 328
+      },
+      {
+        "id": 376,
+        "hash": "e7e282ee",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 329
+      },
+      {
+        "id": 378,
+        "hash": "62b7d0ca",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 330
+      },
+      {
+        "id": 379,
+        "hash": "6f8c22d5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 331
+      },
+      {
+        "id": 380,
+        "hash": "6000687e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 332
+      },
+      {
+        "id": 381,
+        "hash": "28e0cc6a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 333
+      },
+      {
+        "id": 382,
+        "hash": "a1abb2ae",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 334
+      },
+      {
+        "id": 383,
+        "hash": "23115153",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 335
+      },
+      {
+        "id": 384,
+        "hash": "af3606fd",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 336
+      },
+      {
+        "id": 385,
+        "hash": "ef8dd0cf",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 337
+      },
+      {
+        "id": 386,
+        "hash": "c963be9e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 338
+      },
+      {
+        "id": 387,
+        "hash": "57735970",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 339
+      },
+      {
+        "id": 388,
+        "hash": "eee2eaf8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 340
+      },
+      {
+        "id": 389,
+        "hash": "607a742c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 341
+      },
+      {
+        "id": 390,
+        "hash": "226f50f7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 342
+      },
+      {
+        "id": 391,
+        "hash": "bdf2599b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 343
+      },
+      {
+        "id": 392,
+        "hash": "7b9f768c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 344
+      },
+      {
+        "id": 393,
+        "hash": "17585084",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 345
+      },
+      {
+        "id": 394,
+        "hash": "24ceab23",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 346
+      },
+      {
+        "id": 396,
+        "hash": "7a2e6ad0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 347
+      },
+      {
+        "id": 397,
+        "hash": "99e94794",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 348
+      },
+      {
+        "id": 398,
+        "hash": "06ebaa49",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 349
+      },
+      {
+        "id": 399,
+        "hash": "e57755e8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 350
+      },
+      {
+        "id": 400,
+        "hash": "792df6e8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 351
+      },
+      {
+        "id": 401,
+        "hash": "d0020505",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 352
+      },
+      {
+        "id": 402,
+        "hash": "626665ec",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 353
+      },
+      {
+        "id": 403,
+        "hash": "24d7315a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 354
+      },
+      {
+        "id": 404,
+        "hash": "fc2188fc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 355
+      },
+      {
+        "id": 405,
+        "hash": "cf04e2ac",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 356
+      },
+      {
+        "id": 406,
+        "hash": "a7f8c9e4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 357
+      },
+      {
+        "id": 407,
+        "hash": "18a36d4f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 358
+      },
+      {
+        "id": 408,
+        "hash": "4bb004b7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 359
+      },
+      {
+        "id": 409,
+        "hash": "ba8d803c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 360
+      },
+      {
+        "id": 410,
+        "hash": "5c78e058",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 361
+      },
+      {
+        "id": 411,
+        "hash": "c9953456",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 362
+      },
+      {
+        "id": 412,
+        "hash": "6bfc95f0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 363
+      },
+      {
+        "id": 413,
+        "hash": "307b95c5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 364
+      },
+      {
+        "id": 414,
+        "hash": "ba42a01d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 365
+      },
+      {
+        "id": 415,
+        "hash": "bd9c82b5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 366
+      },
+      {
+        "id": 416,
+        "hash": "2e4b56c3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 367
+      },
+      {
+        "id": 417,
+        "hash": "797705f8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 368
+      },
+      {
+        "id": 418,
+        "hash": "b8d8303a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 369
+      },
+      {
+        "id": 419,
+        "hash": "2bd39b6f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 370
+      },
+      {
+        "id": 420,
+        "hash": "95ac3c6e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 371
+      },
+      {
+        "id": 421,
+        "hash": "9d53749b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 372
+      },
+      {
+        "id": 422,
+        "hash": "813653eb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 373
+      },
+      {
+        "id": 423,
+        "hash": "f394933c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 374
+      },
+      {
+        "id": 424,
+        "hash": "3e52a235",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 375
+      },
+      {
+        "id": 425,
+        "hash": "85cafb06",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 376
+      },
+      {
+        "id": 426,
+        "hash": "b1c8d4f4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 377
+      },
+      {
+        "id": 427,
+        "hash": "114520ec",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 378
+      },
+      {
+        "id": 428,
+        "hash": "2af8933a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 379
+      },
+      {
+        "id": 429,
+        "hash": "1cc20866",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 380
+      },
+      {
+        "id": 430,
+        "hash": "54d7e59b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 381
+      },
+      {
+        "id": 431,
+        "hash": "104fe745",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 382
+      },
+      {
+        "id": 432,
+        "hash": "6ee8dcf8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 383
+      },
+      {
+        "id": 433,
+        "hash": "47ccbafb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 384
+      },
+      {
+        "id": 434,
+        "hash": "c47329b8",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 385
+      },
+      {
+        "id": 435,
+        "hash": "759ba457",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 386
+      },
+      {
+        "id": 436,
+        "hash": "05b85c92",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 387
+      },
+      {
+        "id": 437,
+        "hash": "4fbeca40",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 388
+      },
+      {
+        "id": 438,
+        "hash": "37a42192",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 389
+      },
+      {
+        "id": 439,
+        "hash": "f9ce0ba4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 390
+      },
+      {
+        "id": 440,
+        "hash": "3d28a577",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 391
+      },
+      {
+        "id": 441,
+        "hash": "6b0ed9cb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 392
+      },
+      {
+        "id": 442,
+        "hash": "8053fda1",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 393
+      },
+      {
+        "id": 443,
+        "hash": "0eedcde7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 394
+      },
+      {
+        "id": 444,
+        "hash": "81848815",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 395
+      },
+      {
+        "id": 445,
+        "hash": "c4b696e0",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 396
+      },
+      {
+        "id": 446,
+        "hash": "426d2969",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 397
+      },
+      {
+        "id": 447,
+        "hash": "e0abca15",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 398
+      },
+      {
+        "id": 448,
+        "hash": "f0375995",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 399
+      },
+      {
+        "id": 449,
+        "hash": "490f3086",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 400
+      },
+      {
+        "id": 450,
+        "hash": "e04a1a3b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 401
+      },
+      {
+        "id": 451,
+        "hash": "7b88627b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 402
+      },
+      {
+        "id": 452,
+        "hash": "a39917bf",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 403
+      },
+      {
+        "id": 453,
+        "hash": "34651230",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 404
+      },
+      {
+        "id": 454,
+        "hash": "26b270a7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 405
+      },
+      {
+        "id": 455,
+        "hash": "837fdddb",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 406
+      },
+      {
+        "id": 456,
+        "hash": "f733f8d4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 407
+      },
+      {
+        "id": 457,
+        "hash": "751bc2cd",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 408
+      },
+      {
+        "id": 458,
+        "hash": "39b25c8e",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 409
+      },
+      {
+        "id": 459,
+        "hash": "41f8b575",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 410
+      },
+      {
+        "id": 460,
+        "hash": "b04605a4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 411
+      },
+      {
+        "id": 461,
+        "hash": "58f1bb6f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 412
+      },
+      {
+        "id": 462,
+        "hash": "df9380e6",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 413
+      },
+      {
+        "id": 463,
+        "hash": "5ef907c3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 414
+      },
+      {
+        "id": 464,
+        "hash": "2004fb4a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 415
+      },
+      {
+        "id": 465,
+        "hash": "9b9b6b6b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 416
+      },
+      {
+        "id": 466,
+        "hash": "8941e363",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 417
+      },
+      {
+        "id": 467,
+        "hash": "e4eb1b33",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 418
+      },
+      {
+        "id": 468,
+        "hash": "409e27df",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 419
+      },
+      {
+        "id": 469,
+        "hash": "a112cb8a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 420
+      },
+      {
+        "id": 470,
+        "hash": "85386cd9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 421
+      },
+      {
+        "id": 471,
+        "hash": "906ccec5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 422
+      },
+      {
+        "id": 472,
+        "hash": "8aaa2c67",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 423
+      },
+      {
+        "id": 473,
+        "hash": "2c1f9778",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 424
+      },
+      {
+        "id": 474,
+        "hash": "9668377d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 425
+      },
+      {
+        "id": 475,
+        "hash": "40ca79f9",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 426
+      },
+      {
+        "id": 476,
+        "hash": "1a77f31d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 427
+      },
+      {
+        "id": 477,
+        "hash": "ae9ffefc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 428
+      },
+      {
+        "id": 478,
+        "hash": "b3711f6c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 429
+      },
+      {
+        "id": 479,
+        "hash": "5dd69e7a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 430
+      },
+      {
+        "id": 480,
+        "hash": "91514125",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 431
+      },
+      {
+        "id": 481,
+        "hash": "a0f51b8b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 432
+      },
+      {
+        "id": 482,
+        "hash": "493e8b68",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 433
+      },
+      {
+        "id": 483,
+        "hash": "fbae7b85",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 434
+      },
+      {
+        "id": 484,
+        "hash": "fd59bb6b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 435
+      },
+      {
+        "id": 485,
+        "hash": "99fbb8e3",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 436
+      },
+      {
+        "id": 486,
+        "hash": "23e1cb39",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 437
+      },
+      {
+        "id": 487,
+        "hash": "58880de4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 438
+      },
+      {
+        "id": 488,
+        "hash": "de6a9156",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 439
+      },
+      {
+        "id": 489,
+        "hash": "c61261b7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 440
+      },
+      {
+        "id": 490,
+        "hash": "a4e6b65b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 441
+      },
+      {
+        "id": 491,
+        "hash": "c47be705",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 442
+      },
+      {
+        "id": 492,
+        "hash": "2f65f4de",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 443
+      },
+      {
+        "id": 493,
+        "hash": "069de668",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 444
+      },
+      {
+        "id": 494,
+        "hash": "64e4fefa",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 445
+      },
+      {
+        "id": 495,
+        "hash": "187c5074",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 446
+      },
+      {
+        "id": 496,
+        "hash": "95185833",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 447
+      },
+      {
+        "id": 497,
+        "hash": "4fb306a7",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 448
+      },
+      {
+        "id": 498,
+        "hash": "10359915",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 449
+      },
+      {
+        "id": 499,
+        "hash": "6b50567f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 450
+      },
+      {
+        "id": 500,
+        "hash": "7b773e19",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 451
+      },
+      {
+        "id": 501,
+        "hash": "f2f10e43",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 452
+      },
+      {
+        "id": 502,
+        "hash": "b033063d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 453
+      },
+      {
+        "id": 503,
+        "hash": "de422625",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 454
+      },
+      {
+        "id": 504,
+        "hash": "03bb8215",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 455
+      },
+      {
+        "id": 505,
+        "hash": "bc65f95f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 456
+      },
+      {
+        "id": 506,
+        "hash": "6383ddec",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 457
+      },
+      {
+        "id": 507,
+        "hash": "d21d76b4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 458
+      },
+      {
+        "id": 508,
+        "hash": "d26a49ee",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 459
+      },
+      {
+        "id": 509,
+        "hash": "0ffb2598",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 460
+      },
+      {
+        "id": 510,
+        "hash": "147625d4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 461
+      },
+      {
+        "id": 511,
+        "hash": "1d0d3052",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 462
+      },
+      {
+        "id": 512,
+        "hash": "1833bcad",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 463
+      },
+      {
+        "id": 513,
+        "hash": "f4afe5a5",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 464
+      },
+      {
+        "id": 514,
+        "hash": "6c3919cc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 465
+      },
+      {
+        "id": 515,
+        "hash": "a0aef11d",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 466
+      },
+      {
+        "id": 516,
+        "hash": "662cfb45",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 467
+      },
+      {
+        "id": 517,
+        "hash": "a0420e4b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 468
+      },
+      {
+        "id": 518,
+        "hash": "31a0e831",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 469
+      },
+      {
+        "id": 519,
+        "hash": "0bb3fc5b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 470
+      },
+      {
+        "id": 520,
+        "hash": "307fa293",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 471
+      },
+      {
+        "id": 521,
+        "hash": "dcd458f6",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 472
+      },
+      {
+        "id": 522,
+        "hash": "9df7ad4a",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 473
+      },
+      {
+        "id": 523,
+        "hash": "59b66bbc",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 474
+      },
+      {
+        "id": 524,
+        "hash": "f0317276",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 475
+      },
+      {
+        "id": 525,
+        "hash": "5566313c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 476
+      },
+      {
+        "id": 526,
+        "hash": "8384e9c4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 477
+      },
+      {
+        "id": 527,
+        "hash": "c5085d97",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 478
+      },
+      {
+        "id": 528,
+        "hash": "5ad03c2b",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 479
+      },
+      {
+        "id": 529,
+        "hash": "564a4b0f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 480
+      },
+      {
+        "id": 530,
+        "hash": "71802688",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 481
+      },
+      {
+        "id": 531,
+        "hash": "0bc8846f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 482
+      },
+      {
+        "id": 532,
+        "hash": "38283405",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 483
+      },
+      {
+        "id": 533,
+        "hash": "9d82cf57",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 484
+      },
+      {
+        "id": 534,
+        "hash": "828fe7a2",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 485
+      },
+      {
+        "id": 535,
+        "hash": "38718e2c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 486
+      },
+      {
+        "id": 536,
+        "hash": "57735970",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 487
+      },
+      {
+        "id": 537,
+        "hash": "450cb80f",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 488
+      },
+      {
+        "id": 538,
+        "hash": "ed8d6249",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 489
+      },
+      {
+        "id": 539,
+        "hash": "94b3d6df",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 490
+      },
+      {
+        "id": 540,
+        "hash": "c4660f67",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 491
+      },
+      {
+        "id": 541,
+        "hash": "6e4e0fc4",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 492
+      },
+      {
+        "id": 542,
+        "hash": "0fb214ee",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 493
+      },
+      {
+        "id": 543,
+        "hash": "f680739c",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 494
+      },
+      {
+        "id": 547,
+        "hash": "7c18fcba",
+        "exactSourceMatches": [],
+        "contentClass": "unmatched-content-possibly-composited-or-recolored",
+        "byteLength": 2138112,
+        "sequence": 574
+      }
+    ],
+    "capture": {
+      "started": null,
+      "ended": null,
+      "skips": {},
+      "drawGroups": [],
+      "draws": []
+    }
+  },
+  "idleExporter": {
+    "version": "v.88",
+    "mode": "native-single-idle",
+    "sourceCell": [
+      0,
+      1
+    ],
+    "originalPixelSize": [
+      64,
+      64
+    ],
+    "outputScale": 20,
+    "outputPaddingPixels": 0,
+    "outputPixelSize": [
+      420,
+      420
+    ],
+    "ready": true,
+    "previewUpdates": 24,
+    "exported": 1,
+    "interceptedNativeDownloads": 0,
+    "nativeButtonClicks": 1,
+    "lastTextureId": 547,
+    "lastTextureHash": "7c18fcba",
+    "lastError": null,
+    "lastCropBounds": [
+      22,
+      6,
+      43,
+      24
+    ],
+    "lastSquareOffset": [
+      0,
+      1
+    ]
+  },
+  "previewDraw": {
+    "version": "v.51",
+    "drawsSuppressed": 17740,
+    "drawsAllowed": 742914,
+    "spritePrograms": 1,
+    "failures": 0,
+    "lastError": null,
+    "active": true
+  },
+  "policy": {
+    "browserGeometryWriters": false,
+    "browserHandWriters": false,
+    "nativeV76IdleHand": true,
+    "experimentalNativeUnderlay": true,
+    "animationsDisabled": true,
+    "tailFixesPresent": false
+  },
+  "note": "Read-only diagnostic report. Native layer probe calls may access Unity source/palette routines when explicitly requested; they do not append to the visible merge. WebGL atlas observation and browser preview/export remain enabled."
+}

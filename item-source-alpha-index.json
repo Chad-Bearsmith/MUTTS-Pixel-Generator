@@ -1,0 +1,3950 @@
+[
+  {
+    "name": "RedKatana",
+    "pathid": 5,
+    "file": "sharedassets0.assets",
+    "count": 54,
+    "key": "aea498c1e1ddcd92"
+  },
+  {
+    "name": "PirateRobe",
+    "pathid": 6,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "Chief",
+    "pathid": 7,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "AncientGreatShield",
+    "pathid": 8,
+    "file": "sharedassets0.assets",
+    "count": 92,
+    "key": "efbeafafbe5ff1cb"
+  },
+  {
+    "name": "Spartan",
+    "pathid": 9,
+    "file": "sharedassets0.assets",
+    "count": 27,
+    "key": "2ec41bf5f4b1a902"
+  },
+  {
+    "name": "PumpkinHead",
+    "pathid": 10,
+    "file": "sharedassets0.assets",
+    "count": 156,
+    "key": "af6ecea4821d7e22"
+  },
+  {
+    "name": "Merman",
+    "pathid": 11,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "Elf",
+    "pathid": 12,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "ElfTunic",
+    "pathid": 13,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Vampire",
+    "pathid": 15,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "9bf5147297205122"
+  },
+  {
+    "name": "Angel",
+    "pathid": 16,
+    "file": "sharedassets0.assets",
+    "count": 114,
+    "key": "a0fae0badcec4ca2"
+  },
+  {
+    "name": "LegionShield",
+    "pathid": 17,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "49b4268d9a672b5b"
+  },
+  {
+    "name": "BishopStaff",
+    "pathid": 18,
+    "file": "sharedassets0.assets",
+    "count": 45,
+    "key": "cbb4a4189e67aac7"
+  },
+  {
+    "name": "Human",
+    "pathid": 19,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "MagicWand",
+    "pathid": 20,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "18b5ed321404f95f"
+  },
+  {
+    "name": "TravelerTunic",
+    "pathid": 21,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Vampire",
+    "pathid": 22,
+    "file": "sharedassets0.assets",
+    "count": 16,
+    "key": "a14724c508841477"
+  },
+  {
+    "name": "Katana",
+    "pathid": 23,
+    "file": "sharedassets0.assets",
+    "count": 53,
+    "key": "9973c77f781523dc"
+  },
+  {
+    "name": "HermitStaff",
+    "pathid": 24,
+    "file": "sharedassets0.assets",
+    "count": 55,
+    "key": "d9efc8774e929a3b"
+  },
+  {
+    "name": "SantaTunic",
+    "pathid": 25,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "FarmerClothes",
+    "pathid": 26,
+    "file": "sharedassets0.assets",
+    "count": 41,
+    "key": "705a3d171de04bc4"
+  },
+  {
+    "name": "SmallAxe",
+    "pathid": 27,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "a0374ea089cdd859"
+  },
+  {
+    "name": "Pickaxe",
+    "pathid": 28,
+    "file": "sharedassets0.assets",
+    "count": 46,
+    "key": "7884a313c06d3f3a"
+  },
+  {
+    "name": "Glass",
+    "pathid": 29,
+    "file": "sharedassets0.assets",
+    "count": 11,
+    "key": "02f5fc4be3b1c96e"
+  },
+  {
+    "name": "Executioner",
+    "pathid": 30,
+    "file": "sharedassets0.assets",
+    "count": 16,
+    "key": "3795a7df4edc5eb2"
+  },
+  {
+    "name": "CrystalWand",
+    "pathid": 31,
+    "file": "sharedassets0.assets",
+    "count": 36,
+    "key": "e5af3b7fefadc067"
+  },
+  {
+    "name": "FireWizardRobe",
+    "pathid": 33,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "FireLizard",
+    "pathid": 35,
+    "file": "sharedassets0.assets",
+    "count": 125,
+    "key": "df5bda8726e3fd01"
+  },
+  {
+    "name": "DeathScythe",
+    "pathid": 36,
+    "file": "sharedassets0.assets",
+    "count": 130,
+    "key": "f3824a20e6623368"
+  },
+  {
+    "name": "Hair9",
+    "pathid": 37,
+    "file": "sharedassets0.assets",
+    "count": 81,
+    "key": "c2f0941e35d3e8f7"
+  },
+  {
+    "name": "DemigodArmour",
+    "pathid": 38,
+    "file": "sharedassets0.assets",
+    "count": 17,
+    "key": "ed07bdbc26c9b9d1"
+  },
+  {
+    "name": "NinjaTunic",
+    "pathid": 39,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Werewolf",
+    "pathid": 40,
+    "file": "sharedassets0.assets",
+    "count": 99,
+    "key": "1978db8e2b50da23"
+  },
+  {
+    "name": "Broadsword",
+    "pathid": 41,
+    "file": "sharedassets0.assets",
+    "count": 48,
+    "key": "4a1d5807d069b92c"
+  },
+  {
+    "name": "ArcherHood",
+    "pathid": 42,
+    "file": "sharedassets0.assets",
+    "count": 85,
+    "key": "4a96941df5f700a6"
+  },
+  {
+    "name": "Hair10",
+    "pathid": 44,
+    "file": "sharedassets0.assets",
+    "count": 25,
+    "key": "90fe3483ec9e38a7"
+  },
+  {
+    "name": "FireWizardRobe",
+    "pathid": 45,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Dreadnought",
+    "pathid": 46,
+    "file": "sharedassets0.assets",
+    "count": 88,
+    "key": "6e3474bf4db61ad7"
+  },
+  {
+    "name": "BlueWizzardHat",
+    "pathid": 47,
+    "file": "sharedassets0.assets",
+    "count": 120,
+    "key": "7f5e3b35b96f3ecc"
+  },
+  {
+    "name": "NinjaTunic",
+    "pathid": 48,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Example",
+    "pathid": 49,
+    "file": "sharedassets0.assets",
+    "count": 168,
+    "key": "d46e6c5b27d047b8"
+  },
+  {
+    "name": "Lizard",
+    "pathid": 50,
+    "file": "sharedassets0.assets",
+    "count": 70,
+    "key": "f137657d9916f7b9"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 51,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "PilotArmor",
+    "pathid": 52,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SamuraiHelmet",
+    "pathid": 53,
+    "file": "sharedassets0.assets",
+    "count": 124,
+    "key": "535376ab78f77a1b"
+  },
+  {
+    "name": "Longsword",
+    "pathid": 54,
+    "file": "sharedassets0.assets",
+    "count": 58,
+    "key": "44ff96b880058963"
+  },
+  {
+    "name": "Angel",
+    "pathid": 55,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "3448af14cb2b7168"
+  },
+  {
+    "name": "DeerCostume",
+    "pathid": 56,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "FemaleOutfit",
+    "pathid": 57,
+    "file": "sharedassets0.assets",
+    "count": 40,
+    "key": "56696841373574de"
+  },
+  {
+    "name": "MinerArmour",
+    "pathid": 58,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "6e5e3907c36ed6a7"
+  },
+  {
+    "name": "Samurai",
+    "pathid": 59,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Gladiator",
+    "pathid": 61,
+    "file": "sharedassets0.assets",
+    "count": 181,
+    "key": "c3e7fbb8e450c901"
+  },
+  {
+    "name": "Human",
+    "pathid": 62,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "367e2eefbb89c8cb"
+  },
+  {
+    "name": "Orc",
+    "pathid": 63,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Furry",
+    "pathid": 64,
+    "file": "sharedassets0.assets",
+    "count": 43,
+    "key": "d056fe7c5972f555"
+  },
+  {
+    "name": "HornsHelmet",
+    "pathid": 65,
+    "file": "sharedassets0.assets",
+    "count": 112,
+    "key": "a5e824be93280cbb"
+  },
+  {
+    "name": "Werewolf",
+    "pathid": 66,
+    "file": "sharedassets0.assets",
+    "count": 68,
+    "key": "b8abfd77da412766"
+  },
+  {
+    "name": "AnimeMask",
+    "pathid": 67,
+    "file": "sharedassets0.assets",
+    "count": 65,
+    "key": "d1077faa29965343"
+  },
+  {
+    "name": "SantaHelperCap [ShowEars]",
+    "pathid": 68,
+    "file": "sharedassets0.assets",
+    "count": 80,
+    "key": "877a791b173da963"
+  },
+  {
+    "name": "Link",
+    "pathid": 69,
+    "file": "sharedassets0.assets",
+    "count": 32,
+    "key": "6f23c8b2eed6ef2d"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 70,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 71,
+    "file": "sharedassets0.assets",
+    "count": 15,
+    "key": "ef359d72795cda99"
+  },
+  {
+    "name": "WaterWand",
+    "pathid": 72,
+    "file": "sharedassets0.assets",
+    "count": 37,
+    "key": "eed703e8c939c752"
+  },
+  {
+    "name": "AssaultSword",
+    "pathid": 73,
+    "file": "sharedassets0.assets",
+    "count": 43,
+    "key": "96cade11810f6404"
+  },
+  {
+    "name": "Merman",
+    "pathid": 74,
+    "file": "sharedassets0.assets",
+    "count": 57,
+    "key": "26bb0320837d17e3"
+  },
+  {
+    "name": "PirateBandana [ShowEars]",
+    "pathid": 75,
+    "file": "sharedassets0.assets",
+    "count": 54,
+    "key": "5d21ba1a3d866605"
+  },
+  {
+    "name": "LegionaryHelmet",
+    "pathid": 76,
+    "file": "sharedassets0.assets",
+    "count": 123,
+    "key": "1c2c5b6a3d2eb9f6"
+  },
+  {
+    "name": "Bident",
+    "pathid": 77,
+    "file": "sharedassets0.assets",
+    "count": 82,
+    "key": "a2a2ae53c0f85ce3"
+  },
+  {
+    "name": "Furry",
+    "pathid": 78,
+    "file": "sharedassets0.assets",
+    "count": 12,
+    "key": "1f606bb312efa2fe"
+  },
+  {
+    "name": "DarkElf",
+    "pathid": 79,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "367e2eefbb89c8cb"
+  },
+  {
+    "name": "DeerHorns [ShowEars]",
+    "pathid": 80,
+    "file": "sharedassets0.assets",
+    "count": 100,
+    "key": "f315199af7932c7d"
+  },
+  {
+    "name": "NecromancerRobe",
+    "pathid": 81,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "HornsKnight",
+    "pathid": 82,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Spartan",
+    "pathid": 83,
+    "file": "sharedassets0.assets",
+    "count": 3,
+    "key": "932760d1419d2bbc"
+  },
+  {
+    "name": "NinjaMask",
+    "pathid": 84,
+    "file": "sharedassets0.assets",
+    "count": 77,
+    "key": "182e704f37b42fdb"
+  },
+  {
+    "name": "MinerHelment",
+    "pathid": 85,
+    "file": "sharedassets0.assets",
+    "count": 68,
+    "key": "55973b9ef6f1e23d"
+  },
+  {
+    "name": "FireLizard",
+    "pathid": 86,
+    "file": "sharedassets0.assets",
+    "count": 70,
+    "key": "f137657d9916f7b9"
+  },
+  {
+    "name": "Hair14",
+    "pathid": 87,
+    "file": "sharedassets0.assets",
+    "count": 98,
+    "key": "0ed84a47b156613c"
+  },
+  {
+    "name": "GoldenSkullWand",
+    "pathid": 89,
+    "file": "sharedassets0.assets",
+    "count": 35,
+    "key": "03742597597b7c08"
+  },
+  {
+    "name": "ShitOnStick",
+    "pathid": 90,
+    "file": "sharedassets0.assets",
+    "count": 43,
+    "key": "df59b16300a5d081"
+  },
+  {
+    "name": "AmurWand",
+    "pathid": 91,
+    "file": "sharedassets0.assets",
+    "count": 40,
+    "key": "d6317a1a2bb1eab8"
+  },
+  {
+    "name": "Hellsing",
+    "pathid": 94,
+    "file": "sharedassets0.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Sickle",
+    "pathid": 95,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "d97704a61190a6b7"
+  },
+  {
+    "name": "Hair8",
+    "pathid": 96,
+    "file": "sharedassets0.assets",
+    "count": 116,
+    "key": "6d6623b1f55c5ba2"
+  },
+  {
+    "name": "BlueWizardTunic",
+    "pathid": 98,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "NecromancerStaff",
+    "pathid": 99,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "3f8d08ba41a7a986"
+  },
+  {
+    "name": "Hair5",
+    "pathid": 100,
+    "file": "sharedassets0.assets",
+    "count": 82,
+    "key": "9bf45974df5a4e81"
+  },
+  {
+    "name": "Chief",
+    "pathid": 101,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "94058b8ce9432f02"
+  },
+  {
+    "name": "HaloweenTunic",
+    "pathid": 102,
+    "file": "sharedassets0.assets",
+    "count": 2,
+    "key": "a3be7aa518249e8f"
+  },
+  {
+    "name": "VikingHelmet",
+    "pathid": 103,
+    "file": "sharedassets0.assets",
+    "count": 120,
+    "key": "8f365792403ff007"
+  },
+  {
+    "name": "NecromancerRobe",
+    "pathid": 104,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "CaptainHelmet",
+    "pathid": 105,
+    "file": "sharedassets0.assets",
+    "count": 93,
+    "key": "f1f17f3945c09c13"
+  },
+  {
+    "name": "Panda",
+    "pathid": 106,
+    "file": "sharedassets0.assets",
+    "count": 156,
+    "key": "e19585df6ca081c4"
+  },
+  {
+    "name": "SaboteurArmour",
+    "pathid": 107,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "BastardSword",
+    "pathid": 108,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "48e87594cb45fdf6"
+  },
+  {
+    "name": "RoyalLongsword",
+    "pathid": 109,
+    "file": "sharedassets0.assets",
+    "count": 62,
+    "key": "67c7e58c1294c48e"
+  },
+  {
+    "name": "Hair6",
+    "pathid": 110,
+    "file": "sharedassets0.assets",
+    "count": 95,
+    "key": "8aac2b028788851a"
+  },
+  {
+    "name": "IronMask",
+    "pathid": 111,
+    "file": "sharedassets0.assets",
+    "count": 57,
+    "key": "a24a25bbad220c49"
+  },
+  {
+    "name": "DarkMask",
+    "pathid": 112,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "8330a7927faa36d3"
+  },
+  {
+    "name": "BlackMask",
+    "pathid": 113,
+    "file": "sharedassets0.assets",
+    "count": 27,
+    "key": "b55c43164b1403d1"
+  },
+  {
+    "name": "HornsKnightHelmet",
+    "pathid": 114,
+    "file": "sharedassets0.assets",
+    "count": 115,
+    "key": "e8289a8392e04233"
+  },
+  {
+    "name": "PlagueDoctorMask",
+    "pathid": 115,
+    "file": "sharedassets0.assets",
+    "count": 64,
+    "key": "314f4ae8f54d7c5f"
+  },
+  {
+    "name": "Demigod",
+    "pathid": 116,
+    "file": "sharedassets0.assets",
+    "count": 10,
+    "key": "86206011f2461c70"
+  },
+  {
+    "name": "ClericRobe",
+    "pathid": 117,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Morgenstern",
+    "pathid": 118,
+    "file": "sharedassets0.assets",
+    "count": 42,
+    "key": "bc01cc9bc5eb7cfd"
+  },
+  {
+    "name": "Shestoper",
+    "pathid": 119,
+    "file": "sharedassets0.assets",
+    "count": 41,
+    "key": "decf142016a8bc81"
+  },
+  {
+    "name": "Halberd",
+    "pathid": 120,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "b361b5bc6900b10e"
+  },
+  {
+    "name": "KitchenAxe",
+    "pathid": 121,
+    "file": "sharedassets0.assets",
+    "count": 32,
+    "key": "a0bd13f20efdf036"
+  },
+  {
+    "name": "Hair11",
+    "pathid": 122,
+    "file": "sharedassets0.assets",
+    "count": 78,
+    "key": "8a5bee0b7cc112ef"
+  },
+  {
+    "name": "MusketeerTunic",
+    "pathid": 123,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Rambo",
+    "pathid": 124,
+    "file": "sharedassets0.assets",
+    "count": 97,
+    "key": "4b56760234597d88"
+  },
+  {
+    "name": "GuardianShield",
+    "pathid": 126,
+    "file": "sharedassets0.assets",
+    "count": 34,
+    "key": "e77520ab84cd4440"
+  },
+  {
+    "name": "Sword",
+    "pathid": 127,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "9a17c61b8ea8d692"
+  },
+  {
+    "name": "LegionaryArmor",
+    "pathid": 128,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "DarkElf",
+    "pathid": 129,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "Priest",
+    "pathid": 130,
+    "file": "sharedassets0.assets",
+    "count": 125,
+    "key": "9e6cf8c7db90ab52"
+  },
+  {
+    "name": "IronKnightHelmet",
+    "pathid": 131,
+    "file": "sharedassets0.assets",
+    "count": 139,
+    "key": "238431def672a39a"
+  },
+  {
+    "name": "ThiefTunic",
+    "pathid": 132,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Goblin",
+    "pathid": 133,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Goblin",
+    "pathid": 134,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "9bf5147297205122"
+  },
+  {
+    "name": "GiantBlade",
+    "pathid": 135,
+    "file": "sharedassets0.assets",
+    "count": 78,
+    "key": "7e4638da207792f3"
+  },
+  {
+    "name": "LegionaryArmor",
+    "pathid": 136,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "",
+    "pathid": 138,
+    "file": "sharedassets0.assets",
+    "count": 81,
+    "key": "f0e5af15b1e4f09a"
+  },
+  {
+    "name": "MusketeerHat [ShowEars]",
+    "pathid": 139,
+    "file": "sharedassets0.assets",
+    "count": 132,
+    "key": "7c33220c19d1a801"
+  },
+  {
+    "name": "CurvedBow",
+    "pathid": 140,
+    "file": "sharedassets0.assets",
+    "count": 25,
+    "key": "64ba66096756da24"
+  },
+  {
+    "name": "BackSword",
+    "pathid": 141,
+    "file": "sharedassets0.assets",
+    "count": 37,
+    "key": "b384079411bed222"
+  },
+  {
+    "name": "SantaHood",
+    "pathid": 142,
+    "file": "sharedassets0.assets",
+    "count": 111,
+    "key": "94603fb28b03713a"
+  },
+  {
+    "name": "PriestWand",
+    "pathid": 144,
+    "file": "sharedassets0.assets",
+    "count": 30,
+    "key": "370fec02d4631b7f"
+  },
+  {
+    "name": "BlacksmithHammer",
+    "pathid": 145,
+    "file": "sharedassets0.assets",
+    "count": 49,
+    "key": "eb5a6a95e6c3712f"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 146,
+    "file": "sharedassets0.assets",
+    "count": 100,
+    "key": "489ece7440a54100"
+  },
+  {
+    "name": "Dracula",
+    "pathid": 147,
+    "file": "sharedassets0.assets",
+    "count": 53,
+    "key": "f21f1c27e4e6ad40"
+  },
+  {
+    "name": "Lizard",
+    "pathid": 148,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "ArcherTunic",
+    "pathid": 149,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "Orc",
+    "pathid": 150,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Shadow",
+    "pathid": 151,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "b5155b8f5060673d"
+  },
+  {
+    "name": "RedStick",
+    "pathid": 152,
+    "file": "sharedassets0.assets",
+    "count": 19,
+    "key": "ac80d28ae59689d6"
+  },
+  {
+    "name": "FireLizard",
+    "pathid": 153,
+    "file": "sharedassets0.assets",
+    "count": 5,
+    "key": "66e2a54ba27e9ae9"
+  },
+  {
+    "name": "Skeleton",
+    "pathid": 154,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "367e2eefbb89c8cb"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 155,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "HunterKnife",
+    "pathid": 156,
+    "file": "sharedassets0.assets",
+    "count": 26,
+    "key": "3673220e60e94ef6"
+  },
+  {
+    "name": "Furry",
+    "pathid": 157,
+    "file": "sharedassets0.assets",
+    "count": 76,
+    "key": "bcfd0c03abfe07a8"
+  },
+  {
+    "name": "IronKnight",
+    "pathid": 158,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "GuardianTunic",
+    "pathid": 159,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "ElderStaff",
+    "pathid": 160,
+    "file": "sharedassets0.assets",
+    "count": 41,
+    "key": "dedbd81f2c444a4e"
+  },
+  {
+    "name": "SmallPitchfork",
+    "pathid": 161,
+    "file": "sharedassets0.assets",
+    "count": 44,
+    "key": "13aca3893df145c1"
+  },
+  {
+    "name": "Skeleton",
+    "pathid": 162,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Elf",
+    "pathid": 163,
+    "file": "sharedassets0.assets",
+    "count": 8,
+    "key": "367e2eefbb89c8cb"
+  },
+  {
+    "name": "LeatherQuiver",
+    "pathid": 165,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "2e034c2e35376db1"
+  },
+  {
+    "name": "PirateHelmet [ShowEars]",
+    "pathid": 166,
+    "file": "sharedassets0.assets",
+    "count": 89,
+    "key": "8f782557f649043d"
+  },
+  {
+    "name": "RustedPickaxe",
+    "pathid": 167,
+    "file": "sharedassets0.assets",
+    "count": 43,
+    "key": "ad36bf0b364de449"
+  },
+  {
+    "name": "BlueStick",
+    "pathid": 168,
+    "file": "sharedassets0.assets",
+    "count": 19,
+    "key": "ac80d28ae59689d6"
+  },
+  {
+    "name": "Lance",
+    "pathid": 169,
+    "file": "sharedassets0.assets",
+    "count": 55,
+    "key": "1dbaf8d6e639e637"
+  },
+  {
+    "name": "CaptainArmor",
+    "pathid": 170,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Demon",
+    "pathid": 171,
+    "file": "sharedassets0.assets",
+    "count": 13,
+    "key": "c695491984cf1c21"
+  },
+  {
+    "name": "GiantSword",
+    "pathid": 172,
+    "file": "sharedassets0.assets",
+    "count": 82,
+    "key": "9cbbcff775cb4c7a"
+  },
+  {
+    "name": "HolowKnightHelmet",
+    "pathid": 173,
+    "file": "sharedassets0.assets",
+    "count": 137,
+    "key": "4cb2f4a24b81e579"
+  },
+  {
+    "name": "Elf",
+    "pathid": 174,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "WideDagger",
+    "pathid": 175,
+    "file": "sharedassets0.assets",
+    "count": 42,
+    "key": "67c976f0b4cb92fa"
+  },
+  {
+    "name": "Furry",
+    "pathid": 176,
+    "file": "sharedassets0.assets",
+    "count": 73,
+    "key": "fad26b354a3f7773"
+  },
+  {
+    "name": "ShortBow",
+    "pathid": 177,
+    "file": "sharedassets0.assets",
+    "count": 19,
+    "key": "8abf2ba5badcfe72"
+  },
+  {
+    "name": "BanditTunic",
+    "pathid": 178,
+    "file": "sharedassets0.assets",
+    "count": 41,
+    "key": "705a3d171de04bc4"
+  },
+  {
+    "name": "WoodenBuckler",
+    "pathid": 180,
+    "file": "sharedassets0.assets",
+    "count": 32,
+    "key": "0be516e3d89ce49d"
+  },
+  {
+    "name": "FlameStaff",
+    "pathid": 181,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "402fe7ebbc029571"
+  },
+  {
+    "name": "MilitiamanArmor",
+    "pathid": 183,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "BlueKnightHelmet",
+    "pathid": 184,
+    "file": "sharedassets0.assets",
+    "count": 112,
+    "key": "63d871ee1715b2d9"
+  },
+  {
+    "name": "Hair13",
+    "pathid": 185,
+    "file": "sharedassets0.assets",
+    "count": 68,
+    "key": "8e7366434cc53edc"
+  },
+  {
+    "name": "GreenElfTunic",
+    "pathid": 186,
+    "file": "sharedassets0.assets",
+    "count": 80,
+    "key": "877a791b173da963"
+  },
+  {
+    "name": "Knife",
+    "pathid": 187,
+    "file": "sharedassets0.assets",
+    "count": 28,
+    "key": "0c269490e3c5224d"
+  },
+  {
+    "name": "BlueKnight",
+    "pathid": 188,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "IronBuckler",
+    "pathid": 189,
+    "file": "sharedassets0.assets",
+    "count": 32,
+    "key": "0be516e3d89ce49d"
+  },
+  {
+    "name": "CurveBranch",
+    "pathid": 190,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "81ceae71d0ebb082"
+  },
+  {
+    "name": "Goblin",
+    "pathid": 191,
+    "file": "sharedassets0.assets",
+    "count": 85,
+    "key": "30fe1f8534d1f856"
+  },
+  {
+    "name": "HeavyKnightArmor",
+    "pathid": 192,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Hair7",
+    "pathid": 194,
+    "file": "sharedassets0.assets",
+    "count": 128,
+    "key": "95b5781522929cb0"
+  },
+  {
+    "name": "DeerCostume",
+    "pathid": 195,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "ExecutionerHood",
+    "pathid": 196,
+    "file": "sharedassets0.assets",
+    "count": 123,
+    "key": "9d9b4be172bc4ca8"
+  },
+  {
+    "name": "RoyalGreatShield",
+    "pathid": 197,
+    "file": "sharedassets0.assets",
+    "count": 54,
+    "key": "ad02b0c1e25ce288"
+  },
+  {
+    "name": "IronSword",
+    "pathid": 199,
+    "file": "sharedassets0.assets",
+    "count": 44,
+    "key": "bccc8be04e54e01d"
+  },
+  {
+    "name": "Priest",
+    "pathid": 200,
+    "file": "sharedassets0.assets",
+    "count": 6,
+    "key": "88577bb31c3e161d"
+  },
+  {
+    "name": "Hair2",
+    "pathid": 201,
+    "file": "sharedassets0.assets",
+    "count": 69,
+    "key": "254e7b264784a7cd"
+  },
+  {
+    "name": "GuardianHelmet",
+    "pathid": 202,
+    "file": "sharedassets0.assets",
+    "count": 128,
+    "key": "245ab21ebecda474"
+  },
+  {
+    "name": "Cape",
+    "pathid": 203,
+    "file": "sharedassets0.assets",
+    "count": 35,
+    "key": "de383c2619b74136"
+  },
+  {
+    "name": "Dracula",
+    "pathid": 204,
+    "file": "sharedassets0.assets",
+    "count": 51,
+    "key": "38f1708a9e6bd522"
+  },
+  {
+    "name": "Dracula",
+    "pathid": 205,
+    "file": "sharedassets0.assets",
+    "count": 28,
+    "key": "a8ecee3108cfee0a"
+  },
+  {
+    "name": "Scythe",
+    "pathid": 206,
+    "file": "sharedassets0.assets",
+    "count": 92,
+    "key": "68228f292cf1cd20"
+  },
+  {
+    "name": "SteelShield",
+    "pathid": 207,
+    "file": "sharedassets0.assets",
+    "count": 40,
+    "key": "b6cb49a901c9ebc0"
+  },
+  {
+    "name": "BanditPatch [ShowEars]",
+    "pathid": 208,
+    "file": "sharedassets0.assets",
+    "count": 21,
+    "key": "fc1f020b52c32074"
+  },
+  {
+    "name": "FireWand",
+    "pathid": 209,
+    "file": "sharedassets0.assets",
+    "count": 36,
+    "key": "e5af3b7fefadc067"
+  },
+  {
+    "name": "Executioner",
+    "pathid": 210,
+    "file": "sharedassets0.assets",
+    "count": 61,
+    "key": "94908804cc129396"
+  },
+  {
+    "name": "Orc",
+    "pathid": 211,
+    "file": "sharedassets0.assets",
+    "count": 14,
+    "key": "59c716f93e59ebbc"
+  },
+  {
+    "name": "Hellsing",
+    "pathid": 212,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "94058b8ce9432f02"
+  },
+  {
+    "name": "DarkElf",
+    "pathid": 213,
+    "file": "sharedassets0.assets",
+    "count": 16,
+    "key": "4e3991d523d9d72b"
+  },
+  {
+    "name": "HeavyKnightHelmet",
+    "pathid": 214,
+    "file": "sharedassets0.assets",
+    "count": 129,
+    "key": "a61c29b540324935"
+  },
+  {
+    "name": "LongKatana",
+    "pathid": 216,
+    "file": "sharedassets0.assets",
+    "count": 57,
+    "key": "5108b59eb72718d3"
+  },
+  {
+    "name": "Demigod",
+    "pathid": 217,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "ArcherTunic",
+    "pathid": 218,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "BattleBow",
+    "pathid": 219,
+    "file": "sharedassets0.assets",
+    "count": 27,
+    "key": "aba7ae9b3dfaae6d"
+  },
+  {
+    "name": "ShortDagger",
+    "pathid": 220,
+    "file": "sharedassets0.assets",
+    "count": 32,
+    "key": "d17a2c344fa76dc9"
+  },
+  {
+    "name": "Hair12",
+    "pathid": 221,
+    "file": "sharedassets0.assets",
+    "count": 11,
+    "key": "e7bf7f70fed1a158"
+  },
+  {
+    "name": "Fork",
+    "pathid": 222,
+    "file": "sharedassets0.assets",
+    "count": 33,
+    "key": "34045798c7d55f45"
+  },
+  {
+    "name": "DemigodArmour",
+    "pathid": 223,
+    "file": "sharedassets0.assets",
+    "count": 43,
+    "key": "8126188a5313f1c6"
+  },
+  {
+    "name": "Orc",
+    "pathid": 225,
+    "file": "sharedassets0.assets",
+    "count": 9,
+    "key": "5ee8abd369dee3f1"
+  },
+  {
+    "name": "Demon",
+    "pathid": 226,
+    "file": "sharedassets0.assets",
+    "count": 9,
+    "key": "005140ff2bc6f9eb"
+  },
+  {
+    "name": "RustedShovel",
+    "pathid": 227,
+    "file": "sharedassets0.assets",
+    "count": 53,
+    "key": "5b2b38269e59ccde"
+  },
+  {
+    "name": "Spartan",
+    "pathid": 228,
+    "file": "sharedassets0.assets",
+    "count": 218,
+    "key": "2bc47ffd1808f0b2"
+  },
+  {
+    "name": "Angel",
+    "pathid": 229,
+    "file": "sharedassets0.assets",
+    "count": 5,
+    "key": "286c85d3f58ccf24"
+  },
+  {
+    "name": "NatureWand",
+    "pathid": 230,
+    "file": "sharedassets0.assets",
+    "count": 31,
+    "key": "a5f2cb549c634653"
+  },
+  {
+    "name": "IronKnight",
+    "pathid": 231,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Priest",
+    "pathid": 232,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "DeathHood",
+    "pathid": 233,
+    "file": "sharedassets0.assets",
+    "count": 124,
+    "key": "c9ca15a58b50924c"
+  },
+  {
+    "name": "GreenWand",
+    "pathid": 234,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "3b5aae4d63da15af"
+  },
+  {
+    "name": "SantaHelperTunic",
+    "pathid": 235,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SuperMask",
+    "pathid": 236,
+    "file": "sharedassets0.assets",
+    "count": 26,
+    "key": "14692785b9da49ab"
+  },
+  {
+    "name": "Vampire",
+    "pathid": 237,
+    "file": "sharedassets0.assets",
+    "count": 86,
+    "key": "b274782041b57272"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 238,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Werewolf",
+    "pathid": 239,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "WoodenStuff",
+    "pathid": 240,
+    "file": "sharedassets0.assets",
+    "count": 34,
+    "key": "0c2cfb1540630aa9"
+  },
+  {
+    "name": "PumpkinOveralls",
+    "pathid": 241,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "e54fb759aa5494df"
+  },
+  {
+    "name": "Pan",
+    "pathid": 242,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "8710ea972cb5c3b9"
+  },
+  {
+    "name": "Human",
+    "pathid": 244,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "ArchStaff",
+    "pathid": 245,
+    "file": "sharedassets0.assets",
+    "count": 46,
+    "key": "0afeafc51470f8f1"
+  },
+  {
+    "name": "Goblin",
+    "pathid": 246,
+    "file": "sharedassets0.assets",
+    "count": 16,
+    "key": "9c78fd5da765f6cd"
+  },
+  {
+    "name": "Executioner",
+    "pathid": 247,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "221be52d7bfb40eb"
+  },
+  {
+    "name": "Blade",
+    "pathid": 248,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "7e063551a72a6bc3"
+  },
+  {
+    "name": "Demon",
+    "pathid": 249,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "Butcher",
+    "pathid": 250,
+    "file": "sharedassets0.assets",
+    "count": 67,
+    "key": "5331f23c27558af3"
+  },
+  {
+    "name": "ChiefHat [ShowEars]",
+    "pathid": 251,
+    "file": "sharedassets0.assets",
+    "count": 137,
+    "key": "7a52e2343b25a537"
+  },
+  {
+    "name": "BlueWizardTunic",
+    "pathid": 252,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Panda",
+    "pathid": 253,
+    "file": "sharedassets0.assets",
+    "count": 6,
+    "key": "88577bb31c3e161d"
+  },
+  {
+    "name": "Axe",
+    "pathid": 254,
+    "file": "sharedassets0.assets",
+    "count": 42,
+    "key": "90a76d048ea86d11"
+  },
+  {
+    "name": "Demigod",
+    "pathid": 255,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "FireLizard",
+    "pathid": 256,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Merman",
+    "pathid": 257,
+    "file": "sharedassets0.assets",
+    "count": 16,
+    "key": "0303bbc705a64159"
+  },
+  {
+    "name": "BlueShield",
+    "pathid": 258,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "5dc368a3c843e692"
+  },
+  {
+    "name": "BanditMask",
+    "pathid": 259,
+    "file": "sharedassets0.assets",
+    "count": 27,
+    "key": "0a6bdfe9bb36ad93"
+  },
+  {
+    "name": "SantaHoodBeard",
+    "pathid": 260,
+    "file": "sharedassets0.assets",
+    "count": 128,
+    "key": "90f5c563c94d6f52"
+  },
+  {
+    "name": "Samurai",
+    "pathid": 261,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "HeavyKnightArmor",
+    "pathid": 262,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "DruidHelmet",
+    "pathid": 263,
+    "file": "sharedassets0.assets",
+    "count": 131,
+    "key": "341c8e0f9fabcfe9"
+  },
+  {
+    "name": "WoodenClub",
+    "pathid": 264,
+    "file": "sharedassets0.assets",
+    "count": 60,
+    "key": "6855369bfef0246c"
+  },
+  {
+    "name": "Cutlass",
+    "pathid": 265,
+    "file": "sharedassets0.assets",
+    "count": 48,
+    "key": "f0073b50625d67ba"
+  },
+  {
+    "name": "ThiefHood",
+    "pathid": 266,
+    "file": "sharedassets0.assets",
+    "count": 123,
+    "key": "9304ebeb04ddf22e"
+  },
+  {
+    "name": "Gladiator",
+    "pathid": 268,
+    "file": "sharedassets0.assets",
+    "count": 28,
+    "key": "0ab97ad0d6fe14e6"
+  },
+  {
+    "name": "BlueWand",
+    "pathid": 269,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "3b5aae4d63da15af"
+  },
+  {
+    "name": "Crusher",
+    "pathid": 270,
+    "file": "sharedassets0.assets",
+    "count": 90,
+    "key": "a24cef911b48f785"
+  },
+  {
+    "name": "Greatsword",
+    "pathid": 271,
+    "file": "sharedassets0.assets",
+    "count": 76,
+    "key": "eb3eb960fe504e7f"
+  },
+  {
+    "name": "Demon",
+    "pathid": 272,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "b80c6fe24b8ee757"
+  },
+  {
+    "name": "HolowKnight",
+    "pathid": 273,
+    "file": "sharedassets0.assets",
+    "count": 73,
+    "key": "ddc6a7e6f727ae79"
+  },
+  {
+    "name": "Squaw",
+    "pathid": 274,
+    "file": "sharedassets0.assets",
+    "count": 36,
+    "key": "5470fd26c43a3e13"
+  },
+  {
+    "name": "ThiefTunic",
+    "pathid": 275,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "RustedHammer",
+    "pathid": 276,
+    "file": "sharedassets0.assets",
+    "count": 44,
+    "key": "b3f97c5cd77b4339"
+  },
+  {
+    "name": "Shotgun",
+    "pathid": 277,
+    "file": "sharedassets0.assets",
+    "count": 59,
+    "key": "6785223961fe33ed"
+  },
+  {
+    "name": "BanditBandana",
+    "pathid": 278,
+    "file": "sharedassets0.assets",
+    "count": 82,
+    "key": "a1296fb11bba96b7"
+  },
+  {
+    "name": "Demon",
+    "pathid": 279,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Bow",
+    "pathid": 280,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "f81bf8f2d2906fa8"
+  },
+  {
+    "name": "StormStaff",
+    "pathid": 281,
+    "file": "sharedassets0.assets",
+    "count": 55,
+    "key": "d00eb5d1da322c4c"
+  },
+  {
+    "name": "Maid",
+    "pathid": 282,
+    "file": "sharedassets0.assets",
+    "count": 34,
+    "key": "6ef81f553b0ce611"
+  },
+  {
+    "name": "KnightShield",
+    "pathid": 283,
+    "file": "sharedassets0.assets",
+    "count": 40,
+    "key": "477cf64500ad761f"
+  },
+  {
+    "name": "Epee",
+    "pathid": 284,
+    "file": "sharedassets0.assets",
+    "count": 42,
+    "key": "157cd7b0fa2246c5"
+  },
+  {
+    "name": "SantaTunic",
+    "pathid": 286,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "94058b8ce9432f02"
+  },
+  {
+    "name": "LargeBackpack",
+    "pathid": 287,
+    "file": "sharedassets0.assets",
+    "count": 73,
+    "key": "a09b4fef69600851"
+  },
+  {
+    "name": "Merman",
+    "pathid": 288,
+    "file": "sharedassets0.assets",
+    "count": 12,
+    "key": "1f606bb312efa2fe"
+  },
+  {
+    "name": "MilitiamanArmor",
+    "pathid": 289,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Box",
+    "pathid": 290,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "657e9b43f7e98f34"
+  },
+  {
+    "name": "Goblin",
+    "pathid": 291,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Dracula",
+    "pathid": 292,
+    "file": "sharedassets0.assets",
+    "count": 27,
+    "key": "e8e45b6334fa85c0"
+  },
+  {
+    "name": "ClericRobe",
+    "pathid": 293,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "HolowKnight",
+    "pathid": 294,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Skeleton",
+    "pathid": 295,
+    "file": "sharedassets0.assets",
+    "count": 89,
+    "key": "a1371c743471c447"
+  },
+  {
+    "name": "Elf",
+    "pathid": 296,
+    "file": "sharedassets0.assets",
+    "count": 13,
+    "key": "c695491984cf1c21"
+  },
+  {
+    "name": "Hammer",
+    "pathid": 297,
+    "file": "sharedassets0.assets",
+    "count": 49,
+    "key": "eb5a6a95e6c3712f"
+  },
+  {
+    "name": "PilotHelment",
+    "pathid": 298,
+    "file": "sharedassets0.assets",
+    "count": 70,
+    "key": "07596c132bd5ad68"
+  },
+  {
+    "name": "Skeleton",
+    "pathid": 299,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "LargePickaxe",
+    "pathid": 300,
+    "file": "sharedassets0.assets",
+    "count": 58,
+    "key": "94ad78b20ca75ce4"
+  },
+  {
+    "name": "Furry",
+    "pathid": 301,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Maid",
+    "pathid": 302,
+    "file": "sharedassets0.assets",
+    "count": 130,
+    "key": "0020eb94ca9e5ebf"
+  },
+  {
+    "name": "Lizard",
+    "pathid": 303,
+    "file": "sharedassets0.assets",
+    "count": 101,
+    "key": "005a124dab94cdd7"
+  },
+  {
+    "name": "LongBow",
+    "pathid": 305,
+    "file": "sharedassets0.assets",
+    "count": 29,
+    "key": "03dc44a1f1980ed9"
+  },
+  {
+    "name": "RustedShortSword",
+    "pathid": 306,
+    "file": "sharedassets0.assets",
+    "count": 40,
+    "key": "dad025b07ec41a3a"
+  },
+  {
+    "name": "Pitchfork",
+    "pathid": 307,
+    "file": "sharedassets0.assets",
+    "count": 66,
+    "key": "2fbd241d36ba9afd"
+  },
+  {
+    "name": "MilitiamanHelmet",
+    "pathid": 308,
+    "file": "sharedassets0.assets",
+    "count": 91,
+    "key": "57c346f847663a17"
+  },
+  {
+    "name": "RoundMace",
+    "pathid": 310,
+    "file": "sharedassets0.assets",
+    "count": 48,
+    "key": "2c269cfb904f4b3d"
+  },
+  {
+    "name": "SkullWand",
+    "pathid": 311,
+    "file": "sharedassets0.assets",
+    "count": 35,
+    "key": "03742597597b7c08"
+  },
+  {
+    "name": "Pharaon",
+    "pathid": 312,
+    "file": "sharedassets0.assets",
+    "count": 37,
+    "key": "eeca67e170090bd9"
+  },
+  {
+    "name": "ClericHood",
+    "pathid": 313,
+    "file": "sharedassets0.assets",
+    "count": 85,
+    "key": "4a96941df5f700a6"
+  },
+  {
+    "name": "MasterGreataxe",
+    "pathid": 314,
+    "file": "sharedassets0.assets",
+    "count": 80,
+    "key": "82641bd5e441b9a0"
+  },
+  {
+    "name": "Demigod",
+    "pathid": 315,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Stick",
+    "pathid": 316,
+    "file": "sharedassets0.assets",
+    "count": 19,
+    "key": "ac80d28ae59689d6"
+  },
+  {
+    "name": "BattleHammer",
+    "pathid": 318,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "d1dbe1b59ca013dd"
+  },
+  {
+    "name": "SmallBackpack",
+    "pathid": 319,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "4981899cd22e41e9"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 320,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Vampire",
+    "pathid": 321,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Pharaon",
+    "pathid": 323,
+    "file": "sharedassets0.assets",
+    "count": 137,
+    "key": "a58933ed6e2efa4f"
+  },
+  {
+    "name": "Saber",
+    "pathid": 324,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "e988c69cd020e7fa"
+  },
+  {
+    "name": "Apache",
+    "pathid": 325,
+    "file": "sharedassets0.assets",
+    "count": 28,
+    "key": "ab69507afdcef052"
+  },
+  {
+    "name": "GoldenSkepter",
+    "pathid": 326,
+    "file": "sharedassets0.assets",
+    "count": 33,
+    "key": "119bef82331900f7"
+  },
+  {
+    "name": "MarderDagger",
+    "pathid": 327,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "10b3605fbe54f523"
+  },
+  {
+    "name": "GuardianHalberd",
+    "pathid": 328,
+    "file": "sharedassets0.assets",
+    "count": 58,
+    "key": "93ba8d6d4090b596"
+  },
+  {
+    "name": "BattleAxe",
+    "pathid": 329,
+    "file": "sharedassets0.assets",
+    "count": 65,
+    "key": "34e35836df02f2f5"
+  },
+  {
+    "name": "Gladiator",
+    "pathid": 330,
+    "file": "sharedassets0.assets",
+    "count": 2,
+    "key": "a3be7aa518249e8f"
+  },
+  {
+    "name": "CaptainArmor",
+    "pathid": 332,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "Werewolf",
+    "pathid": 333,
+    "file": "sharedassets0.assets",
+    "count": 22,
+    "key": "5c096b89298c0628"
+  },
+  {
+    "name": "Demon",
+    "pathid": 334,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "DeathRobe",
+    "pathid": 335,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "DruidRobe",
+    "pathid": 336,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "DarkElf",
+    "pathid": 338,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "HornsKnight",
+    "pathid": 339,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "RedWand",
+    "pathid": 340,
+    "file": "sharedassets0.assets",
+    "count": 24,
+    "key": "3b5aae4d63da15af"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 341,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Greataxe",
+    "pathid": 342,
+    "file": "sharedassets0.assets",
+    "count": 77,
+    "key": "7a0dec4fd1e54935"
+  },
+  {
+    "name": "Hair1",
+    "pathid": 343,
+    "file": "sharedassets0.assets",
+    "count": 88,
+    "key": "bb0cfc4d26ec1494"
+  },
+  {
+    "name": "Human",
+    "pathid": 344,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "WoodcutterAxe",
+    "pathid": 345,
+    "file": "sharedassets0.assets",
+    "count": 45,
+    "key": "be270354e875dca2"
+  },
+  {
+    "name": "PirateRobe",
+    "pathid": 346,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "GoldenEagle",
+    "pathid": 347,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "45baf459e4b317be"
+  },
+  {
+    "name": "LargeScythe",
+    "pathid": 348,
+    "file": "sharedassets0.assets",
+    "count": 105,
+    "key": "5635a349c37c5434"
+  },
+  {
+    "name": "BrassRoundShield",
+    "pathid": 349,
+    "file": "sharedassets0.assets",
+    "count": 60,
+    "key": "b601b96aa298c88e"
+  },
+  {
+    "name": "Lizard",
+    "pathid": 350,
+    "file": "sharedassets0.assets",
+    "count": 5,
+    "key": "53e0d4d4b1029d78"
+  },
+  {
+    "name": "PilotArmor",
+    "pathid": 351,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "FireWizardHood",
+    "pathid": 352,
+    "file": "sharedassets0.assets",
+    "count": 85,
+    "key": "4a96941df5f700a6"
+  },
+  {
+    "name": "GreatHammer",
+    "pathid": 353,
+    "file": "sharedassets0.assets",
+    "count": 79,
+    "key": "1685e2dac1fb373d"
+  },
+  {
+    "name": "Panda",
+    "pathid": 354,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 355,
+    "file": "sharedassets0.assets",
+    "count": 10,
+    "key": "86206011f2461c70"
+  },
+  {
+    "name": "Hair3",
+    "pathid": 356,
+    "file": "sharedassets0.assets",
+    "count": 18,
+    "key": "2b23ddfba259f7ff"
+  },
+  {
+    "name": "Mace",
+    "pathid": 357,
+    "file": "sharedassets0.assets",
+    "count": 49,
+    "key": "2c88234704c4a85d"
+  },
+  {
+    "name": "Apache",
+    "pathid": 358,
+    "file": "sharedassets0.assets",
+    "count": 219,
+    "key": "0dfe816a85346f4b"
+  },
+  {
+    "name": "MusketeerTunic",
+    "pathid": 359,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "TowerShield",
+    "pathid": 360,
+    "file": "sharedassets0.assets",
+    "count": 38,
+    "key": "2604fcedfd8c019b"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 361,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "DarkElf",
+    "pathid": 363,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SpikedClub",
+    "pathid": 364,
+    "file": "sharedassets0.assets",
+    "count": 42,
+    "key": "7492a949fb41e8c1"
+  },
+  {
+    "name": "Vampire",
+    "pathid": 365,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 366,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "MasterWand",
+    "pathid": 367,
+    "file": "sharedassets0.assets",
+    "count": 37,
+    "key": "bad62e5938a0aa65"
+  },
+  {
+    "name": "FemaleSwimmingSuit",
+    "pathid": 368,
+    "file": "sharedassets0.assets",
+    "count": 25,
+    "key": "3f561b84909fc8e5"
+  },
+  {
+    "name": "Link",
+    "pathid": 369,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d44df1dcc7404360"
+  },
+  {
+    "name": "Link",
+    "pathid": 370,
+    "file": "sharedassets0.assets",
+    "count": 4,
+    "key": "d7c3fa207eabbb52"
+  },
+  {
+    "name": "Tanto",
+    "pathid": 371,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "62e0c4b0f05e90b7"
+  },
+  {
+    "name": "GuardianTunic",
+    "pathid": 372,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "Merman",
+    "pathid": 373,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "NecromancerHood",
+    "pathid": 374,
+    "file": "sharedassets0.assets",
+    "count": 122,
+    "key": "36a1734bc1028bdf"
+  },
+  {
+    "name": "Squaw",
+    "pathid": 375,
+    "file": "sharedassets0.assets",
+    "count": 102,
+    "key": "4850fc78f71ea177"
+  },
+  {
+    "name": "Branch",
+    "pathid": 376,
+    "file": "sharedassets0.assets",
+    "count": 22,
+    "key": "c067c6ce2b5b897d"
+  },
+  {
+    "name": "Cleaver",
+    "pathid": 377,
+    "file": "sharedassets0.assets",
+    "count": 62,
+    "key": "d059f2bfec02a4a1"
+  },
+  {
+    "name": "Orc",
+    "pathid": 378,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "PirateCostume",
+    "pathid": 379,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Rake",
+    "pathid": 381,
+    "file": "sharedassets0.assets",
+    "count": 65,
+    "key": "61080a7278e9f741"
+  },
+  {
+    "name": "DeathRobe",
+    "pathid": 382,
+    "file": "sharedassets0.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Hellsing",
+    "pathid": 383,
+    "file": "sharedassets0.assets",
+    "count": 122,
+    "key": "d204faff3f4810b0"
+  },
+  {
+    "name": "Hair4",
+    "pathid": 384,
+    "file": "sharedassets0.assets",
+    "count": 39,
+    "key": "4e9936137f887175"
+  },
+  {
+    "name": "Hair15",
+    "pathid": 385,
+    "file": "sharedassets0.assets",
+    "count": 87,
+    "key": "766a6bf70fb8ff05"
+  },
+  {
+    "name": "Box",
+    "pathid": 386,
+    "file": "sharedassets0.assets",
+    "count": 154,
+    "key": "5afc1c0eae12ddf1"
+  },
+  {
+    "name": "Werewolf",
+    "pathid": 387,
+    "file": "sharedassets0.assets",
+    "count": 12,
+    "key": "907084c05321d52e"
+  },
+  {
+    "name": "DruidRobe",
+    "pathid": 388,
+    "file": "sharedassets0.assets",
+    "count": 52,
+    "key": "e54fb759aa5494df"
+  },
+  {
+    "name": "MonkRobe",
+    "pathid": 389,
+    "file": "sharedassets0.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "MonkRobe",
+    "pathid": 390,
+    "file": "sharedassets0.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "Elf",
+    "pathid": 391,
+    "file": "sharedassets0.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "CrusaderShield",
+    "pathid": 392,
+    "file": "sharedassets0.assets",
+    "count": 46,
+    "key": "f9c785d49be97fe1"
+  },
+  {
+    "name": "Overalls",
+    "pathid": 393,
+    "file": "sharedassets0.assets",
+    "count": 47,
+    "key": "221be52d7bfb40eb"
+  },
+  {
+    "name": "BlueKnight",
+    "pathid": 394,
+    "file": "sharedassets0.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "AimBolt",
+    "pathid": 1,
+    "file": "resources.assets",
+    "count": 95,
+    "key": "e322cba4e0a455d4"
+  },
+  {
+    "name": "ImperialShockDuder",
+    "pathid": 2,
+    "file": "resources.assets",
+    "count": 187,
+    "key": "1f50953ecb67448e"
+  },
+  {
+    "name": "LightswordPurple",
+    "pathid": 3,
+    "file": "resources.assets",
+    "count": 46,
+    "key": "2c59338094ab57c2"
+  },
+  {
+    "name": "LightswordGreen",
+    "pathid": 5,
+    "file": "resources.assets",
+    "count": 46,
+    "key": "2c59338094ab57c2"
+  },
+  {
+    "name": "JedudeRobe2",
+    "pathid": 6,
+    "file": "resources.assets",
+    "count": 110,
+    "key": "b25a125e7cd3f654"
+  },
+  {
+    "name": "Soldier",
+    "pathid": 8,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "Robo",
+    "pathid": 10,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "BanditMask",
+    "pathid": 12,
+    "file": "resources.assets",
+    "count": 27,
+    "key": "0a6bdfe9bb36ad93"
+  },
+  {
+    "name": "Judge",
+    "pathid": 13,
+    "file": "resources.assets",
+    "count": 8,
+    "key": "c1f96555d32a4e91"
+  },
+  {
+    "name": "SnowRider",
+    "pathid": 15,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Guardian",
+    "pathid": 19,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Cowboy",
+    "pathid": 20,
+    "file": "resources.assets",
+    "count": 33,
+    "key": "7b78116c86c6c996"
+  },
+  {
+    "name": "Duda",
+    "pathid": 21,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 22,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Launcher",
+    "pathid": 24,
+    "file": "resources.assets",
+    "count": 84,
+    "key": "077c1847279395ba"
+  },
+  {
+    "name": "Pilot",
+    "pathid": 25,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "SuperMask",
+    "pathid": 27,
+    "file": "resources.assets",
+    "count": 26,
+    "key": "14692785b9da49ab"
+  },
+  {
+    "name": "Stealth",
+    "pathid": 28,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Terminator",
+    "pathid": 29,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "fb626c2060eac160"
+  },
+  {
+    "name": "Stealth",
+    "pathid": 30,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "LargeBackpack",
+    "pathid": 32,
+    "file": "resources.assets",
+    "count": 73,
+    "key": "a09b4fef69600851"
+  },
+  {
+    "name": "Pilot",
+    "pathid": 34,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Medic",
+    "pathid": 35,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "2-Shotgun",
+    "pathid": 38,
+    "file": "resources.assets",
+    "count": 79,
+    "key": "6edc0e6b1be528b1"
+  },
+  {
+    "name": "BishopStaff",
+    "pathid": 40,
+    "file": "resources.assets",
+    "count": 45,
+    "key": "cbb4a4189e67aac7"
+  },
+  {
+    "name": "Santa",
+    "pathid": 41,
+    "file": "resources.assets",
+    "count": 52,
+    "key": "94058b8ce9432f02"
+  },
+  {
+    "name": "Robo",
+    "pathid": 42,
+    "file": "resources.assets",
+    "count": 77,
+    "key": "f8eb1d3db0726431"
+  },
+  {
+    "name": "DeathHood",
+    "pathid": 44,
+    "file": "resources.assets",
+    "count": 124,
+    "key": "c9ca15a58b50924c"
+  },
+  {
+    "name": "SmallAxe",
+    "pathid": 47,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "a0374ea089cdd859"
+  },
+  {
+    "name": "Bolt",
+    "pathid": 49,
+    "file": "resources.assets",
+    "count": 61,
+    "key": "4aa8c303fa3691f8"
+  },
+  {
+    "name": "DudeSidious",
+    "pathid": 50,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 51,
+    "file": "resources.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "PumpkinHead",
+    "pathid": 54,
+    "file": "resources.assets",
+    "count": 156,
+    "key": "af6ecea4821d7e22"
+  },
+  {
+    "name": "Pilot",
+    "pathid": 55,
+    "file": "resources.assets",
+    "count": 70,
+    "key": "07596c132bd5ad68"
+  },
+  {
+    "name": "BattleBow",
+    "pathid": 57,
+    "file": "resources.assets",
+    "count": 27,
+    "key": "aba7ae9b3dfaae6d"
+  },
+  {
+    "name": "SnowRider",
+    "pathid": 58,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Katana",
+    "pathid": 59,
+    "file": "resources.assets",
+    "count": 53,
+    "key": "9973c77f781523dc"
+  },
+  {
+    "name": "Ninja",
+    "pathid": 60,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Santa",
+    "pathid": 62,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "JedudeRobe2",
+    "pathid": 65,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "NightVision",
+    "pathid": 69,
+    "file": "resources.assets",
+    "count": 86,
+    "key": "4ccaf9f6bc857256"
+  },
+  {
+    "name": "Terminator",
+    "pathid": 70,
+    "file": "resources.assets",
+    "count": 8,
+    "key": "c1f96555d32a4e91"
+  },
+  {
+    "name": "GuardianShield",
+    "pathid": 71,
+    "file": "resources.assets",
+    "count": 34,
+    "key": "e77520ab84cd4440"
+  },
+  {
+    "name": "DudeVader",
+    "pathid": 72,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Elf",
+    "pathid": 74,
+    "file": "resources.assets",
+    "count": 13,
+    "key": "c695491984cf1c21"
+  },
+  {
+    "name": "SVD",
+    "pathid": 76,
+    "file": "resources.assets",
+    "count": 106,
+    "key": "183112befe2a03e6"
+  },
+  {
+    "name": "ShortBow",
+    "pathid": 78,
+    "file": "resources.assets",
+    "count": 19,
+    "key": "8abf2ba5badcfe72"
+  },
+  {
+    "name": "ShortDagger",
+    "pathid": 83,
+    "file": "resources.assets",
+    "count": 32,
+    "key": "d17a2c344fa76dc9"
+  },
+  {
+    "name": "Astronaut",
+    "pathid": 84,
+    "file": "resources.assets",
+    "count": 167,
+    "key": "8e493bb3f58e8784"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 90,
+    "file": "resources.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "IronBuckler",
+    "pathid": 93,
+    "file": "resources.assets",
+    "count": 32,
+    "key": "0be516e3d89ce49d"
+  },
+  {
+    "name": "Rambo",
+    "pathid": 95,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "9856c81b7b0f75f8"
+  },
+  {
+    "name": "Medic",
+    "pathid": 96,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "JedudeRobe2",
+    "pathid": 98,
+    "file": "resources.assets",
+    "count": 15,
+    "key": "7235638512a4d152"
+  },
+  {
+    "name": "Duda",
+    "pathid": 101,
+    "file": "resources.assets",
+    "count": 73,
+    "key": "fad26b354a3f7773"
+  },
+  {
+    "name": "DudeVader",
+    "pathid": 102,
+    "file": "resources.assets",
+    "count": 189,
+    "key": "4f1d233225ef66ca"
+  },
+  {
+    "name": "Duda",
+    "pathid": 103,
+    "file": "resources.assets",
+    "count": 4,
+    "key": "bad856fc0ddd2764"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 104,
+    "file": "resources.assets",
+    "count": 9,
+    "key": "639d36f5e9389492"
+  },
+  {
+    "name": "HaloBack",
+    "pathid": 105,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "2abb1f9c9c3ba916"
+  },
+  {
+    "name": "Terminator",
+    "pathid": 109,
+    "file": "resources.assets",
+    "count": 47,
+    "key": "af55c48b48965264"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 111,
+    "file": "resources.assets",
+    "count": 15,
+    "key": "ef359d72795cda99"
+  },
+  {
+    "name": "BackSword",
+    "pathid": 112,
+    "file": "resources.assets",
+    "count": 37,
+    "key": "b384079411bed222"
+  },
+  {
+    "name": "Chief",
+    "pathid": 113,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 114,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SantaHood",
+    "pathid": 116,
+    "file": "resources.assets",
+    "count": 111,
+    "key": "94603fb28b03713a"
+  },
+  {
+    "name": "Astronaut",
+    "pathid": 118,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Guardian",
+    "pathid": 119,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "GasMaskArmor1",
+    "pathid": 120,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Cowboy",
+    "pathid": 121,
+    "file": "resources.assets",
+    "count": 103,
+    "key": "3be91d79dddb7c7e"
+  },
+  {
+    "name": "Glass",
+    "pathid": 123,
+    "file": "resources.assets",
+    "count": 11,
+    "key": "02f5fc4be3b1c96e"
+  },
+  {
+    "name": "LightswordKyloRed",
+    "pathid": 127,
+    "file": "resources.assets",
+    "count": 69,
+    "key": "f4166e8a8c44c684"
+  },
+  {
+    "name": "SantaHelper",
+    "pathid": 128,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Shotgun",
+    "pathid": 130,
+    "file": "resources.assets",
+    "count": 59,
+    "key": "6785223961fe33ed"
+  },
+  {
+    "name": "FemaleSwimmingSuit",
+    "pathid": 131,
+    "file": "resources.assets",
+    "count": 25,
+    "key": "3f561b84909fc8e5"
+  },
+  {
+    "name": "GasMaskArmor2",
+    "pathid": 137,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Predator",
+    "pathid": 138,
+    "file": "resources.assets",
+    "count": 211,
+    "key": "916cce0051239fc0"
+  },
+  {
+    "name": "Human",
+    "pathid": 139,
+    "file": "resources.assets",
+    "count": 83,
+    "key": "d7ecb95c86779793"
+  },
+  {
+    "name": "Duda",
+    "pathid": 140,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Human",
+    "pathid": 142,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "E-11",
+    "pathid": 143,
+    "file": "resources.assets",
+    "count": 89,
+    "key": "980f5891433ce3b3"
+  },
+  {
+    "name": "RoyalGreatShield",
+    "pathid": 144,
+    "file": "resources.assets",
+    "count": 54,
+    "key": "ad02b0c1e25ce288"
+  },
+  {
+    "name": "TowerShield",
+    "pathid": 145,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "2604fcedfd8c019b"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 147,
+    "file": "resources.assets",
+    "count": 100,
+    "key": "489ece7440a54100"
+  },
+  {
+    "name": "SmallBackpack",
+    "pathid": 148,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "4981899cd22e41e9"
+  },
+  {
+    "name": "Chief [ShowEars]",
+    "pathid": 151,
+    "file": "resources.assets",
+    "count": 137,
+    "key": "2e265b7f3f04133c"
+  },
+  {
+    "name": "Bow",
+    "pathid": 152,
+    "file": "resources.assets",
+    "count": 24,
+    "key": "f81bf8f2d2906fa8"
+  },
+  {
+    "name": "LeatherQuiver",
+    "pathid": 153,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "2e034c2e35376db1"
+  },
+  {
+    "name": "Judge",
+    "pathid": 154,
+    "file": "resources.assets",
+    "count": 40,
+    "key": "8ae371c0e2fcd778"
+  },
+  {
+    "name": "DeerCostume",
+    "pathid": 156,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "PlagueDoctorMask",
+    "pathid": 158,
+    "file": "resources.assets",
+    "count": 64,
+    "key": "314f4ae8f54d7c5f"
+  },
+  {
+    "name": "Death",
+    "pathid": 159,
+    "file": "resources.assets",
+    "count": 7,
+    "key": "2b61aa369f463ece"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 161,
+    "file": "resources.assets",
+    "count": 12,
+    "key": "7b235c75a7ead90e"
+  },
+  {
+    "name": "Predator",
+    "pathid": 163,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "MachineGun",
+    "pathid": 164,
+    "file": "resources.assets",
+    "count": 117,
+    "key": "397f96ca658ba1ef"
+  },
+  {
+    "name": "ExpertSheef",
+    "pathid": 165,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Alien",
+    "pathid": 166,
+    "file": "resources.assets",
+    "count": 73,
+    "key": "7be54aef65ec0861"
+  },
+  {
+    "name": "SnowBack",
+    "pathid": 168,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "a931a579221dc089"
+  },
+  {
+    "name": "CrusaderShield",
+    "pathid": 169,
+    "file": "resources.assets",
+    "count": 46,
+    "key": "f9c785d49be97fe1"
+  },
+  {
+    "name": "Soldier",
+    "pathid": 170,
+    "file": "resources.assets",
+    "count": 107,
+    "key": "7576f9b964be24b4"
+  },
+  {
+    "name": "Terrorist",
+    "pathid": 171,
+    "file": "resources.assets",
+    "count": 77,
+    "key": "182e704f37b42fdb"
+  },
+  {
+    "name": "ImperialShockDuder",
+    "pathid": 172,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "AnimeMask",
+    "pathid": 173,
+    "file": "resources.assets",
+    "count": 65,
+    "key": "d1077faa29965343"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 174,
+    "file": "resources.assets",
+    "count": 106,
+    "key": "9700df542b71ad3e"
+  },
+  {
+    "name": "Death",
+    "pathid": 175,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "Shadow",
+    "pathid": 176,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "b5155b8f5060673d"
+  },
+  {
+    "name": "BlackMask",
+    "pathid": 177,
+    "file": "resources.assets",
+    "count": 27,
+    "key": "b55c43164b1403d1"
+  },
+  {
+    "name": "DeerHorns [ShowEars]",
+    "pathid": 178,
+    "file": "resources.assets",
+    "count": 100,
+    "key": "f315199af7932c7d"
+  },
+  {
+    "name": "DudeSidious",
+    "pathid": 179,
+    "file": "resources.assets",
+    "count": 64,
+    "key": "f2a1d4b15fab1f88"
+  },
+  {
+    "name": "Jedude",
+    "pathid": 183,
+    "file": "resources.assets",
+    "count": 6,
+    "key": "88577bb31c3e161d"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 186,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 187,
+    "file": "resources.assets",
+    "count": 10,
+    "key": "86206011f2461c70"
+  },
+  {
+    "name": "M-16",
+    "pathid": 188,
+    "file": "resources.assets",
+    "count": 103,
+    "key": "c74c0a23bb3eef30"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 189,
+    "file": "resources.assets",
+    "count": 30,
+    "key": "70411d5ab612d1db"
+  },
+  {
+    "name": "Overalls",
+    "pathid": 190,
+    "file": "resources.assets",
+    "count": 47,
+    "key": "221be52d7bfb40eb"
+  },
+  {
+    "name": "DudeSidious",
+    "pathid": 191,
+    "file": "resources.assets",
+    "count": 128,
+    "key": "f8eb0b12972738b2"
+  },
+  {
+    "name": "AncientGreatShield",
+    "pathid": 195,
+    "file": "resources.assets",
+    "count": 92,
+    "key": "efbeafafbe5ff1cb"
+  },
+  {
+    "name": "LongBow",
+    "pathid": 196,
+    "file": "resources.assets",
+    "count": 29,
+    "key": "03dc44a1f1980ed9"
+  },
+  {
+    "name": "PowerBazuka",
+    "pathid": 197,
+    "file": "resources.assets",
+    "count": 138,
+    "key": "3b5fe6dacdb64776"
+  },
+  {
+    "name": "Phantom",
+    "pathid": 198,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Phantom",
+    "pathid": 202,
+    "file": "resources.assets",
+    "count": 126,
+    "key": "848b0a9433780111"
+  },
+  {
+    "name": "Policeman",
+    "pathid": 203,
+    "file": "resources.assets",
+    "count": 104,
+    "key": "1260ea68f0d6a6d2"
+  },
+  {
+    "name": "6-MachineGun",
+    "pathid": 204,
+    "file": "resources.assets",
+    "count": 129,
+    "key": "4570a4fdde35a202"
+  },
+  {
+    "name": "GasMaskArmor1",
+    "pathid": 207,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "JedudeRobe1",
+    "pathid": 208,
+    "file": "resources.assets",
+    "count": 85,
+    "key": "4a96941df5f700a6"
+  },
+  {
+    "name": "ImperialStormDuder",
+    "pathid": 210,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "Saboteur",
+    "pathid": 211,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Duda",
+    "pathid": 213,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "d26c7b543df39ca6"
+  },
+  {
+    "name": "Astronaut",
+    "pathid": 215,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SantaHelperCap [ShowEars]",
+    "pathid": 216,
+    "file": "resources.assets",
+    "count": 80,
+    "key": "877a791b173da963"
+  },
+  {
+    "name": "SteelShield",
+    "pathid": 217,
+    "file": "resources.assets",
+    "count": 40,
+    "key": "b6cb49a901c9ebc0"
+  },
+  {
+    "name": "CurvedBow",
+    "pathid": 218,
+    "file": "resources.assets",
+    "count": 25,
+    "key": "64ba66096756da24"
+  },
+  {
+    "name": "DudeMaul",
+    "pathid": 219,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "SpaceBack",
+    "pathid": 220,
+    "file": "resources.assets",
+    "count": 58,
+    "key": "551fecd6605360dc"
+  },
+  {
+    "name": "Revolver",
+    "pathid": 221,
+    "file": "resources.assets",
+    "count": 49,
+    "key": "152acb78362f8526"
+  },
+  {
+    "name": "ExpertSheef",
+    "pathid": 223,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "IronMask",
+    "pathid": 224,
+    "file": "resources.assets",
+    "count": 57,
+    "key": "a24a25bbad220c49"
+  },
+  {
+    "name": "Duda",
+    "pathid": 225,
+    "file": "resources.assets",
+    "count": 32,
+    "key": "219b2746e1f47be1"
+  },
+  {
+    "name": "DeerCostume",
+    "pathid": 227,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "PumpkinOveralls",
+    "pathid": 228,
+    "file": "resources.assets",
+    "count": 52,
+    "key": "e54fb759aa5494df"
+  },
+  {
+    "name": "Sniper2",
+    "pathid": 231,
+    "file": "resources.assets",
+    "count": 125,
+    "key": "993b024e9a7bb3be"
+  },
+  {
+    "name": "Sniper1",
+    "pathid": 232,
+    "file": "resources.assets",
+    "count": 127,
+    "key": "e1dc307ae5b6c72a"
+  },
+  {
+    "name": "GoldenEagle",
+    "pathid": 235,
+    "file": "resources.assets",
+    "count": 52,
+    "key": "45baf459e4b317be"
+  },
+  {
+    "name": "SnowRider",
+    "pathid": 236,
+    "file": "resources.assets",
+    "count": 185,
+    "key": "81f733fe77bf4971"
+  },
+  {
+    "name": "Alien",
+    "pathid": 238,
+    "file": "resources.assets",
+    "count": 198,
+    "key": "c49cdec9925dc8ba"
+  },
+  {
+    "name": "Stealth",
+    "pathid": 239,
+    "file": "resources.assets",
+    "count": 109,
+    "key": "b5be32efcd5bdee5"
+  },
+  {
+    "name": "Phantom",
+    "pathid": 240,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Human",
+    "pathid": 241,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Ninja",
+    "pathid": 244,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Chief",
+    "pathid": 245,
+    "file": "resources.assets",
+    "count": 52,
+    "key": "94058b8ce9432f02"
+  },
+  {
+    "name": "Predator",
+    "pathid": 246,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "StelsPistol",
+    "pathid": 248,
+    "file": "resources.assets",
+    "count": 52,
+    "key": "17173ef4b5d6dfdf"
+  },
+  {
+    "name": "DeathScythe",
+    "pathid": 249,
+    "file": "resources.assets",
+    "count": 130,
+    "key": "f3824a20e6623368"
+  },
+  {
+    "name": "AK-47",
+    "pathid": 250,
+    "file": "resources.assets",
+    "count": 80,
+    "key": "5c96886068e4a057"
+  },
+  {
+    "name": "Duda",
+    "pathid": 251,
+    "file": "resources.assets",
+    "count": 11,
+    "key": "428a320b04faf554"
+  },
+  {
+    "name": "LightstaffRed",
+    "pathid": 253,
+    "file": "resources.assets",
+    "count": 64,
+    "key": "0b6a5f148b19e429"
+  },
+  {
+    "name": "Soldier",
+    "pathid": 254,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "HKG36",
+    "pathid": 256,
+    "file": "resources.assets",
+    "count": 95,
+    "key": "a9c0211a03aa6700"
+  },
+  {
+    "name": "Robo",
+    "pathid": 257,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "Jedude",
+    "pathid": 258,
+    "file": "resources.assets",
+    "count": 37,
+    "key": "17872911afd6397f"
+  },
+  {
+    "name": "ZombieB",
+    "pathid": 259,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Cape",
+    "pathid": 260,
+    "file": "resources.assets",
+    "count": 41,
+    "key": "88f54a01682df428"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 261,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "GasMask2",
+    "pathid": 263,
+    "file": "resources.assets",
+    "count": 89,
+    "key": "a1371c743471c447"
+  },
+  {
+    "name": "Policeman",
+    "pathid": 264,
+    "file": "resources.assets",
+    "count": 34,
+    "key": "d325616d26863525"
+  },
+  {
+    "name": "Medic",
+    "pathid": 266,
+    "file": "resources.assets",
+    "count": 44,
+    "key": "2eaab463321c5d3a"
+  },
+  {
+    "name": "Ninja",
+    "pathid": 268,
+    "file": "resources.assets",
+    "count": 77,
+    "key": "182e704f37b42fdb"
+  },
+  {
+    "name": "BlueShield",
+    "pathid": 272,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "5dc368a3c843e692"
+  },
+  {
+    "name": "SaberstaffRed",
+    "pathid": 273,
+    "file": "resources.assets",
+    "count": 70,
+    "key": "6341e762b810ee5d"
+  },
+  {
+    "name": "GasMask1",
+    "pathid": 274,
+    "file": "resources.assets",
+    "count": 98,
+    "key": "90daf8e82f5a6dff"
+  },
+  {
+    "name": "Judge",
+    "pathid": 275,
+    "file": "resources.assets",
+    "count": 107,
+    "key": "2d0c2f6d89322650"
+  },
+  {
+    "name": "LegionShield",
+    "pathid": 276,
+    "file": "resources.assets",
+    "count": 38,
+    "key": "49b4268d9a672b5b"
+  },
+  {
+    "name": "Human",
+    "pathid": 277,
+    "file": "resources.assets",
+    "count": 8,
+    "key": "367e2eefbb89c8cb"
+  },
+  {
+    "name": "GasMaskArmor2",
+    "pathid": 279,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "DudeVader",
+    "pathid": 283,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "KnightShield",
+    "pathid": 285,
+    "file": "resources.assets",
+    "count": 40,
+    "key": "477cf64500ad761f"
+  },
+  {
+    "name": "BrassRoundShield",
+    "pathid": 286,
+    "file": "resources.assets",
+    "count": 60,
+    "key": "b601b96aa298c88e"
+  },
+  {
+    "name": "ImperialShockDuder",
+    "pathid": 287,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  },
+  {
+    "name": "DarkMask",
+    "pathid": 288,
+    "file": "resources.assets",
+    "count": 47,
+    "key": "8330a7927faa36d3"
+  },
+  {
+    "name": "Saboteur",
+    "pathid": 289,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "Stick",
+    "pathid": 291,
+    "file": "resources.assets",
+    "count": 19,
+    "key": "ac80d28ae59689d6"
+  },
+  {
+    "name": "ImperialStormDuder",
+    "pathid": 292,
+    "file": "resources.assets",
+    "count": 187,
+    "key": "1f50953ecb67448e"
+  },
+  {
+    "name": "DLT-19",
+    "pathid": 294,
+    "file": "resources.assets",
+    "count": 94,
+    "key": "9ccb573fc2e71bb9"
+  },
+  {
+    "name": "Farmer",
+    "pathid": 296,
+    "file": "resources.assets",
+    "count": 41,
+    "key": "705a3d171de04bc4"
+  },
+  {
+    "name": "ExpertSheef",
+    "pathid": 297,
+    "file": "resources.assets",
+    "count": 145,
+    "key": "88cdee0ede2180bf"
+  },
+  {
+    "name": "JedudeRobe1",
+    "pathid": 298,
+    "file": "resources.assets",
+    "count": 6,
+    "key": "88577bb31c3e161d"
+  },
+  {
+    "name": "Blade",
+    "pathid": 301,
+    "file": "resources.assets",
+    "count": 56,
+    "key": "7e063551a72a6bc3"
+  },
+  {
+    "name": "PlagueDoctor",
+    "pathid": 304,
+    "file": "resources.assets",
+    "count": 23,
+    "key": "457f8df0b5d1bff2"
+  },
+  {
+    "name": "SAWN-OFF",
+    "pathid": 305,
+    "file": "resources.assets",
+    "count": 57,
+    "key": "9024521f797a2119"
+  },
+  {
+    "name": "ZombieA",
+    "pathid": 307,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "FemaleOutfit",
+    "pathid": 310,
+    "file": "resources.assets",
+    "count": 40,
+    "key": "56696841373574de"
+  },
+  {
+    "name": "6-MiniMachineGun",
+    "pathid": 312,
+    "file": "resources.assets",
+    "count": 121,
+    "key": "f45dbba31be1ae85"
+  },
+  {
+    "name": "Pistol",
+    "pathid": 314,
+    "file": "resources.assets",
+    "count": 49,
+    "key": "79de17f4cc85c707"
+  },
+  {
+    "name": "LightswordRed",
+    "pathid": 317,
+    "file": "resources.assets",
+    "count": 46,
+    "key": "2c59338094ab57c2"
+  },
+  {
+    "name": "Dreadnought",
+    "pathid": 318,
+    "file": "resources.assets",
+    "count": 88,
+    "key": "6e3474bf4db61ad7"
+  },
+  {
+    "name": "Bazuka",
+    "pathid": 321,
+    "file": "resources.assets",
+    "count": 144,
+    "key": "5e3576fe0779084e"
+  },
+  {
+    "name": "JedudeRobe1",
+    "pathid": 322,
+    "file": "resources.assets",
+    "count": 53,
+    "key": "d8c7dac925dd74f1"
+  },
+  {
+    "name": "PredatorSpear",
+    "pathid": 323,
+    "file": "resources.assets",
+    "count": 55,
+    "key": "bff93ad5c16e1d66"
+  },
+  {
+    "name": "Policeman",
+    "pathid": 324,
+    "file": "resources.assets",
+    "count": 6,
+    "key": "88577bb31c3e161d"
+  },
+  {
+    "name": "Terrorist",
+    "pathid": 326,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "ImperialStormDuder",
+    "pathid": 330,
+    "file": "resources.assets",
+    "count": 50,
+    "key": "73680901bb3b2762"
+  },
+  {
+    "name": "WoodenBuckler",
+    "pathid": 331,
+    "file": "resources.assets",
+    "count": 32,
+    "key": "0be516e3d89ce49d"
+  },
+  {
+    "name": "LightswordBlue",
+    "pathid": 334,
+    "file": "resources.assets",
+    "count": 46,
+    "key": "2c59338094ab57c2"
+  },
+  {
+    "name": "Guardian",
+    "pathid": 336,
+    "file": "resources.assets",
+    "count": 128,
+    "key": "245ab21ebecda474"
+  },
+  {
+    "name": "Alien",
+    "pathid": 339,
+    "file": "resources.assets",
+    "count": 21,
+    "key": "1a068a39ca2c762e"
+  }
+]

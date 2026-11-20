@@ -1,0 +1,22 @@
+name: Source integrity and native smoke
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify pinned binaries and manifest
+        run: python scripts/verify_repository.py
+      - name: Smoke test compiled WebAssembly and JS
+        run: python scripts/run_tests.py --smoke

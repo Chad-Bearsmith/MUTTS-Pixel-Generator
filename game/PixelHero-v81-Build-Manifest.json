@@ -1,0 +1,33 @@
+{
+  "format": "PixelHero-v81-BuildManifest-1",
+  "version": "v.81",
+  "baseline": "Accepted Pixel Hero Maker [v.80]",
+  "newNativeFunction": 71935,
+  "newWasmMutableGlobal": "phm_underlay_status",
+  "nativeScope": "Experimental exact-match Cape, Fire Lizard, Apache with naked Human and Bolt only",
+  "v80WasmSHA256": "ca81e969c6cb6ea0c6cde67bf5006d526e948143583f2981d494082947d84cf4",
+  "unityAssets": {
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "cea957b06039153986a56865bc2ef8eff6327897e41a01e385e377a3b7fdd48a",
+    "Build/WebGL.loader.js": "b57c4a7714dc15be07103018586feb336f49eb09f3805716e91046db2ff34ec6",
+    "Build/WebGL.wasm": "e168c5eb402cbf1589b427b9cd83a72b6a099c857f74ab5604710dd7f11519e3"
+  },
+  "activeScripts": {
+    "offline-ui.js": "3eafaa385289b31d0e01323ccef08e657401a778e404558c2c81f7351fb94089",
+    "phm-compositor-probe.js": "f8015746ac6a875f7a160b7e209030a85e9413ee0e479ff196c0bada8968926e",
+    "phm-diagnostics-ui.js": "14460354a9a78fc8a37905536dddb9b9b3a3843f8df9a7b4b4ec1caea4160fff",
+    "phm-preview-inline.js": "a60973fc6646f5e9d9f4a86237a72ae1211612dfd151a997add1526a193b42c9",
+    "phm-static-idle.js": "1b9ee27161b4d78139d257727c2ad481787498e6e3764e921cb71284a52c63e6",
+    "phm-v76-layer-provenance.js": "c9e6212ff81c6de3e8a351f07146db949575a24c85b284068e57c3674dabdaa3"
+  },
+  "activeCss": {
+    "phm-diagnostics-ui.css": "c5a3b7100422db563602d2c71de2cb9b502892e79593157b8664c3240dab6f81",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "e134c33ae667ba22e76e3e79d2142370cf3035989ec4787a420632db43ba0047",
+  "notes": [
+    "User accepted v80 hand colors; both v80 native hand routines preserved by bytes and call order.",
+    "Current version geometry correction is an exact-reference-matching experiment, not live verified.",
+    "Browser-saved ZIP filename, full gameplay and native Windows execution NOT TESTED in this environment."
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "format": "PixelHero-v83-BuildManifest-1",
+  "version": "v.83",
+  "baseline": "User live-accepted Pixel Hero Maker [v.82] for all 12 naked-Human, original-color Bolt item references",
+  "codeChange": "Only preexisting WebAssembly function 71935 body changed; old builder and hand routines preserved",
+  "sourceV82WasmSHA256": "c0f31dba2a77be97ccc30a678ea07261705e0ab379bd6d9356a109d402e54747",
+  "newNativeWasmSHA256": "04eef99b637f4c722126a314f9daf2c62a0e4afd74eb2b15f481502801c55b94",
+  "weapons": {
+    "0": {
+      "name": "Bolt",
+      "firstIdleAlphaHash": "0x3dbe5bbd"
+    },
+    "1": {
+      "name": "2-Shotgun",
+      "firstIdleAlphaHash": "0xb739dd6b"
+    },
+    "2": {
+      "name": "6-MachineGun",
+      "firstIdleAlphaHash": "0xb53b9051"
+    },
+    "3": {
+      "name": "6-MiniMachineGun",
+      "firstIdleAlphaHash": "0xbb38ddad"
+    },
+    "4": {
+      "name": "AK-47",
+      "firstIdleAlphaHash": "0x6482d900"
+    },
+    "5": {
+      "name": "AimBolt",
+      "firstIdleAlphaHash": "0x34316c13"
+    },
+    "6": {
+      "name": "Bazuka",
+      "firstIdleAlphaHash": "0x65ebb6c2"
+    },
+    "7": {
+      "name": "DLT-19",
+      "firstIdleAlphaHash": "0xeac21292"
+    },
+    "8": {
+      "name": "E-11",
+      "firstIdleAlphaHash": "0xb92bc587"
+    },
+    "9": {
+      "name": "GoldenEagle",
+      "firstIdleAlphaHash": "0xb0995dc5"
+    },
+    "10": {
+      "name": "HKG36",
+      "firstIdleAlphaHash": "0x0b9ac9b1"
+    },
+    "11": {
+      "name": "Launcher",
+      "firstIdleAlphaHash": "0x1e1f366c"
+    },
+    "12": {
+      "name": "M-16",
+      "firstIdleAlphaHash": "0x5fe65d47"
+    },
+    "13": {
+      "name": "MachineGun",
+      "firstIdleAlphaHash": "0x3ac28527"
+    },
+    "14": {
+      "name": "Pistol",
+      "firstIdleAlphaHash": "0x894c19cb"
+    },
+    "15": {
+      "name": "PowerBazuka",
+      "firstIdleAlphaHash": "0x58f03ba8"
+    },
+    "16": {
+      "name": "Revolver",
+      "firstIdleAlphaHash": "0x026236c2"
+    },
+    "17": {
+      "name": "SAWN-OFF",
+      "firstIdleAlphaHash": "0x55389cbc"
+    },
+    "18": {
+      "name": "SVD",
+      "firstIdleAlphaHash": "0xd19e7a37"
+    },
+    "19": {
+      "name": "Shotgun",
+      "firstIdleAlphaHash": "0x8b4dc278"
+    },
+    "20": {
+      "name": "Sniper1",
+      "firstIdleAlphaHash": "0x4d812c43"
+    },
+    "21": {
+      "name": "Sniper2",
+      "firstIdleAlphaHash": "0x3f01d93b"
+    },
+    "22": {
+      "name": "StelsPistol",
+      "firstIdleAlphaHash": "0x379133d2"
+    }
+  },
+  "itemStatuses": {
+    "1": "Cape",
+    "2": "Fire Lizard",
+    "3": "Apache Armor",
+    "4": "Alien Armor",
+    "5": "Angel Armor",
+    "6": "Dracula Armor",
+    "7": "Furry Body",
+    "8": "Lizard Body",
+    "9": "Merman Body",
+    "10": "Werewolf Body",
+    "11": "Hellsing Helmet",
+    "12": "Snow Rider Helmet"
+  },
+  "guard": "Exact 23 full 64x64 gun alpha masks, strict weapon-independent character fingerprint for 22 non-Bolt masks, per-target before+source validation; Bolt branch original v82",
+  "unityAssets": {
+    "Build/WebGL.wasm": "04eef99b637f4c722126a314f9daf2c62a0e4afd74eb2b15f481502801c55b94",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "cea957b06039153986a56865bc2ef8eff6327897e41a01e385e377a3b7fdd48a",
+    "Build/WebGL.loader.js": "b57c4a7714dc15be07103018586feb336f49eb09f3805716e91046db2ff34ec6"
+  },
+  "activeScripts": {
+    "offline-ui.js": "3eafaa385289b31d0e01323ccef08e657401a778e404558c2c81f7351fb94089",
+    "phm-compositor-probe.js": "f8015746ac6a875f7a160b7e209030a85e9413ee0e479ff196c0bada8968926e",
+    "phm-diagnostics-ui.js": "eb4ffa6353f71157d108671fdc2c48c8b4ddd0278c2b09eb696bb294b46b18d7",
+    "phm-preview-inline.js": "a60973fc6646f5e9d9f4a86237a72ae1211612dfd151a997add1526a193b42c9",
+    "phm-static-idle.js": "410de9fdb16840ef6ad30b8da6abc0c9450b64c48c25d3d0f51dbfcce3d89738",
+    "phm-v76-layer-provenance.js": "2aa54c276731051b74f72ceec7bc63c108f062ad12d32bae2769bf1f7ad453b5"
+  },
+  "activeCss": {
+    "phm-diagnostics-ui.css": "c5a3b7100422db563602d2c71de2cb9b502892e79593157b8664c3240dab6f81",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "d5000db2c50f448cd9c9f58f9e3c4fbb7c0f70437b18393526336f931acad9e3",
+  "validation": {
+    "native23GunBy12ItemFixtureTests": 276,
+    "nativeAdversarialFixtureTests": 5,
+    "nativeHandPipelineFixtures": 6,
+    "nativeCapeBackFixtures": 17,
+    "liveBoltUserAcceptance": "12 of 12 in v82",
+    "liveNonBoltAcceptance": "NOT TESTED",
+    "nativeWindowsLiveExecution": "NOT TESTED",
+    "browserSavedZipBasename": "NOT TESTED"
+  }
+}

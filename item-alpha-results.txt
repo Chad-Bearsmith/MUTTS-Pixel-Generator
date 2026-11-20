@@ -1,0 +1,83 @@
+TOTAL 564 DIFFERENT MASKS 315
+
+ Merman
+sharedassets0.assets 11 alpha 83 key d7ecb95c86779793 shared by 12 [('Merman', 'sharedassets0', 11), ('Human', 'sharedassets0', 19), ('ZombieB', 'sharedassets0', 70), ('DarkElf', 'sharedassets0', 129), ('Demon', 'sharedassets0', 249), ('Demigod', 'sharedassets0', 255), ('ZombieA', 'sharedassets0', 361), ('Orc', 'sharedassets0', 378), ('Elf', 'sharedassets0', 391), ('ZombieB', 'resources', 51)]
+sharedassets0.assets 74 alpha 57 key 26bb0320837d17e3 shared by 1 [('Merman', 'sharedassets0', 74)]
+sharedassets0.assets 257 alpha 16 key 0303bbc705a64159 shared by 1 [('Merman', 'sharedassets0', 257)]
+sharedassets0.assets 288 alpha 12 key 1f606bb312efa2fe shared by 2 [('Furry', 'sharedassets0', 78), ('Merman', 'sharedassets0', 288)]
+sharedassets0.assets 373 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+
+ FireLizard
+sharedassets0.assets 35 alpha 125 key df5bda8726e3fd01 shared by 1 [('FireLizard', 'sharedassets0', 35)]
+sharedassets0.assets 86 alpha 70 key f137657d9916f7b9 shared by 2 [('Lizard', 'sharedassets0', 50), ('FireLizard', 'sharedassets0', 86)]
+sharedassets0.assets 153 alpha 5 key 66e2a54ba27e9ae9 shared by 1 [('FireLizard', 'sharedassets0', 153)]
+sharedassets0.assets 256 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+
+ Furry
+sharedassets0.assets 64 alpha 43 key d056fe7c5972f555 shared by 1 [('Furry', 'sharedassets0', 64)]
+sharedassets0.assets 78 alpha 12 key 1f606bb312efa2fe shared by 2 [('Furry', 'sharedassets0', 78), ('Merman', 'sharedassets0', 288)]
+sharedassets0.assets 157 alpha 76 key bcfd0c03abfe07a8 shared by 1 [('Furry', 'sharedassets0', 157)]
+sharedassets0.assets 176 alpha 73 key fad26b354a3f7773 shared by 2 [('Furry', 'sharedassets0', 176), ('Duda', 'resources', 101)]
+sharedassets0.assets 301 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+
+ Werewolf
+sharedassets0.assets 40 alpha 99 key 1978db8e2b50da23 shared by 1 [('Werewolf', 'sharedassets0', 40)]
+sharedassets0.assets 66 alpha 68 key b8abfd77da412766 shared by 1 [('Werewolf', 'sharedassets0', 66)]
+sharedassets0.assets 239 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+sharedassets0.assets 333 alpha 22 key 5c096b89298c0628 shared by 1 [('Werewolf', 'sharedassets0', 333)]
+sharedassets0.assets 387 alpha 12 key 907084c05321d52e shared by 1 [('Werewolf', 'sharedassets0', 387)]
+
+ Lizard
+sharedassets0.assets 50 alpha 70 key f137657d9916f7b9 shared by 2 [('Lizard', 'sharedassets0', 50), ('FireLizard', 'sharedassets0', 86)]
+sharedassets0.assets 148 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+sharedassets0.assets 303 alpha 101 key 005a124dab94cdd7 shared by 1 [('Lizard', 'sharedassets0', 303)]
+sharedassets0.assets 350 alpha 5 key 53e0d4d4b1029d78 shared by 1 [('Lizard', 'sharedassets0', 350)]
+
+ Apache
+sharedassets0.assets 325 alpha 28 key ab69507afdcef052 shared by 1 [('Apache', 'sharedassets0', 325)]
+sharedassets0.assets 358 alpha 219 key 0dfe816a85346f4b shared by 1 [('Apache', 'sharedassets0', 358)]
+
+ Angel
+sharedassets0.assets 16 alpha 114 key a0fae0badcec4ca2 shared by 1 [('Angel', 'sharedassets0', 16)]
+sharedassets0.assets 55 alpha 8 key 3448af14cb2b7168 shared by 1 [('Angel', 'sharedassets0', 55)]
+sharedassets0.assets 229 alpha 5 key 286c85d3f58ccf24 shared by 1 [('Angel', 'sharedassets0', 229)]
+
+ Alien
+resources.assets 166 alpha 73 key 7be54aef65ec0861 shared by 1 [('Alien', 'resources', 166)]
+resources.assets 238 alpha 198 key c49cdec9925dc8ba shared by 1 [('Alien', 'resources', 238)]
+resources.assets 339 alpha 21 key 1a068a39ca2c762e shared by 10 [('Hellsing', 'sharedassets0', 94), ('DudeSidious', 'resources', 50), ('SnowRider', 'resources', 58), ('DudeVader', 'resources', 72), ('Astronaut', 'resources', 118), ('ExpertSheef', 'resources', 165), ('ImperialStormDuder', 'resources', 210), ('Predator', 'resources', 246), ('ImperialShockDuder', 'resources', 287), ('Alien', 'resources', 339)]
+
+ Dracula
+sharedassets0.assets 147 alpha 53 key f21f1c27e4e6ad40 shared by 1 [('Dracula', 'sharedassets0', 147)]
+sharedassets0.assets 204 alpha 51 key 38f1708a9e6bd522 shared by 1 [('Dracula', 'sharedassets0', 204)]
+sharedassets0.assets 205 alpha 28 key a8ecee3108cfee0a shared by 1 [('Dracula', 'sharedassets0', 205)]
+sharedassets0.assets 292 alpha 27 key e8e45b6334fa85c0 shared by 1 [('Dracula', 'sharedassets0', 292)]
+
+ Cape
+sharedassets0.assets 203 alpha 35 key de383c2619b74136 shared by 1 [('Cape', 'sharedassets0', 203)]
+resources.assets 260 alpha 41 key 88f54a01682df428 shared by 1 [('Cape', 'resources', 260)]
+
+ Hellsing
+sharedassets0.assets 94 alpha 21 key 1a068a39ca2c762e shared by 10 [('Hellsing', 'sharedassets0', 94), ('DudeSidious', 'resources', 50), ('SnowRider', 'resources', 58), ('DudeVader', 'resources', 72), ('Astronaut', 'resources', 118), ('ExpertSheef', 'resources', 165), ('ImperialStormDuder', 'resources', 210), ('Predator', 'resources', 246), ('ImperialShockDuder', 'resources', 287), ('Alien', 'resources', 339)]
+sharedassets0.assets 212 alpha 52 key 94058b8ce9432f02 shared by 5 [('Chief', 'sharedassets0', 101), ('Hellsing', 'sharedassets0', 212), ('SantaTunic', 'sharedassets0', 286), ('Santa', 'resources', 41), ('Chief', 'resources', 245)]
+sharedassets0.assets 383 alpha 122 key d204faff3f4810b0 shared by 1 [('Hellsing', 'sharedassets0', 383)]
+
+ SnowRider
+resources.assets 15 alpha 50 key 73680901bb3b2762 shared by 64 [('Elf', 'sharedassets0', 12), ('ElfTunic', 'sharedassets0', 13), ('TravelerTunic', 'sharedassets0', 21), ('NinjaTunic', 'sharedassets0', 39), ('FireWizardRobe', 'sharedassets0', 45), ('PlagueDoctor', 'sharedassets0', 51), ('PilotArmor', 'sharedassets0', 52), ('DeerCostume', 'sharedassets0', 56), ('Samurai', 'sharedassets0', 59), ('HornsKnight', 'sharedassets0', 82)]
+resources.assets 58 alpha 21 key 1a068a39ca2c762e shared by 10 [('Hellsing', 'sharedassets0', 94), ('DudeSidious', 'resources', 50), ('SnowRider', 'resources', 58), ('DudeVader', 'resources', 72), ('Astronaut', 'resources', 118), ('ExpertSheef', 'resources', 165), ('ImperialStormDuder', 'resources', 210), ('Predator', 'resources', 246), ('ImperialShockDuder', 'resources', 287), ('Alien', 'resources', 339)]
+resources.assets 236 alpha 185 key 81f733fe77bf4971 shared by 1 [('SnowRider', 'resources', 236)]
+
+ Human
+sharedassets0.assets 19 alpha 83 key d7ecb95c86779793 shared by 12 [('Merman', 'sharedassets0', 11), ('Human', 'sharedassets0', 19), ('ZombieB', 'sharedassets0', 70), ('DarkElf', 'sharedassets0', 129), ('Demon', 'sharedassets0', 249), ('Demigod', 'sharedassets0', 255), ('ZombieA', 'sharedassets0', 361), ('Orc', 'sharedassets0', 378), ('Elf', 'sharedassets0', 391), ('ZombieB', 'resources', 51)]
+sharedassets0.assets 62 alpha 8 key 367e2eefbb89c8cb shared by 5 [('Human', 'sharedassets0', 62), ('DarkElf', 'sharedassets0', 79), ('Skeleton', 'sharedassets0', 154), ('Elf', 'sharedassets0', 163), ('Human', 'resources', 277)]
+sharedassets0.assets 244 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+sharedassets0.assets 344 alpha 50 key 73680901bb3b2762 shared by 64 [('Elf', 'sharedassets0', 12), ('ElfTunic', 'sharedassets0', 13), ('TravelerTunic', 'sharedassets0', 21), ('NinjaTunic', 'sharedassets0', 39), ('FireWizardRobe', 'sharedassets0', 45), ('PlagueDoctor', 'sharedassets0', 51), ('PilotArmor', 'sharedassets0', 52), ('DeerCostume', 'sharedassets0', 56), ('Samurai', 'sharedassets0', 59), ('HornsKnight', 'sharedassets0', 82)]
+resources.assets 139 alpha 83 key d7ecb95c86779793 shared by 12 [('Merman', 'sharedassets0', 11), ('Human', 'sharedassets0', 19), ('ZombieB', 'sharedassets0', 70), ('DarkElf', 'sharedassets0', 129), ('Demon', 'sharedassets0', 249), ('Demigod', 'sharedassets0', 255), ('ZombieA', 'sharedassets0', 361), ('Orc', 'sharedassets0', 378), ('Elf', 'sharedassets0', 391), ('ZombieB', 'resources', 51)]
+resources.assets 142 alpha 23 key 457f8df0b5d1bff2 shared by 43 [('SantaTunic', 'sharedassets0', 25), ('NinjaTunic', 'sharedassets0', 48), ('Orc', 'sharedassets0', 63), ('NecromancerRobe', 'sharedassets0', 81), ('SaboteurArmour', 'sharedassets0', 107), ('ThiefTunic', 'sharedassets0', 132), ('Goblin', 'sharedassets0', 133), ('Lizard', 'sharedassets0', 148), ('PlagueDoctor', 'sharedassets0', 155), ('IronKnight', 'sharedassets0', 158)]
+resources.assets 241 alpha 50 key 73680901bb3b2762 shared by 64 [('Elf', 'sharedassets0', 12), ('ElfTunic', 'sharedassets0', 13), ('TravelerTunic', 'sharedassets0', 21), ('NinjaTunic', 'sharedassets0', 39), ('FireWizardRobe', 'sharedassets0', 45), ('PlagueDoctor', 'sharedassets0', 51), ('PilotArmor', 'sharedassets0', 52), ('DeerCostume', 'sharedassets0', 56), ('Samurai', 'sharedassets0', 59), ('HornsKnight', 'sharedassets0', 82)]
+resources.assets 277 alpha 8 key 367e2eefbb89c8cb shared by 5 [('Human', 'sharedassets0', 62), ('DarkElf', 'sharedassets0', 79), ('Skeleton', 'sharedassets0', 154), ('Elf', 'sharedassets0', 163), ('Human', 'resources', 277)]
+
+ Astronaut
+resources.assets 84 alpha 167 key 8e493bb3f58e8784 shared by 1 [('Astronaut', 'resources', 84)]
+resources.assets 118 alpha 21 key 1a068a39ca2c762e shared by 10 [('Hellsing', 'sharedassets0', 94), ('DudeSidious', 'resources', 50), ('SnowRider', 'resources', 58), ('DudeVader', 'resources', 72), ('Astronaut', 'resources', 118), ('ExpertSheef', 'resources', 165), ('ImperialStormDuder', 'resources', 210), ('Predator', 'resources', 246), ('ImperialShockDuder', 'resources', 287), ('Alien', 'resources', 339)]
+resources.assets 215 alpha 50 key 73680901bb3b2762 shared by 64 [('Elf', 'sharedassets0', 12), ('ElfTunic', 'sharedassets0', 13), ('TravelerTunic', 'sharedassets0', 21), ('NinjaTunic', 'sharedassets0', 39), ('FireWizardRobe', 'sharedassets0', 45), ('PlagueDoctor', 'sharedassets0', 51), ('PilotArmor', 'sharedassets0', 52), ('DeerCostume', 'sharedassets0', 56), ('Samurai', 'sharedassets0', 59), ('HornsKnight', 'sharedassets0', 82)]

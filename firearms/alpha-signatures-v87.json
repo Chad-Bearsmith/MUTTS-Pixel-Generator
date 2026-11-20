@@ -1,0 +1,35 @@
+{
+  "format": "PixelHero-v87-Silhouette-Fallback-1",
+  "sourceV86NativeCodeSHA256": "2c1e8f097e2248fc47bf2f081d16f410842d6693683aa9cfa156548829cb1099",
+  "targetedIds": {
+    "2": {
+      "item": "Fire Lizard",
+      "hash": "0xe81dcf5f",
+      "collidingIDs": [
+        2
+      ]
+    },
+    "8": {
+      "item": "Lizard Body",
+      "hash": "0xcb55fb39",
+      "collidingIDs": [
+        8
+      ]
+    },
+    "10": {
+      "item": "Werewolf Body",
+      "hash": "0x0f290826",
+      "collidingIDs": [
+        10
+      ]
+    }
+  },
+  "unionFirearmPixels": 255,
+  "scope": "Whole first-idle silhouette only; helmet combinations retain strict fail-closed behavior until native per-category selection can be identified reliably",
+  "newLiveExamples": [
+    "SpriteSheet.png",
+    "SpriteSheet (1).png",
+    "SpriteSheet (2).png",
+    "SpriteSheet (3).png"
+  ]
+}

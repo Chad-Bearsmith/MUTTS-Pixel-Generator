@@ -1,0 +1,77 @@
+{
+  "format": "PixelHero-v87-PerItemGuardedSwatchSignatures-1",
+  "previousNativeSourceSHA256": "2c1e8f097e2248fc47bf2f081d16f410842d6693683aa9cfa156548829cb1099",
+  "recognizedCases": {
+    "2": {
+      "name": "Fire Lizard",
+      "fingerprint": "0xb789bca7",
+      "relaxedSitesXY": [
+        [
+          32,
+          12
+        ],
+        [
+          32,
+          13
+        ]
+      ]
+    },
+    "8": {
+      "name": "Lizard Body",
+      "fingerprint": "0xe77ead65",
+      "relaxedSitesXY": [
+        [
+          33,
+          13
+        ]
+      ]
+    },
+    "10": {
+      "name": "Werewolf Body",
+      "fingerprint": "0xc120178e",
+      "relaxedSitesXY": [
+        [
+          29,
+          9
+        ],
+        [
+          31,
+          12
+        ],
+        [
+          31,
+          13
+        ],
+        [
+          35,
+          13
+        ],
+        [
+          36,
+          13
+        ]
+      ]
+    }
+  },
+  "realExports": [
+    {
+      "file": "SpriteSheet.png",
+      "item": 2
+    },
+    {
+      "file": "SpriteSheet (1).png",
+      "item": 8
+    },
+    {
+      "file": "SpriteSheet (2).png",
+      "item": 10
+    },
+    {
+      "file": "SpriteSheet (3).png",
+      "item": 10
+    }
+  ],
+  "firearmUnionPixelsExcluded": 255,
+  "helmetCompatibility": "NOT CLAIMED; source-layer native provenance is needed to identify selected items underneath helmets",
+  "originalPath": "unchanged v86 exact/strict/relaxed and all original correction templates/alpha guards"
+}

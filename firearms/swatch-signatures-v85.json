@@ -1,0 +1,77 @@
+{
+  "format": "PixelHero-v85-PaletteInvariantAppearances-1",
+  "signatures": [
+    {
+      "id": 1,
+      "name": "Cape",
+      "hash": "0x2a6325e3"
+    },
+    {
+      "id": 2,
+      "name": "Fire Lizard",
+      "hash": "0x6778b015"
+    },
+    {
+      "id": 3,
+      "name": "Apache Armor",
+      "hash": "0xf3289fec"
+    },
+    {
+      "id": 4,
+      "name": "Alien Armor",
+      "hash": "0xf3289fec"
+    },
+    {
+      "id": 5,
+      "name": "Angel Armor",
+      "hash": "0xd1d77612"
+    },
+    {
+      "id": 6,
+      "name": "Dracula Armor",
+      "hash": "0x2a6325e3"
+    },
+    {
+      "id": 7,
+      "name": "Furry Body",
+      "hash": "0xb7cf5b66"
+    },
+    {
+      "id": 8,
+      "name": "Lizard Body",
+      "hash": "0xe77ead65"
+    },
+    {
+      "id": 9,
+      "name": "Merman Body",
+      "hash": "0x92c317b0"
+    },
+    {
+      "id": 10,
+      "name": "Werewolf Body",
+      "hash": "0x95994762"
+    },
+    {
+      "id": 11,
+      "name": "Hellsing Helmet",
+      "hash": "0xe8f12230"
+    },
+    {
+      "id": 12,
+      "name": "Snow Rider Helmet",
+      "hash": "0xdd34eeb4"
+    }
+  ],
+  "ambiguousPairs": [
+    [
+      "Cape",
+      "Dracula Armor"
+    ],
+    [
+      "Apache Armor",
+      "Alien Armor"
+    ]
+  ],
+  "algorithm": "Alpha and immediate left/top RGB equality, excluding 255 union firearm pixels",
+  "draculaHighlight": "Rank-based adjustment from current dark-red source: synthetic only, live unverified"
+}

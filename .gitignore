@@ -1,0 +1,19 @@
+# Generated output; source/baseline WebGL WASM and data files ARE tracked.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+/dist/
+/out/
+/artifacts/
+/*.exe
+/phm-linux-smoke-*
+/Pixel Hero Maker *.zip
+/PixelHero-v*-Development-Source.zip
+*.tmp
+*.bak

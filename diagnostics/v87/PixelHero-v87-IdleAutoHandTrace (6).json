@@ -1,0 +1,77 @@
+{
+  "format": "PixelHero-v87-AutomaticIdleTrace-1",
+  "capturedAt": "2026-11-20T07:49:45.212Z",
+  "result": {
+    "available": true,
+    "build": "Pixel Hero Maker [v.87]",
+    "mode": "native-automatic-idle-only",
+    "excludedReferenceCategories": [
+      "Back",
+      "Cape"
+    ],
+    "status": 0,
+    "statusDescription": "No armed idle result yet",
+    "idleFrame": "64x64 tile at Unity atlas x=0,y=64; all other tiles excluded",
+    "referencePixelOneBased": [
+      28,
+      20
+    ],
+    "referencePixelZeroBased": [
+      27,
+      19
+    ],
+    "referenceColor": null,
+    "observedSpriteAtlas": {
+      "available": true,
+      "atlasTextureId": 547,
+      "atlasHash": "f72ed321",
+      "alpha254IdleMarkers": 7,
+      "markerColors": [
+        {
+          "rgba": [
+            246,
+            202,
+            159,
+            254
+          ],
+          "pixels": 7
+        }
+      ],
+      "allObservedMarkersMatchNativeReference": false,
+      "caveat": "GPU texture upload observation may not be from the same rebuild as the last native status. Rebuild before recording."
+    },
+    "firearmLayerSlot": null,
+    "detectedMarkers": 0,
+    "changedMarkerPixels": 0,
+    "acceptedMarkerPixels": 0,
+    "freshArm104": true,
+    "freshArm108": false,
+    "optionalArm108Absent": true,
+    "reconstructedAtlasStatus": 0,
+    "reconstructedFirstFrameReference": [
+      0,
+      205,
+      249,
+      255
+    ],
+    "experimentalUnderlay": {
+      "available": true,
+      "status": -1,
+      "description": "Skipped: unexpected managed array/list identity",
+      "firearm": null,
+      "correctedItemCode": null,
+      "matchMode": null,
+      "experimental": true,
+      "scope": "12 item templates, 24 firearm IDs (25 masks); new verified Body swatch guards for Fire Lizard/Lizard/Werewolf; helmets still may skip",
+      "note": "A 5000-series offset denotes the new palette-aware fallback. Status is recorded on the most recent builder call and may not describe the current GPU atlas. v87 additionally handles specific Fire Lizard, Lizard and Werewolf swatches via item-specific verified shade-boundary guards. Helmet combinations remain unverified and may skip: see underlaySourceLayers for read-only layer identity evidence. Dracula recolor highlight still experimental."
+    },
+    "underlaySourceLayers": {
+      "available": false,
+      "reason": "Native snapshot header missing or unsupported"
+    },
+    "requiresManualUnarmedCapture": false,
+    "oldColorGuessingEnabled": false,
+    "otherFramesChangedByThisFix": false,
+    "caveat": "Reports the most recent normal Unity rebuild; native WebGL gameplay and exported SpriteSheet.png still need verification."
+  }
+}

@@ -1,0 +1,296 @@
+common transparency 3841
+AimBolt present 95 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Launcher present 84 marker 9 coords: (27, 17): 0 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+2-Shotgun present 79 marker 7 coords: (27, 17): 0 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Bolt present 61 marker 7 coords: (27, 17): 0 (27, 18): 0 (27, 19): 0 (27, 20): 0 (26, 19): 0 (26, 20): 0 (28, 19): 0 (25, 20): 0 (29, 19): 0
+SVD present 106 marker 7 coords: (27, 17): 0 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Shotgun present 59 marker 0 coords: (27, 17): 0 (27, 18): 0 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+E-11 present 89 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+MachineGun present 117 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+M-16 present 103 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+PowerBazuka present 138 marker 9 coords: (27, 17): 255 (27, 18): 252 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 255 (29, 19): 255
+6-MachineGun present 129 marker 7 coords: (27, 17): 0 (27, 18): 0 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Revolver present 49 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 254
+Sniper2 present 125 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Sniper1 present 127 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+GoldenEagle present 52 marker 0 coords: (27, 17): 0 (27, 18): 0 (27, 19): 0 (27, 20): 0 (26, 19): 0 (26, 20): 0 (28, 19): 0 (25, 20): 0 (29, 19): 0
+StelsPistol present 52 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 254
+AK-47 present 80 marker 7 coords: (27, 17): 0 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 255
+HKG36 present 95 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+DLT-19 present 94 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+SAWN-OFF present 57 marker 7 coords: (27, 17): 0 (27, 18): 0 (27, 19): 255 (27, 20): 255 (26, 19): 0 (26, 20): 0 (28, 19): 255 (25, 20): 0 (29, 19): 252
+6-MiniMachineGun present 121 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 255
+Pistol present 49 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 255 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 0 (29, 19): 254
+Bazuka present 144 marker 7 coords: (27, 17): 255 (27, 18): 255 (27, 19): 255 (27, 20): 0 (26, 19): 255 (26, 20): 255 (28, 19): 255 (25, 20): 255 (29, 19): 255
+
+Cape total 1
+  AimBolt masked 1 of 1 sites [(27, 17)]
+  E-11 masked 1 of 1 sites [(27, 17)]
+  MachineGun masked 1 of 1 sites [(27, 17)]
+  M-16 masked 1 of 1 sites [(27, 17)]
+  PowerBazuka masked 1 of 1 sites [(27, 17)]
+  Revolver masked 1 of 1 sites [(27, 17)]
+  Sniper2 masked 1 of 1 sites [(27, 17)]
+  Sniper1 masked 1 of 1 sites [(27, 17)]
+  StelsPistol masked 1 of 1 sites [(27, 17)]
+  HKG36 masked 1 of 1 sites [(27, 17)]
+  DLT-19 masked 1 of 1 sites [(27, 17)]
+  6-MiniMachineGun masked 1 of 1 sites [(27, 17)]
+  Pistol masked 1 of 1 sites [(27, 17)]
+  Bazuka masked 1 of 1 sites [(27, 17)]
+
+Fire Lizard total 5
+  AimBolt masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  Launcher masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  2-Shotgun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SVD masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  Shotgun masked 2 of 5 sites [(27, 19), (27, 20)]
+  E-11 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  MachineGun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  M-16 masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  PowerBazuka masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  6-MachineGun masked 2 of 5 sites [(27, 19), (27, 20)]
+  Revolver masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper2 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Sniper1 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  StelsPistol masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  AK-47 masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  DLT-19 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SAWN-OFF masked 2 of 5 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Pistol masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Bazuka masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20)]
+
+Apache Armor total 1
+  AimBolt masked 1 of 1 sites [(27, 17)]
+  E-11 masked 1 of 1 sites [(27, 17)]
+  MachineGun masked 1 of 1 sites [(27, 17)]
+  M-16 masked 1 of 1 sites [(27, 17)]
+  PowerBazuka masked 1 of 1 sites [(27, 17)]
+  Revolver masked 1 of 1 sites [(27, 17)]
+  Sniper2 masked 1 of 1 sites [(27, 17)]
+  Sniper1 masked 1 of 1 sites [(27, 17)]
+  StelsPistol masked 1 of 1 sites [(27, 17)]
+  HKG36 masked 1 of 1 sites [(27, 17)]
+  DLT-19 masked 1 of 1 sites [(27, 17)]
+  6-MiniMachineGun masked 1 of 1 sites [(27, 17)]
+  Pistol masked 1 of 1 sites [(27, 17)]
+  Bazuka masked 1 of 1 sites [(27, 17)]
+
+Alien Armor total 4
+  AimBolt masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  Launcher masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  2-Shotgun masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  SVD masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  Shotgun masked 2 of 4 sites [(27, 19), (27, 20)]
+  E-11 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  MachineGun masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  M-16 masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  PowerBazuka masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  6-MachineGun masked 2 of 4 sites [(27, 19), (27, 20)]
+  Revolver masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  Sniper2 masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  Sniper1 masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  StelsPistol masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  AK-47 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  DLT-19 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  SAWN-OFF masked 2 of 4 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  Pistol masked 4 of 4 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  Bazuka masked 2 of 4 sites [(27, 18), (27, 19)]
+
+Angel Armor total 7
+  AimBolt masked 4 of 7 sites [(27, 17), (27, 18), (27, 19), (27, 20)]
+  Launcher masked 3 of 7 sites [(27, 18), (27, 19), (27, 20)]
+  2-Shotgun masked 6 of 7 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SVD masked 3 of 7 sites [(27, 18), (27, 19), (27, 20)]
+  Shotgun masked 2 of 7 sites [(27, 19), (27, 20)]
+  E-11 masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  MachineGun masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  M-16 masked 4 of 7 sites [(27, 17), (27, 18), (27, 19), (27, 20)]
+  PowerBazuka masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  6-MachineGun masked 2 of 7 sites [(27, 19), (27, 20)]
+  Revolver masked 6 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper2 masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Sniper1 masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  StelsPistol masked 6 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (27, 20)]
+  AK-47 masked 3 of 7 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  DLT-19 masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SAWN-OFF masked 2 of 7 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Pistol masked 7 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Bazuka masked 6 of 7 sites [(27, 17), (26, 18), (27, 18), (26, 19), (27, 19), (26, 20)]
+
+Dracula Armor total 16
+  AimBolt masked 6 of 16 sites [(27, 16), (37, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  Launcher masked 4 of 16 sites [(27, 18), (27, 19), (27, 20), (27, 21)]
+  2-Shotgun masked 6 of 16 sites [(37, 16), (38, 16), (27, 18), (27, 19), (27, 20), (27, 21)]
+  SVD masked 9 of 16 sites [(37, 14), (37, 15), (38, 15), (37, 16), (38, 16), (27, 18), (27, 19), (27, 20), (27, 21)]
+  Shotgun masked 2 of 16 sites [(27, 19), (27, 20)]
+  E-11 masked 4 of 16 sites [(27, 17), (27, 18), (27, 19), (27, 20)]
+  MachineGun masked 8 of 16 sites [(37, 15), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  M-16 masked 7 of 16 sites [(37, 15), (37, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  PowerBazuka masked 7 of 16 sites [(25, 16), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  6-MachineGun masked 6 of 16 sites [(37, 15), (38, 15), (37, 16), (38, 16), (27, 19), (27, 20)]
+  Revolver masked 8 of 16 sites [(26, 14), (26, 15), (26, 16), (27, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  Sniper2 masked 9 of 16 sites [(37, 15), (38, 15), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  Sniper1 masked 9 of 16 sites [(37, 15), (38, 15), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  GoldenEagle masked 4 of 16 sites [(37, 15), (38, 15), (37, 16), (38, 16)]
+  StelsPistol masked 8 of 16 sites [(26, 14), (26, 15), (26, 16), (27, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  AK-47 masked 5 of 16 sites [(37, 16), (38, 16), (27, 18), (27, 19), (27, 20)]
+  HKG36 masked 8 of 16 sites [(26, 16), (27, 16), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  DLT-19 masked 6 of 16 sites [(26, 16), (27, 16), (27, 17), (27, 18), (27, 19), (27, 20)]
+  SAWN-OFF masked 2 of 16 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 7 of 16 sites [(37, 16), (38, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  Pistol masked 9 of 16 sites [(26, 14), (26, 15), (26, 16), (27, 16), (27, 17), (27, 18), (27, 19), (27, 20), (27, 21)]
+  Bazuka masked 11 of 16 sites [(25, 15), (26, 15), (37, 15), (25, 16), (26, 16), (27, 16), (37, 16), (38, 16), (27, 17), (27, 18), (27, 19)]
+
+Furry Body total 4
+  AimBolt masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  Launcher masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  2-Shotgun masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  SVD masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  Shotgun masked 2 of 4 sites [(27, 19), (27, 20)]
+  E-11 masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  MachineGun masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  M-16 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  PowerBazuka masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  6-MachineGun masked 2 of 4 sites [(27, 19), (27, 20)]
+  Revolver masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper2 masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper1 masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  StelsPistol masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  AK-47 masked 3 of 4 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  DLT-19 masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  SAWN-OFF masked 2 of 4 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Pistol masked 4 of 4 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Bazuka masked 3 of 4 sites [(27, 18), (26, 19), (27, 19)]
+
+Lizard Body total 5
+  AimBolt masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  Launcher masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  2-Shotgun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SVD masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  Shotgun masked 2 of 5 sites [(27, 19), (27, 20)]
+  E-11 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  MachineGun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  M-16 masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  PowerBazuka masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  6-MachineGun masked 2 of 5 sites [(27, 19), (27, 20)]
+  Revolver masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper2 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Sniper1 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  StelsPistol masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (27, 20)]
+  AK-47 masked 3 of 5 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  DLT-19 masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SAWN-OFF masked 2 of 5 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Pistol masked 5 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Bazuka masked 4 of 5 sites [(27, 18), (26, 19), (27, 19), (26, 20)]
+
+Merman Body total 4
+  AimBolt masked 2 of 4 sites [(27, 19), (27, 20)]
+  Launcher masked 3 of 4 sites [(27, 19), (27, 20), (27, 21)]
+  2-Shotgun masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  SVD masked 3 of 4 sites [(27, 19), (27, 20), (27, 21)]
+  Shotgun masked 2 of 4 sites [(27, 19), (27, 20)]
+  E-11 masked 3 of 4 sites [(27, 19), (26, 20), (27, 20)]
+  MachineGun masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  M-16 masked 3 of 4 sites [(27, 19), (27, 20), (27, 21)]
+  PowerBazuka masked 3 of 4 sites [(27, 19), (26, 20), (27, 20)]
+  6-MachineGun masked 2 of 4 sites [(27, 19), (27, 20)]
+  Revolver masked 2 of 4 sites [(27, 19), (27, 20)]
+  Sniper2 masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  Sniper1 masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  StelsPistol masked 2 of 4 sites [(27, 19), (27, 20)]
+  AK-47 masked 2 of 4 sites [(27, 19), (27, 20)]
+  HKG36 masked 3 of 4 sites [(27, 19), (26, 20), (27, 20)]
+  DLT-19 masked 3 of 4 sites [(27, 19), (26, 20), (27, 20)]
+  SAWN-OFF masked 2 of 4 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  Pistol masked 4 of 4 sites [(27, 19), (26, 20), (27, 20), (27, 21)]
+  Bazuka masked 2 of 4 sites [(27, 19), (26, 20)]
+
+Werewolf Body total 6
+  AimBolt masked 3 of 6 sites [(27, 18), (27, 19), (27, 20)]
+  Launcher masked 3 of 6 sites [(27, 18), (27, 19), (27, 20)]
+  2-Shotgun masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SVD masked 3 of 6 sites [(27, 18), (27, 19), (27, 20)]
+  Shotgun masked 2 of 6 sites [(27, 19), (27, 20)]
+  E-11 masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  MachineGun masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  M-16 masked 3 of 6 sites [(27, 18), (27, 19), (27, 20)]
+  PowerBazuka masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  6-MachineGun masked 2 of 6 sites [(27, 19), (27, 20)]
+  Revolver masked 5 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (27, 20)]
+  Sniper2 masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Sniper1 masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  StelsPistol masked 5 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (27, 20)]
+  AK-47 masked 3 of 6 sites [(27, 18), (27, 19), (27, 20)]
+  HKG36 masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  DLT-19 masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  SAWN-OFF masked 2 of 6 sites [(27, 19), (27, 20)]
+  6-MiniMachineGun masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Pistol masked 6 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20), (27, 20)]
+  Bazuka masked 5 of 6 sites [(26, 18), (27, 18), (26, 19), (27, 19), (26, 20)]
+
+Hellsing Helmet total 1
+  AimBolt masked 1 of 1 sites [(27, 17)]
+  E-11 masked 1 of 1 sites [(27, 17)]
+  MachineGun masked 1 of 1 sites [(27, 17)]
+  M-16 masked 1 of 1 sites [(27, 17)]
+  PowerBazuka masked 1 of 1 sites [(27, 17)]
+  Revolver masked 1 of 1 sites [(27, 17)]
+  Sniper2 masked 1 of 1 sites [(27, 17)]
+  Sniper1 masked 1 of 1 sites [(27, 17)]
+  StelsPistol masked 1 of 1 sites [(27, 17)]
+  HKG36 masked 1 of 1 sites [(27, 17)]
+  DLT-19 masked 1 of 1 sites [(27, 17)]
+  6-MiniMachineGun masked 1 of 1 sites [(27, 17)]
+  Pistol masked 1 of 1 sites [(27, 17)]
+  Bazuka masked 1 of 1 sites [(27, 17)]
+
+Snow Rider Helmet total 1
+  AimBolt masked 1 of 1 sites [(27, 17)]
+  E-11 masked 1 of 1 sites [(27, 17)]
+  MachineGun masked 1 of 1 sites [(27, 17)]
+  M-16 masked 1 of 1 sites [(27, 17)]
+  PowerBazuka masked 1 of 1 sites [(27, 17)]
+  Revolver masked 1 of 1 sites [(27, 17)]
+  Sniper2 masked 1 of 1 sites [(27, 17)]
+  Sniper1 masked 1 of 1 sites [(27, 17)]
+  StelsPistol masked 1 of 1 sites [(27, 17)]
+  HKG36 masked 1 of 1 sites [(27, 17)]
+  DLT-19 masked 1 of 1 sites [(27, 17)]
+  6-MiniMachineGun masked 1 of 1 sites [(27, 17)]
+  Pistol masked 1 of 1 sites [(27, 17)]
+  Bazuka masked 1 of 1 sites [(27, 17)]
+MASK AimBolt d10e4c001cfa095f
+MASK Launcher 0dd4f3cfe5ab9a51
+MASK 2-Shotgun 4251997a4c4067fc
+MASK Bolt ad2105735d1d6794
+MASK SVD 85c0c8d2658734ce
+MASK Shotgun c6c63ca4aaffe169
+MASK E-11 dd84fa3dd0d3ebca
+MASK MachineGun 4e634ed87d670caf
+MASK M-16 0667abb26b0944f5
+MASK PowerBazuka 48fe64fc0cc0b8cf
+MASK 6-MachineGun 91887c84f3ef9c6a
+MASK Revolver d5e676f669efb56d
+MASK Sniper2 1166827590ac8d46
+MASK Sniper1 977335c37cbc046c
+MASK GoldenEagle a5ba2b02dfca0b7b
+MASK StelsPistol 4d7bc9be0a7f2baf
+MASK AK-47 546d9928e54a5721
+MASK HKG36 3e70bb95a5236147
+MASK DLT-19 4d6e14feef7cb90a
+MASK SAWN-OFF a6397bd59cd62d76
+MASK 6-MiniMachineGun 9ec23214fb694f7e
+MASK Pistol ba3f0475962af206
+MASK Bazuka 890da3c7e3e1b2d0

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; connect-src 'self' data: blob:; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' data: blob:; worker-src 'self' blob:; frame-src 'none'; form-action 'self'">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pixel Hero Maker [v.89]</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="stylesheet" href="phm-static-idle.css">
+  <link rel="stylesheet" href="phm-diagnostics-ui.css">
+  <script src="phm-static-idle.js"></script>
+  <script src="phm-preview-inline.js"></script>
+  <script src="phm-compositor-probe.js"></script>
+  <script src="offline-ui.js"></script>
+  <script src="phm-v76-layer-provenance.js"></script>
+  <script src="phm-diagnostics-ui.js"></script>
+</head>
+<body>
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" width="960" height="600" tabindex="0" aria-label="Character, outfit, item and palette selections"></canvas>
+    <canvas id="phm-native-preview-surface" width="64" height="64" aria-hidden="true"></canvas>
+    <div id="unity-loading-bar"><div id="unity-logo"></div><div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div></div>
+    <div id="unity-warning"></div>
+    
+  </div>
+  <section id="phm-diag-host" aria-label="Read-only native diagnostic controls">
+    <button type="button" id="phm-diag-toggle" aria-expanded="false" aria-controls="phm-diag-panel">Diagnostic mode</button>
+    <div id="phm-diag-panel" hidden>
+      <div class="phm-diag-header"><strong>v.88 · Native hand colors + experimental source-layer underlays</strong><span>Original native hand recoloring runs first; Cape and Back are excluded from final hand reference</span></div>
+      <p class="phm-diag-help">Unity's original firearm masks and geometry remain visible, without browser-side restoration. Browser idle preview and 20× cropped-square Export remain in place. Only the native idle hand-marker RGB correction modifies firearm colors. It now ignores Cape and Back when choosing the reference color, not when rendering the character. The twelve corrective underlays retain the accepted exact/swatch-aware rules and add experimental item-source identification when other equipment hides the original reference shape. Corrections write to the item's own input layer beneath subsequent equipment and firearm artwork. Some selected armor plus Cape/Back combinations can still fail the native hand-color source108 guard (status 2); this remains UNFIXED, with read-only diagnostic evidence added. No firearm artwork or hand-color algorithm was changed. No animation playback or tail repair is enabled.</p>
+      <div class="phm-diag-controls">
+        <button type="button" id="phm-diag-source" class="phm-diag-button">Download current system report</button>
+        <button type="button" id="phm-compositor-probe" class="phm-diag-button">Capture read-only renderer draw trace</button>
+      </div>
+      <p id="phm-probe-status" class="phm-diag-note" role="status">Renderer trace available when the character is visible.</p>
+      <div class="phm-v64-frame-panel" id="phm-v76-auto-panel">
+        <strong>Automatic idle hand colors — Cape/Back-aware final native correction</strong>
+        <p class="phm-diag-note">Uses fresh source 104 and source 108 when available; a legitimately absent optional overlay is recognized separately. Reconstructs the current firearm-free reference at (28,20) one-based while excluding only the actual Cape and Back category source arrays from that color sample; those categories remain visible in the character. Recolors only source-verified idle alpha-254 firearm markers (7 or 9) and never guesses skin shades. Missing required inputs cause a safe skip.</p>
+        <div class="phm-diag-controls">
+          <button type="button" id="phm-v76-check-auto" class="phm-diag-button phm-diag-primary">Check automatic idle hand status</button>
+          <button type="button" id="phm-v76-download-auto" class="phm-diag-button">Download idle hand trace JSON</button>
+        </div>
+        <p id="phm-v76-auto-result" class="phm-diag-note" role="status" aria-live="polite">Equip a firearm and change a selection or swatch to rebuild, then check the native status.</p>
+      </div>
+      <div class="phm-v64-frame-panel" id="phm-v76-compare-panel">
+        <strong>Optional layer comparison for future firearm geometry work</strong>
+        <p class="phm-diag-note">Select Firearm=None and record a genuine unarmed rebuild. For a comparable second capture, optionally prepare shadow inputs, equip a firearm without changing any other selection or swatch, then record equipped. The armed-minus-firearm image is incomplete by design and must not be treated as the genuine unarmed reference.</p>
+        <div class="phm-diag-controls"><button type="button" id="phm-v76-record-unarmed" class="phm-diag-button phm-diag-primary">1. Record normal unarmed</button>
+        <button type="button" id="phm-v76-prepare-shadow" class="phm-diag-button">2. Prepare optional shadow comparison</button>
+        <button type="button" id="phm-v76-record-armed" class="phm-diag-button phm-diag-primary">3. Record firearm equipped</button></div>
+        <canvas id="phm-v76-unarmed-preview" width="256" height="256" aria-label="Genuine unarmed composite" style="image-rendering:pixelated;max-width:48%;background:repeating-conic-gradient(#999 0% 25%,#bbb 0% 50%) 50% / 20px 20px;border:1px solid #777"></canvas>
+        <canvas id="phm-v76-armed-preview" width="256" height="256" aria-label="Armed build excluding only final firearm buffer" style="image-rendering:pixelated;max-width:48%;background:repeating-conic-gradient(#999 0% 25%,#bbb 0% 50%) 50% / 20px 20px;border:1px solid #777"></canvas>
+        <p id="phm-v76-status" class="phm-diag-note" role="status" aria-live="polite">Normal automatic idle hand correction requires no manual capture.</p>
+        <div class="phm-diag-controls">
+          <button type="button" id="phm-v76-download-composite" class="phm-diag-button" disabled>Download 3-frame comparison PNG</button>
+          <button type="button" id="phm-v76-download-layers" class="phm-diag-button" disabled>Download source input sheet PNG</button>
+          <button type="button" id="phm-v76-download-arm-sources" class="phm-diag-button" disabled>Download arm source arrays PNG</button>
+          <button type="button" id="phm-v76-download-json" class="phm-diag-button" disabled>Download provenance JSON</button>
+          <button type="button" id="phm-v76-download-full-atlas" class="phm-diag-button" disabled>Download full atlas comparison PNG</button>
+        </div>
+      </div>
+      <p id="phm-diag-status" role="status" aria-live="polite" class="phm-diag-note">Diagnostics ready.</p>
+    </div>
+  </section>
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/WebGL.data",
+        frameworkUrl: buildUrl + "/WebGL.framework.js",
+        codeUrl: buildUrl + "/WebGL.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Hippo Games",
+        productName: "Pixel Hero Maker [v.89]",
+        productVersion: "v.89",
+        // Unity 2021.3: automatically persist IndexedDB changes, avoiding the
+        // deprecated manual JS_FileSystem_Sync() synchronization warning.
+        autoSyncPersistentDataPath: true,
+        // Sprite artwork is pixel-perfect; no multisample antialiasing needed.
+        webglContextAttributes: { antialias: false },
+        showBanner: unityShowBanner,
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+		
+      var gameInstance = null;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+		  gameInstance = unityInstance;
+          window.PHMV76LayerProvenance?.setModule?.(unityInstance.Module);
+          window.PHMIdleFrame?.onUnityReady?.();
+          loadingBar.style.display = "none";
+
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
