@@ -31,7 +31,22 @@ python scripts/run_tests.py --full
 
 `patch_native_underlay_v89.py` asserts the SHA-256 of the pinned `previous-v88.wasm` input and rewrites `game/Build/WebGL.wasm` by replacing **only function 71935**. Changes for later versions need new versioned scripts and tests, not silent edits to v.89 history.
 
-## Packaging the v.89 candidate (not an endorsement of it)
+## Rebuilding the v.90 Alien Armor tail candidate
+
+Reproduce the checked-in helper with Zig 0.17.1.
+
+```sh
+zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_tail_v90.wasm prototype/native_alien_body_tail_v90.c
+python patch_native_alien_tail_v90.py
+python scripts/verify_repository.py
+python scripts/run_tests.py --full
+```
+
+The patcher reconstructs and checks the pinned v.89 WASM, changes builder function 5031, and appends function 71936. The builder clears verified first-idle tail pixels in a per-rebuild copy of the Body array so an equipment toggle can restore the original appearance.
+
+## Packaging the historical v.89 candidate
+
+Run these commands from the v.89 checkout.
 
 ```sh
 python build_release_v89.py

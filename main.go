@@ -17,7 +17,7 @@ import (
     "time"
 )
 
-const productTitle = "Pixel Hero Maker [v.89]"
+const productTitle = "Pixel Hero Maker [v.90]"
 
 // The complete verified Web package is embedded at build time; no external
 // assets, Python installation, or Internet connection are required.

@@ -1,3 +1,9 @@
+Pixel Hero Maker [v.90] — Alien Armor Body-tail correction (development candidate)
+- Alien Armor hides the verified first-idle tail pixels of Fire Lizard, Lizard, Merman, Furry, and Werewolf on the Body item layer in both firearm states.
+- The native hook runs before the current Body and Armor arrays are combined. The v.89 firearm underlay and both v.80 hand-color routines are retained.
+- Validation includes isolated source-mask tests, live Unity atlas comparisons for all five Body selections with Bolt and with Firearm set to Empty, and Unity export checks for Merman and Fire Lizard. Removing Alien Armor restored Fire Lizard in both firearm states.
+- Cape/Back arm-source status 2 and unmatched gear underlay cases remain open. Windows GUI and downloaded release filenames have not been tested.
+
 Pixel Hero Maker [v.89] — Experimental optional companion source support (four item geometry cases)
 - Changed: Native underlay helper 71935 recognizes Apache Armor, Alien Armor, Dracula Armor, and Furry Body by their independently unique 64x64 original item source alpha shapes, even when a companion source buffer is omitted by Unity during an equipped rebuild. Each unique primary source was checked against the 564-item original source texture alpha index. All other item matching rules, including Snow Rider's shared source shape that requires its distinguishing sentinel, remain strict.
 - Corrective pixels: Existing v88 item-specific add, recolor, and erase templates are unchanged. The four selected item changes are written to their own current swatch-adjusted native source arrays, beneath later equipment and the firearm. For Apache, an optional secondary erase is performed only if its secondary source exists. The other original matching paths remain first-choice, and the firearm buffer remains untouched.

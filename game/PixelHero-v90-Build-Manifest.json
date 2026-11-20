@@ -1,0 +1,27 @@
+{
+  "format": "PixelHero-v90-BuildManifest-1",
+  "version": "v.90",
+  "status": "development candidate",
+  "sourceV89WasmSHA256": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+  "newNativeWasmSHA256": "ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd",
+  "nativeChange": "Function 5031 passes the selected Body source, its per-rebuild copy, and the selected Armor array to new function 71936. All other v.89 function bodies are preserved.",
+  "unityAssets": {
+    "Build/WebGL.wasm": "ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "cea957b06039153986a56865bc2ef8eff6327897e41a01e385e377a3b7fdd48a",
+    "Build/WebGL.loader.js": "b57c4a7714dc15be07103018586feb336f49eb09f3805716e91046db2ff34ec6"
+  },
+  "activeScripts": {
+    "offline-ui.js": "3eafaa385289b31d0e01323ccef08e657401a778e404558c2c81f7351fb94089",
+    "phm-compositor-probe.js": "f8015746ac6a875f7a160b7e209030a85e9413ee0e479ff196c0bada8968926e",
+    "phm-diagnostics-ui.js": "570be6972aa61a7a83067aea894c4c39ae9567b3a41ea1ff53492f64ba2b7168",
+    "phm-preview-inline.js": "a60973fc6646f5e9d9f4a86237a72ae1211612dfd151a997add1526a193b42c9",
+    "phm-static-idle.js": "e8cbd472ecc3e6dddfa7c2b965cff9fd9438b1d30bd4fbcc4f8e600c66435585",
+    "phm-v76-layer-provenance.js": "d469b7a3411eab807febb8ae6506d3ceeb027ecafc49cd821600f35bcb5d080f"
+  },
+  "activeCss": {
+    "phm-diagnostics-ui.css": "c5a3b7100422db563602d2c71de2cb9b502892e79593157b8664c3240dab6f81",
+    "phm-static-idle.css": "7c3ee6d1a61028adbb750cdb35014312296673a3b0e8dd2878e1eb2d81f33e86"
+  },
+  "entryHTMLSHA256": "8ce3e9b39d0d8b046f0d2367b93b78032f7544da56bf7dd4682433cbe8398f95"
+}

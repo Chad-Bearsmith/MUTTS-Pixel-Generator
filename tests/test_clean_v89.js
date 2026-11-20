@@ -1,13 +1,14 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const version=process.argv[3]||'v.89';
 const root=process.argv[2],src=n=>fs.readFileSync(path.join(root,n),'utf8');
 const index=src('index.html');const names=[...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(m=>m[1]);
 assert.deepEqual(names,['phm-static-idle.js','phm-preview-inline.js','phm-compositor-probe.js','offline-ui.js','phm-v76-layer-provenance.js','phm-diagnostics-ui.js']);
 for(const name of names){assert(fs.existsSync(path.join(root,name)),name)}
 for(const name of ['phm-live-skin-repair.js','phm-final-frame-compositor.js','phm-geometry-review.js','phm-firearm-geometry.js','phm-idle-weapon-guard.js','phm-v56-fixed-hand.js','phm-v58-auto-hand.js','phm-session-recorder.js','firearm-skin-repair.js'])assert(!fs.existsSync(path.join(root,name)),name+' must be removed');
-assert(index.includes('<title>Pixel Hero Maker [v.89]</title>'));
-assert(index.includes('productName: "Pixel Hero Maker [v.89]"'));
-assert(index.includes('productVersion: "v.89"'));
+assert(index.includes(`<title>Pixel Hero Maker [${version}]</title>`));
+assert(index.includes(`productName: "Pixel Hero Maker [${version}]"`));
+assert(index.includes(`productVersion: "${version}"`));
 // Old geometry path must have no references or dependency, not merely a disabled flag.
 assert(!/PHMFinalFrameCompositor|PHMGeometryReview|PHMLiveSkinRepair/.test(src('phm-static-idle.js')));
 assert(!/PHMV56HandResolver|PHMV58AutoHand/.test(src('phm-v76-layer-provenance.js')));
@@ -47,7 +48,7 @@ context.window.PHMCompositorProbe.activeSpriteImage=()=>({width:576,height:928,r
 assert.equal(context.window.PHMIdleFrame.refresh(),true);
 assert.equal(context.window.PHMIdleFrame.report().ready,true);
 assert.equal(context.window.PHMIdleFrame.report().previewUpdates,1);
-assert.equal(context.window.PHMIdleFrame.report().version,'v.89');
+assert.equal(context.window.PHMIdleFrame.report().version,version);
 assert.deepEqual(Array.from(context.window.PHMIdleFrame.extractFirstIdle(topdown).subarray((19*64+27)*4,(19*64+27)*4+4)),[37,91,205,255]);
 assert(context.window.PHMIdleFrame.exportIdle());
 assert.equal(clicked.at(-1).name,'SpriteSheet.png');

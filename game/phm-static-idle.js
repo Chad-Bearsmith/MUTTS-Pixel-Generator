@@ -1,4 +1,4 @@
-/* Pixel Hero Maker [v.89] — static idle presentation, direct native atlas.
+/* Pixel Hero Maker [v.90] — static idle presentation, direct native atlas.
  * Scene level0 draws the ORIGINAL Unity preview with both body/weapon Animator
  * components disabled and exposes its existing native Save button as "Export".
  * Unity's native controls, not an HTML overlay, are visible inside the canvas.
@@ -8,7 +8,7 @@
  */
 (()=>{'use strict';
 const CELL=64,SCALE=20,SIZE=CELL*SCALE;
-const stats={version:'v.89',mode:'native-single-idle',sourceCell:[0,1],
+const stats={version:'v.90',mode:'native-single-idle',sourceCell:[0,1],
   originalPixelSize:[64,64],outputScale:20,outputPaddingPixels:0,outputPixelSize:null,
   ready:false,previewUpdates:0,exported:0,interceptedNativeDownloads:0,
   nativeButtonClicks:0,lastTextureId:null,lastTextureHash:null,lastError:null};

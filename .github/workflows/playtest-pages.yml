@@ -1,0 +1,40 @@
+name: Deploy public playtest
+on:
+  push:
+    branches: [codex/alien-body-tail]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/codex/alien-body-tail'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          python3 scripts/verify_repository.py
+          python3 scripts/run_tests.py --smoke
+      - name: Stage playable web assets
+        run: |
+          mkdir public
+          cp -R game/Build game/TemplateData public/
+          cp game/index.html game/*.js game/*.css game/phm-probe-manifest.json public/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deployment

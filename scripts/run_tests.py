@@ -8,7 +8,8 @@ if opts.smoke==opts.full:P.error('Choose exactly one of --smoke or --full')
 if not shutil.which('node'):
  raise SystemExit('Node.js is required; install from https://nodejs.org/')
 smoke=[
- ('tests/test_clean_v89.js','game'),
+ ('tests/test_clean_v89.js','game','v.90'),
+ ('tests/test_native_alien_body_tail_v90.js',),
  ('tests/test_native_pipeline_order.js',),
  ('tests/test_native_cape_back.js',),
  ('prototype/test_native_v89_uploads.js',),

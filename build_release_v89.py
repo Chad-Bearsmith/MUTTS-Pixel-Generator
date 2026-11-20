@@ -23,6 +23,7 @@ def make_zip(path,members):
  print('PASS ZIP',repr(path.name),len(members),'members',path.stat().st_size)
 
 def build():
+ assert f'<title>{TITLE}</title>' in (G/'index.html').read_text(), 'Use the v.89 checkout to package v.89'
  js=['offline-ui.js','phm-compositor-probe.js','phm-diagnostics-ui.js','phm-preview-inline.js','phm-static-idle.js','phm-v76-layer-provenance.js']
  css=['phm-diagnostics-ui.css','phm-static-idle.css']
  assets=['Build/WebGL.wasm','Build/WebGL.data','Build/WebGL.framework.js','Build/WebGL.loader.js']

@@ -50,7 +50,7 @@
   const base=dst+FULL_META,rd=i=>view.getUint32(base+i,true);
   if(rd(0)!==FULL_MAGIC || rd(92)!==ARRAY_PIXELS)throw Error('Full atlas native snapshot not initialized; trigger a fresh rebuild');
   const status=rd(24),valid=status===1||status===4;
-  const info={format:'PixelHero-v89-FullAtlas-1',dimensions:[ATLAS_W,ATLAS_H],totalPixels:ARRAY_PIXELS,
+  const info={format:'PixelHero-v90-FullAtlas-1',dimensions:[ATLAS_W,ATLAS_H],totalPixels:ARRAY_PIXELS,
    source:'Native synchronous merge excluding Firearm; armed path adds source104 and the optional source108 when selected',
    nativeStatus:status, statusDescription:({0:'not attempted',1:'full reconstruction and unarmed-baseline comparison completed',2:'skipped: required source missing or expected optional source failed to generate',3:'skipped: firearm layer is not last',4:'reconstructed, but no genuine unarmed baseline exists'})[status]||'unknown',
    unarmedCaptureCount:rd(4),armedCaptureCount:rd(8),hasUnarmedBaseline:rd(12)===1,
@@ -214,7 +214,7 @@
   for(let i=0;i<u.layerCount;i++)layout.push({tile:layout.length,description:'unarmed input '+i});
   layout.push({tile:layout.length,description:'armed-minus-gun composite'});
   for(let i=0;i<a.layerCount;i++)layout.push({tile:layout.length,description:'equipped input '+i+(i===a.firearmLayerSlot?' (firearm)':'')});
-  return {format:'PixelHero-v89-BuilderArrayOutputs-1',build:'Pixel Hero Maker [v.89]',capturedAt:new Date().toISOString(),
+  return {format:'PixelHero-v90-BuilderArrayOutputs-1',build:'Pixel Hero Maker [v.90]',capturedAt:new Date().toISOString(),
    method:'One-shot nonrecursive armed shadow pixel-generation probe from builder source sites 104/108, without final-merge insertion; compares with genuine unarmed output',
    assumptions:['The user did not alter other item selections or swatches between the two captures','A firearm-free normal rebuild contains all parts that Unity normally renders when no firearm is selected'],
    unarmed:u,armed:a,shadowComparisons,
@@ -245,18 +245,18 @@
  function exportPng(which){if(!unarmed||!armed)throw Error('Record both states first');
   let pixels,w,h,name;
   if(which==='comparison'){
-   w=192;h=64;name='PixelHero-v89-CompositeComparison.png';pixels=new Uint8ClampedArray(w*h*4);
+   w=192;h=64;name='PixelHero-v90-CompositeComparison.png';pixels=new Uint8ClampedArray(w*h*4);
    [unarmed.composite,armed.composite,armed.fullyArmed].forEach((frame,t)=>{
     for(let y=0;y<F;y++)pixels.set(frame.subarray(y*F*4,(y+1)*F*4),(y*w+t*F)*4);
    });
   }else if(which==='arm-sources'){
-   w=F*2;h=F*2;name='PixelHero-v89-ArmSources.png';pixels=new Uint8ClampedArray(w*h*4);
+   w=F*2;h=F*2;name='PixelHero-v90-ArmSources.png';pixels=new Uint8ClampedArray(w*h*4);
    const frames=[...unarmed.sourceFrames,...armed.sourceFrames];
    frames.forEach((frame,t)=>{if(!frame)return;const ox=(t%2)*F,oy=Math.floor(t/2)*F;
     for(let y=0;y<F;y++)pixels.set(frame.subarray(y*F*4,(y+1)*F*4),((oy+y)*w+ox)*4);
    });
   }else{
-   const tiles=[unarmed.composite,...unarmed.layers,armed.composite,...armed.layers];w=F*4;h=F*Math.ceil(tiles.length/4);name='PixelHero-v89-LayerInputs.png';pixels=new Uint8ClampedArray(w*h*4);
+   const tiles=[unarmed.composite,...unarmed.layers,armed.composite,...armed.layers];w=F*4;h=F*Math.ceil(tiles.length/4);name='PixelHero-v90-LayerInputs.png';pixels=new Uint8ClampedArray(w*h*4);
    tiles.forEach((frame,t)=>{const ox=(t%4)*F,oy=Math.floor(t/4)*F;
     for(let y=0;y<F;y++)pixels.set(frame.subarray(y*F*4,(y+1)*F*4),((oy+y)*w+ox)*4);
    });
@@ -274,11 +274,11 @@
   });
   canvas.toBlob(blob=>{
     if(!blob){status('Full atlas PNG conversion failed');return;}
-    deliver(blob,'PixelHero-v89-FullAtlasComparison.png');
+    deliver(blob,'PixelHero-v90-FullAtlasComparison.png');
   },'image/png');
  }
  function deliver(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),20000);}
- function exportJson(){deliver(new Blob([JSON.stringify(doc(),null,2)],{type:'application/json'}),'PixelHero-v89-BuilderProvenance.json');}
+ function exportJson(){deliver(new Blob([JSON.stringify(doc(),null,2)],{type:'application/json'}),'PixelHero-v90-BuilderProvenance.json');}
  function enableDownloads(){const ready=!!unarmed&&!!armed&&armed.report.serial>unarmed.report.serial;
   for(const id of ['phm-v76-download-json','phm-v76-download-composite','phm-v76-download-layers','phm-v76-download-arm-sources','phm-v76-download-full-atlas']){
     const x=$(id);if(x)x.disabled=!ready||(id==='phm-v76-download-full-atlas'&&!armed?.fullAtlasBytes);
@@ -448,7 +448,7 @@
   const n=rd(104);
   const selectedReference=n===1||n===4?rgba(rd(112)):null;
   const descriptions={0:'No armed idle result yet',1:'Idle hand markers recolored from current Cape/Back-excluded body/arm reference',2:'Skipped: required source missing or optional-source absence not proven',3:'Skipped: unexpected firearm merge order',4:'Skipped: reference pixel transparent',5:'Skipped: no alpha-254 hand markers',6:'Skipped: markers do not match the source-verified count (7 or 9)'};
-  return {available:true,build:'Pixel Hero Maker [v.89]',mode:'native-automatic-idle-only',excludedReferenceCategories:['Back','Cape'],status:n,statusDescription:descriptions[n]||'Unknown status',
+  return {available:true,build:'Pixel Hero Maker [v.90]',mode:'native-automatic-idle-only',excludedReferenceCategories:['Back','Cape'],status:n,statusDescription:descriptions[n]||'Unknown status',
    idleFrame:'64x64 tile at Unity atlas x=0,y=64; all other tiles excluded',
    referencePixelOneBased:[28,20],referencePixelZeroBased:[27,19],referenceColor:selectedReference,observedSpriteAtlas:observedIdleMarkers(selectedReference),
    firearmLayerSlot:n===0?null:rd(116),detectedMarkers:rd(108),changedMarkerPixels:rd(120),acceptedMarkerPixels:rd(124),
@@ -458,7 +458,7 @@
  }
  function saveAutomaticIdleTrace(){
   const result=automaticIdleStatus();
-  deliver(new Blob([JSON.stringify({format:'PixelHero-v89-AutomaticIdleTrace-1',capturedAt:new Date().toISOString(),result},null,2)],{type:'application/json'}),'PixelHero-v89-IdleAutoHandTrace.json');
+  deliver(new Blob([JSON.stringify({format:'PixelHero-v90-AutomaticIdleTrace-1',capturedAt:new Date().toISOString(),result},null,2)],{type:'application/json'}),'PixelHero-v90-IdleAutoHandTrace.json');
   status(result.statusDescription||result.reason||'No automatic correction observed');
  }
  function status(msg){for(const id of ['phm-v76-status','phm-v76-auto-result']){const x=$(id);if(x)x.textContent=msg;}}
