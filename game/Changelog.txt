@@ -1,3 +1,10 @@
+Pixel Hero Maker [v.90] — Player build
+- Removed the diagnostic panel, tracing, reference manifest, and diagnostic native exports from the player.
+- Retained the Alien Armor Body-tail correction and accepted hand-color routines. Restored the v.87 firearm underlay and retired the experimental v.88/v.89 source-layer matching.
+- The player loads bundled assets only. Unity web requests and external navigation are disabled. Sprite PNG export stays local.
+- Verified Unity Web exports for Fire Lizard with Alien Armor, both with Bolt and with Firearm set to Empty. PNG names and pixels matched the v.90 candidate, and the browser made only packaged asset reads.
+- Some Armor and Cape/Back combinations can still produce an incorrect firearm hand color.
+
 Pixel Hero Maker [v.90] — Alien Armor Body-tail correction (development candidate)
 - Alien Armor hides the verified first-idle tail pixels of Fire Lizard, Lizard, Merman, Furry, and Werewolf on the Body item layer in both firearm states.
 - The native hook runs before the current Body and Armor arrays are combined. The v.89 firearm underlay and both v.80 hand-color routines are retained.

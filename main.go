@@ -21,7 +21,7 @@ const productTitle = "Pixel Hero Maker [v.90]"
 
 // The complete verified Web package is embedded at build time; no external
 // assets, Python installation, or Internet connection are required.
-//go:embed game
+//go:embed game/index.html game/offline-ui.js game/phm-static-idle.js game/phm-sprite-atlas.js game/phm-static-idle.css game/Build game/TemplateData
 var contents embed.FS
 
 func main() {
@@ -40,6 +40,12 @@ func main() {
             http.Error(w, "This offline game is available only at its local launcher address.", http.StatusForbidden)
             return
         }
+        if r.Method != http.MethodGet && r.Method != http.MethodHead {
+            w.Header().Set("Allow", "GET, HEAD")
+            http.Error(w, "Only game asset reads are supported.", http.StatusMethodNotAllowed)
+            return
+        }
+        w.Header().Set("Referrer-Policy", "no-referrer")
         w.Header().Set("Cache-Control", "no-store")
         w.Header().Set("X-Content-Type-Options", "nosniff")
         switch {

@@ -8,7 +8,7 @@ if opts.smoke==opts.full:P.error('Choose exactly one of --smoke or --full')
 if not shutil.which('node'):
  raise SystemExit('Node.js is required; install from https://nodejs.org/')
 smoke=[
- ('tests/test_clean_v89.js','game','v.90'),
+ ('tests/test_player_v90.js',),
  ('tests/test_native_alien_body_tail_v90.js',),
  ('tests/test_native_pipeline_order.js',),
  ('tests/test_native_cape_back.js',),
@@ -16,6 +16,8 @@ smoke=[
  ('prototype/test_native_v89_items.js',),
 ]
 full=smoke+[
+ ('prototype/test_native_v87_inherited.js',),
+ ('prototype/test_native_v87_swatches.js',),
  ('prototype/test_native_v89_layers.js',),
  ('prototype/test_native_v89_swatches.js',),
  ('prototype/test_native_v89_inherited_from_85.js',),

@@ -1,7 +1,7 @@
 'use strict';
 /* Read-only v88 arm metadata: invalid source108 does not turn into a guessed body/skin color. */
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),path=require('path');
-const js=fs.readFileSync(path.join(__dirname,'../game/phm-v76-layer-provenance.js'),'utf8');
+const js=fs.readFileSync(path.join(__dirname,'fixtures/legacy-web/phm-v76-layer-provenance.js'),'utf8');
 const memory=new WebAssembly.Memory({initial:512}),dst=0x1000000;
 const view=new DataView(memory.buffer),set=(p,v)=>view.setUint32(p,v>>>0,true);
 const STRIDE=64*64*4,FRAME_TOTAL=64+25*STRIDE,FULL_META=FRAME_TOTAL+4096+64+2*STRIDE;

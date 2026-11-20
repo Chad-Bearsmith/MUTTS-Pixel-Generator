@@ -1,6 +1,6 @@
 # Pixel Hero Maker — preservation and Codex development repository
 
-**Current development candidate: `Pixel Hero Maker [v.90]`, based on the imported experimental v.89 build.**
+**Current player build: `Pixel Hero Maker [v.90]`.**
 
 This repository captures the project's supplied **compiled Unity WebGL game**, custom native WASM patch sources, launcher source, scripts, test fixtures, visual references, and native diagnostics. **It is not a Unity Editor project and does not contain the original Unity C# source/project hierarchy.** Future development will mainly modify the WASM/JavaScript build pipeline and verify actual Unity sprite exports.
 
@@ -16,7 +16,7 @@ This repository captures the project's supplied **compiled Unity WebGL game**, c
 
 | Path | Meaning |
 |---|---|
-| `game/` | **v.90 development** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
+| `game/` | **v.90 player** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
 | `previous-v80.wasm` ... `previous-v88.wasm` | Imported SHA-pinned previous native builds, **not** evidence that all versions were user-accepted |
 | `prototype/` | Native C correction helpers, compiled helper WASMs, and regression tests |
 | `tests/` | Unity native fixtures, Javascript probes, hand-color regression tests, and release test helpers |

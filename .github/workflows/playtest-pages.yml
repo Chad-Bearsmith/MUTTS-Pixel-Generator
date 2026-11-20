@@ -32,7 +32,8 @@ jobs:
         run: |
           mkdir public
           cp -R game/Build game/TemplateData public/
-          cp game/index.html game/*.js game/*.css game/phm-probe-manifest.json public/
+          cp game/index.html game/offline-ui.js game/phm-static-idle.js \
+            game/phm-sprite-atlas.js game/phm-static-idle.css public/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

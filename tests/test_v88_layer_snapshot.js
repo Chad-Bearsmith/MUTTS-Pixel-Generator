@@ -1,7 +1,7 @@
 'use strict';
 /* Read-only browser diagnostic: mocked native snapshot, no pixel writes. */
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),path=require('path');
-const js=fs.readFileSync(path.join(__dirname,'../game/phm-v76-layer-provenance.js'),'utf8');
+const js=fs.readFileSync(path.join(__dirname,'fixtures/legacy-web/phm-v76-layer-provenance.js'),'utf8');
 const memory=new WebAssembly.Memory({initial:512}),dst=0x1000000;
 const dv=new DataView(memory.buffer),set=(p,x)=>dv.setUint32(p,x>>>0,true);
 const HEAD=64,STRIDE=64*64*4,FRAME_TOTAL=HEAD+25*STRIDE,prov=dst+FRAME_TOTAL;
