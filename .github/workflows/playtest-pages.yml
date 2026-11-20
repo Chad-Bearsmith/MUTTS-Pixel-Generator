@@ -1,7 +1,7 @@
 name: Deploy public playtest
 on:
   push:
-    branches: [codex/alien-body-tail]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/codex/alien-body-tail'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
