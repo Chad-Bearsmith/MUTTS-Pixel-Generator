@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.93.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.94.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -33,7 +33,7 @@ python scripts/run_tests.py --full
 
 ## Rebuilding the native player
 
-The v.93 player builds on v.92 and replaces only the native underlay function. The Unity data stays pinned.
+The v.94 player uses the v.93 native build unchanged. Its idle preview draws in Unity's WebGL canvas through `game/mutts-sprite-atlas.js`.
 
 Reproduce the checked-in helpers with Zig 0.17.1.
 

@@ -1,3 +1,7 @@
+MUTTS Pixel Generator [v.94] — In-canvas Unity preview
+- Moved the idle sprite preview into Unity’s WebGL render pass and removed the separate HTML preview canvas. The preview still uses the combined idle sprite, including any equipped firearm.
+- The export keeps its existing crop, transparency, 20× scaling, and SpriteSheet.png filename.
+
 MUTTS Pixel Generator [v.93] — Small Backpack firearm correction
 - Preserved the Small Backpack pixel that an Apache Armor correction could erase when a firearm was equipped. The backpack keeps its original swatch and stays behind foreground layers.
 - Verified in Chromium preview and SpriteSheet.png exports with two Bolt swatches, E-11 covering the pixel, and the firearm unequipped.

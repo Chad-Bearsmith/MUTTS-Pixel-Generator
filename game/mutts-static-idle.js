@@ -1,12 +1,9 @@
-/* Draw the static idle preview from Unity's combined character atlas.
- * The native Unity controls include the existing Save button labeled "Export".
- * This bridge paints the 64x64 first-idle cell (x=0,y=64) and saves it at 20x
- * nearest-neighbor scale through that button.
- * It never modifies the compiled Unity WASM or supplies animated frames.
+/* Export Unity's combined first-idle sprite at 20× nearest-neighbor scale
+ * through the existing Unity Save button labeled "Export".
  */
 (()=>{'use strict';
 const CELL=64,SCALE=20;
-let current=null,busy=false;
+let busy=false;
 /* Extract the smallest alpha-visible bounding rectangle, centered in a
  * square whose side length is max(width,height). Only the shorter dimension
  * receives transparent pixels (if any), with any odd extra on right/bottom.
@@ -28,29 +25,11 @@ function cropIdle(frame){
  }
  return {pixels,width:side,height:side};
 }
-function paintNativePreview(frame){
- // The overlay lives INSIDE #unity-container, in the exact area of the
- // original preview SpriteRenderer. It is not an external browser editor.
- const preview=document.getElementById('mutts-native-preview-surface');
- if(!preview)return false;
- const ctx=preview.getContext('2d',{alpha:true});if(!ctx)return false;
- ctx.clearRect(0,0,CELL,CELL);
- ctx.putImageData(new ImageData(frame,CELL,CELL),0,0);
- return true;
-}
-function refresh(){
- const frame=window.MUTTSSpriteAtlas.idleFrame();
- if(!frame)return false;
- if(!current||!frame.every((v,i)=>v===current[i])){
-  if(!paintNativePreview(frame))return false;
-  current=frame;
- }
- return true;
-}
 function imageURL(){
- if(!refresh())throw Error('Idle sprite not available. Choose a character or change an item first.');
+ const frame=window.MUTTSSpriteAtlas.idleFrame();
+ if(!frame)throw Error('Idle sprite not available. Choose a character or change an item first.');
  // Browser PNG encoder, but the UI control is an actual Unity Button.
- const cropped=cropIdle(current);
+ const cropped=cropIdle(frame);
  const src=document.createElement('canvas');src.width=cropped.width;src.height=cropped.height;
  const s=src.getContext('2d',{alpha:true});if(!s)throw Error('2D image canvas unavailable');
  s.putImageData(new ImageData(cropped.pixels,cropped.width,cropped.height),0,0);
@@ -109,7 +88,6 @@ function setupNativeExportHitbox(){
    if(eventType==='pointerup')exportIdle();
   },true);
  }
- canvas.addEventListener('pointerup',()=>{setTimeout(refresh,100);setTimeout(refresh,450);},{passive:true});
 }
 // Do not pass animation hotkeys to Unity. Body/item selection remains clickable.
 document.addEventListener('keydown',ev=>{
@@ -120,7 +98,5 @@ document.addEventListener('keydown',ev=>{
   ev.preventDefault();ev.stopImmediatePropagation();
  }
 },true);
-function init(){setupNativeExportHitbox();setInterval(refresh,220);}
-window.MUTTSIdleFrame={ready:()=>current!==null,onUnityReady:()=>{setTimeout(refresh,100);setTimeout(refresh,800);}};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupNativeExportHitbox);else setupNativeExportHitbox();
 })();

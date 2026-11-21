@@ -1,4 +1,4 @@
-MUTTS Pixel Generator [v.93]
+MUTTS Pixel Generator [v.94]
 
 Serve the game directory over local HTTP and open index.html for the Web
 build. The Windows launcher serves its bundled assets on your computer.

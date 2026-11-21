@@ -50,8 +50,11 @@ active_bodies=tail.v89.code_bodies(active_sections[10])
 assert len(active_bodies)==len(new_bodies)
 assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(new_bodies,active_bodies)) if a!=b]==[71935]
 print('PASS v93 changes only the native underlay function')
-m=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
+m=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
+v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
+assert m['unityAssets']==v93['unityAssets']
+assert m['sourceV93PlayerWasmSHA256']==tail.sha256(active)
 assert {n:h for n,h in m['unityAssets'].items() if n!='Build/WebGL.wasm'}=={n:h for n,h in v92['unityAssets'].items() if n!='Build/WebGL.wasm'}
 assert m['sourceV92PlayerWasmSHA256']==v92['newNativeWasmSHA256']==tail.sha256(v92_native)
 assert m['underlayHelperWasmSHA256']==H(backpack.UNDERLAY_HELPER)
@@ -70,5 +73,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v93 Web manifest, product titles, source references, and diagnostics')
+print('PASS v94 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

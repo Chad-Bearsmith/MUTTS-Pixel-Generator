@@ -12,7 +12,8 @@ async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js']);
-    assert(index.includes('<title>MUTTS Pixel Generator [v.93]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.94]</title>'));
+    assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
     assert(index.includes('name="referrer" content="no-referrer"'));
@@ -24,26 +25,59 @@ async function main() {
 
     const listeners = new Map(), downloads = [], requests = [];
     const context2D = { clearRect() {}, putImageData() {}, drawImage() {} };
+    const unityVAO = {};
     class WebGL {
         constructor(id = 'unity-canvas') {
-            this.canvas = { id };
+            this.canvas = { id, addEventListener: (name, listener) => { this.onRestored = listener; } };
             this.TEXTURE0 = 33984;
             this.TEXTURE_2D = 3553;
             this.FRAMEBUFFER = 36160;
             this.DRAW_FRAMEBUFFER = 36009;
             this.RGBA = 6408;
             this.UNSIGNED_BYTE = 5121;
+            this.LINK_STATUS = 35714;
+            this.TRIANGLE_STRIP = 5;
+            this.drawingBufferWidth = 960;
+            this.drawingBufferHeight = 600;
             this.draws = 0;
+            this.previews = 0;
+            this.vao = unityVAO;
+            this.depth = true;
         }
         activeTexture() {}
         bindTexture() {}
         bindFramebuffer() {}
-        useProgram() {}
-        getProgramParameter(program) { return program.uniforms.length; }
+        useProgram(program) { this.currentProgram = program; }
+        getProgramParameter(program, key) { return key === this.LINK_STATUS ? !this.failLink : program.uniforms.length; }
         getActiveUniform(program, index) { return { name: program.uniforms[index] }; }
+        createProgram() { return { preview: true }; }
+        createShader() { return {}; }
+        shaderSource() {}
+        compileShader() {}
+        attachShader() {}
+        deleteShader() {}
+        linkProgram() {}
+        deleteProgram() {}
+        createVertexArray() { return {}; }
+        getUniformLocation(_program, name) { return name; }
+        uniform1f(name, value) { this[name] = value; }
+        bindVertexArray(vao) { this.vao = vao; }
+        getParameter() { return this.vao; }
+        isEnabled() { return this.depth; }
+        enable() { this.depth = true; }
+        disable() { this.depth = false; }
         texImage2D(...args) { this.lastUpload = args; return 'uploaded'; }
         texSubImage2D(...args) { this.lastUpload = args; return 'uploaded'; }
-        drawArrays() { this.draws++; }
+        drawArrays(mode, start, count) {
+            if (this.currentProgram?.preview) {
+                assert.deepEqual([mode, start, count], [this.TRIANGLE_STRIP, 0, 4]);
+                assert.notEqual(this.vao, unityVAO);
+                assert.equal(this.depth, false);
+                this.previews++;
+            } else {
+                this.draws++;
+            }
+        }
     }
     class XHR {
         constructor() { this.withCredentials = false; }
@@ -61,10 +95,7 @@ async function main() {
     const document = {
         readyState: 'loading',
         addEventListener(name, listener) { listeners.set(name, listener); },
-        getElementById(id) {
-            if (id === 'mutts-native-preview-surface') return { getContext: () => context2D };
-            return null;
-        },
+        getElementById() { return null; },
         createElement() {
             return { getContext: () => context2D, toDataURL: () => 'data:image/png;base64,dGVzdA==' };
         },
@@ -79,10 +110,9 @@ async function main() {
             assert.equal(options.headers, undefined);
         },
     };
-    let refresh;
     const sandbox = vm.createContext({
         window, document, navigator, URL, Request, HTMLAnchorElement: Anchor,
-        ImageData: MockImageData, setInterval(fn) { refresh = fn; },
+        ImageData: MockImageData,
     });
     for (const name of scripts) vm.runInContext(source(name), sandbox, { filename: name });
     listeners.get('DOMContentLoaded')();
@@ -124,17 +154,21 @@ async function main() {
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, atlas);
     gl.useProgram(sprite);
+    gl.drawArrays();
+    assert.equal(gl.draws, 1, 'native startup draw without a captured atlas');
     assert.equal(gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 576, 928, 0, gl.RGBA, gl.UNSIGNED_BYTE, raw), 'uploaded');
     assert.equal(gl.lastUpload[8], raw);
     gl.drawArrays();
-    assert.equal(gl.draws, 1, 'native sprite draws while the idle surface is starting');
-    refresh();
-    assert(window.MUTTSIdleFrame.ready());
-    gl.drawArrays();
-    assert.equal(gl.draws, 1, 'combined body draw is suppressed');
+    assert.equal(gl.draws, 1, 'idle quad replaces the scene body draw');
+    assert.equal(gl.previews, 1);
+    assert.equal(gl.viewportAspect, 960 / 600);
+    assert.equal(gl.currentProgram, sprite);
+    assert.equal(gl.vao, unityVAO);
+    assert.equal(gl.depth, true);
     gl.bindTexture(gl.TEXTURE_2D, {});
     gl.drawArrays();
     assert.equal(gl.draws, 1, 'separate firearm draw is suppressed');
+    assert.equal(gl.previews, 1, 'the firearm does not issue a duplicate quad');
     gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER, {});
     gl.drawArrays();
     assert.equal(gl.draws, 2, 'offscreen sprite draws are preserved');
@@ -154,13 +188,28 @@ async function main() {
     raw.set([50, 60, 70, 255], offset);
     gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 576, 928, gl.RGBA, gl.UNSIGNED_BYTE, raw);
     assert.equal(gl.lastUpload[8], raw);
-    refresh();
+    gl.drawingBufferWidth = 720;
+    gl.useProgram(sprite);
+    gl.drawArrays();
+    assert.equal(gl.viewportAspect, 720 / 600);
+    assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [50, 60, 70, 255]);
+
+    const fallback = new WebGL();
+    fallback.failLink = true;
+    fallback.bindTexture(fallback.TEXTURE_2D, {});
+    fallback.useProgram(sprite);
+    fallback.texImage2D(fallback.TEXTURE_2D, 0, fallback.RGBA, 576, 928, 0, fallback.RGBA, fallback.UNSIGNED_BYTE, raw);
+    fallback.drawArrays();
+    assert.equal(fallback.draws, 1, 'the scene still draws if the shader fails');
+    assert.equal(fallback.previews, 0);
 
     Object.assign(new Anchor(), { download: 'SpriteSheet.png', href: 'blob:unity-export' }).click();
     assert.deepEqual(downloads.at(-1), { name: 'SpriteSheet.png', url: 'data:image/png;base64,dGVzdA==' });
     Object.assign(new Anchor(), { download: 'MySprite.png', href: 'blob:custom-export' }).click();
     assert.deepEqual(downloads.at(-1), { name: 'MySprite.png', url: 'blob:custom-export' });
-    console.log('PASS player browser mock, native module exports, local-only asset reads, preview draw suppression, and sprite PNG handling');
+    gl.onRestored();
+    assert.equal(window.MUTTSSpriteAtlas.idleFrame(), undefined, 'context restoration invalidates the old atlas');
+    console.log('PASS player browser mock, native exports, local-only asset reads, in-canvas preview, and PNG handling');
 }
 
 main().catch(error => {
