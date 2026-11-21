@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -17,6 +18,8 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      PAGES_ARTIFACT: github-pages-${{ github.run_attempt }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,5 +35,21 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
+          name: ${{ env.PAGES_ARTIFACT }}
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          endpoint="repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=$PAGES_ARTIFACT"
+          for attempt in {1..8}; do
+            if [[ "$(gh api "$endpoint" --jq '.total_count')" == 1 ]]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Pages artifact metadata did not become available for $PAGES_ARTIFACT"
+          exit 1
       - uses: actions/deploy-pages@v4
         id: deployment
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT }}
