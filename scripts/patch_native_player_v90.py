@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_alien_tail_v90 as tail
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 PINNED_V90 = 'ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd'
 PINNED_V87 = '0c47dc29fec0446fa5e8a632f24ec6d663e0c33eabfccb1d9e3322980e698486'
 wasm = tail.v89
@@ -32,7 +32,7 @@ def player_exports(contents):
 
 def build():
     candidate = tail.build()
-    baseline = (ROOT / 'previous-v87.wasm').read_bytes()
+    baseline = (ROOT / 'baselines/previous-v87.wasm').read_bytes()
     assert tail.sha256(candidate) == PINNED_V90
     assert tail.sha256(baseline) == PINNED_V87
     sections = wasm.sections(candidate)

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v99 as v99
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 BASE_SHA256 = '97d026f8a13aac43d183c8cdcb934066dfc940d0a63e40dd64a18bb04e0ee3de'
 SET_ACTIVE = 2401
 EXPORT = b'mutts_set_active'

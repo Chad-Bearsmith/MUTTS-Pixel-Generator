@@ -3,7 +3,7 @@
 **Prepared:** 2026-11-20  
 **Imported runtime:** experimental v.89.
 
-**Safeguarded reference:** `previous-v87.wasm` is the last imported source version with newly user-confirmed palette cases. The original v.87 Web archive is preserved separately from this repository.
+**Safeguarded reference:** `baselines/previous-v87.wasm` is the last imported source version with newly user-confirmed palette cases. The original v.87 Web archive is preserved separately from this repository.
 **Important:** The user has not yet confirmed the v.89 geometry changes in live gameplay. In this imported snapshot, v.89 is an experimental branch, not a new accepted baseline.
 
 ## 1. What the product is
@@ -72,7 +72,7 @@ User screenshots are in `diagnostics/v88/exports/` and reference true targets in
 
 The v.89 technical reference reports 126 source-item assertions, 305 cross-firearm checks, 1,802 synthetic swatches, and 23 hand-color checks. These are **historical tests** and are not fresh outcomes until re-run in a new environment. `scripts/run_tests.py` can run a smoke suite and the fuller native suites; results are distinct from a real interactive Unity/Web/Windows test.
 
-`previous-v87.wasm` is a byte-identical reference to the v.87 released Web WASM, `previous-v88.wasm` is byte-identical to the v.88 released Web WASM, and `game/Build/WebGL.wasm` is byte-identical to the v.89 released Web WASM in the supplied archives. Hashes are pinned and validated in `scripts/verify_repository.py`.
+`baselines/previous-v87.wasm` is a byte-identical reference to the v.87 released Web WASM, `baselines/previous-v88.wasm` is byte-identical to the v.88 released Web WASM, and `game/Build/WebGL.wasm` is byte-identical to the v.89 released Web WASM in the supplied archives. Hashes are pinned and validated in `scripts/verify_repository.py`.
 
 The compiled Unity `WebGL.data` and other assets are present under `game/Build`. Do not treat the native C helper or reconstructed assets as the whole original Unity source code.
 

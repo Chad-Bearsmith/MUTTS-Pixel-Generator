@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v97 as v97
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 HELPER = ROOT / 'prototype/native_alien_body_mask_v98.wasm'
 BASE_SHA256 = 'd8d9a19262b6ec19492224001bff792c9fcfd72a55b8fa9e29e3a78dc19f3779'
 wasm = v97.wasm

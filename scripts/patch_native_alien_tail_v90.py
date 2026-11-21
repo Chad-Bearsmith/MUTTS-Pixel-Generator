@@ -5,7 +5,7 @@ from pathlib import Path
 
 import patch_native_underlay_v89 as v89
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 HELPER = ROOT / 'prototype/native_alien_body_tail_v90.wasm'
 BASELINE_SHA256 = '7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a'
 BUILDER = 5031

@@ -3,7 +3,7 @@
 // Fixtures are synthetic, NOT Unity gameplay tests.
 const fs=require('fs'),assert=require('assert');
 const path=require('path');
-const bytes=fs.readFileSync(path.join(__dirname,'..','test-native-helper.wasm'));
+const bytes=fs.readFileSync(path.join(__dirname,'fixtures','test-native-helper.wasm'));
 const PIXELS=534528,REF=486171,MARKERS=497088;
 const c={green:0xff5fe699,green2:0xff357b33,red:0xff002cff,blue:0xffd85c04,black:0xff000000,gray:0xff5d5d5d,orange:0xff2983ed,marker:0xfe0a1ec8};
 let n=0;

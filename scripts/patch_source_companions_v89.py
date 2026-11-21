@@ -2,7 +2,7 @@
 Apache, Alien, Dracula, Furry. Companion can be absent in normal Unity builds.
 Other 8 rules unchanged. Never relax Snow Rider (donor shared by 64 items)."""
 from pathlib import Path
-R=Path(__file__).resolve().parent
+R=Path(__file__).resolve().parents[1]
 p=R/'prototype/native_underlay_v88.c'
 s=p.read_text()
 for number in (3,4,6,7):

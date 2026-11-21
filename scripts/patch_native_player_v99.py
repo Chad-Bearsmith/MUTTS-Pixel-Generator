@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v98 as v98
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 HELPER = ROOT / 'prototype/native_armed_body_v99.wasm'
 BASE_SHA256 = '418af6ac95a06a0d9e02716ec31d01fad5f9c568be807761ae6513243ea9a517'
 wasm = v98.wasm

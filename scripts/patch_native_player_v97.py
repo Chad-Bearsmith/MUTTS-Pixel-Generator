@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v96 as v96
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 HELPER = ROOT / 'prototype/native_hand_fallback_v97.wasm'
 BASE_SHA256 = 'ee7748179c8cdc0a29e2ef0ac3142d4a55b13c83ea079a409ab682562d64cf2c'
 wasm = v96.wasm

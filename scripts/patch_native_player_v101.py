@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v100 as v100
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 BASE_SHA256 = 'b7627d1780d5266fbd054adb2107e587ce545230f0d2490eb1a741f23b929022'
 BUTTON_PRESS = 17081
 wasm = v100.wasm

@@ -1,6 +1,6 @@
 # Codex operating instructions — MUTTS Pixel Generator
 
-Read `docs/CODEX_HANDOFF.md`, `docs/BUILD_AND_TEST.md`, and `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md` before modifying code.
+Read `docs/CODEX_HANDOFF.md`, `docs/BUILD_AND_TEST.md`, and `docs/MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md` before modifying code.
 
 ## Hard invariants
 
@@ -11,7 +11,7 @@ Read `docs/CODEX_HANDOFF.md`, `docs/BUILD_AND_TEST.md`, and `MUTTS_PIXEL_GENERAT
 - Never presume all 24 firearm types, every palette, and arbitrary equipment combinations are fixed. Respect 25 known firearm mask variants, item layer order, and unsupported-case safe skips.
 - Do not repaint sleeves or gloves with guessed skin RGB. Cape and Back are excluded as hand-color reference categories. The known source108-selected-but-unavailable failure is **unresolved** in imported v.89.
 - Keep sprite-sheet geometry, animations, transparency, UI, palettes, offline behavior, and custom export names unchanged. Default suggested export basename is `SpriteSheet`.
-- Release filenames and in-game titles must exactly follow `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md`. Archive roots must be flat; Web `Build/` and `TemplateData/` remain subfolders. No underscore or URL-encoded final basenames.
+- Release filenames and in-game titles must exactly follow `docs/MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md`. Archive roots must be flat; Web `Build/` and `TemplateData/` remain subfolders. No underscore or URL-encoded final basenames.
 - Changes to compiled Unity WASM require pinned-baseline checks and an auditable function-level diff. Never call a mock test a live Unity or Windows GUI test.
 - Treat diagnostics as evidence; their native snapshot and GPU-observed atlas may refer to different builder calls. Validate freshness before relying on them.
 

@@ -6,6 +6,10 @@ For read-only checks: Python 3.10+ and Node.js 18+ (newer LTS recommended). Nati
 
 This repository contains compiled helpers, so the basic tests do **not** need a Clang installation.
 
+## Repository layout
+
+Development tools live in `scripts/`, pinned native inputs in `baselines/`, regression inputs in `tests/fixtures/`, and captured evidence in `diagnostics/`. The Go launcher builds from the repository root and embeds the playable assets from `game/`. See the [release rules](MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md) for packaging requirements.
+
 ## Recommended first checks
 
 ```sh
@@ -24,12 +28,12 @@ Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang 
 
 ```sh
 clang --target=wasm32 -O2 -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--export=phm_native_underlay -o prototype/native_underlay_v89.wasm prototype/native_underlay_v89.c
-python patch_native_underlay_v89.py
+python scripts/patch_native_underlay_v89.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
 
-`patch_native_underlay_v89.py` asserts the SHA-256 of the pinned `previous-v88.wasm` input and rewrites `game/Build/WebGL.wasm` by replacing **only function 71935**. Changes for later versions need new versioned scripts and tests, not silent edits to v.89 history.
+`scripts/patch_native_underlay_v89.py` asserts the SHA-256 of the pinned `baselines/previous-v88.wasm` input and rewrites `game/Build/WebGL.wasm` by replacing **only function 71935**. Changes for later versions need new versioned scripts and tests, not silent edits to v.89 history.
 
 ## Rebuilding the native player
 
@@ -44,7 +48,7 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACU
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_mask_v98.wasm prototype/native_alien_body_mask_v98.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_armed_body_v99.wasm prototype/native_armed_body_v99.c
-python patch_native_player_v103.py
+python scripts/patch_native_player_v103.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
@@ -84,7 +88,7 @@ The imported native test fixtures model managed arrays, selected inputs, framebu
 
 ## Large binary management
 
-The active checkout keeps the pinned v.87 and v.88 WASM baselines and current `WebGL.data` as byte-for-byte development inputs. The `archive/v103-pre-cleanup` tag preserves the v.80–v.86 snapshots, historical patchers and packagers, and original reference ZIP. The same reference PNGs are available directly under `references/`.
+The active checkout keeps the pinned v.87 and v.88 WASM files in `baselines/` and the current `WebGL.data` in `game/Build/` as byte-for-byte development inputs. The `archive/v103-pre-cleanup` tag preserves the v.80–v.86 snapshots, historical patchers and packagers, and original reference ZIP. The same reference PNGs are available directly under `references/`. [Imported source hashes](IMPORTED_SOURCE_SHA256.json) record the original import paths.
 
 ```sh
 git worktree add --detach ../mutts-v103-archive archive/v103-pre-cleanup

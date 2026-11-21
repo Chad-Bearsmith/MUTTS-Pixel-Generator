@@ -1,5 +1,5 @@
 from pathlib import Path
-R=Path(__file__).resolve().parent
+R=Path(__file__).resolve().parents[1]
 src=(R/'prototype/native_underlay_v87.c').read_text()
 # First release: targets uniquely observed in user-supplied v87 layer captures.
 # The first idle alpha mask fingerprints are from exact Unity asset textures

@@ -3,7 +3,7 @@
 from pathlib import Path
 import hashlib,json,sys
 sys.dont_write_bytecode=True
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import patch_native_alien_tail_v90 as tail
 import patch_native_player_v91 as player
 import patch_native_player_v93 as backpack
@@ -18,8 +18,8 @@ import patch_native_player_v103 as remove_presets
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
-  'previous-v87.wasm':'0c47dc29fec0446fa5e8',
-  'previous-v88.wasm':'12e3640b5f08041ed6fc',
+  'baselines/previous-v87.wasm':'0c47dc29fec0446fa5e8',
+  'baselines/previous-v88.wasm':'12e3640b5f08041ed6fc',
   'game/Build/WebGL.wasm':'72e2bb6e525d4da5',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
@@ -29,10 +29,10 @@ for name,prefix in EXPECTED.items():
  actual=H(p)
  assert actual.startswith(prefix),f'Imported baseline mismatch {name}: {actual}'
  print('PASS pinned',name,actual[:20])
-for name in ['AGENTS.md','MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md','docs/CODEX_HANDOFF.md','docs/GITHUB_SETUP.md','prototype/native_underlay_v89.c','prototype/native_underlay_v89.wasm','tests/v89-uploaded-layer-fixtures.json','references/Fix/Armor;Dracula.png','game/index.html','game/Changelog.txt']:
+for name in ['AGENTS.md','docs/MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md','docs/CODEX_HANDOFF.md','docs/GITHUB_SETUP.md','prototype/native_underlay_v89.c','prototype/native_underlay_v89.wasm','tests/v89-uploaded-layer-fixtures.json','references/Fix/Armor;Dracula.png','game/index.html','game/Changelog.txt']:
  assert (R/name).is_file(),f'Missing {name}'
 old=json.loads((R/'game/MUTTS-v89-Build-Manifest.json').read_text())
-assert old['sourceV88WasmSHA256']==H(R/'previous-v88.wasm')
+assert old['sourceV88WasmSHA256']==H(R/'baselines/previous-v88.wasm')
 baseline=tail.v89_baseline()
 assert old['newNativeWasmSHA256']==tail.sha256(baseline)
 baseline=player.v90.build()

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v93 as v93
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 BASE_SHA256 = '388ccad1175d687d8885fccf5442c7bb9ed5baddc087a2d81ab3b96ac15adfe7'
 wasm = v93.v91.wasm
 tail = v93.v91.tail

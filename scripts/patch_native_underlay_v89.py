@@ -5,8 +5,8 @@ hand-color helpers, and all other original functions/assets.
 """
 from pathlib import Path
 import hashlib
-ROOT=Path(__file__).resolve().parent
-BASE=ROOT/'previous-v88.wasm'
+ROOT=Path(__file__).resolve().parents[1]
+BASE=ROOT/'baselines/previous-v88.wasm'
 HELPER=ROOT/'prototype/native_underlay_v89.wasm'
 OUTPUT=ROOT/'game/Build/WebGL.wasm'
 BASE_HASH='12e3640b5f08041ed6fcaa2630bd08c7a09bec3e833dfa543055200a73dd3b73'

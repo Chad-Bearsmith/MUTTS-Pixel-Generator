@@ -4,7 +4,7 @@ signatures and named source-specific sample coordinates are compared.
 """
 from pathlib import Path
 import json,mmap,struct,numpy as np
-R=Path(__file__).resolve().parent
+R=Path(__file__).resolve().parents[1]
 old=(R/'prototype/native_underlay_v87.c').read_text()
 ref=json.load(open(R/'prototype/fixtures_v82.json'))['cases']
 root=Path('/mnt/data/phm-v81-work/unity-assets')

@@ -3,7 +3,7 @@
 // Demonstrates v79 overwrite (filtered first) and v80 last-writer result
 // (original first), while preserving all non-hand firearm bytes.
 const assert=require('assert'),fs=require('fs'),path=require('path');
-const wasm=fs.readFileSync(path.join(__dirname,'..','test-native-pair.wasm'));
+const wasm=fs.readFileSync(path.join(__dirname,'fixtures','test-native-pair.wasm'));
 const PIXELS=534528, REF=486171, MARK=497088,ctx=0xa40000,list=0xc0000;
 const ptr={body:0x410000,back:0x200000,cape:0x620000,gun:0x830000};
 const c={body:0xff5fe699, gray:0xffb9a192, cape:0xffd85c04, dark:0xff000000, glove:0xff5d5d5d, marker:0xfea1a1a1};

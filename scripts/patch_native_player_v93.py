@@ -4,7 +4,7 @@ from pathlib import Path
 
 import patch_native_player_v91 as v91
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 UNDERLAY_HELPER = ROOT / 'prototype/native_underlay_v93.wasm'
 PINNED_PLAYER_V92 = '69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4'
 
