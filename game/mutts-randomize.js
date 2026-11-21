@@ -139,14 +139,20 @@
     for (let i = 0; i < 4 && root; ++i) root = a.mutts_parent(root, 0);
     if (!root || text(module, a.mutts_name(root, 0)) !== 'Canvas') throw Error('Unity canvas was not found.');
     const panel = a.mutts_child(root, 2, 0);
-    const presets = a.mutts_child(panel, 0, 0);
-    if (!presets || text(module, a.mutts_name(presets, 0)) !== 'Presets') {
-      throw Error('Unity preset grid was not found.');
+    let save = 0, presets = 0;
+    for (let i = 0, count = a.mutts_child_count(panel, 0); i < count; ++i) {
+      const child = a.mutts_child(panel, i, 0);
+      const name = text(module, a.mutts_name(child, 0));
+      if (name === 'Save') save = child;
+      if (name === 'Presets') presets = child;
     }
-    // Deactivate the parent so its preset buttons cannot render or receive input.
-    a.mutts_set_active(a.mutts_game_object(presets, 0), 0, 0);
-    const save = a.mutts_child(panel, 4, 0);
-    if (text(module, a.mutts_name(save, 0)) !== 'Save') throw Error('Unity Export was not found.');
+    if (!save) throw Error('Unity Export was not found.');
+    if (presets) {
+      const grid = a.mutts_game_object(presets, 0);
+      // Destroy is deferred by Unity. Disable input and rendering immediately.
+      a.mutts_set_active(grid, 0, 0);
+      a.mutts_destroy(grid, 0);
+    }
 
     const labelType = a.mutts_type(a.mutts_caption(dropdown, 0), 0);
     const originalLabel = a.mutts_component(a.mutts_game_object(a.mutts_child(save, 0, 0), 0), labelType, 0);
@@ -239,5 +245,5 @@
     requestAnimationFrame(ready);
   }
 
-  window.MUTTSRandomize = { build: 102, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 103, connect, submit: key => submit(key) };
 })();

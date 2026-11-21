@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.102.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.103.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -44,7 +44,7 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACU
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_mask_v98.wasm prototype/native_alien_body_mask_v98.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_armed_body_v99.wasm prototype/native_armed_body_v99.c
-python patch_native_player_v101.py
+python patch_native_player_v103.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
@@ -59,6 +59,10 @@ The v.100 patcher exports Unity's existing `GameObject.SetActive` function. UI i
 
 The v.101 patcher routes the Reset clone through Unity's existing button press method. The editor records startup selections, colors, and visibility, then restores them in one rebuild. The v.102 preview uses four design pixels per texel and the default Human's bounds for the fixed shadow anchor.
 
+The v.103 patcher exposes Unity's child count and deferred object destruction. At startup the editor finds Export by name and destroys the optional legacy preset grid. The original serialized Unity scene is preserved in `WebGL.data`.
+
+The guarded Apache Armor underlay preserves the Small Backpack pixel. The preview and PNG export both read the combined first idle tile. Randomize and Reset inherit Export's styling and apply changes using the native controls in one editor rebuild.
+
 ## Packaging the historical v.89 candidate
 
 Run these commands from the v.89 checkout.
@@ -69,6 +73,8 @@ python verify_release_v89.py
 ```
 
 The build script cross-compiles the Go Windows launcher, packages Web and Windows ZIPs, and writes a development-source ZIP in the **parent folder of the repository**. All are generated artifacts; they should be attached to a GitHub Release or retained outside Git history. Existing v.89 output should not be overwritten without deliberate intent. The release rules require additional live checks before a future player release is called verified.
+
+Review rights to the original game assets before changing how they’re distributed.
 
 ## Native tests are not gameplay tests
 

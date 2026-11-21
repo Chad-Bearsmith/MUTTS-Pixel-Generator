@@ -45,7 +45,7 @@ for (const [i, label] of layers.entries()) {
     rows.set(label, { controls, dropdown, count, options, swatches, row });
 }
 
-const events = [], frames = [], activation = [], captions = [], positions = [];
+const events = [], frames = [], activation = [], destroyed = [], captions = [], positions = [];
 let focus, selectedObject, first, draws, error, clones = 0;
 const batch = { value: 0 };
 const pending = { value: 0 };
@@ -54,6 +54,7 @@ const exportCaption = writeText(9024, 'Export');
 const canvasName = writeText(9088, 'Canvas');
 const saveName = writeText(9152, 'Save');
 const presetsName = writeText(9280, 'Presets');
+const panelChildren = [10096, 10112]; // Presets, Save
 const lookup = (key, address) => [...rows.values()].find(row => row[key] === address);
 const inBatch = (event, ...args) => {
     assert.equal(batch.value, 1);
@@ -69,8 +70,14 @@ const asm = {
     mutts_transform: pointer => pointer === rows.get('Cape').dropdown ? 10000 : pointer === 10224 ? 10032 : 10040,
     mutts_parent: pointer => pointer + 1,
     mutts_name: pointer => ({10004: canvasName, 10096: presetsName, 10112: saveName})[pointer],
-    mutts_child: (parent, index) => ({'10004,2': 10064, '10064,0': 10096, '10064,4': 10112, '10112,0': 10144, '10032,0': 10176, '10040,0': 10184})[[parent, index]],
+    mutts_child_count: parent => { assert.equal(parent, 10064); return panelChildren.length; },
+    mutts_child: (parent, index) => parent === 10064 ? panelChildren[index] :
+        ({'10004,2': 10064, '10112,0': 10144, '10032,0': 10176, '10040,0': 10184})[[parent, index]],
     mutts_set_active: (object, active) => activation.push([object, active]),
+    mutts_destroy: object => {
+        assert.deepEqual(activation.at(-1), [object, 0]);
+        destroyed.push(object);
+    },
     mutts_caption: () => 20000,
     mutts_type: pointer => pointer === 20000 ? 1 : 2,
     mutts_game_object: pointer => pointer,
@@ -133,9 +140,11 @@ vm.runInNewContext(script, {
     Math: {random: () => draws++ === 0 ? first : .999, floor: Math.floor},
     console: {error() {}},
 });
-window.MUTTSRandomize.connect({asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats, _malloc: () => 9504, _free() {}});
+const moduleMock = {asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats, _malloc: () => 9504, _free() {}};
+window.MUTTSRandomize.connect(moduleMock);
 frames.shift()();
 assert.deepEqual(activation, [[10096, 0]], 'only the preset grid is deactivated');
+assert.deepEqual(destroyed, [10096], 'only the preset grid is removed');
 assert.equal(asm.mutts_random_button.value, 10224);
 assert.equal(asm.mutts_reset_button.value, 10240);
 assert.deepEqual(captions, ['Randomize', 'Reset']);
@@ -196,4 +205,12 @@ frames.shift()();
 assert.equal(alerts.length, 1);
 assert.equal(batch.value, 0);
 assert.deepEqual(events.at(-1), ['rebuild']);
-console.log('PASS Unity action buttons, native Randomize ranges, and complete one-rebuild Reset');
+// Save moves to index zero when the obsolete preset grid is already absent.
+panelChildren.shift();
+frames.length = 0;
+clones = 0;
+window.MUTTSRandomize.connect(moduleMock);
+frames.shift()();
+assert.deepEqual(captions.slice(-2), ['Randomize', 'Reset']);
+assert.deepEqual(destroyed, [10096]);
+console.log('PASS preset cleanup and Unity action buttons with and without the preset grid');

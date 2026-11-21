@@ -1,3 +1,7 @@
+MUTTS Pixel Generator [v.103] — Internal cleanup
+- Unity removes the retired character preset grid from the active scene at startup.
+- Consolidated developer and build instructions.
+
 MUTTS Pixel Generator [v.102] — 4 × 4 preview pixels
 - The live preview uses four design pixels per sprite pixel. The default Human's midpoint and feet still anchor it over the shadow.
 

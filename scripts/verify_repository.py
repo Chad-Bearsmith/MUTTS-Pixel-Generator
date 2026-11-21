@@ -14,12 +14,13 @@ import patch_native_player_v98 as body_mask
 import patch_native_player_v99 as armed_body
 import patch_native_player_v100 as hide_presets
 import patch_native_player_v101 as reset_editor
+import patch_native_player_v103 as remove_presets
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
   'previous-v87.wasm':'0c47dc29fec0446fa5e8',
   'previous-v88.wasm':'12e3640b5f08041ed6fc',
-  'game/Build/WebGL.wasm':'b40d239923a3b06e',
+  'game/Build/WebGL.wasm':'72e2bb6e525d4da5',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
 for name,prefix in EXPECTED.items():
@@ -104,16 +105,22 @@ v100_sections=dict(tail.v89.sections(v100_native))
 assert v100_sections.keys()==v99_sections.keys()
 assert all(v100_sections[sid]==v99_sections[sid] for sid in v99_sections if sid!=7)
 print('PASS v100 adds one Unity export and preserves every native function body')
-active=(R/'game/Build/WebGL.wasm').read_bytes()
-assert active==reset_editor.build()
-active_sections=dict(tail.v89.sections(active))
-assert active_sections.keys()==v100_sections.keys()
-assert all(active_sections[sid]==v100_sections[sid] for sid in v100_sections if sid not in (6,7,10))
-active_bodies=tail.v89.code_bodies(active_sections[10])
-assert len(active_bodies)==len(v99_bodies)
-assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v99_bodies,active_bodies)) if a!=b]==[reset_editor.BUTTON_PRESS]
+v101_native=reset_editor.build()
+v101_sections=dict(tail.v89.sections(v101_native))
+assert v101_sections.keys()==v100_sections.keys()
+assert all(v101_sections[sid]==v100_sections[sid] for sid in v100_sections if sid not in (6,7,10))
+v101_bodies=tail.v89.code_bodies(v101_sections[10])
+assert len(v101_bodies)==len(v99_bodies)
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v99_bodies,v101_bodies)) if a!=b]==[reset_editor.BUTTON_PRESS]
 print('PASS v101 changes only Unity Button.Press and adds Reset globals and exports')
-m=json.loads((R/'game/MUTTS-v102-Build-Manifest.json').read_text())
+active=(R/'game/Build/WebGL.wasm').read_bytes()
+assert active==remove_presets.build()
+active_sections=dict(tail.v89.sections(active))
+assert active_sections.keys()==v101_sections.keys()
+assert all(active_sections[sid]==v101_sections[sid] for sid in v101_sections if sid!=7)
+print('PASS v103 adds preset cleanup exports and preserves every native function body')
+m=json.loads((R/'game/MUTTS-v103-Build-Manifest.json').read_text())
+v102=json.loads((R/'game/MUTTS-v102-Build-Manifest.json').read_text())
 v101=json.loads((R/'game/MUTTS-v101-Build-Manifest.json').read_text())
 v100=json.loads((R/'game/MUTTS-v100-Build-Manifest.json').read_text())
 v99=json.loads((R/'game/MUTTS-v99-Build-Manifest.json').read_text())
@@ -125,7 +132,8 @@ v94=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
 v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
-assert m['unityAssets']==v101['unityAssets']
+assert v102['unityAssets']==v101['unityAssets']
+assert m['sourceV102PlayerWasmSHA256']==tail.sha256(v101_native)==v102['newNativeWasmSHA256']
 assert m['sourceV100PlayerWasmSHA256']==tail.sha256(v100_native)==v100['newNativeWasmSHA256']
 assert m['sourceV99PlayerWasmSHA256']==tail.sha256(v99_native)==v99['newNativeWasmSHA256']
 assert m['sourceV98PlayerWasmSHA256']==tail.sha256(v98_native)==v98['newNativeWasmSHA256']
@@ -154,5 +162,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v102 Web manifest, product titles, source references, and diagnostics')
+print('PASS v103 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')
