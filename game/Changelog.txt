@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.106] — Corrections with layered equipment
+- Restores first-idle item repairs when equipment such as Blue Shield makes Unity render a separate firearm copy.
+- Uses the selected item and current swatch for Armor repairs and the Lizard and Fire Lizard Body repairs. Apache's erase targets its own layers so Small Backpack pixels survive.
+- Compared 315 outfits with v.105 in Chromium. Differences were confined to known repair coordinates, and the selected and rendered firearms matched byte for byte in the sampled idle tile.
+
 MUTTS Pixel Generator [v.105] — Touch export
 - Export uses the same local PNG action for mouse, touch, and keyboard.
 - The Unity Export button no longer opens the legacy Save dialog.

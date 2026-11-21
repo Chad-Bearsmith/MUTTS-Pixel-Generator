@@ -39,7 +39,7 @@ async function testStartup(index, build) {
     const settle = () => new Promise(resolve => setImmediate(resolve));
     await settle();
     assert.equal(canvas.style.visibility, 'hidden');
-    if (build !== 105) {
+    if (build !== 106) {
         assert.equal(connected, false);
         assert.equal(loadingBar.style.display, 'none');
         assert.match(warning.children[0].textContent, /Refresh the page/);
@@ -62,12 +62,12 @@ async function testStartup(index, build) {
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    const release = '?build=105';
+    const release = '?build=106';
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js'].map(name => name + release));
-    assert(index.includes('<title>MUTTS Pixel Generator [v.105]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.106]</title>'));
     for (const asset of ['loader.js', 'framework.js', 'wasm', 'data']) assert(index.includes('/WebGL.' + asset + release));
-    await testStartup(index, 104);
     await testStartup(index, 105);
+    await testStartup(index, 106);
     assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
@@ -180,7 +180,7 @@ async function main() {
         document.currentScript = { src: new URL(name, location.href).href };
         vm.runInContext(source(name.split('?')[0]), sandbox, { filename: name });
     }
-    assert.equal(window.MUTTSRandomize.build, 105);
+    assert.equal(window.MUTTSRandomize.build, 106);
     let tabHandled = false;
     windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
     assert(tabHandled, 'Unity cannot capture browser Tab navigation');
@@ -191,7 +191,7 @@ async function main() {
     xhr.withCredentials = true;
     xhr.send();
     assert.equal(xhr.withCredentials, false);
-    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=104', 'Build/WebGL.data', './index.html']) {
+    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=105', 'Build/WebGL.data', './index.html']) {
         await assert.rejects(window.fetch(target));
         assert.throws(() => xhr.open('GET', target));
     }

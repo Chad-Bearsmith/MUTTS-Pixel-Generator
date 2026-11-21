@@ -257,5 +257,5 @@
     requestAnimationFrame(poll);
   }
 
-  window.MUTTSRandomize = { build: 105, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 106, connect, submit: key => submit(key) };
 })();

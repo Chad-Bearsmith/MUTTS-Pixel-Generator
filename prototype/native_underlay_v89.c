@@ -173,7 +173,7 @@ __attribute__((always_inline)) static inline void v87_palette_signatures(u32* sl
  }
  *fire=h2;*lizard=h8;*werewolf=h10;
 }
-__attribute__((always_inline)) static inline int swatch_underlay(u32* slots,u32 n,u32* gp,int gun_id){
+__attribute__((always_inline)) static inline int swatch_underlay(u32* slots,u32 n,u32* gp,int gun_id,u32 allowed){
  u32 relaxed=0u;
  u32 sig=swatch_signature(slots,n,&relaxed);
  int item=0;
@@ -204,7 +204,7 @@ __attribute__((always_inline)) static inline int swatch_underlay(u32* slots,u32 
   else if(lizard==0xe77ead65u)item=8;
   else if(werewolf==0xc120178eu)item=10;
  }
- if(!item)return -3; /* unknown structural appearance */
+ if(!item || !(allowed & (1u << item)))return -3; /* unmatched selected item */
  int visible=0;
  /* Complete validation occurs BEFORE any layer is written. */
  if(item==1){ /* Cape */
@@ -698,7 +698,7 @@ __attribute__((always_inline)) static inline int swatch_underlay(u32* slots,u32 
  return 5000+gun_id*100+item; /* swatch-aware path, distinct diagnostic status */
 }
 
-__attribute__((always_inline)) static inline int cross_gun_underlay(u32* slots,u32 n,u32* gp,u32 alpha_hash){
+__attribute__((always_inline)) static inline int cross_gun_underlay(u32* slots,u32 n,u32* gp,u32 alpha_hash,u32 allowed){
  int gun_id=0;
   if(alpha_hash==0xb739dd6bu)gun_id=1;
   if(alpha_hash==0xb53b9051u)gun_id=2;
@@ -750,7 +750,7 @@ __attribute__((always_inline)) static inline int cross_gun_underlay(u32* slots,u
   if(whole==0x0a7c4a11u)item=10;
   if(whole==0x5f745573u)item=11;
   if(whole==0x01d2a664u)item=12;
-  if(!item)goto palette_fallback; /* guarded color-change fallback */
+  if(!item || !(allowed & (1u << item)))goto palette_fallback;
   /* Prevalidate all visible corrections and their color samples BEFORE
      writing any managed array, ensuring a failed case cannot partially edit. */
   int visible=0;
@@ -1243,7 +1243,7 @@ __attribute__((always_inline)) static inline int cross_gun_underlay(u32* slots,u
   }
   return gun_id*100+item; /* original v84 exact path */
 palette_fallback:
-  return swatch_underlay(slots,n,gp,gun_id);
+  return swatch_underlay(slots,n,gp,gun_id,allowed);
 }
 
 
@@ -1268,7 +1268,7 @@ __attribute__((always_inline)) static inline int v88_find(u32 *hashes,u32 n,u32 
  return found;
 }
 typedef struct {u32* dst;u32 p;u32 color;} V88Patch;
-__attribute__((always_inline)) static inline int v88_independent_sources(u32 *slots,u32 n,u32 *gp,int gun_id){
+__attribute__((always_inline)) static inline int v88_independent_sources(u32 *slots,u32 n,u32 *gp,int gun_id,u32 allowed){
  u32 hashes[MAX_LAYERS];
  for(u32 i=0;i<n-1;++i)hashes[i]=v88_alpha_shape(slots[i]);
  V88Patch jobs[96];int jobsCount=0,seen=0,confirmed=0;u32 matchedItems=0u;
@@ -1279,7 +1279,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s1_0=v88_find(hashes,n,0x55c92166u);
 
-  if(d1>=0 && s1_0>=0){
+  if((allowed & (1u << 1)) && d1>=0 && s1_0>=0){
     seen++;matchedItems|=(1u<<(1-1));
 
     const u32 c1_0=pixels(slots[d1])[index_for(27,19)];
@@ -1303,7 +1303,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s2_0=v88_find(hashes,n,0x548aabc8u);
 
-  if(d2>=0 && s2_0>=0){
+  if((allowed & (1u << 2)) && d2>=0 && s2_0>=0){
     seen++;matchedItems|=(1u<<(2-1));
 
     const u32 c2_0=pixels(slots[d2])[index_for(25,20)];
@@ -1341,7 +1341,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s3_1=v88_find(hashes,n,0x7e3fff48u);
 
-  if(d3>=0){
+  if((allowed & (1u << 3)) && d3>=0){
     seen++;matchedItems|=(1u<<(3-1));
 
     const u32 at=index_for(27,17);
@@ -1365,7 +1365,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s4_1=v88_find(hashes,n,0x4106c419u);
 
-  if(d4>=0){
+  if((allowed & (1u << 4)) && d4>=0){
     seen++;matchedItems|=(1u<<(4-1));
 
     const u32 c4_0=pixels(slots[d4])[index_for(28,19)];
@@ -1399,7 +1399,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s5_0=v88_find(hashes,n,0xa1fe314du);
 
-  if(d5>=0 && s5_0>=0){
+  if((allowed & (1u << 5)) && d5>=0 && s5_0>=0){
     seen++;matchedItems|=(1u<<(5-1));
 
     const u32 c5_0=pixels(slots[d5])[index_for(25,19)];
@@ -1437,7 +1437,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s6_1=v88_find(hashes,n,0x7c2f32cfu);
 
-  if(d6>=0){
+  if((allowed & (1u << 6)) && d6>=0){
     seen++;matchedItems|=(1u<<(6-1));
 
     const u32 c6_0=pixels(slots[d6])[index_for(28,19)];
@@ -1511,7 +1511,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s7_0=v88_find(hashes,n,0x57d31d68u);
 
-  if(d7>=0){
+  if((allowed & (1u << 7)) && d7>=0){
     seen++;matchedItems|=(1u<<(7-1));
 
     const u32 c7_0=pixels(slots[d7])[index_for(28,19)];
@@ -1545,7 +1545,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s8_0=v88_find(hashes,n,0x5f1aa2a0u);
 
-  if(d8>=0 && s8_0>=0){
+  if((allowed & (1u << 8)) && d8>=0 && s8_0>=0){
     seen++;matchedItems|=(1u<<(8-1));
 
     const u32 c8_0=pixels(slots[d8])[index_for(25,20)];
@@ -1581,7 +1581,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s9_0=v88_find(hashes,n,0xbed8b438u);
 
-  if(d9>=0 && s9_0>=0){
+  if((allowed & (1u << 9)) && d9>=0 && s9_0>=0){
     seen++;matchedItems|=(1u<<(9-1));
 
     const u32 c9_0=pixels(slots[d9])[index_for(28,19)];
@@ -1615,7 +1615,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s10_0=v88_find(hashes,n,0x8a51fb4eu);
 
-  if(d10>=0 && s10_0>=0){
+  if((allowed & (1u << 10)) && d10>=0 && s10_0>=0){
     seen++;matchedItems|=(1u<<(10-1));
 
     const u32 c10_0=pixels(slots[d10])[index_for(28,19)];
@@ -1653,7 +1653,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s11_0=v88_find(hashes,n,0x915ed4dfu);
 
-  if(d11>=0 && s11_0>=0){
+  if((allowed & (1u << 11)) && d11>=0 && s11_0>=0){
     seen++;matchedItems|=(1u<<(11-1));
 
     const u32 c11_0=pixels(slots[d11])[index_for(28,19)];
@@ -1677,7 +1677,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
 
   const int s12_0=v88_find(hashes,n,0x1c976d8eu);
 
-  if(d12>=0 && s12_0>=0){
+  if((allowed & (1u << 12)) && d12>=0 && s12_0>=0){
     seen++;matchedItems|=(1u<<(12-1));
 
     const u32 c12_0=pixels(slots[d12])[index_for(28,19)];
@@ -1706,7 +1706,7 @@ __attribute__((always_inline)) static inline int v88_independent_sources(u32 *sl
  if(seen==1){for(int id=1;id<=12;++id)if(matchedItems==(1u<<(id-1)))reported=id;}
  return 8000 + (gun_id*100) + reported;
 }
-__attribute__((always_inline)) static inline int v88_try_original_first(int previous,u32 *slots,u32 n,u32 *gp,u32 weapon_hash){
+__attribute__((always_inline)) static inline int v88_try_original_first(int previous,u32 *slots,u32 n,u32 *gp,u32 weapon_hash,u32 allowed){
  if(previous!=-3&&previous!=-7)return previous;
  int gun_id=0;
  /* All 25 original masks are checked by the unchanged v87 helper first.
@@ -1715,13 +1715,20 @@ __attribute__((always_inline)) static inline int v88_try_original_first(int prev
  else if(weapon_hash==0x0175df7au)gun_id=23;
  else if(weapon_hash==0xcc087534u || weapon_hash==0x8b4dc278u)gun_id=19;
  else gun_id=24; /* recognized other source variant; don't invent a weapon name */
- const int newer=v88_independent_sources(slots,n,gp,gun_id);
+ const int newer=v88_independent_sources(slots,n,gp,gun_id,allowed);
  return newer>0?newer:previous;
 }
 
 __attribute__((export_name("phm_native_underlay")))
 int phm_native_underlay(u32 list, u32 gun, u32 ctx) {
+#ifdef PHM_REQUIRE_SELECTED_ITEM
+    /* The live builder supplies the exact selected recipe bits. Apache is
+       handled by the owned Armor pass, including its verified shadow. */
+    const u32 allowed = ctx & ~(1u << 3);
+#else
+    const u32 allowed = ~(u32)0;
     (void)ctx;
+#endif
     if (!list || !gun || gun < 0x10000u || list < 0x10000u) return -1;
     const u32 n=*(u32*)(uintptr_t)(list+12);
     if(n<2 || n>MAX_LAYERS || length(gun)!=ATLAS_LENGTH) return -1;
@@ -1733,7 +1740,7 @@ int phm_native_underlay(u32 list, u32 gun, u32 ctx) {
     u32 weapon_hash=FNV_INIT;
     for(int y=0;y<SIDE;++y)for(int x=0;x<SIDE;++x)
       weapon_hash=hashbyte(weapon_hash,gp[index_for(x,y)]>>24);
-    if(weapon_hash!=BOLT_ALPHA_FNV) return v88_try_original_first(cross_gun_underlay(slots,n,gp,weapon_hash),slots,n,gp,weapon_hash);
+    if(weapon_hash!=BOLT_ALPHA_FNV) return v88_try_original_first(cross_gun_underlay(slots,n,gp,weapon_hash,allowed),slots,n,gp,weapon_hash,allowed);
     u32 whole=FNV_INIT;
     for(int y=0;y<SIDE;++y)for(int x=0;x<SIDE;++x){
       u32 p=index_for(x,y);
@@ -1761,7 +1768,7 @@ int phm_native_underlay(u32 list, u32 gun, u32 ctx) {
     else if(whole==((u32)0x0b9614d2u))which=10;
     else if(whole==((u32)0x11f93f66u))which=11;
     else if(whole==((u32)0x1c971062u))which=12;
-    else return v88_try_original_first(cross_gun_underlay(slots,n,gp,weapon_hash),slots,n,gp,weapon_hash); /* v88: source identity after strict legacy match */
+    if(!which || !(allowed & (1u << which))) return v88_try_original_first(cross_gun_underlay(slots,n,gp,weapon_hash,allowed),slots,n,gp,weapon_hash,allowed); /* v88: source identity after strict legacy match */
     /* Guard ALL modified target sites using the LIVE selected firearm buffer.
        Prevalidate every source and target BEFORE modifying any layer. */
     const u32 p0=index_for(27,17),p1=index_for(27,18),p2=index_for(26,19),

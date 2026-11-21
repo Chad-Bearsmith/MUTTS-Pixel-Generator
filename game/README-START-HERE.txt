@@ -1,4 +1,4 @@
-MUTTS Pixel Generator [v.105]
+MUTTS Pixel Generator [v.106]
 
 Use Randomize above Export to roll items and color swatches for all visible
 categories. A roll can equip either a melee weapon or a firearm.
@@ -14,8 +14,9 @@ Export saves the first idle frame as SpriteSheet.png by default. Alien Armor
 hides conflicting Body tail pixels for Fire Lizard, Lizard, Merman, Furry,
 and Werewolf with or without a firearm. With a firearm equipped, the hand
 color comes from the arm or glove in the current outfit. The first idle
-frame restores the original Body repair pixels for Werewolf, Furry, and
-Merman when a firearm is equipped. Some other gear combinations still skip
-automatic underlay correction.
+frame restores the verified Body repair pixels for Werewolf, Furry, Merman,
+Lizard, and Fire Lizard when a firearm is equipped. The Armor correction
+also uses the current item and swatch when Unity renders a firearm copy.
+Some other gear combinations still skip automatic underlay correction.
 
 The player reads the bundled game files and saves sprite PNGs locally.
