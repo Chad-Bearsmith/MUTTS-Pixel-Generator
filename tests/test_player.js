@@ -39,7 +39,7 @@ async function testStartup(index, build) {
     const settle = () => new Promise(resolve => setImmediate(resolve));
     await settle();
     assert.equal(canvas.style.visibility, 'hidden');
-    if (build !== 104) {
+    if (build !== 105) {
         assert.equal(connected, false);
         assert.equal(loadingBar.style.display, 'none');
         assert.match(warning.children[0].textContent, /Refresh the page/);
@@ -62,12 +62,12 @@ async function testStartup(index, build) {
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    const release = '?build=104';
+    const release = '?build=105';
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js'].map(name => name + release));
-    assert(index.includes('<title>MUTTS Pixel Generator [v.104]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.105]</title>'));
     for (const asset of ['loader.js', 'framework.js', 'wasm', 'data']) assert(index.includes('/WebGL.' + asset + release));
-    await testStartup(index, 103);
     await testStartup(index, 104);
+    await testStartup(index, 105);
     assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
@@ -77,6 +77,10 @@ async function main() {
     const native = new WebAssembly.Module(fs.readFileSync(path.join(game, 'Build/WebGL.wasm')));
     assert.deepEqual(WebAssembly.Module.exports(native).filter(e => e.name.startsWith('phm_')), [
         { name: 'phm_hand_scratch', kind: 'global' },
+    ]);
+    assert.deepEqual(WebAssembly.Module.exports(native).filter(e => e.name.startsWith('mutts_export_')), [
+        { name: 'mutts_export_button', kind: 'global' },
+        { name: 'mutts_export_pending', kind: 'global' },
     ]);
 
     const listeners = new Map(), windowEvents = new Map(), downloads = [], requests = [];
@@ -144,15 +148,16 @@ async function main() {
         click() { downloads.push({ name: this.download, url: this.href }); }
         getAttribute(name) { return this[name]; }
         hasAttribute(name) { return name in this; }
+        remove() {}
     }
     class MockImageData {}
     const navigator = { sendBeacon() { throw new Error('Unexpected native beacon'); } };
     const location = { href: 'https://example.test/MUTTS-Pixel-Generator/' };
     const document = {
-        readyState: 'loading',
+        body: {appendChild(anchor) { assert(anchor instanceof Anchor); }},
         addEventListener(name, listener) { listeners.set(name, listener); },
-        getElementById() { return null; },
-        createElement() {
+        createElement(tag) {
+            if (tag === 'a') return new Anchor();
             return { getContext: () => context2D, toDataURL: () => 'data:image/png;base64,dGVzdA==' };
         },
     };
@@ -175,8 +180,7 @@ async function main() {
         document.currentScript = { src: new URL(name, location.href).href };
         vm.runInContext(source(name.split('?')[0]), sandbox, { filename: name });
     }
-    assert.equal(window.MUTTSRandomize.build, 104);
-    listeners.get('DOMContentLoaded')();
+    assert.equal(window.MUTTSRandomize.build, 105);
     let tabHandled = false;
     windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
     assert(tabHandled, 'Unity cannot capture browser Tab navigation');
@@ -187,7 +191,7 @@ async function main() {
     xhr.withCredentials = true;
     xhr.send();
     assert.equal(xhr.withCredentials, false);
-    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=103', 'Build/WebGL.data', './index.html']) {
+    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=104', 'Build/WebGL.data', './index.html']) {
         await assert.rejects(window.fetch(target));
         assert.throws(() => xhr.open('GET', target));
     }
@@ -270,6 +274,8 @@ async function main() {
     assert.equal(fallback.draws, 1, 'the scene still draws if the shader fails');
     assert.equal(fallback.previews, 0);
 
+    assert.equal(window.MUTTSExport.download(), true);
+    assert.deepEqual(downloads, [{ name: 'SpriteSheet.png', url: 'data:image/png;base64,dGVzdA==' }]);
     Object.assign(new Anchor(), { download: 'SpriteSheet.png', href: 'blob:unity-export' }).click();
     assert.deepEqual(downloads.at(-1), { name: 'SpriteSheet.png', url: 'data:image/png;base64,dGVzdA==' });
     Object.assign(new Anchor(), { download: 'MySprite.png', href: 'blob:custom-export' }).click();

@@ -1,9 +1,11 @@
-MUTTS Pixel Generator [v.104]
+MUTTS Pixel Generator [v.105]
 
 Use Randomize above Export to roll items and color swatches for all visible
 categories. A roll can equip either a melee weapon or a firearm.
 Use Reset above Randomize to restore the starting Human and its default
 equipment, colors, and layer visibility.
+With the canvas focused, use Up and Down to select an action button and
+Enter or Space to activate it.
 
 Serve the game directory over local HTTP and open index.html for the Web
 build. The Windows launcher serves its bundled assets on your computer.

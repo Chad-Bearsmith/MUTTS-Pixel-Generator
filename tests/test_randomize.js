@@ -46,10 +46,11 @@ for (const [i, label] of layers.entries()) {
 }
 
 const events = [], frames = [], activation = [], destroyed = [], captions = [], positions = [];
-let focus, selectedObject, first, draws, error, clones = 0;
+let focus, selectedObject, first, draws, error, clones = 0, downloads = 0;
 const batch = { value: 0 };
 const pending = { value: 0 };
 const resetPending = { value: 0 };
+const exportPending = { value: 0 };
 const exportCaption = writeText(9024, 'Export');
 const canvasName = writeText(9088, 'Canvas');
 const saveName = writeText(9152, 'Save');
@@ -67,6 +68,8 @@ const asm = {
     mutts_reset_button: {value: 0},
     mutts_reset_pending: resetPending,
     mutts_roll_pending: pending,
+    mutts_export_button: {value: 0},
+    mutts_export_pending: exportPending,
     mutts_transform: pointer => pointer === rows.get('Cape').dropdown ? 10000 : pointer === 10224 ? 10032 : 10040,
     mutts_parent: pointer => pointer + 1,
     mutts_name: pointer => ({10004: canvasName, 10096: presetsName, 10112: saveName})[pointer],
@@ -104,7 +107,8 @@ const asm = {
     mutts_set_selected: (_events, object) => { selectedObject = object; },
     mutts_selected: () => selectedObject,
     mutts_submit: pointer => {
-        if (pointer === 10240) resetPending.value++;
+        if (pointer === 10208) exportPending.value = 1;
+        else if (pointer === 10240) resetPending.value++;
         else { assert.equal(pointer, 10224); pending.value++; }
     },
     mutts_dropdown_value: dropdown => layers.indexOf([...rows].find(([, r]) => r.dropdown === dropdown)[0]),
@@ -132,12 +136,16 @@ const asm = {
 };
 const canvas = {matches: () => true, addEventListener: (_event, handler) => { focus = handler; }};
 const alerts = [];
-const window = { MUTTSSpriteAtlas: {idleFrame: () => [1]}, alert: msg => alerts.push(msg) };
+const window = {
+    MUTTSSpriteAtlas: {idleFrame: () => [1]},
+    MUTTSExport: {download: () => downloads++},
+    alert: msg => alerts.push(msg),
+};
 vm.runInNewContext(script, {
     window,
     document: {getElementById: id => id === 'unity-canvas' && canvas},
     requestAnimationFrame: fn => frames.push(fn),
-    Math: {random: () => draws++ === 0 ? first : .999, floor: Math.floor},
+    Math: {random: () => draws++ === 0 ? first : .999, floor: Math.floor, min: Math.min, max: Math.max},
     console: {error() {}},
 });
 const moduleMock = {asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats, _malloc: () => 9504, _free() {}};
@@ -147,11 +155,23 @@ assert.deepEqual(activation, [[10096, 0]], 'only the preset grid is deactivated'
 assert.deepEqual(destroyed, [10096], 'only the preset grid is removed');
 assert.equal(asm.mutts_random_button.value, 10224);
 assert.equal(asm.mutts_reset_button.value, 10240);
+assert.equal(asm.mutts_export_button.value, 10208);
 assert.deepEqual(captions, ['Randomize', 'Reset']);
 assert.deepEqual(positions, [[10032, 0, 97], [10040, 0, 169]]);
 window.MUTTSRandomize.submit('Enter');
 assert.equal(pending.value, 0);
 focus();
+window.MUTTSRandomize.submit('ArrowDown');
+window.MUTTSRandomize.submit('Enter');
+assert.equal(exportPending.value, 1);
+assert.equal(pending.value, 0);
+assert.equal(resetPending.value, 0);
+frames.shift()();
+frames.shift()();
+assert.equal(exportPending.value, 0);
+assert.equal(downloads, 1, 'an Export activation is consumed exactly once');
+assert.deepEqual(events, [], 'Export does not reset or randomize the editor');
+window.MUTTSRandomize.submit('ArrowUp');
 
 for (const [choice, selectedWeapon] of [[.1, 'Weapon'], [.9, 'Firearm']]) {
     first = choice;

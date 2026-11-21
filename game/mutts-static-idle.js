@@ -65,27 +65,7 @@ function exportIdle(){
   return false;
  }finally{busy=false;}
 }
-function isNativeExportPosition(event,canvas){
- const box=canvas.getBoundingClientRect();
- if(!box.width||!box.height)return false;
- // Unity centers its design coordinates and scales them by canvas height.
- const scale=box.height/600;
- const x=(event.clientX-box.left-box.width/2)/scale+480;
- const y=(event.clientY-box.top)/scale;
- return x>=150&&x<=330&&y>=498&&y<=537;
-}
-function setupNativeExportHitbox(){
- const canvas=document.getElementById('unity-canvas');if(!canvas)return;
- for(const eventType of ['pointerdown','pointerup','click']){
-  canvas.addEventListener(eventType,e=>{
-   if(!isNativeExportPosition(e,canvas))return;
-   // Prevent the original Unity Save() callback, which exports a full sheet.
-   // Use the existing native Unity button as the visible UI control instead.
-   e.preventDefault();e.stopImmediatePropagation();
-   if(eventType==='pointerup')exportIdle();
-  },true);
- }
-}
+window.MUTTSExport={download:exportIdle};
 // Capture before Unity's keyboard listener. Tab keeps browser focus traversal.
 window.addEventListener('keydown',ev=>{
  const active=document.activeElement;
@@ -97,5 +77,4 @@ window.addEventListener('keydown',ev=>{
   ev.preventDefault();ev.stopImmediatePropagation();
  }
 },true);
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupNativeExportHitbox);else setupNativeExportHitbox();
 })();

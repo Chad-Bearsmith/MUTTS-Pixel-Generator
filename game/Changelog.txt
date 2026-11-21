@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.105] — Touch export
+- Export uses the same local PNG action for mouse, touch, and keyboard.
+- The Unity Export button no longer opens the legacy Save dialog.
+- Verified one identical PNG per activation in Chromium with mouse, keyboard, and Android touch emulation.
+
 MUTTS Pixel Generator [v.104] — Preset-free startup
 - The loading screen stays visible until Unity removes the retired preset grid and redraws the editor.
 - Archived superseded WebAssembly snapshots, historical packagers, and the duplicate reference ZIP.

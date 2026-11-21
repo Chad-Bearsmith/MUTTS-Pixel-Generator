@@ -17,7 +17,7 @@ import (
     "time"
 )
 
-const productTitle = "MUTTS Pixel Generator [v.104]"
+const productTitle = "MUTTS Pixel Generator [v.105]"
 
 // The complete verified Web package is embedded at build time; no external
 // assets, Python installation, or Internet connection are required.

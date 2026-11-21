@@ -163,6 +163,7 @@
     const buttonType = a.mutts_type(swatch, 0);
     const original = a.mutts_component(a.mutts_game_object(save, 0), buttonType, 0);
     if (!original) throw Error('Unity Export button is unavailable.');
+    a.mutts_export_button.value = original;
     const coordinates = module._malloc(8);
     if (!coordinates) throw Error('Could not initialize the Unity action buttons.');
     try {
@@ -189,7 +190,8 @@
   async function connect(module) {
     const a = module.asm;
     const canvas = document.getElementById('unity-canvas');
-    if (!canvas || !a.mutts_random_button || !a.mutts_reset_button) {
+    if (!canvas || !a.mutts_random_button || !a.mutts_reset_button || !a.mutts_export_button ||
+        !a.mutts_export_pending || typeof window.MUTTSExport?.download !== 'function') {
       throw Error('Unity editor controls are unavailable.');
     }
     while (!a.mutts_editor.value || !window.MUTTSSpriteAtlas.idleFrame()) {
@@ -202,6 +204,10 @@
     a.mutts_reset_button.value = resetButton;
     const randomObject = a.mutts_game_object(randomButton, 0);
     const resetObject = a.mutts_game_object(resetButton, 0);
+    const exportButton = a.mutts_export_button.value;
+    const exportObject = a.mutts_game_object(exportButton, 0);
+    const buttons = [resetButton, randomButton, exportButton];
+    const objects = [resetObject, randomObject, exportObject];
     const focusButton = object => {
       const events = a.mutts_event_system(0);
       if (events) a.mutts_set_selected(events, object, 0);
@@ -210,17 +216,25 @@
       if (canvas.matches(':focus-visible')) focusButton(randomObject);
     });
     submit = key => {
-      if (key === 'ArrowUp') return focusButton(resetObject);
-      if (key === 'ArrowDown') return focusButton(randomObject);
-      if (key !== 'Enter' && key !== ' ') return;
+      const moving = key === 'ArrowUp' || key === 'ArrowDown';
+      if (!moving && key !== 'Enter' && key !== ' ') return;
       const events = a.mutts_event_system(0);
       if (!events) return;
-      const selected = a.mutts_selected(events, 0);
-      if (selected === randomObject) a.mutts_submit(randomButton, 0, 0);
-      if (selected === resetObject) a.mutts_submit(resetButton, 0, 0);
+      const selected = objects.indexOf(a.mutts_selected(events, 0));
+      if (moving) {
+        const next = selected < 0 ? (key === 'ArrowUp' ? 0 : 1) :
+          Math.max(0, Math.min(objects.length - 1, selected + (key === 'ArrowUp' ? -1 : 1)));
+        focusButton(objects[next]);
+      } else if (selected >= 0) {
+        a.mutts_submit(buttons[selected], 0, 0);
+      }
     };
     const poll = () => {
       requestAnimationFrame(poll);
+      if (a.mutts_export_pending.value) {
+        a.mutts_export_pending.value = 0;
+        window.MUTTSExport.download();
+      }
       const resetting = a.mutts_reset_pending.value;
       if (resetting) {
         a.mutts_reset_pending.value = 0;
@@ -243,5 +257,5 @@
     requestAnimationFrame(poll);
   }
 
-  window.MUTTSRandomize = { build: 104, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 105, connect, submit: key => submit(key) };
 })();
