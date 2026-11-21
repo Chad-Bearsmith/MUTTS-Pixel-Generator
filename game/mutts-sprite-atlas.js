@@ -63,15 +63,18 @@
 
   function createPreview(gl) {
     // The preview slot is measured in the Unity canvas's 960×600 design space.
-    // Its 192×192 quad shows the 64×64 idle cell at three design pixels per texel.
-    // The default naked Human occupies [26, 38) × [8, 24). This origin
-    // centers that reference at x=240 and grounds it on the y=300 shadow.
+    // The default naked Human occupies [26, 38) × [8, 24). Its horizontal
+    // midpoint and bottom edge anchor every outfit to the shadow at (240, 300).
+    const scale = 6;
+    const humanMidpoint = (26 + 38) / 2, humanBottom = 24;
+    const originX = 240 - humanMidpoint * scale, originY = 300 - humanBottom * scale;
+    const size = tile * scale;
     const vertexSource = `#version 300 es
       uniform float viewportAspect;
       out vec2 uv;
       void main() {
         uv = vec2(gl_VertexID & 1, gl_VertexID >> 1);
-        vec2 p = vec2(144.0, 228.0) + uv * 192.0 - vec2(480.0, 300.0);
+        vec2 p = vec2(${originX}.0, ${originY}.0) + uv * ${size}.0 - vec2(480.0, 300.0);
         // Unity centers its design space and scales it by viewport height.
         vec2 clip = p / vec2(300.0 * viewportAspect, -300.0);
         gl_Position = vec4(clip, 0.0, 1.0);

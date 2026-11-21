@@ -37,9 +37,9 @@
     for (let i = 0; i < count; ++i) {
       const layer = word(module, items, 16 + i * 4);
       const label = text(module, word(module, layer, 8)); // LayerEditor.Name
-      if (visibleLayers.has(label)) controls.set(label, word(module, layer, 12));
+      controls.set(label, { row: layer, controls: word(module, layer, 12) });
     }
-    if (controls.size !== visibleLayers.size) throw Error('Unity editor layers are unavailable.');
+    if ([...visibleLayers].some(label => !controls.has(label))) throw Error('Unity editor layers are unavailable.');
     return controls;
   }
 
@@ -48,7 +48,8 @@
     const plan = [];
     // Unity treats melee weapons and firearms as mutually exclusive.
     const weaponLayer = randomIndex(2) === 0 ? 'Weapon' : 'Firearm';
-    for (const [label, controls] of controlsFor(module, editor)) {
+    for (const [label, {controls}] of controlsFor(module, editor)) {
+      if (!visibleLayers.has(label)) continue;
       const dropdown = word(module, controls, 20); // LayerControls.Dropdown
       const options = asm.mutts_get_options(dropdown, 0);
       const optionCount = word(module, options, 12);
@@ -87,9 +88,50 @@
     }
   }
 
-  function createButton(module, editor) {
+  function startupOptions(module, layers) {
+    return [...layers.values()].map(({row, controls}) => {
+      const dropdown = word(module, controls, 20);
+      return {
+        row, controls, dropdown,
+        option: module.asm.mutts_dropdown_value(dropdown, 0),
+        index: word(module, row, 16) | 0,
+        hidden: word(module, row, 36) & 0xff, // LayerEditor.Hidden
+        color: module.HEAPF32.slice((row + 40) / 4, (row + 56) / 4),
+      };
+    });
+  }
+
+  function reset(module, defaults) {
     const a = module.asm;
-    const controls = controlsFor(module, editor).get('Cape');
+    const rgba = module._malloc(16);
+    if (!rgba) throw Error('Could not restore Unity colors.');
+    a.mutts_batch.value = 1;
+    try {
+      for (const {dropdown, option} of defaults) {
+        a.mutts_hide_options(dropdown, 0);
+        a.mutts_select_item(dropdown, option, 0);
+      }
+      for (const {row, controls, index, hidden, color} of defaults) {
+        // Arms starts with an unset layer index even though its dropdown
+        // displays index zero. Preserve both values from Unity's startup.
+        if ((word(module, row, 16) | 0) !== index) a.mutts_layer_index(row, index, 0);
+        if ((word(module, row, 36) & 0xff) !== hidden) {
+          const hide = word(module, controls, 24); // LayerControls.Hide button
+          a.mutts_invoke(a.mutts_button_event(hide, 0), 0);
+        }
+        module.HEAPF32.set(color, rgba / 4);
+        a.mutts_fixed_color(controls, rgba, 0);
+      }
+    } finally {
+      module._free(rgba);
+      a.mutts_batch.value = 0;
+      a.mutts_rebuild(a.mutts_editor.value, 0);
+    }
+  }
+
+  function createButtons(module, layers) {
+    const a = module.asm;
+    const {controls} = layers.get('Cape');
     const dropdown = word(module, controls, 20);
     // The Cape dropdown lives at Canvas / Panel / Grid / Cape / Dropdown.
     // The sibling preview panel holds the original Export button (Save).
@@ -116,23 +158,23 @@
     const original = a.mutts_component(a.mutts_game_object(save, 0), buttonType, 0);
     if (!original) throw Error('Unity Export button is unavailable.');
     const coordinates = module._malloc(8);
-    if (!coordinates) throw Error('Could not initialize the Unity Randomize button.');
+    if (!coordinates) throw Error('Could not initialize the Unity action buttons.');
     try {
-      const button = a.mutts_instantiate(original, panel, 0, 0);
-      if (!button) throw Error('Could not clone the Unity Export button.');
-      a.mutts_random_button.value = button;
-      const rect = a.mutts_transform(button, 0);
-      a.mutts_get_position(coordinates, save, 0);
-      // The original is 64 Unity units tall. Leave an 8-unit gap.
-      module.HEAPF32[coordinates / 4 + 1] += 72;
-      a.mutts_set_position(rect, coordinates, 0);
-      const child = a.mutts_child(rect, 0, 0);
-      const label = a.mutts_component(a.mutts_game_object(child, 0), labelType, 0);
-      const caption = 'Randomize';
-      const string = a.mutts_alloc_string(caption.length, 0);
-      for (let i = 0; i < caption.length; ++i) module.HEAPU16[(string + 12) / 2 + i] = caption.charCodeAt(i);
-      a.mutts_set_text(label, string, 0);
-      return button;
+      return ['Randomize', 'Reset'].map((caption, i) => {
+        const button = a.mutts_instantiate(original, panel, 0, 0);
+        if (!button) throw Error('Could not clone the Unity Export button.');
+        const rect = a.mutts_transform(button, 0);
+        a.mutts_get_position(coordinates, save, 0);
+        // The original is 64 Unity units tall. Leave an 8-unit gap.
+        module.HEAPF32[coordinates / 4 + 1] += 72 * (i + 1);
+        a.mutts_set_position(rect, coordinates, 0);
+        const child = a.mutts_child(rect, 0, 0);
+        const label = a.mutts_component(a.mutts_game_object(child, 0), labelType, 0);
+        const string = a.mutts_alloc_string(caption.length, 0);
+        for (let j = 0; j < caption.length; ++j) module.HEAPU16[(string + 12) / 2 + j] = caption.charCodeAt(j);
+        a.mutts_set_text(label, string, 0);
+        return button;
+      });
     } finally {
       module._free(coordinates);
     }
@@ -141,45 +183,61 @@
   function connect(module) {
     const a = module.asm;
     const canvas = document.getElementById('unity-canvas');
-    if (!canvas || !a.mutts_random_button) return;
-    let buttonObject = 0;
-    const focusButton = () => {
-      const events = a.mutts_event_system(0);
-      if (events) a.mutts_set_selected(events, buttonObject, 0);
-    };
+    if (!canvas || !a.mutts_random_button || !a.mutts_reset_button) return;
     const ready = () => {
       if (!a.mutts_editor.value || !window.MUTTSSpriteAtlas.idleFrame()) {
         requestAnimationFrame(ready);
         return;
       }
-      const button = createButton(module, a.mutts_editor.value);
-      buttonObject = a.mutts_game_object(button, 0);
+      const layers = controlsFor(module, a.mutts_editor.value);
+      const defaults = startupOptions(module, layers);
+      const [randomButton, resetButton] = createButtons(module, layers);
+      a.mutts_random_button.value = randomButton;
+      a.mutts_reset_button.value = resetButton;
+      const randomObject = a.mutts_game_object(randomButton, 0);
+      const resetObject = a.mutts_game_object(resetButton, 0);
+      const focusButton = object => {
+        const events = a.mutts_event_system(0);
+        if (events) a.mutts_set_selected(events, object, 0);
+      };
       canvas.addEventListener('focus', () => {
-        if (canvas.matches(':focus-visible')) focusButton();
+        if (canvas.matches(':focus-visible')) focusButton(randomObject);
       });
       submit = key => {
+        if (key === 'ArrowUp') return focusButton(resetObject);
+        if (key === 'ArrowDown') return focusButton(randomObject);
         if (key !== 'Enter' && key !== ' ') return;
         const events = a.mutts_event_system(0);
-        if (events && a.mutts_selected(events, 0) === buttonObject) a.mutts_submit(button, 0, 0);
+        if (!events) return;
+        const selected = a.mutts_selected(events, 0);
+        if (selected === randomObject) a.mutts_submit(randomButton, 0, 0);
+        if (selected === resetObject) a.mutts_submit(resetButton, 0, 0);
+      };
+      const poll = () => {
+        requestAnimationFrame(poll);
+        const resetting = a.mutts_reset_pending.value;
+        if (resetting) {
+          a.mutts_reset_pending.value = 0;
+          a.mutts_roll_pending.value = 0;
+        } else {
+          if (!a.mutts_roll_pending.value) return;
+          a.mutts_roll_pending.value--;
+        }
+        const action = resetting ? 'Reset' : 'Randomize';
+        try {
+          if (resetting) reset(module, defaults);
+          else randomize(module);
+        } catch (error) {
+          console.error(action + ' failed:', error);
+          window.alert(action + ' could not finish.');
+        } finally {
+          focusButton(resetting ? resetObject : randomObject);
+        }
       };
       requestAnimationFrame(poll);
-    };
-    const poll = () => {
-      requestAnimationFrame(poll);
-      const pending = a.mutts_roll_pending.value;
-      if (!pending) return;
-      a.mutts_roll_pending.value = pending - 1;
-      try {
-        randomize(module);
-      } catch (error) {
-        console.error('Randomize failed:', error);
-        window.alert('Randomize could not finish.');
-      } finally {
-        focusButton();
-      }
     };
     requestAnimationFrame(ready);
   }
 
-  window.MUTTSRandomize = { build: 100, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 101, connect, submit: key => submit(key) };
 })();

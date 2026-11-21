@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.100.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.101.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -44,7 +44,7 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACU
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_mask_v98.wasm prototype/native_alien_body_mask_v98.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_armed_body_v99.wasm prototype/native_armed_body_v99.c
-python patch_native_player_v100.py
+python patch_native_player_v101.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
@@ -56,6 +56,8 @@ The v.98 patcher replaces the Body tail helper and updates its existing builder 
 The v.99 helper uses the selected Body key for the verified Furry, Merman, and Werewolf firearm templates. It samples the two donor colors in the private Body copy and checks the current firearm pixels before applying each repair. The call runs after the original underlay and before the Alien Armor tail mask.
 
 The v.100 patcher exports Unity's existing `GameObject.SetActive` function. UI initialization calls it on the `Presets` parent to hide the whole grid and disable its input.
+
+The v.101 patcher routes the Reset clone through Unity's existing button press method. The editor records startup selections, colors, and visibility, then restores them in one rebuild. The preview uses six design pixels per texel and the default Human's bounds for the fixed shadow anchor.
 
 ## Packaging the historical v.89 candidate
 

@@ -1,0 +1,43 @@
+{
+  "format": "MUTTS-v96-BuildManifest-1",
+  "version": "v.101",
+  "status": "player build",
+  "sourceV89WasmSHA256": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+  "newNativeWasmSHA256": "b40d239923a3b06e0760f5ae56fd6de1ffe65bfaca23491b975ab17bc393e968",
+  "nativeChange": "Routes the Reset clone through Button.Press and exposes Unity editor operations to restore the startup state.",
+  "unityAssets": {
+    "Build/WebGL.wasm": "b40d239923a3b06e0760f5ae56fd6de1ffe65bfaca23491b975ab17bc393e968",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "1c986c65f12c62d83a53e51d1a31ecc991250ae831280a79fa8427792a49dc29",
+    "Build/WebGL.loader.js": "5d4dfe5b1b1748fc794365ea7b8f5ca4c713d6c3aea92078b712a4a87c233901"
+  },
+  "activeScripts": {
+    "mutts-randomize.js": "9f30e23f0e7d49071791387bde20caa7551b0778c41b9b539e8a26d58c4720d2",
+    "mutts-sprite-atlas.js": "70e5874be8725d6d5f7a39b1e736b2978fd4b5259b9369d95d24d88ddbda5b72",
+    "mutts-static-idle.js": "2615ecaba767ee865bfaa7527bafe23c31dc8db9b7f9fee706e2a95450086008",
+    "offline-ui.js": "0b47de5e6710b9a7e9a68c83602c0f63cfde171182c59e97a59a2a3dc1ec9a3a"
+  },
+  "activeCss": {
+    "TemplateData/style.css": "516028e9b619fc17245a0de692ba617c70c3d0feb442b22e1b05b1082a21645a",
+    "mutts-static-idle.css": "e4025adac69d271399444e093c36faa0b4b91ebcdb52289cd57525ad49858b80"
+  },
+  "entryHTMLSHA256": "31b266f8378282cc873c318b6be8f8d37f251e238a529c2c8eca39cd2b252ba0",
+  "sourceV90CandidateWasmSHA256": "ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd",
+  "sourceV90PlayerWasmSHA256": "95c4ec1e0d6d187868cd83ff671c71b0fcf721cb530f4d65255511d2630b5912",
+  "underlayHelperWasmSHA256": "a07de5b469dd2a232b42653a414e2c71e3f52bb170133582a3fde8f818759f53",
+  "previewChange": "Draws the first idle tile at twice the previous scale, with the default Human anchored to the shadow.",
+  "sourceV91PlayerWasmSHA256": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+  "sourceV92PlayerWasmSHA256": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+  "sourceV93PlayerWasmSHA256": "388ccad1175d687d8885fccf5442c7bb9ed5baddc087a2d81ab3b96ac15adfe7",
+  "sourceV94PlayerWasmSHA256": "388ccad1175d687d8885fccf5442c7bb9ed5baddc087a2d81ab3b96ac15adfe7",
+  "sourceV95PlayerWasmSHA256": "5f0fba8a7a6f5b6aaa49334e4d5179ceedec88a92ee7da324d30e5e860ab402d",
+  "sourceV96PlayerWasmSHA256": "ee7748179c8cdc0a29e2ef0ac3142d4a55b13c83ea079a409ab682562d64cf2c",
+  "handFallbackWasmSHA256": "40c8df293b50dceee3a3fb21a3b34b4dcdf0a8b3a40446902612ae808b806c60",
+  "startupChange": "Versions player asset requests and checks that the native Randomize script matches the running page.",
+  "sourceV97PlayerWasmSHA256": "d8d9a19262b6ec19492224001bff792c9fcfd72a55b8fa9e29e3a78dc19f3779",
+  "bodyMaskWasmSHA256": "49f0a46c2382ca8baee5c7bc5d194ed3364322d9e9d0e2f55df885682730e201",
+  "sourceV98PlayerWasmSHA256": "418af6ac95a06a0d9e02716ec31d01fad5f9c568be807761ae6513243ea9a517",
+  "armedBodyWasmSHA256": "ad12a9138c26aadd4829e05d21d780da8bb49fff93b4bd7ffe5d1738cf378137",
+  "sourceV99PlayerWasmSHA256": "97d026f8a13aac43d183c8cdcb934066dfc940d0a63e40dd64a18bb04e0ee3de",
+  "sourceV100PlayerWasmSHA256": "b7627d1780d5266fbd054adb2107e587ce545230f0d2490eb1a741f23b929022"
+}

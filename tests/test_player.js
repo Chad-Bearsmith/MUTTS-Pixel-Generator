@@ -11,11 +11,11 @@ const source = name => fs.readFileSync(path.join(game, name), 'utf8');
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    const release = '?build=100';
+    const release = '?build=101';
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js'].map(name => name + release));
-    assert(index.includes('<title>MUTTS Pixel Generator [v.100]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.101]</title>'));
     for (const asset of ['loader.js', 'framework.js', 'wasm', 'data']) assert(index.includes('/WebGL.' + asset + release));
-    assert(index.includes('window.MUTTSRandomize?.build === 100'));
+    assert(index.includes('window.MUTTSRandomize?.build === 101'));
     assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
@@ -123,7 +123,7 @@ async function main() {
         document.currentScript = { src: new URL(name, location.href).href };
         vm.runInContext(source(name.split('?')[0]), sandbox, { filename: name });
     }
-    assert.equal(window.MUTTSRandomize.build, 100);
+    assert.equal(window.MUTTSRandomize.build, 101);
     listeners.get('DOMContentLoaded')();
     let tabHandled = false;
     windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
@@ -135,7 +135,7 @@ async function main() {
     xhr.withCredentials = true;
     xhr.send();
     assert.equal(xhr.withCredentials, false);
-    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=99', 'Build/WebGL.data', './index.html']) {
+    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=100', 'Build/WebGL.data', './index.html']) {
         await assert.rejects(window.fetch(target));
         assert.throws(() => xhr.open('GET', target));
     }
@@ -174,7 +174,7 @@ async function main() {
     assert.equal(gl.draws, 1, 'idle quad replaces the scene body draw');
     assert.equal(gl.previews, 1);
     assert.equal(gl.viewportAspect, 960 / 600);
-    assert(gl.vertexSource.includes('vec2(144.0, 228.0)'));
+    assert(gl.vertexSource.includes('vec2(48.0, 156.0) + uv * 384.0'));
     assert.equal(gl.currentProgram, sprite);
     assert.equal(gl.vao, unityVAO);
     assert.equal(gl.depth, true);
@@ -206,7 +206,7 @@ async function main() {
     gl.useProgram(sprite);
     gl.drawArrays();
     assert.equal(gl.viewportAspect, 720 / 600);
-    assert(gl.vertexSource.includes('vec2(144.0, 228.0)'));
+    assert(gl.vertexSource.includes('vec2(48.0, 156.0) + uv * 384.0'));
     assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [50, 60, 70, 255]);
 
     const fallback = new WebGL();

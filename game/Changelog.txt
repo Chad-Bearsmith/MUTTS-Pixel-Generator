@@ -1,3 +1,7 @@
+MUTTS Pixel Generator [v.101] — Reset and larger live preview
+- Added a matching Unity Reset button above Randomize. Reset restores the default naked Human, including equipment choices, colors, and layer visibility.
+- Doubled the live preview. The default Human's midpoint and feet define the fixed anchor over the shadow.
+
 MUTTS Pixel Generator [v.100] — Hidden character presets
 - Hid and disabled the 16 character preset buttons. All 18 Body types are available in the Body dropdown.
 
