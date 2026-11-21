@@ -12,6 +12,7 @@ smoke=[
  ('tests/test_randomize.js',),
  ('tests/test_native_alien_body_tail_v90.js',),
  ('tests/test_native_alien_body_mask_v98.js',),
+ ('tests/test_native_armed_body_v99.js',),
  ('tests/test_native_pipeline_order.js',),
  ('tests/test_native_cape_back.js',),
  ('tests/test_native_hand_fallback.js',),

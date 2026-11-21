@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.99] — Missing Body pixels with firearms
+- Restores the original first-idle repair pixels for Werewolf, Furry, and Merman from their current Body swatches, including outfits where Unity renders a separate firearm copy.
+- Repairs the Body layer underneath foreground equipment and respects the firearm's occupied pixels. Alien Armor's tail mask still runs after the repair.
+- Chromium comparisons covered 75 varied outfits across all 23 firearm selections, Empty, and all Body swatches for each of the three Bodies. The only visible changes were at the expected Body repair pixels.
+
 MUTTS Pixel Generator [v.98] — Body tail masks for Alien Armor
 - The selected Body supplies an exact tail mask for Alien Armor. The mask works with or without a firearm and clears the Body tail even when an earlier equipment correction recolors its pixels.
 - Applies to Werewolf, Furry, Merman, Lizard, and Fire Lizard. The Body keeps its tail when another Armor item is selected or Armor is empty.

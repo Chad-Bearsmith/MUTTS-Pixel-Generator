@@ -11,12 +11,13 @@ import patch_native_player_v95 as randomize
 import patch_native_player_v96 as native_button
 import patch_native_player_v97 as hand_fallback
 import patch_native_player_v98 as body_mask
+import patch_native_player_v99 as armed_body
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
   'previous-v87.wasm':'0c47dc29fec0446fa5e8',
   'previous-v88.wasm':'12e3640b5f08041ed6fc',
-  'game/Build/WebGL.wasm':'418af6ac95a06a0d9e',
+  'game/Build/WebGL.wasm':'97d026f8a13aac43d1',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
 for name,prefix in EXPECTED.items():
@@ -78,17 +79,27 @@ assert len(v97_bodies)==len(v96_bodies)+1
 assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v96_bodies,v97_bodies)) if a!=b]==[5031]
 assert v97_bodies[-1]==tail.v89.body_from_helper(hand_fallback.HELPER)
 print('PASS v97 adds one hand fallback at the existing native builder call site')
-active=(R/'game/Build/WebGL.wasm').read_bytes()
-assert active==body_mask.build()
-active_sections=dict(tail.v89.sections(active))
-assert active_sections.keys()==v97_sections.keys()
-assert all(active_sections[sid]==v97_sections[sid] for sid in v97_sections if sid!=10)
-active_bodies=tail.v89.code_bodies(active_sections[10])
-assert len(active_bodies)==len(v97_bodies)
-assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v97_bodies,active_bodies)) if a!=b]==[5031,71936]
-assert active_bodies[body_mask.TAIL-tail.v89.DEF_FUNCS]==tail.v89.body_from_helper(body_mask.HELPER)
+v98_native=body_mask.build()
+v98_sections=dict(tail.v89.sections(v98_native))
+assert v98_sections.keys()==v97_sections.keys()
+assert all(v98_sections[sid]==v97_sections[sid] for sid in v97_sections if sid!=10)
+v98_bodies=tail.v89.code_bodies(v98_sections[10])
+assert len(v98_bodies)==len(v97_bodies)
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v97_bodies,v98_bodies)) if a!=b]==[5031,71936]
+assert v98_bodies[body_mask.TAIL-tail.v89.DEF_FUNCS]==tail.v89.body_from_helper(body_mask.HELPER)
 print('PASS v98 changes only the body mask helper and its builder call sites')
-m=json.loads((R/'game/MUTTS-v98-Build-Manifest.json').read_text())
+active=(R/'game/Build/WebGL.wasm').read_bytes()
+assert active==armed_body.build()
+active_sections=dict(tail.v89.sections(active))
+assert active_sections.keys()==v98_sections.keys()
+assert all(active_sections[sid]==v98_sections[sid] for sid in v98_sections if sid not in (3,10))
+active_bodies=tail.v89.code_bodies(active_sections[10])
+assert len(active_bodies)==len(v98_bodies)+1
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v98_bodies,active_bodies)) if a!=b]==[5031]
+assert active_bodies[-1]==tail.v89.body_from_helper(armed_body.HELPER)
+print('PASS v99 adds one armed Body helper and its builder call site')
+m=json.loads((R/'game/MUTTS-v99-Build-Manifest.json').read_text())
+v98=json.loads((R/'game/MUTTS-v98-Build-Manifest.json').read_text())
 v97=json.loads((R/'game/MUTTS-v97-Build-Manifest.json').read_text())
 v96=json.loads((R/'game/MUTTS-v96-Build-Manifest.json').read_text())
 v95=json.loads((R/'game/MUTTS-v95-Build-Manifest.json').read_text())
@@ -96,6 +107,7 @@ v94=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
 v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
+assert m['sourceV98PlayerWasmSHA256']==tail.sha256(v98_native)==v98['newNativeWasmSHA256']
 assert m['sourceV97PlayerWasmSHA256']==tail.sha256(v97_native)==v97['newNativeWasmSHA256']
 assert m['sourceV96PlayerWasmSHA256']==tail.sha256(v96_native)==v96['newNativeWasmSHA256']
 assert m['sourceV95PlayerWasmSHA256']==tail.sha256(v95_native)==v95['newNativeWasmSHA256']
@@ -105,6 +117,7 @@ assert m['sourceV92PlayerWasmSHA256']==v92['newNativeWasmSHA256']==tail.sha256(v
 assert m['underlayHelperWasmSHA256']==H(backpack.UNDERLAY_HELPER)
 assert m['handFallbackWasmSHA256']==H(hand_fallback.HELPER)
 assert m['bodyMaskWasmSHA256']==H(body_mask.HELPER)
+assert m['armedBodyWasmSHA256']==H(armed_body.HELPER)
 assert m['newNativeWasmSHA256']==H(R/'game/Build/WebGL.wasm')
 assert set(m['activeScripts'])=={p.name for p in (R/'game').glob('*.js')}
 assert set(m['activeCss'])=={p.relative_to(R/'game').as_posix() for p in (R/'game').rglob('*.css')}
@@ -120,5 +133,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v98 Web manifest, product titles, source references, and diagnostics')
+print('PASS v99 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

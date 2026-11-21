@@ -1,6 +1,6 @@
 # MUTTS Pixel Generator — preservation and Codex development repository
 
-**Current player build: `MUTTS Pixel Generator [v.98]`.**
+**Current player build: `MUTTS Pixel Generator [v.99]`.**
 
 [Play on GitHub Pages](https://chad-bearsmith.github.io/MUTTS-Pixel-Generator/)
 
@@ -18,7 +18,7 @@ This repository captures the project's supplied **compiled Unity WebGL game**, c
 
 | Path | Meaning |
 |---|---|
-| `game/` | **v.98 player** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
+| `game/` | **v.99 player** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
 | `previous-v80.wasm` ... `previous-v88.wasm` | Imported SHA-pinned previous native builds, **not** evidence that all versions were user-accepted |
 | `prototype/` | Native C correction helpers, compiled helper WASMs, and regression tests |
 | `tests/` | Unity native fixtures, Javascript probes, hand-color regression tests, and release test helpers |
