@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.103.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.104, which uses the v.103 native module.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -61,11 +61,13 @@ The v.101 patcher routes the Reset clone through Unity's existing button press m
 
 The v.103 patcher exposes Unity's child count and deferred object destruction. At startup the editor finds Export by name and destroys the optional legacy preset grid. The original serialized Unity scene is preserved in `WebGL.data`.
 
+In v.104 the loading screen stays visible while Unity initializes the editor and removes the grid. The page reveals the canvas after Unity has had a frame to redraw.
+
 The guarded Apache Armor underlay preserves the Small Backpack pixel. The preview and PNG export both read the combined first idle tile. Randomize and Reset inherit Export's styling and apply changes using the native controls in one editor rebuild.
 
 ## Packaging the historical v.89 candidate
 
-Run these commands from the v.89 checkout.
+Run these commands from the imported v.89 checkout (`3962388`).
 
 ```sh
 python build_release_v89.py
@@ -82,4 +84,10 @@ The imported native test fixtures model managed arrays, selected inputs, framebu
 
 ## Large binary management
 
-The repo includes original pinned WASM baselines and current `WebGL.data` as byte-for-byte development inputs. All imported files are below GitHub's individual 100 MiB Git limit; no separate Git LFS setup is required for this bootstrap. Avoid committing Windows executables, repeated full game ZIPs, or unrelated large exports every release. Add new large binary assets to Git LFS or GitHub Releases if size starts growing.
+The active checkout keeps the pinned v.87 and v.88 WASM baselines and current `WebGL.data` as byte-for-byte development inputs. The `archive/v103-pre-cleanup` tag preserves the v.80–v.86 snapshots, historical patchers and packagers, and original reference ZIP. The same reference PNGs are available directly under `references/`.
+
+```sh
+git worktree add --detach ../mutts-v103-archive archive/v103-pre-cleanup
+```
+
+Keep generated Windows executables and release ZIPs outside the source tree.

@@ -1,3 +1,7 @@
+MUTTS Pixel Generator [v.104] — Preset-free startup
+- The loading screen stays visible until Unity removes the retired preset grid and redraws the editor.
+- Archived superseded WebAssembly snapshots, historical packagers, and the duplicate reference ZIP.
+
 MUTTS Pixel Generator [v.103] — Internal cleanup
 - Unity removes the retired character preset grid from the active scene at startup.
 - Consolidated developer and build instructions.

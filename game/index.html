@@ -6,18 +6,18 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MUTTS Pixel Generator [v.103]</title>
+  <title>MUTTS Pixel Generator [v.104]</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css?build=103">
-  <link rel="stylesheet" href="mutts-static-idle.css?build=103">
-  <script src="offline-ui.js?build=103"></script>
-  <script src="mutts-static-idle.js?build=103"></script>
-  <script src="mutts-sprite-atlas.js?build=103"></script>
-  <script src="mutts-randomize.js?build=103"></script>
+  <link rel="stylesheet" href="TemplateData/style.css?build=104">
+  <link rel="stylesheet" href="mutts-static-idle.css?build=104">
+  <script src="offline-ui.js?build=104"></script>
+  <script src="mutts-static-idle.js?build=104"></script>
+  <script src="mutts-sprite-atlas.js?build=104"></script>
+  <script src="mutts-randomize.js?build=104"></script>
 </head>
 <body>
   <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width="960" height="600" tabindex="0" aria-label="Character, outfit, item and palette selections"></canvas>
+    <canvas id="unity-canvas" width="960" height="600" tabindex="0" style="visibility: hidden" aria-label="Character, outfit, item and palette selections"></canvas>
     <div id="unity-loading-bar"><div id="unity-logo"></div><div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div></div>
     <div id="unity-warning"></div>
 
@@ -54,15 +54,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js?build=103";
+      var loaderUrl = buildUrl + "/WebGL.loader.js?build=104";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data?build=103",
-        frameworkUrl: buildUrl + "/WebGL.framework.js?build=103",
-        codeUrl: buildUrl + "/WebGL.wasm?build=103",
+        dataUrl: buildUrl + "/WebGL.data?build=104",
+        frameworkUrl: buildUrl + "/WebGL.framework.js?build=104",
+        codeUrl: buildUrl + "/WebGL.wasm?build=104",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Hippo Games",
-        productName: "MUTTS Pixel Generator [v.103]",
-        productVersion: "v.103",
+        productName: "MUTTS Pixel Generator [v.104]",
+        productVersion: "v.104",
         // Unity 2021.3: automatically persist IndexedDB changes, avoiding the
         // deprecated manual JS_FileSystem_Sync() synchronization warning.
         autoSyncPersistentDataPath: true,
@@ -95,7 +95,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then(async (unityInstance) => {
           const module = unityInstance.Module;
           // The native hand-color routine shares this scratch layout with the
           // historical rebuild instrumentation.
@@ -104,13 +104,17 @@
           if (!scratch) throw new Error("Could not initialize native sprite colors.");
           module.HEAPU8.fill(0, scratch, scratch + scratchBytes);
           module.asm.phm_hand_scratch.value = scratch;
-          loadingBar.style.display = "none";
-          if (window.MUTTSRandomize?.build === 103 && module.asm.mutts_random_button) {
-            window.MUTTSRandomize.connect(module);
+          if (window.MUTTSRandomize?.build !== 104) {
+            throw new Error("Editor assets could not be loaded. Refresh the page.");
           }
-
-        }).catch((message) => {
-          alert(message);
+          await window.MUTTSRandomize.connect(module);
+          // Let Unity render a frame after deactivating the retired preset grid.
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          canvas.style.visibility = "visible";
+          loadingBar.style.display = "none";
+        }).catch((error) => {
+          loadingBar.style.display = "none";
+          unityShowBanner(error.message || String(error), "error");
         });
       };
       document.body.appendChild(script);

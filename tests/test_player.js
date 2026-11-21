@@ -8,14 +8,66 @@ const vm = require('node:vm');
 const game = path.join(__dirname, '../game');
 const source = name => fs.readFileSync(path.join(game, name), 'utf8');
 
+async function testStartup(index, build) {
+    const inline = index.match(/<script>([\s\S]*?)<\/script>/)[1];
+    const canvas = {style: {visibility: 'hidden'}};
+    const loadingBar = {style: {}};
+    const warning = {style: {}, children: [], appendChild(child) { this.children.push(child); }};
+    const loader = {};
+    const elements = {
+        '#unity-container': {}, '#unity-canvas': canvas, '#unity-loading-bar': loadingBar,
+        '#unity-progress-bar-full': {style: {}}, '#unity-warning': warning,
+    };
+    const frames = [];
+    const module = {asm: {phm_hand_scratch: {value: 0}}, _malloc: () => 1, HEAPU8: {fill() {}}};
+    let finish, connected = false;
+    const ready = new Promise(resolve => { finish = resolve; });
+    vm.runInNewContext(inline, {
+        document: {
+            querySelector: selector => elements[selector],
+            createElement: tag => tag === 'script' ? loader : {},
+            body: {appendChild: script => assert.equal(script, loader)},
+        },
+        navigator: {userAgent: ''},
+        createUnityInstance: async () => ({Module: module}),
+        window: {MUTTSRandomize: {build, connect() { connected = true; return ready; }}},
+        requestAnimationFrame: callback => frames.push(callback),
+    });
+    assert.match(index, /<canvas [^>]*style="visibility: hidden"/);
+    assert.equal(loadingBar.style.display, 'block');
+    loader.onload();
+    const settle = () => new Promise(resolve => setImmediate(resolve));
+    await settle();
+    assert.equal(canvas.style.visibility, 'hidden');
+    if (build !== 104) {
+        assert.equal(connected, false);
+        assert.equal(loadingBar.style.display, 'none');
+        assert.match(warning.children[0].textContent, /Refresh the page/);
+        return;
+    }
+    assert.equal(connected, true);
+    assert.equal(loadingBar.style.display, 'block');
+    assert.equal(frames.length, 0);
+    finish();
+    await settle();
+    frames.shift()();
+    await settle();
+    assert.equal(canvas.style.visibility, 'hidden');
+    frames.shift()();
+    await settle();
+    assert.equal(canvas.style.visibility, 'visible');
+    assert.equal(loadingBar.style.display, 'none');
+}
+
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    const release = '?build=103';
+    const release = '?build=104';
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js'].map(name => name + release));
-    assert(index.includes('<title>MUTTS Pixel Generator [v.103]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.104]</title>'));
     for (const asset of ['loader.js', 'framework.js', 'wasm', 'data']) assert(index.includes('/WebGL.' + asset + release));
-    assert(index.includes('window.MUTTSRandomize?.build === 103'));
+    await testStartup(index, 103);
+    await testStartup(index, 104);
     assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
@@ -123,7 +175,7 @@ async function main() {
         document.currentScript = { src: new URL(name, location.href).href };
         vm.runInContext(source(name.split('?')[0]), sandbox, { filename: name });
     }
-    assert.equal(window.MUTTSRandomize.build, 103);
+    assert.equal(window.MUTTSRandomize.build, 104);
     listeners.get('DOMContentLoaded')();
     let tabHandled = false;
     windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
@@ -135,7 +187,7 @@ async function main() {
     xhr.withCredentials = true;
     xhr.send();
     assert.equal(xhr.withCredentials, false);
-    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=102', 'Build/WebGL.data', './index.html']) {
+    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=103', 'Build/WebGL.data', './index.html']) {
         await assert.rejects(window.fetch(target));
         assert.throws(() => xhr.open('GET', target));
     }

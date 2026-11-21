@@ -1,0 +1,17 @@
+name: Verify player
+description: Check pinned game assets and smoke test the native and browser code
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Verify pinned binaries and manifest
+      shell: bash
+      run: python scripts/verify_repository.py
+    - name: Smoke test compiled WebAssembly and JS
+      shell: bash
+      run: python scripts/run_tests.py --smoke

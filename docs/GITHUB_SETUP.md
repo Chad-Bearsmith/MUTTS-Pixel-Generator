@@ -8,3 +8,5 @@ The public [GitHub repository](https://github.com/Chad-Bearsmith/MUTTS-Pixel-Gen
 4. Follow **Deploy public playtest** in the repository's [Actions tab](https://github.com/Chad-Bearsmith/MUTTS-Pixel-Generator/actions). The workflow stages the playable assets and publishes the Pages site after the smoke tests pass.
 
 The repository's **Settings → Pages → Source** is set to **GitHub Actions**.
+
+Pages runs integrity and smoke checks on each push to `main`. The separate **Source integrity and native smoke** workflow uses the same checks for pull requests and can also run manually.

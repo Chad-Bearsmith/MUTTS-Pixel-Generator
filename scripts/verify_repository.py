@@ -119,7 +119,8 @@ active_sections=dict(tail.v89.sections(active))
 assert active_sections.keys()==v101_sections.keys()
 assert all(active_sections[sid]==v101_sections[sid] for sid in v101_sections if sid!=7)
 print('PASS v103 adds preset cleanup exports and preserves every native function body')
-m=json.loads((R/'game/MUTTS-v103-Build-Manifest.json').read_text())
+m=json.loads((R/'game/MUTTS-v104-Build-Manifest.json').read_text())
+v103=json.loads((R/'game/MUTTS-v103-Build-Manifest.json').read_text())
 v102=json.loads((R/'game/MUTTS-v102-Build-Manifest.json').read_text())
 v101=json.loads((R/'game/MUTTS-v101-Build-Manifest.json').read_text())
 v100=json.loads((R/'game/MUTTS-v100-Build-Manifest.json').read_text())
@@ -133,6 +134,7 @@ v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
 assert v102['unityAssets']==v101['unityAssets']
+assert m['unityAssets']==v103['unityAssets']
 assert m['sourceV102PlayerWasmSHA256']==tail.sha256(v101_native)==v102['newNativeWasmSHA256']
 assert m['sourceV100PlayerWasmSHA256']==tail.sha256(v100_native)==v100['newNativeWasmSHA256']
 assert m['sourceV99PlayerWasmSHA256']==tail.sha256(v99_native)==v99['newNativeWasmSHA256']
@@ -162,5 +164,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v103 Web manifest, product titles, source references, and diagnostics')
+print('PASS v104 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

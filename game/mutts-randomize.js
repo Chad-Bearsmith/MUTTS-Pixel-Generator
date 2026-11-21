@@ -186,64 +186,62 @@
     }
   }
 
-  function connect(module) {
+  async function connect(module) {
     const a = module.asm;
     const canvas = document.getElementById('unity-canvas');
-    if (!canvas || !a.mutts_random_button || !a.mutts_reset_button) return;
-    const ready = () => {
-      if (!a.mutts_editor.value || !window.MUTTSSpriteAtlas.idleFrame()) {
-        requestAnimationFrame(ready);
-        return;
-      }
-      const layers = controlsFor(module, a.mutts_editor.value);
-      const defaults = startupOptions(module, layers);
-      const [randomButton, resetButton] = createButtons(module, layers);
-      a.mutts_random_button.value = randomButton;
-      a.mutts_reset_button.value = resetButton;
-      const randomObject = a.mutts_game_object(randomButton, 0);
-      const resetObject = a.mutts_game_object(resetButton, 0);
-      const focusButton = object => {
-        const events = a.mutts_event_system(0);
-        if (events) a.mutts_set_selected(events, object, 0);
-      };
-      canvas.addEventListener('focus', () => {
-        if (canvas.matches(':focus-visible')) focusButton(randomObject);
-      });
-      submit = key => {
-        if (key === 'ArrowUp') return focusButton(resetObject);
-        if (key === 'ArrowDown') return focusButton(randomObject);
-        if (key !== 'Enter' && key !== ' ') return;
-        const events = a.mutts_event_system(0);
-        if (!events) return;
-        const selected = a.mutts_selected(events, 0);
-        if (selected === randomObject) a.mutts_submit(randomButton, 0, 0);
-        if (selected === resetObject) a.mutts_submit(resetButton, 0, 0);
-      };
-      const poll = () => {
-        requestAnimationFrame(poll);
-        const resetting = a.mutts_reset_pending.value;
-        if (resetting) {
-          a.mutts_reset_pending.value = 0;
-          a.mutts_roll_pending.value = 0;
-        } else {
-          if (!a.mutts_roll_pending.value) return;
-          a.mutts_roll_pending.value--;
-        }
-        const action = resetting ? 'Reset' : 'Randomize';
-        try {
-          if (resetting) reset(module, defaults);
-          else randomize(module);
-        } catch (error) {
-          console.error(action + ' failed:', error);
-          window.alert(action + ' could not finish.');
-        } finally {
-          focusButton(resetting ? resetObject : randomObject);
-        }
-      };
-      requestAnimationFrame(poll);
+    if (!canvas || !a.mutts_random_button || !a.mutts_reset_button) {
+      throw Error('Unity editor controls are unavailable.');
+    }
+    while (!a.mutts_editor.value || !window.MUTTSSpriteAtlas.idleFrame()) {
+      await new Promise(resolve => requestAnimationFrame(resolve));
+    }
+    const layers = controlsFor(module, a.mutts_editor.value);
+    const defaults = startupOptions(module, layers);
+    const [randomButton, resetButton] = createButtons(module, layers);
+    a.mutts_random_button.value = randomButton;
+    a.mutts_reset_button.value = resetButton;
+    const randomObject = a.mutts_game_object(randomButton, 0);
+    const resetObject = a.mutts_game_object(resetButton, 0);
+    const focusButton = object => {
+      const events = a.mutts_event_system(0);
+      if (events) a.mutts_set_selected(events, object, 0);
     };
-    requestAnimationFrame(ready);
+    canvas.addEventListener('focus', () => {
+      if (canvas.matches(':focus-visible')) focusButton(randomObject);
+    });
+    submit = key => {
+      if (key === 'ArrowUp') return focusButton(resetObject);
+      if (key === 'ArrowDown') return focusButton(randomObject);
+      if (key !== 'Enter' && key !== ' ') return;
+      const events = a.mutts_event_system(0);
+      if (!events) return;
+      const selected = a.mutts_selected(events, 0);
+      if (selected === randomObject) a.mutts_submit(randomButton, 0, 0);
+      if (selected === resetObject) a.mutts_submit(resetButton, 0, 0);
+    };
+    const poll = () => {
+      requestAnimationFrame(poll);
+      const resetting = a.mutts_reset_pending.value;
+      if (resetting) {
+        a.mutts_reset_pending.value = 0;
+        a.mutts_roll_pending.value = 0;
+      } else {
+        if (!a.mutts_roll_pending.value) return;
+        a.mutts_roll_pending.value--;
+      }
+      const action = resetting ? 'Reset' : 'Randomize';
+      try {
+        if (resetting) reset(module, defaults);
+        else randomize(module);
+      } catch (error) {
+        console.error(action + ' failed:', error);
+        window.alert(action + ' could not finish.');
+      } finally {
+        focusButton(resetting ? resetObject : randomObject);
+      }
+    };
+    requestAnimationFrame(poll);
   }
 
-  window.MUTTSRandomize = { build: 103, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 104, connect, submit: key => submit(key) };
 })();
