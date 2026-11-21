@@ -33,7 +33,7 @@ jobs:
           mkdir public
           cp -R game/Build game/TemplateData public/
           cp game/index.html game/offline-ui.js game/mutts-static-idle.js \
-            game/mutts-sprite-atlas.js game/mutts-static-idle.css public/
+            game/mutts-sprite-atlas.js game/mutts-randomize.js game/mutts-static-idle.css public/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

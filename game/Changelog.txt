@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.95] — Centered preview and Randomize
+- Centered the visible sprite horizontally over Unity’s shadow and aligned its bottom to the shadow line.
+- Added a Randomize button above Export. It rolls an item and swatch for each visible category and follows Unity’s melee and firearm compatibility rules.
+- Chromium tests verified the preview alignment, mouse and keyboard activation, repeated rolls, and SpriteSheet.png exports.
+
 MUTTS Pixel Generator [v.94] — In-canvas Unity preview
 - Moved the idle sprite preview into Unity’s WebGL render pass and removed the separate HTML preview canvas. The preview still uses the combined idle sprite, including any equipped firearm.
 - The export keeps its existing crop, transparency, 20× scaling, and SpriteSheet.png filename.

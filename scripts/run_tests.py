@@ -9,6 +9,7 @@ if not shutil.which('node'):
  raise SystemExit('Node.js is required; install from https://nodejs.org/')
 smoke=[
  ('tests/test_player.js',),
+ ('tests/test_randomize.js',),
  ('tests/test_native_alien_body_tail_v90.js',),
  ('tests/test_native_pipeline_order.js',),
  ('tests/test_native_cape_back.js',),

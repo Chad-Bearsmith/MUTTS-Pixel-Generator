@@ -7,12 +7,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import patch_native_alien_tail_v90 as tail
 import patch_native_player_v91 as player
 import patch_native_player_v93 as backpack
+import patch_native_player_v95 as randomize
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
   'previous-v87.wasm':'0c47dc29fec0446fa5e8',
   'previous-v88.wasm':'12e3640b5f08041ed6fc',
-  'game/Build/WebGL.wasm':'388ccad1175d687d88',
+  'game/Build/WebGL.wasm':'5f0fba8a7a6f5b6aaa',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
 for name,prefix in EXPECTED.items():
@@ -41,20 +42,29 @@ assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(old_bodies,new_bodies)
 assert new_bodies[71935-tail.v89.DEF_FUNCS]==tail.v89.body_from_helper(player.UNDERLAY_HELPER)
 assert new_bodies[-1]==player.optional_overlay_lookup(old_bodies[player.LOOKUP-tail.v89.DEF_FUNCS])
 print('PASS pinned v90 player, v91 underlay, and native function diff')
-active=(R/'game/Build/WebGL.wasm').read_bytes()
-assert active==backpack.build()
-active_sections=dict(tail.v89.sections(active))
-assert active_sections.keys()==v92_sections.keys()
-assert all(active_sections[sid]==v92_sections[sid] for sid in v92_sections if sid!=10)
-active_bodies=tail.v89.code_bodies(active_sections[10])
-assert len(active_bodies)==len(new_bodies)
-assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(new_bodies,active_bodies)) if a!=b]==[71935]
+v94_native=backpack.build()
+v94_sections=dict(tail.v89.sections(v94_native))
+assert v94_sections.keys()==v92_sections.keys()
+assert all(v94_sections[sid]==v92_sections[sid] for sid in v92_sections if sid!=10)
+v94_bodies=tail.v89.code_bodies(v94_sections[10])
+assert len(v94_bodies)==len(new_bodies)
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(new_bodies,v94_bodies)) if a!=b]==[71935]
 print('PASS v93 changes only the native underlay function')
-m=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
+active=(R/'game/Build/WebGL.wasm').read_bytes()
+assert active==randomize.build()
+active_sections=dict(tail.v89.sections(active))
+assert active_sections.keys()==v94_sections.keys()
+assert all(active_sections[sid]==v94_sections[sid] for sid in v94_sections if sid not in (3,6,7,10))
+active_bodies=tail.v89.code_bodies(active_sections[10])
+assert len(active_bodies)==len(v94_bodies)+1
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v94_bodies,active_bodies)) if a!=b]==[5032,50008]
+print('PASS v95 adds one palette accessor and changes only CharacterEditor.Start and CharacterEditor.Rebuild')
+m=json.loads((R/'game/MUTTS-v95-Build-Manifest.json').read_text())
+v94=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
 v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
-assert m['unityAssets']==v93['unityAssets']
-assert m['sourceV93PlayerWasmSHA256']==tail.sha256(active)
+assert v94['unityAssets']==v93['unityAssets']
+assert m['sourceV94PlayerWasmSHA256']==tail.sha256(v94_native)==v94['newNativeWasmSHA256']
 assert {n:h for n,h in m['unityAssets'].items() if n!='Build/WebGL.wasm'}=={n:h for n,h in v92['unityAssets'].items() if n!='Build/WebGL.wasm'}
 assert m['sourceV92PlayerWasmSHA256']==v92['newNativeWasmSHA256']==tail.sha256(v92_native)
 assert m['underlayHelperWasmSHA256']==H(backpack.UNDERLAY_HELPER)
@@ -73,5 +83,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v94 Web manifest, product titles, source references, and diagnostics')
+print('PASS v95 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

@@ -44,11 +44,21 @@
     }
     const input = new Uint8Array(source.buffer, source.byteOffset + offset, width * height * 4);
     const frame = new Uint8ClampedArray(tile * tile * 4);
+    let left = tile, top = tile, right = 0, bottom = 0;
     for (let y = 0; y < tile; ++y) {
       const start = (height - 1 - idleY - y) * width * 4;
-      frame.set(input.subarray(start, start + tile * 4), y * tile * 4);
+      const row = input.subarray(start, start + tile * 4);
+      frame.set(row, y * tile * 4);
+      for (let x = 0; x < tile; ++x) {
+        if (!row[x * 4 + 3]) continue;
+        left = Math.min(left, x);
+        top = Math.min(top, y);
+        right = Math.max(right, x + 1);
+        bottom = y + 1;
+      }
     }
-    frames.set(texture, frame);
+    const bounds = right ? { left, top, right, bottom } : null;
+    frames.set(texture, { frame, bounds });
   }
 
   function createPreview(gl) {
@@ -56,10 +66,11 @@
     // Its 192×192 quad shows the 64×64 idle cell at three design pixels per texel.
     const vertexSource = `#version 300 es
       uniform float viewportAspect;
+      uniform vec2 previewOrigin;
       out vec2 uv;
       void main() {
         uv = vec2(gl_VertexID & 1, gl_VertexID >> 1);
-        vec2 p = vec2(152.0, 230.0) + uv * 192.0 - vec2(480.0, 300.0);
+        vec2 p = previewOrigin + uv * 192.0 - vec2(480.0, 300.0);
         // Unity centers its design space and scales it by viewport height.
         vec2 clip = p / vec2(300.0 * viewportAspect, -300.0);
         gl_Position = vec4(clip, 0.0, 1.0);
@@ -89,7 +100,11 @@
     }
     gl.linkProgram(program);
     const vao = gl.getProgramParameter(program, gl.LINK_STATUS) && gl.createVertexArray();
-    if (vao) return { program, vao, aspect: gl.getUniformLocation(program, 'viewportAspect') };
+    if (vao) return {
+      program, vao,
+      aspect: gl.getUniformLocation(program, 'viewportAspect'),
+      origin: gl.getUniformLocation(program, 'previewOrigin'),
+    };
     gl.deleteProgram(program);
     return null;
   }
@@ -99,9 +114,10 @@
     const useProgram = gl.useProgram;
     const drawArrays = gl.drawArrays;
 
-    function renderPreview(ctx, s) {
+    function renderPreview(ctx, s, bounds) {
       if (s.preview === undefined) s.preview = createPreview(ctx);
       if (!s.preview) return false;
+      if (!bounds) return true;
       const vao = ctx.getParameter(ctx.VERTEX_ARRAY_BINDING);
       const depthTest = ctx.isEnabled(ctx.DEPTH_TEST);
       // Unity's sprite pass is already blending premultiplied alpha. Use its
@@ -109,6 +125,9 @@
       try {
         useProgram.call(ctx, s.preview.program);
         ctx.uniform1f(s.preview.aspect, ctx.drawingBufferWidth / ctx.drawingBufferHeight);
+        // Center the visible sprite on Unity's shadow at (240, 300).
+        ctx.uniform2f(s.preview.origin,
+          Math.round(240 - (bounds.left + bounds.right) * 1.5), 300 - bounds.bottom * 3);
         ctx.bindVertexArray(s.preview.vao);
         if (depthTest) ctx.disable(ctx.DEPTH_TEST);
         drawArrays.call(ctx, ctx.TRIANGLE_STRIP, 0, 4);
@@ -154,7 +173,7 @@
           const texture = s.bound.get(0);
           if (frames.has(texture)) {
             activeTexture = texture;
-            if (renderPreview(this, s)) return;
+            if (renderPreview(this, s, frames.get(texture).bounds)) return;
           } else if (s.preview && frames.has(activeTexture)) {
             // Body's atlas already includes the firearm. Skip Unity's separate firearm draw.
             return;
@@ -165,5 +184,5 @@
     }
   }
 
-  window.MUTTSSpriteAtlas = { idleFrame: () => frames.get(activeTexture) };
+  window.MUTTSSpriteAtlas = { idle: () => frames.get(activeTexture), idleFrame: () => frames.get(activeTexture)?.frame };
 })();

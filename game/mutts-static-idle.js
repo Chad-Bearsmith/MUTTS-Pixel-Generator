@@ -9,14 +9,11 @@ let busy=false;
  * receives transparent pixels (if any), with any odd extra on right/bottom.
  * This includes all equipped items, capes, tails, and weapon muzzle pixels.
  * No fixed outside margin is added. Empty images retain a 64x64 square. */
-function cropIdle(frame){
+function cropIdle(frame,bounds){
  if(!frame||frame.length!==CELL*CELL*4)throw Error('Expected a 64×64 RGBA idle frame');
- let x0=CELL,y0=CELL,x1=-1,y1=-1;
- for(let y=0;y<CELL;y++)for(let x=0;x<CELL;x++)if(frame[(y*CELL+x)*4+3]>0){
-  x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);
- }
- if(x1<0)return {pixels:new Uint8ClampedArray(frame),width:CELL,height:CELL};
- const w=x1-x0+1,h=y1-y0+1,side=Math.max(w,h);
+ if(!bounds)return {pixels:new Uint8ClampedArray(frame),width:CELL,height:CELL};
+ const {left:x0,top:y0,right:x1,bottom:y1}=bounds;
+ const w=x1-x0,h=y1-y0,side=Math.max(w,h);
  const left=Math.floor((side-w)/2),top=Math.floor((side-h)/2);
  const pixels=new Uint8ClampedArray(side*side*4);
  for(let y=0;y<h;y++){
@@ -26,10 +23,10 @@ function cropIdle(frame){
  return {pixels,width:side,height:side};
 }
 function imageURL(){
- const frame=window.MUTTSSpriteAtlas.idleFrame();
- if(!frame)throw Error('Idle sprite not available. Choose a character or change an item first.');
+ const idle=window.MUTTSSpriteAtlas.idle();
+ if(!idle)throw Error('Idle sprite not available. Choose a character or change an item first.');
  // Browser PNG encoder, but the UI control is an actual Unity Button.
- const cropped=cropIdle(frame);
+ const cropped=cropIdle(idle.frame,idle.bounds);
  const src=document.createElement('canvas');src.width=cropped.width;src.height=cropped.height;
  const s=src.getContext('2d',{alpha:true});if(!s)throw Error('2D image canvas unavailable');
  s.putImageData(new ImageData(cropped.pixels,cropped.width,cropped.height),0,0);

@@ -11,8 +11,9 @@ const source = name => fs.readFileSync(path.join(game, name), 'utf8');
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js']);
-    assert(index.includes('<title>MUTTS Pixel Generator [v.94]</title>'));
+    assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js']);
+    assert(index.includes('<title>MUTTS Pixel Generator [v.95]</title>'));
+    assert(index.includes('<button id="mutts-randomize" type="button" disabled>Randomize</button>'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
@@ -61,6 +62,7 @@ async function main() {
         createVertexArray() { return {}; }
         getUniformLocation(_program, name) { return name; }
         uniform1f(name, value) { this[name] = value; }
+        uniform2f(name, ...values) { this[name] = values; }
         bindVertexArray(vao) { this.vao = vao; }
         getParameter() { return this.vao; }
         isEnabled() { return this.depth; }
@@ -162,6 +164,7 @@ async function main() {
     assert.equal(gl.draws, 1, 'idle quad replaces the scene body draw');
     assert.equal(gl.previews, 1);
     assert.equal(gl.viewportAspect, 960 / 600);
+    assert.deepEqual(gl.previewOrigin, [158, 240]);
     assert.equal(gl.currentProgram, sprite);
     assert.equal(gl.vao, unityVAO);
     assert.equal(gl.depth, true);
@@ -186,12 +189,14 @@ async function main() {
     assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [37, 91, 205, 255]);
     gl.bindTexture(gl.TEXTURE_2D, atlas);
     raw.set([50, 60, 70, 255], offset);
+    raw.set([88, 99, 110, 255], ((927 - 64 - 23) * 576 + 30) * 4);
     gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 576, 928, gl.RGBA, gl.UNSIGNED_BYTE, raw);
     assert.equal(gl.lastUpload[8], raw);
     gl.drawingBufferWidth = 720;
     gl.useProgram(sprite);
     gl.drawArrays();
     assert.equal(gl.viewportAspect, 720 / 600);
+    assert.deepEqual(gl.previewOrigin, [153, 228]);
     assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [50, 60, 70, 255]);
 
     const fallback = new WebGL();
