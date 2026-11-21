@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.98] — Body tail masks for Alien Armor
+- The selected Body supplies an exact tail mask for Alien Armor. The mask works with or without a firearm and clears the Body tail even when an earlier equipment correction recolors its pixels.
+- Applies to Werewolf, Furry, Merman, Lizard, and Fire Lizard. The Body keeps its tail when another Armor item is selected or Armor is empty.
+- Chromium verified 125 Alien Armor outfits with every swatch and firearm option represented for each of the five Bodies. The original Body tail pixels stayed masked after the firearm corrections ran.
+
 MUTTS Pixel Generator [v.97] — Startup and firearm hand colors
 - The page requests versioned player assets and skips incompatible Randomize scripts during startup.
 - Firearm hand colors use the current arm or glove swatch when Unity renders a verified copy of the equipped firearm.

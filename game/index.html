@@ -6,14 +6,14 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MUTTS Pixel Generator [v.97]</title>
+  <title>MUTTS Pixel Generator [v.98]</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css?build=97">
-  <link rel="stylesheet" href="mutts-static-idle.css?build=97">
-  <script src="offline-ui.js?build=97"></script>
-  <script src="mutts-static-idle.js?build=97"></script>
-  <script src="mutts-sprite-atlas.js?build=97"></script>
-  <script src="mutts-randomize.js?build=97"></script>
+  <link rel="stylesheet" href="TemplateData/style.css?build=98">
+  <link rel="stylesheet" href="mutts-static-idle.css?build=98">
+  <script src="offline-ui.js?build=98"></script>
+  <script src="mutts-static-idle.js?build=98"></script>
+  <script src="mutts-sprite-atlas.js?build=98"></script>
+  <script src="mutts-randomize.js?build=98"></script>
 </head>
 <body>
   <div id="unity-container" class="unity-desktop">
@@ -54,15 +54,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js?build=97";
+      var loaderUrl = buildUrl + "/WebGL.loader.js?build=98";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data?build=97",
-        frameworkUrl: buildUrl + "/WebGL.framework.js?build=97",
-        codeUrl: buildUrl + "/WebGL.wasm?build=97",
+        dataUrl: buildUrl + "/WebGL.data?build=98",
+        frameworkUrl: buildUrl + "/WebGL.framework.js?build=98",
+        codeUrl: buildUrl + "/WebGL.wasm?build=98",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Hippo Games",
-        productName: "MUTTS Pixel Generator [v.97]",
-        productVersion: "v.97",
+        productName: "MUTTS Pixel Generator [v.98]",
+        productVersion: "v.98",
         // Unity 2021.3: automatically persist IndexedDB changes, avoiding the
         // deprecated manual JS_FileSystem_Sync() synchronization warning.
         autoSyncPersistentDataPath: true,
@@ -105,7 +105,7 @@
           module.HEAPU8.fill(0, scratch, scratch + scratchBytes);
           module.asm.phm_hand_scratch.value = scratch;
           loadingBar.style.display = "none";
-          if (window.MUTTSRandomize?.build === 97 && module.asm.mutts_random_button) {
+          if (window.MUTTSRandomize?.build === 98 && module.asm.mutts_random_button) {
             window.MUTTSRandomize.connect(module);
           }
 

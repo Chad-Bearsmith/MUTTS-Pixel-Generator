@@ -1,6 +1,7 @@
-MUTTS Pixel Generator [v.97] player build. The native builder applies Alien
-Armor's first-idle tail correction to a private copy of the Body layer and
-uses the v.89 source-aware firearm underlay. The armed hand fallback reads
+MUTTS Pixel Generator [v.98] player build. The native builder selects the
+first-idle tail mask from the current Body item when Alien Armor is selected.
+It applies the mask to a private copy of the Body layer after the v.89
+source-aware firearm underlay. The armed hand fallback reads
 the current arm or glove swatch even when the composite layer lookup fails
 to find the firearm uniquely.
 The guarded Apache erase preserves the Small Backpack's original pixel.

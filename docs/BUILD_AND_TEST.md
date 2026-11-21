@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.97.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.98.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -42,12 +42,15 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -W
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v91.wasm prototype/native_underlay_v89.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -DPHM_PROTECT_SMALL_BACKPACK -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v93.wasm prototype/native_underlay_v89.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
-python patch_native_player_v97.py
+zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_mask_v98.wasm prototype/native_alien_body_mask_v98.c
+python patch_native_player_v98.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
 
 The v.97 patcher reconstructs the pinned v.96 module and inserts the fallback between the original hand-color pass and the firearm underlay. When some equipment combinations make Unity append a copy of the firearm, the fallback finds the unique rendered layer by an exact first-idle match outside the hand-marker colors. It reads the current arm and glove from native captures and writes only the matched layer's marker RGB. Use `--output <path>` to write the module elsewhere.
+
+The v.98 patcher replaces the Body tail helper and updates its existing builder call sites. It selects the first-idle tail mask from the same item keys Unity passes to its pixel lookup. The swatch suffix can vary freely. After the firearm and equipment corrections, the mask clears the selected pixels in the private Body copy whenever the selected Armor key is Alien.
 
 ## Packaging the historical v.89 candidate
 
