@@ -1,4 +1,4 @@
-MUTTS Pixel Generator [v.99] player build. The native builder selects the
+MUTTS Pixel Generator [v.100] player build. The native builder selects the
 first-idle tail mask from the current Body item when Alien Armor is selected.
 It applies the mask to a private copy of the Body layer after the v.89
 source-aware firearm underlay. The armed hand fallback reads

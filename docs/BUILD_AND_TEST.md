@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.99.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.100.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -44,7 +44,7 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACU
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_mask_v98.wasm prototype/native_alien_body_mask_v98.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_armed_body_v99.wasm prototype/native_armed_body_v99.c
-python patch_native_player_v99.py
+python patch_native_player_v100.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
@@ -54,6 +54,8 @@ The v.97 patcher reconstructs the pinned v.96 module and inserts the fallback be
 The v.98 patcher replaces the Body tail helper and updates its existing builder call sites. It selects the first-idle tail mask from the same item keys Unity passes to its pixel lookup. The swatch suffix can vary freely. After the firearm and equipment corrections, the mask clears the selected pixels in the private Body copy whenever the selected Armor key is Alien.
 
 The v.99 helper uses the selected Body key for the verified Furry, Merman, and Werewolf firearm templates. It samples the two donor colors in the private Body copy and checks the current firearm pixels before applying each repair. The call runs after the original underlay and before the Alien Armor tail mask.
+
+The v.100 patcher exports Unity's existing `GameObject.SetActive` function. UI initialization calls it on the `Presets` parent to hide the whole grid and disable its input.
 
 ## Packaging the historical v.89 candidate
 

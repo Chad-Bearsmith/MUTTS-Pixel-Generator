@@ -1,3 +1,6 @@
+MUTTS Pixel Generator [v.100] — Hidden character presets
+- Hid and disabled the 16 character preset buttons. All 18 Body types are available in the Body dropdown.
+
 MUTTS Pixel Generator [v.99] — Missing Body pixels with firearms
 - Restores the original first-idle repair pixels for Werewolf, Furry, and Merman from their current Body swatches, including outfits where Unity renders a separate firearm copy.
 - Repairs the Body layer underneath foreground equipment and respects the firearm's occupied pixels. Alien Armor's tail mask still runs after the repair.

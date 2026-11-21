@@ -12,12 +12,13 @@ import patch_native_player_v96 as native_button
 import patch_native_player_v97 as hand_fallback
 import patch_native_player_v98 as body_mask
 import patch_native_player_v99 as armed_body
+import patch_native_player_v100 as hide_presets
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
   'previous-v87.wasm':'0c47dc29fec0446fa5e8',
   'previous-v88.wasm':'12e3640b5f08041ed6fc',
-  'game/Build/WebGL.wasm':'97d026f8a13aac43d1',
+  'game/Build/WebGL.wasm':'b7627d1780d5266fb',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
 for name,prefix in EXPECTED.items():
@@ -88,17 +89,23 @@ assert len(v98_bodies)==len(v97_bodies)
 assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v97_bodies,v98_bodies)) if a!=b]==[5031,71936]
 assert v98_bodies[body_mask.TAIL-tail.v89.DEF_FUNCS]==tail.v89.body_from_helper(body_mask.HELPER)
 print('PASS v98 changes only the body mask helper and its builder call sites')
-active=(R/'game/Build/WebGL.wasm').read_bytes()
-assert active==armed_body.build()
-active_sections=dict(tail.v89.sections(active))
-assert active_sections.keys()==v98_sections.keys()
-assert all(active_sections[sid]==v98_sections[sid] for sid in v98_sections if sid not in (3,10))
-active_bodies=tail.v89.code_bodies(active_sections[10])
-assert len(active_bodies)==len(v98_bodies)+1
-assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v98_bodies,active_bodies)) if a!=b]==[5031]
-assert active_bodies[-1]==tail.v89.body_from_helper(armed_body.HELPER)
+v99_native=armed_body.build()
+v99_sections=dict(tail.v89.sections(v99_native))
+assert v99_sections.keys()==v98_sections.keys()
+assert all(v99_sections[sid]==v98_sections[sid] for sid in v98_sections if sid not in (3,10))
+v99_bodies=tail.v89.code_bodies(v99_sections[10])
+assert len(v99_bodies)==len(v98_bodies)+1
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v98_bodies,v99_bodies)) if a!=b]==[5031]
+assert v99_bodies[-1]==tail.v89.body_from_helper(armed_body.HELPER)
 print('PASS v99 adds one armed Body helper and its builder call site')
-m=json.loads((R/'game/MUTTS-v99-Build-Manifest.json').read_text())
+active=(R/'game/Build/WebGL.wasm').read_bytes()
+assert active==hide_presets.build()
+active_sections=dict(tail.v89.sections(active))
+assert active_sections.keys()==v99_sections.keys()
+assert all(active_sections[sid]==v99_sections[sid] for sid in v99_sections if sid!=7)
+print('PASS v100 adds one Unity export and preserves every native function body')
+m=json.loads((R/'game/MUTTS-v100-Build-Manifest.json').read_text())
+v99=json.loads((R/'game/MUTTS-v99-Build-Manifest.json').read_text())
 v98=json.loads((R/'game/MUTTS-v98-Build-Manifest.json').read_text())
 v97=json.loads((R/'game/MUTTS-v97-Build-Manifest.json').read_text())
 v96=json.loads((R/'game/MUTTS-v96-Build-Manifest.json').read_text())
@@ -107,6 +114,7 @@ v94=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
 v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
+assert m['sourceV99PlayerWasmSHA256']==tail.sha256(v99_native)==v99['newNativeWasmSHA256']
 assert m['sourceV98PlayerWasmSHA256']==tail.sha256(v98_native)==v98['newNativeWasmSHA256']
 assert m['sourceV97PlayerWasmSHA256']==tail.sha256(v97_native)==v97['newNativeWasmSHA256']
 assert m['sourceV96PlayerWasmSHA256']==tail.sha256(v96_native)==v96['newNativeWasmSHA256']
@@ -133,5 +141,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v99 Web manifest, product titles, source references, and diagnostics')
+print('PASS v100 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

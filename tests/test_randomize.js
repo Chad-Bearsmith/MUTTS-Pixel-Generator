@@ -42,13 +42,14 @@ for (const [i, label] of layers.entries()) {
     rows.set(label, { controls, dropdown, count, options, swatches, row });
 }
 
-const events = [], frames = [];
+const events = [], frames = [], activation = [];
 let focus, selectedObject, first, draws, error, caption, moved;
 const batch = { value: 0 };
 const pending = { value: 0 };
 const exportCaption = writeText(9024, 'Export');
 const canvasName = writeText(9088, 'Canvas');
 const saveName = writeText(9152, 'Save');
+const presetsName = writeText(9280, 'Presets');
 const lookup = (key, address) => [...rows.values()].find(row => row[key] === address);
 const inBatch = (event, ...args) => {
     assert.equal(batch.value, 1);
@@ -61,8 +62,9 @@ const asm = {
     mutts_roll_pending: pending,
     mutts_transform: pointer => pointer === rows.get('Cape').dropdown ? 10000 : 10032,
     mutts_parent: pointer => pointer + 1,
-    mutts_name: pointer => ({10004: canvasName, 10112: saveName})[pointer],
-    mutts_child: (parent, index) => ({'10004,2': 10064, '10064,4': 10112, '10112,0': 10144, '10032,0': 10176})[[parent, index]],
+    mutts_name: pointer => ({10004: canvasName, 10096: presetsName, 10112: saveName})[pointer],
+    mutts_child: (parent, index) => ({'10004,2': 10064, '10064,0': 10096, '10064,4': 10112, '10112,0': 10144, '10032,0': 10176})[[parent, index]],
+    mutts_set_active: (object, active) => activation.push([object, active]),
     mutts_caption: () => 20000,
     mutts_type: pointer => pointer === 20000 ? 1 : 2,
     mutts_game_object: pointer => pointer,
@@ -116,6 +118,7 @@ vm.runInNewContext(script, {
 });
 window.MUTTSRandomize.connect({asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats, _malloc: () => 9504, _free() {}});
 frames.shift()();
+assert.deepEqual(activation, [[10096, 0]], 'only the preset grid is deactivated');
 assert.equal(asm.mutts_random_button.value, 10224);
 assert.equal(caption, 'Randomize');
 assert.deepEqual(moved, [0, 97]);

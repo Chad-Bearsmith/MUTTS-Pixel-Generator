@@ -97,6 +97,12 @@
     for (let i = 0; i < 4 && root; ++i) root = a.mutts_parent(root, 0);
     if (!root || text(module, a.mutts_name(root, 0)) !== 'Canvas') throw Error('Unity canvas was not found.');
     const panel = a.mutts_child(root, 2, 0);
+    const presets = a.mutts_child(panel, 0, 0);
+    if (!presets || text(module, a.mutts_name(presets, 0)) !== 'Presets') {
+      throw Error('Unity preset grid was not found.');
+    }
+    // Deactivate the parent so its preset buttons cannot render or receive input.
+    a.mutts_set_active(a.mutts_game_object(presets, 0), 0, 0);
     const save = a.mutts_child(panel, 4, 0);
     if (text(module, a.mutts_name(save, 0)) !== 'Save') throw Error('Unity Export was not found.');
 
@@ -175,5 +181,5 @@
     requestAnimationFrame(ready);
   }
 
-  window.MUTTSRandomize = { build: 99, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 100, connect, submit: key => submit(key) };
 })();
