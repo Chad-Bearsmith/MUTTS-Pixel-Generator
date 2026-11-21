@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.101.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.102.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -57,7 +57,7 @@ The v.99 helper uses the selected Body key for the verified Furry, Merman, and W
 
 The v.100 patcher exports Unity's existing `GameObject.SetActive` function. UI initialization calls it on the `Presets` parent to hide the whole grid and disable its input.
 
-The v.101 patcher routes the Reset clone through Unity's existing button press method. The editor records startup selections, colors, and visibility, then restores them in one rebuild. The preview uses six design pixels per texel and the default Human's bounds for the fixed shadow anchor.
+The v.101 patcher routes the Reset clone through Unity's existing button press method. The editor records startup selections, colors, and visibility, then restores them in one rebuild. The v.102 preview uses four design pixels per texel and the default Human's bounds for the fixed shadow anchor.
 
 ## Packaging the historical v.89 candidate
 

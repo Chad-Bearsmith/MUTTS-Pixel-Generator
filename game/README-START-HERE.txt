@@ -1,4 +1,4 @@
-MUTTS Pixel Generator [v.101]
+MUTTS Pixel Generator [v.102]
 
 Use Randomize above Export to roll items and color swatches for all visible
 categories. A roll can equip either a melee weapon or a firearm.

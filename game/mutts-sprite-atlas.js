@@ -65,7 +65,7 @@
     // The preview slot is measured in the Unity canvas's 960×600 design space.
     // The default naked Human occupies [26, 38) × [8, 24). Its horizontal
     // midpoint and bottom edge anchor every outfit to the shadow at (240, 300).
-    const scale = 6;
+    const scale = 4;
     const humanMidpoint = (26 + 38) / 2, humanBottom = 24;
     const originX = 240 - humanMidpoint * scale, originY = 300 - humanBottom * scale;
     const size = tile * scale;

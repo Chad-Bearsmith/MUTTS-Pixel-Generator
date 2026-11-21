@@ -113,7 +113,8 @@ active_bodies=tail.v89.code_bodies(active_sections[10])
 assert len(active_bodies)==len(v99_bodies)
 assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v99_bodies,active_bodies)) if a!=b]==[reset_editor.BUTTON_PRESS]
 print('PASS v101 changes only Unity Button.Press and adds Reset globals and exports')
-m=json.loads((R/'game/MUTTS-v101-Build-Manifest.json').read_text())
+m=json.loads((R/'game/MUTTS-v102-Build-Manifest.json').read_text())
+v101=json.loads((R/'game/MUTTS-v101-Build-Manifest.json').read_text())
 v100=json.loads((R/'game/MUTTS-v100-Build-Manifest.json').read_text())
 v99=json.loads((R/'game/MUTTS-v99-Build-Manifest.json').read_text())
 v98=json.loads((R/'game/MUTTS-v98-Build-Manifest.json').read_text())
@@ -124,6 +125,7 @@ v94=json.loads((R/'game/MUTTS-v94-Build-Manifest.json').read_text())
 v93=json.loads((R/'game/MUTTS-v93-Build-Manifest.json').read_text())
 v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
+assert m['unityAssets']==v101['unityAssets']
 assert m['sourceV100PlayerWasmSHA256']==tail.sha256(v100_native)==v100['newNativeWasmSHA256']
 assert m['sourceV99PlayerWasmSHA256']==tail.sha256(v99_native)==v99['newNativeWasmSHA256']
 assert m['sourceV98PlayerWasmSHA256']==tail.sha256(v98_native)==v98['newNativeWasmSHA256']
@@ -152,5 +154,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v101 Web manifest, product titles, source references, and diagnostics')
+print('PASS v102 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

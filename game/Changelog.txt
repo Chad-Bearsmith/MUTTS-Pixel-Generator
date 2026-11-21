@@ -1,3 +1,6 @@
+MUTTS Pixel Generator [v.102] — 4 × 4 preview pixels
+- The live preview uses four design pixels per sprite pixel. The default Human's midpoint and feet still anchor it over the shadow.
+
 MUTTS Pixel Generator [v.101] — Reset and larger live preview
 - Added a matching Unity Reset button above Randomize. Reset restores the default naked Human, including equipment choices, colors, and layer visibility.
 - Doubled the live preview. The default Human's midpoint and feet define the fixed anchor over the shadow.
