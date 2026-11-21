@@ -31,7 +31,9 @@ python scripts/run_tests.py --full
 
 `patch_native_underlay_v89.py` asserts the SHA-256 of the pinned `previous-v88.wasm` input and rewrites `game/Build/WebGL.wasm` by replacing **only function 71935**. Changes for later versions need new versioned scripts and tests, not silent edits to v.89 history.
 
-## Rebuilding the v.91 player
+## Rebuilding the native player
+
+The v.92 player uses the native WebAssembly and Unity data from v.91. The rename and preview fix live in the Web and launcher sources.
 
 Reproduce the checked-in helpers with Zig 0.17.1.
 

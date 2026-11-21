@@ -14,6 +14,6 @@ for number in (3,4,6,7):
 old='if((pixels(slots[s3_1])[at]>>24)!=0u){ if(jobsCount>=96)return -10; jobs[jobsCount++]=(V88Patch){pixels(slots[s3_1]),at,0u};confirmed++; }'
 assert s.count(old)==1
 s=s.replace(old, 'if(s3_1>=0 && (pixels(slots[s3_1])[at]>>24)!=0u){ if(jobsCount>=96)return -10; jobs[jobsCount++]=(V88Patch){pixels(slots[s3_1]),at,0u};confirmed++; }',1)
-s=s.replace('Pixel Hero Maker v.88 experimental first-idle corrective underlay','Pixel Hero Maker v.89 experimental first-idle corrective underlay',1)
+s=s.replace('MUTTS Pixel Generator v.88 experimental first-idle corrective underlay','MUTTS Pixel Generator v.89 experimental first-idle corrective underlay',1)
 (R/'prototype/native_underlay_v89.c').write_text(s)
 print('patched four unique source identities, Apache optional layer safely guarded')

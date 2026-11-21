@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.85] — Swatch-aware underlay experiment
+# MUTTS Pixel Generator [v.85] — Swatch-aware underlay experiment
 
 **Code baseline:** The exact user-accepted v.84 Windows/Web game, native
 WebAssembly SHA-256 `d7e7e32fbcf19dc72823393da235b726e03426e5d631805dce3767b8c66a63eb`.

@@ -1,3 +1,3 @@
-module pixel-hero-maker-offline
+module github.com/Chad-Bearsmith/MUTTS-Pixel-Generator
 
 go 1.23.2

@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.84] — Crossbow and Shotgun source-mask corrections
+# MUTTS Pixel Generator [v.84] — Crossbow and Shotgun source-mask corrections
 
 **Baseline:** v.83 exact distribution, user-reported working except Crossbow
 and Shotgun. Earlier accepted Bolt and native hand-color behavior retained.

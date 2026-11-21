@@ -1,4 +1,4 @@
-/* Pixel Hero Maker v.85 experimental first-idle corrective underlay.
+/* MUTTS Pixel Generator v.85 experimental first-idle corrective underlay.
    This function replaces v84 helper 71935 in the game Wasm module and is called
    after the two original hand-color routines but BEFORE Unity's native final
    layer merge. It is restricted to exact v.81-accepted naked Human + Bolt first-idle

@@ -10,4 +10,4 @@ body{display:flex;align-items:flex-start;justify-content:center;padding:16px 0 0
 /* Same physical preview area as Unity's existing SpriteRenderer: a 64px
  * atlas cell shown at three game pixels per sprite pixel. This never adds
  * separate controls or an external browser preview. Hit testing goes to Unity. */
-#phm-native-preview-surface{position:absolute;left:15.833333%;top:38.333333%;width:20%;height:32%;z-index:2;pointer-events:none;image-rendering:crisp-edges;image-rendering:pixelated}
+#mutts-native-preview-surface{position:absolute;left:15.833333%;top:38.333333%;width:20%;height:32%;z-index:2;pointer-events:none;image-rendering:crisp-edges;image-rendering:pixelated}

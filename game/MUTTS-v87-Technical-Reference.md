@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.87] — Guarded swatch exceptions and diagnostic helmet-layer provenance
+# MUTTS Pixel Generator [v.87] — Guarded swatch exceptions and diagnostic helmet-layer provenance
 
 **Baseline:** Exact v86 game WebAssembly SHA256 `d3176bb11e042b2633bc81a55b700f9aa625f8d58cbfff08330dfc9b7de30c9c`; only existing corrective helper **71935** changed inside the compiled module. The approved native hand-color functions **71933/71934**, builder **5031**, Unity data, framework, loader, and final merge behavior are unchanged. Browser `phm-v76-layer-provenance.js` adds a read-only snapshot to the automatic diagnostic; no pixel upload or browser correction writer is introduced.
 

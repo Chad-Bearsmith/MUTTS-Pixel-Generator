@@ -1,6 +1,7 @@
-# Pixel Hero Maker — Project Source and Release Rules
+# MUTTS Pixel Generator — Project Source and Release Rules
 
-**Status:** Project-wide instructions for all future Pixel Hero Maker fixes, diagnostics, builds, and archives.  
+**Status:** Project-wide instructions for all future MUTTS Pixel Generator fixes, diagnostics, builds, and archives.
+
 **Priority:** Follow these rules unless the user explicitly requests a different convention.  
 **Important:** These are packaging and release standards, not evidence that any gameplay bug has been fixed.
 
@@ -10,29 +11,29 @@ For release version `v.N` (example: `v.24`), use **exactly**:
 
 | Artifact | Exact name |
 |---|---|
-| Windows ZIP | `Pixel Hero Maker [v.N].zip` |
-| Web ZIP | `Pixel Hero Maker [v.N] (Web).zip` |
-| Windows executable | `Pixel Hero Maker [v.N].exe` |
-| Windows extraction folder (if the user creates one) | `Pixel Hero Maker [v.N]` |
-| Web extraction folder (if the user creates one) | `Pixel Hero Maker [v.N] (Web)` |
-| In-game or document version label | `Pixel Hero Maker [v.N]` |
-| Game window title and Web/browser-tab title | `Pixel Hero Maker [v.N]` |
+| Windows ZIP | `MUTTS Pixel Generator [v.N].zip` |
+| Web ZIP | `MUTTS Pixel Generator [v.N] (Web).zip` |
+| Windows executable | `MUTTS Pixel Generator [v.N].exe` |
+| Windows extraction folder (if the user creates one) | `MUTTS Pixel Generator [v.N]` |
+| Web extraction folder (if the user creates one) | `MUTTS Pixel Generator [v.N] (Web)` |
+| In-game or document version label | `MUTTS Pixel Generator [v.N]` |
+| Game window title and Web/browser-tab title | `MUTTS Pixel Generator [v.N]` |
 | Default sprite-sheet export basename | `SpriteSheet` (normally saved as `SpriteSheet.png`) |
 
 Replace **only** `N` with the intended version number. Use literal ASCII spaces, `[`, `]`, `(`, `)`, and periods. Do **not** put `_`, `%20`, `%5B`, `%5D`, `%28`, `%29`, `- Flat`, `- Corrected`, `- Windows`, `- Diagnostic`, or other suffixes into the final ZIP filenames or game folder names. URL encoding in a browser's link address is not a filesystem filename; validate the actual disk names separately.
 
-**Application-facing title requirement:** Every release must show `Pixel Hero Maker [v.N]` as the exact game window title and, for Web, the browser tab/document title. Do not append edition names, patch names, fix labels, platform labels, or descriptions such as `- Fixed`, `- Firearm`, `- Web`, `- Windows`, or `- Edition`. This requirement is separate from ZIP/executable filenames; the Web ZIP still retains `(Web)` in its package name.
+**Application-facing title requirement:** Every release must show `MUTTS Pixel Generator [v.N]` as the exact game window title and, for Web, the browser tab/document title. Do not append edition names, patch names, fix labels, platform labels, or descriptions such as `- Fixed`, `- Firearm`, `- Web`, `- Windows`, or `- Edition`. This requirement is separate from ZIP/executable filenames; the Web ZIP still retains `(Web)` in its package name.
 
 **Do not silently overwrite an established release with different content.** If packaging a diagnostic build for the same version, obtain the user's preference about replacing the existing named files or advancing the version. Diagnostic purpose belongs in the README/changelog, not in an unrequested filename suffix.
 
 ## 2. ZIP layout: no wrapper or nested project folders
 
-**The ZIP must contain the game files at archive root.** The user chooses the extraction directory. Do not include an enclosing `Pixel Hero Maker .../` folder inside the archive, and do not create a second copy of that folder under itself.
+**The ZIP must contain the game files at archive root.** The user chooses the extraction directory. Do not include an enclosing `MUTTS Pixel Generator .../` folder inside the archive, and do not create a second copy of that folder under itself.
 
 Expected Windows ZIP root:
 
 ```text
-Pixel Hero Maker [v.N].exe
+MUTTS Pixel Generator [v.N].exe
 README-START-HERE.txt
 [optional release notes or other necessary root-level files]
 ```
@@ -49,7 +50,7 @@ Changelog.txt
 
 The `Build/` and `TemplateData/` subdirectories are **required asset directories**, not unwanted nested release folders. Do not flatten their contents. Windows packages can have other root files if required by the actual launcher; verify them rather than assuming a fixed list.
 
-When extracted into a user-created folder named `Pixel Hero Maker [v.N]` or `Pixel Hero Maker [v.N] (Web)`, the executable or `index.html` must be **immediately inside that folder**, not one or two levels deeper.
+When extracted into a user-created folder named `MUTTS Pixel Generator [v.N]` or `MUTTS Pixel Generator [v.N] (Web)`, the executable or `index.html` must be **immediately inside that folder**, not one or two levels deeper.
 
 ## 3. Preserve original game behavior unless the change requires otherwise
 
@@ -67,7 +68,7 @@ When extracted into a user-created folder named `Pixel Hero Maker [v.N]` or `Pix
 The Web build must include `Changelog.txt` at ZIP root. Preserve existing historical entries in their existing order and wording unless correcting an explicitly identified factual error. Add the new version entry at the **top**, above prior version entries, using:
 
 ```text
-Pixel Hero Maker [v.N] — Short release title
+MUTTS Pixel Generator [v.N] — Short release title
 - Added/changed: ...
 - Fixed: ... [only when supported by tests]
 - Known limitations: ...
@@ -77,7 +78,7 @@ Pixel Hero Maker [v.N] — Short release title
 
 For a diagnostic-only release, say **"Diagnostic build — not a gameplay fix"**. Never say a fix is complete solely because simulated WebGL or pixel-level tests passed.
 
-Check the **entire changelog**, including bottom `NOTES`, for stale executable names or version references. In the inspected v23 changelog, a historical note still said to run `Pixel Hero Maker [v.19].exe`; future release packaging must update such **current-use instructions** to the actual released executable while preserving historical version narratives.
+Check the **entire changelog**, including bottom `NOTES`, for stale executable names or version references. The v.23 changelog contained an instruction to run v.19. Update **current-use instructions** to the actual released executable while preserving historical version narratives.
 
 The Windows release must also include accessible release information (e.g., `README-START-HERE.txt` and/or `Changelog.txt`). If Windows embeds a web changelog, ensure the embedded copy matches the Web release. Do not promise a standalone Windows changelog unless one is actually included.
 
@@ -85,7 +86,7 @@ The Windows release must also include accessible release information (e.g., `REA
 
 Each release must include a current `README-START-HERE.txt` explaining:
 - Exact release version and whether it is a fix, experiment, or diagnostic.
-- Windows: extract into the chosen folder; run `Pixel Hero Maker [v.N].exe`; describe whether it opens a browser and whether its launcher window must remain open.
+- Windows: extract into the chosen folder; run `MUTTS Pixel Generator [v.N].exe`; describe whether it opens a browser and whether its launcher window must remain open.
 - Web: extract into the chosen folder; explain how to serve `index.html` locally if direct file access does not work.
 - Any required testing steps, diagnostic capture button, generated output filename, and how to send results.
 - Known limitations and unverified behavior.
@@ -110,7 +111,7 @@ Before presenting download links, inspect **the actual final ZIP files**, not ju
 9. Reopen and recheck ZIPs after any last-minute rename, rebuild, or copy.
 10. Verify the exact final output paths exist before linking them.
 11. Apply the tested literal-path `Link` delivery method in §7C, then perform the download-name verification in §7D, recording whether it was actually possible to test the user-facing downloaded filename.
-12. Check the actual running Windows app/launcher title and the Web browser-tab title against the exact `Pixel Hero Maker [v.N]` string, with no edition or release-description suffix. Verify after startup, not solely by inspecting HTML or metadata.
+12. Check the actual running Windows app/launcher title and the Web browser-tab title against the exact `MUTTS Pixel Generator [v.N]` string, with no edition or release-description suffix. Verify after startup, not solely by inspecting HTML or metadata.
 13. Trigger a native sprite-sheet export in both Windows and Web. Verify the initial suggested filename is `SpriteSheet.png` for PNG exports, the exported bytes and sprite art are unchanged, and a user-specified filename is still respected. Report platforms not actually tested.
 
 ### Reference verification script (run against final artifacts)
@@ -122,7 +123,7 @@ from zipfile import ZipFile
 root = Path("/mnt/data")
 version = "v.24"  # set to the actual release version
 for is_web in (False, True):
-    filename = f"Pixel Hero Maker [{version}]" + (" (Web)" if is_web else "") + ".zip"
+    filename = f"MUTTS Pixel Generator [{version}]" + (" (Web)" if is_web else "") + ".zip"
     path = root / filename
     assert path.is_file(), f"Missing: {path}"
     assert path.name == filename
@@ -139,9 +140,9 @@ for is_web in (False, True):
                         "Build/WebGL.framework.js", "Build/WebGL.loader.js"}
             assert required <= set(names), required - set(names)
         else:
-            assert f"Pixel Hero Maker [{version}].exe" in names
-        assert not any(n.startswith(f"Pixel Hero Maker [{version}]/") or
-                       n.startswith(f"Pixel Hero Maker [{version}] (Web)/") for n in names)
+            assert f"MUTTS Pixel Generator [{version}].exe" in names
+        assert not any(n.startswith(f"MUTTS Pixel Generator [{version}]/") or
+                       n.startswith(f"MUTTS Pixel Generator [{version}] (Web)/") for n in names)
         print("PASS", filename, len(names), "files")
 ```
 
@@ -156,8 +157,8 @@ This script is a **minimum structural check**, not a substitute for comparing em
 For `v.N`, the user-visible saved download names must be **exactly**:
 
 ```text
-Pixel Hero Maker [v.N].zip
-Pixel Hero Maker [v.N] (Web).zip
+MUTTS Pixel Generator [v.N].zip
+MUTTS Pixel Generator [v.N] (Web).zip
 ```
 
 Check the saved **basename**, not just the file extension, ZIP contents, link label, or a decoded URL. The filename must contain normal ASCII spaces, literal brackets and parentheses, and no underscores, `%` escape sequences, suffixes, or unexpected prefix. Do not confuse an automatic browser collision suffix such as `(1)` with a packaging error: retry in a clean download directory before drawing a conclusion.
@@ -166,19 +167,19 @@ Check the saved **basename**, not just the file extension, ZIP contents, link la
 
 1. Create the final files on disk under the exact names above, and verify them with `Path.name`, `repr(Path.name)`, and the ZIP checks in §6.
 2. Attach or link **those exact files**; do not create separate copies with URL-encoded names, and do not substitute a filename derived from an encoded link target.
-3. If a delivery mechanism exposes HTTP headers, inspect `Content-Disposition`. Prefer `attachment; filename="Pixel Hero Maker [v.N].zip"` (and the analogous Web name). If `filename*` is present, ensure its UTF-8-decoded value is the same exact basename. Check for unexpected underscores, percent-encoded literal filenames, or conflicting header values. Only configure headers when the delivery mechanism actually permits it.
+3. If a delivery mechanism exposes HTTP headers, inspect `Content-Disposition`. Prefer `attachment; filename="MUTTS Pixel Generator [v.N].zip"` (and the analogous Web name). If `filename*` is present, ensure its UTF-8-decoded value is the same exact basename. Check for unexpected underscores, percent-encoded literal filenames, or conflicting header values. Only configure headers when the delivery mechanism actually permits it.
 4. **When possible, perform a real download through the same link or UI the user will use**, into a clean download directory. Inspect the resulting saved filename (and ZIP integrity). This is the strongest available verification of what the user receives.
 5. If direct download simulation is not available, **state explicitly that the downloaded filename was not independently verified**. Do not claim that a correct `/mnt/data` filename guarantees the browser's saved name.
 6. If the saved filename is wrong, first identify whether the error comes from the local artifact name, the link target, the server's download headers, or the client UI. Correct only the part under our control. Do not repeatedly rename or republish files without testing the relevant layer.
 7. If the platform controls the filename and cannot be corrected from here, report the limitation clearly. Provide the exact intended filename and, if necessary, a rename instruction rather than falsely promising that the download will be named correctly.
 
-**URL encoding rule:** `%20` in a link address can legitimately represent a space, and `%5B` / `%5D` can represent brackets. It is **not** evidence of a bad download filename by itself. Conversely, a file literally named `Pixel%20Hero%20Maker...zip` on disk **is** wrong. Never describe the two as interchangeable.
+**URL encoding rule:** `%20` in a link address can legitimately represent a space, and `%5B` / `%5D` can represent brackets. It is **not** evidence of a bad download filename by itself. Conversely, a file literally named `MUTTS%20Pixel%20Generator...zip` on disk **is** wrong. Never describe the two as interchangeable.
 
 ### C. Mandatory filename-safe download delivery — tested ChatGPT method
 
 **Verified in the current ChatGPT interface on 2026-11-17:** The user confirmed that BOTH test ZIPs saved with their correct names when delivered using the rendered `Link` component with a **literal, unencoded sandbox path**. Earlier manually percent-encoded Markdown links produced encoded or underscored filenames; ordinary Markdown links containing unescaped spaces/brackets did not render reliably. Treat this as a verified delivery method for the tested interface, not a guarantee across all future clients.
 
-1. **First choice for ChatGPT handoffs: render a `Link` component** whose `url` is the literal sandbox path to the already-verified artifact, preserving spaces, square brackets, and parentheses exactly. For example, the Windows link URL value is `sandbox:/mnt/data/Pixel Hero Maker [v.N].zip` and the Web link URL value is `sandbox:/mnt/data/Pixel Hero Maker [v.N] (Web).zip`. Give each link a readable title such as `Download Windows ZIP` or `Download Web ZIP`.
+1. **First choice for ChatGPT handoffs: render a `Link` component** whose `url` is the literal sandbox path to the already-verified artifact, preserving spaces, square brackets, and parentheses exactly. For example, the Windows link URL value is `sandbox:/mnt/data/MUTTS Pixel Generator [v.N].zip` and the Web link URL value is `sandbox:/mnt/data/MUTTS Pixel Generator [v.N] (Web).zip`. Give each link a readable title such as `Download Windows ZIP` or `Download Web ZIP`.
 2. **Do not manually percent-encode** the `Link` URL value (`%20`, `%5B`, `%5D`, `%28`, `%29`) or replace spaces with underscores. Do not use a plain Markdown link with raw spaces/brackets as a substitute: this failed to render in the test. Do not create alternate encoded filenames on disk.
 3. **If `Link` is unavailable in a future environment**, prefer a supported direct attachment with explicit basename, or a server-controlled download with matching `Content-Disposition` filename. A client-side Blob download is acceptable only if the environment truly supports authorized byte access and executable download controls. Never pretend that a nonfunctional workaround is available.
 4. **After delivery, verify saved filenames separately** when possible. The 2026-11-17 user test passed for both test archives with literal-path `Link`; it does not establish the result for every future release or browser.
@@ -216,7 +217,7 @@ A result of **NOT TESTED** must not be represented as PASS. If the actual downlo
 Before any new release:
 1. Inspect the current source build, existing release ZIPs, and `Changelog.txt`.
 2. Determine which prior build is the actual code baseline; do not assume the newest ZIP is the cleanest baseline.
-3. Maintain a single release version across filenames, executable, UI labels, changelog, and documentation. Enforce the exact game/window/browser title `Pixel Hero Maker [v.N]` and the default export basename `SpriteSheet` as release invariants.
+3. Maintain a single release version across filenames, executable, UI labels, changelog, and documentation. Enforce the exact game/window/browser title `MUTTS Pixel Generator [v.N]` and the default export basename `SpriteSheet` as release invariants.
 4. Keep diagnostic artifacts and intermediate comparisons in a separate working directory, **not** mixed into release ZIP roots.
 5. Preserve a reproducible record of code changes and regression tests, including bare arms, clothed arms/gloves, custom swatches, all firearm frames, and weapon-specific exceptions.
 6. Never assert universal outfit/firearm support without evidence across the relevant combinations.
@@ -238,8 +239,8 @@ These settings are standing requirements for **every future release**, including
 
 ### A. Title visible on the game window
 
-- The exact visible name must be `Pixel Hero Maker [v.N]`, with only `N` replaced by the release's number.
-- Remove all appended *edition*, *patch*, *diagnostic*, *platform*, or descriptive names from the visible game window. Do not change the existing package-name distinction: the Web ZIP is still `Pixel Hero Maker [v.N] (Web).zip`.
+- The exact visible name must be `MUTTS Pixel Generator [v.N]`, with only `N` replaced by the release's number.
+- Remove all appended *edition*, *patch*, *diagnostic*, *platform*, or descriptive names from the visible game window. Do not change the existing package-name distinction: the Web ZIP is still `MUTTS Pixel Generator [v.N] (Web).zip`.
 - For the Windows build, check whichever title the player actually sees: native game window, launcher window if present, and any game-bearing browser window the executable opens. For the Web build, check the browser tab's `document.title` and any app-displayed window heading when it represents the game title.
 - Where relevant, change the HTML `<title>`, startup `document.title` assignments, launcher/native window text, and build/application name metadata. Avoid a cosmetic HTML-only fix that is overwritten at runtime by the game or launcher.
 - Keep changelog release subtitles **inside the changelog**; they must not be appended to the application-facing name.

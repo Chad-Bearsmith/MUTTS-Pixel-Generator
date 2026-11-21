@@ -1,8 +1,9 @@
-# Pixel Hero Maker — technical handoff to Codex
+# MUTTS Pixel Generator — technical handoff to Codex
 
 **Prepared:** 2026-11-20  
-**Imported runtime:** experimental `Pixel Hero Maker [v.89]`  
-**Safeguarded reference:** `previous-v87.wasm` (the last source version with newly user-confirmed palette cases); full v.87 Web release is preserved separately as the original `Pixel Hero Maker [v.87] (Web).zip` download, not committed inside this source repo.  
+**Imported runtime:** experimental v.89.
+
+**Safeguarded reference:** `previous-v87.wasm` is the last imported source version with newly user-confirmed palette cases. The original v.87 Web archive is preserved separately from this repository.
 **Important:** The user has not yet confirmed the v.89 geometry changes in live gameplay. In this imported snapshot, v.89 is an experimental branch, not a new accepted baseline.
 
 ## 1. What the product is
@@ -26,7 +27,7 @@ All source/asset/diagnostic files here were imported from `PixelHero-v89-Develop
 | v.88 | Source-layer recognition experiment; user supplied five new failing screenshots/traces. Not accepted as a universal fix. |
 | v.89 | New four uniquely identified primary-source fallback paths; **only synthetic/native tests passed**; awaits user live gameplay confirmation. Cape/Back hand-color bug intentionally still unresolved. |
 
-Historical technical references are in `game/PixelHero-v80...v89-Technical-Reference.md`. Follow those source details rather than treating the summaries as code-level proof.
+Historical technical references are in `game/MUTTS-v80...v89-Technical-Reference.md`. Follow those source details rather than treating the summaries as code-level proof.
 
 ## 3. Native architecture and fixed references
 
@@ -36,11 +37,11 @@ Historical technical references are in `game/PixelHero-v80...v89-Technical-Refer
 - 12 supported item templates: Armor Alien, Angel, Apache, Dracula; Body Fire Lizard, Furry, Lizard, Merman, Werewolf; Cape Cape; Helmet Hellsing, Snow Rider.
 - Corrections may add, replace, or erase a pixel; they must remain behind visible firearm artwork and respect foreground equipment. Apache's erase requires true clearing rather than a transparent overlay.
 - Existing fallback recognition uses palette-invariant fingerprints and later v.88/v.89 source-layer matching when composite-based recognition skips.
-- Accepted release convention: exact visible title `Pixel Hero Maker [v.N]`, export default `SpriteSheet.png`, Windows `Pixel Hero Maker [v.N].zip`, Web `Pixel Hero Maker [v.N] (Web).zip`, flat ZIP roots. See the full rules file.
+- Accepted release convention: exact visible title `MUTTS Pixel Generator [v.N]`, export default `SpriteSheet.png`, Windows `MUTTS Pixel Generator [v.N].zip`, Web `MUTTS Pixel Generator [v.N] (Web).zip`, flat ZIP roots. See the full rules file.
 
 ## 4. Current v.89 implementation and remaining limits
 
-File `game/PixelHero-v89-Technical-Reference.md` details exactly which native function changed and how. Specifically, v.89 recognizes four item primary alpha masks independently when Unity omits otherwise expected companion textures:
+File `game/MUTTS-v89-Technical-Reference.md` details exactly which native function changed and how. Specifically, v.89 recognizes four item primary alpha masks independently when Unity omits otherwise expected companion textures:
 
 | Item | Bolt source-layer status | Known patch |
 |---|---:|---|

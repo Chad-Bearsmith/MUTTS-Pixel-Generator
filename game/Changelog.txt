@@ -1,131 +1,136 @@
-Pixel Hero Maker [v.91] — Firearm hand color and equipment underlays
+MUTTS Pixel Generator [v.92] — Project rename and firearm preview fix
+- Renamed the player, browser title, launcher, and project files to MUTTS Pixel Generator.
+- Fixed a larger duplicate firearm behind the idle preview. The preview now uses the combined character atlas, which already contains the equipped firearm. The preview-only change keeps the PNG export path and sprite data unchanged.
+- Chromium Unity tests verified the preview with Bolt, Bazuka, and the firearm hidden. The downloaded SpriteSheet.png files matched v.91 byte for byte.
+
+MUTTS Pixel Generator [v.91] — Firearm hand color and equipment underlays
 - The armed hand-color routine now distinguishes a missing Armor overlay slot from a failed pixel capture. A verified missing slot uses the current eligible arm reference, while a fresh glove or sleeve supplies its own color.
 - Restored guarded v.88/v.89 source-layer recognition, including the four companion-layer fixes for Alien Armor, Dracula Armor, Apache Armor, and Furry Body.
 - Dracula Armor's source-layer correction samples its exact highlight from the current swatch-adjusted atlas. It skips that pixel when neither the atlas sample nor the stock palette can be verified.
 - Retained the Alien Armor Body-tail correction and the local-only player. Unsupported source arrangements still skip the underlay.
 - The four restored underlays passed the original native fixtures. Chromium Unity runs verified the Cape and Back hand fix, a genuine glove swatch, three Dracula swatches, and SpriteSheet.png exports with Alien Armor in both firearm states. The Windows launcher cross-compiled. Windows GUI testing is pending.
 
-Pixel Hero Maker [v.90] — Player build
+MUTTS Pixel Generator [v.90] — Player build
 - Removed the diagnostic panel, tracing, reference manifest, and diagnostic native exports from the player.
 - Retained the Alien Armor Body-tail correction and accepted hand-color routines. Restored the v.87 firearm underlay and retired the experimental v.88/v.89 source-layer matching.
 - The player loads bundled assets only. Unity web requests and external navigation are disabled. Sprite PNG export stays local.
 - Verified Unity Web exports for Fire Lizard with Alien Armor, both with Bolt and with Firearm set to Empty. PNG names and pixels matched the v.90 candidate, and the browser made only packaged asset reads.
 - Some Armor and Cape/Back combinations can still produce an incorrect firearm hand color.
 
-Pixel Hero Maker [v.90] — Alien Armor Body-tail correction (development candidate)
+MUTTS Pixel Generator [v.90] — Alien Armor Body-tail correction (development candidate)
 - Alien Armor hides the verified first-idle tail pixels of Fire Lizard, Lizard, Merman, Furry, and Werewolf on the Body item layer in both firearm states.
 - The native hook runs before the current Body and Armor arrays are combined. The v.89 firearm underlay and both v.80 hand-color routines are retained.
 - Validation includes isolated source-mask tests, live Unity atlas comparisons for all five Body selections with Bolt and with Firearm set to Empty, and Unity export checks for Merman and Fire Lizard. Removing Alien Armor restored Fire Lizard in both firearm states.
 - Cape/Back arm-source status 2 and unmatched gear underlay cases remain open. Windows GUI and downloaded release filenames have not been tested.
 
-Pixel Hero Maker [v.89] — Experimental optional companion source support (four item geometry cases)
+MUTTS Pixel Generator [v.89] — Experimental optional companion source support (four item geometry cases)
 - Changed: Native underlay helper 71935 recognizes Apache Armor, Alien Armor, Dracula Armor, and Furry Body by their independently unique 64x64 original item source alpha shapes, even when a companion source buffer is omitted by Unity during an equipped rebuild. Each unique primary source was checked against the 564-item original source texture alpha index. All other item matching rules, including Snow Rider's shared source shape that requires its distinguishing sentinel, remain strict.
 - Corrective pixels: Existing v88 item-specific add, recolor, and erase templates are unchanged. The four selected item changes are written to their own current swatch-adjusted native source arrays, beneath later equipment and the firearm. For Apache, an optional secondary erase is performed only if its secondary source exists. The other original matching paths remain first-choice, and the firearm buffer remains untouched.
 - Verification: Five newly supplied v88 native per-layer trace masks modeled with exact observed alpha and sample RGBA values (unobserved RGB filled synthetically) returned 8004 Alien, 8006 Dracula, 8003 Apache, -3 safe skip, and 8007 Furry. All 12 source-item fixture tests (126 checks), earlier v87 equipment layer fixtures, inherited 305 firearm and 1802 swatch tests, and 23 native hand-color tests passed. Full WASM validates. These are isolated tests, NOT evidence of a successful v89 interactive Unity sprite export.
 - Known limitation: The separate Armor + Cape/Back hand-color failure is NOT repaired. Some equipped combinations still give hand status 2 with source104 fresh but a selected 108 overlay unavailable, leaving the earlier routine's Cape/Back color. The v88 arm-source diagnostic remains available. Avoid guessing skin when armor or gloves could be equipped; see the technical reference.
 - Known limitation: Other unsupported mixed outfits, missing source buffers, or shared silhouettes may still skip. Dracula's inferred unusual swatch highlight remains experimental.
-- Windows/Web packaging: Flat-root Windows and Web archives, matching embedded and browser assets, exactly named Pixel Hero Maker [v.89].zip and Pixel Hero Maker [v.89] (Web).zip. Actual native Windows GUI, live Unity v89 exports, and browser-saved ZIP basenames were not independently tested. Default PNG export basename remains SpriteSheet.png.
+- Windows/Web packaging: Flat-root Windows and Web archives, matching embedded and browser assets, exactly named MUTTS Pixel Generator [v.89].zip and MUTTS Pixel Generator [v.89] (Web).zip. Actual native Windows GUI, live Unity v89 exports, and browser-saved ZIP basenames were not independently tested. Default PNG export basename remains SpriteSheet.png.
 
-Pixel Hero Maker [v.88] — Experimental independent item-layer recognition and hand-source diagnostics
+MUTTS Pixel Generator [v.88] — Experimental independent item-layer recognition and hand-source diagnostics
 - Added (experimental underlay): When the accepted exact-color and swatch-aware matchers reject a valid firearm state, native helper 71935 now checks the distinct alpha masks of the original selected item source layers instead of guessing from the final merged character. Original Unity source textures supply item identity; replacement colors come from the CURRENT swatch-adjusted item source array. Correction pixels are written into that item's own layer, beneath subsequently drawn equipment and the firearm, rather than blindly into the last non-firearm array. A two-part item (e.g. Apache or Dracula Armor) must present both required signatures; missing/ambiguous source layers fail closed. Multiple distinct item layers can be corrected in one build when supported, with conflicting writes rejected.
 - Verified in isolated fixtures: Original source RGBA tiles for all 12 items, with and without synthetic palette changes; existing 10 user-supplied v87 native per-layer snapshots reconstructed with matching first-idle alpha and selected source-color samples. The Merman+Astronaut, Merman+additional armor/helmet/accessory, Merman+Cape and Merman+Back combinations produced source-layer corrections, with source masks and gun materials preserved. These are native fixtures, NOT new interactive gameplay acceptance tests.
 - Preserved: All v87 exact/structural/swatch matching rules, all user-confirmed item corrections and four newer Body palette cases, all recognized firearm alpha masks, native hand-color functions 71933/71934 and their invocation order, original Unity item/assets, static preview and SpriteSheet.png export. The compiled game modifies only native helper 71935; no browser pixel writer was added.
 - Known limitation — armor with Cape/Back hand colors NOT yet repaired: Native v80 hand status 2 occurs when arm source104 is fresh but a selected source108 overlay is unavailable and cannot be proven optional. Relaxing that check could damage gloves or armor. The old fallback can retain Cape/Back color. v88 intentionally preserves fail-closed native behavior and adds read-only live samples of both native arm sources to the diagnostic trace for the next targeted investigation. Do not claim this issue fixed. Some combinations may still skip the underlay when the needed item source buffers are omitted by the original armed builder.
 - Validation: Full WASM successfully compiled; source-layer fixtures for all 12 templates and v87 source-layer snapshots passed; inherited 305 firearm/item, 1802 synthetic swatch and 23 hand-color isolated checks passed. Native Windows GUI, interactive v88 Unity, new overlapping item combinations, and downloaded ZIP basenames were not independently tested in this environment.
-- Windows/Web packaging: Pixel Hero Maker [v.88].zip and Pixel Hero Maker [v.88] (Web).zip, with flat roots and byte-identical embedded/browser game content. Exact title Pixel Hero Maker [v.88], default PNG filename SpriteSheet.png.
+- Windows/Web packaging: MUTTS Pixel Generator [v.88].zip and MUTTS Pixel Generator [v.88] (Web).zip, with flat roots and byte-identical embedded/browser game content. Exact title MUTTS Pixel Generator [v.88], default PNG filename SpriteSheet.png.
 
-Pixel Hero Maker [v.87] — Four verified Body-swatch cases and helmet layer diagnostics
+MUTTS Pixel Generator [v.87] — Four verified Body-swatch cases and helmet layer diagnostics
 - Changed (experimental first-idle native corrective underlay): Reproduced all four v86 user-reported failed item-color combinations with their actual exported PNGs: Fire Lizard Body palette 12, Lizard Body palette 12, and Werewolf Body palettes 4 and 19. Every original alpha silhouette remains unchanged. v87 retains v86's exact and structural recognition, then (ONLY for these three Body items) relaxes the two Fire Lizard, one Lizard, and five distinct Werewolf shade-equality comparisons observed in those PNGs. All remaining structure and alpha checks must match, and the original source/target pixel safety guards and firearm protection are unchanged. No unrestricted silhouette-only matching or RGB guessing was added.
 - Added (read-only diagnostic): Automatic idle trace now includes `underlaySourceLayers` with each existing native first-idle input's packed 64x64 alpha mask, pixel counts, original RGBA sample points, and append-site pointer identities. This helps identify the selected item independently of covering helmets without writing to Unity pixels. The record requires an existing fresh equipped native snapshot; if unavailable it explains the absence.
 - Known limitation — helmets NOT fixed in this release: The existing full-character structural fingerprint changes when a helmet covers a Body/Armor item. Several combinations have identical exposed silhouettes, so an automatic generic helmet override would risk misapplying the wrong correction. Helmets therefore continue to safely skip unless previously supported by the strict paths. The new diagnostic is evidence gathering to enable native item/category identity verification. The user-supplied v86 helmet examples were NOT automatically repaired; altered equipment combinations remain unverified. Dracula's experimental recolor highlight is unchanged.
 - Preserved: User-confirmed original-color firearm/item fixes, v80 automatic hand-color fix including Back/Cape exclusion, all 12 corrective templates, all 24 firearm IDs/25 source variants, original Unity assets, preview, export and disabled animations. Only WebAssembly helper 71935 and observational diagnostic JavaScript changed. No rendering/weapon texture modifications.
 - Validation: Four actual v86 failed exports reproduced old native status -3 and newly return 5002/5008/5010/5010 with exactly the expected source-color corrections; 54 source-frame/native fixture checks passed. Inherited 305 firearm/item and 1,802 palette fixture checks passed. The new layer diagnostic passed a simulated native-snapshot integrity/no-write check. Hand-color and full WASM/launcher/browser/ZIP checks are separately documented. Actual interactive v87 Unity, helmet item identity, native Windows execution, and user-facing saved ZIP basenames are NOT TESTED.
-- Windows/Web packaging: Pixel Hero Maker [v.87].zip and Pixel Hero Maker [v.87] (Web).zip, both flat-root and version aligned; Windows launcher rebuilt from same Web files. Exact title Pixel Hero Maker [v.87]; default export SpriteSheet.png.
+- Windows/Web packaging: MUTTS Pixel Generator [v.87].zip and MUTTS Pixel Generator [v.87] (Web).zip, both flat-root and version aligned; Windows launcher rebuilt from same Web files. Exact title MUTTS Pixel Generator [v.87]; default export SpriteSheet.png.
 
-Pixel Hero Maker [v.86] — Targeted Furry/Werewolf color-swatch recognition
+MUTTS Pixel Generator [v.86] — Targeted Furry/Werewolf color-swatch recognition
 - Fixed (experimental native first-idle underlay): Reproduced the user-reported Furry and Werewolf Body failures with the two actual v85 exported PNGs and their matching native geometry. v85's item-recognition hash rejected four Furry and one Werewolf adjacent-shade comparisons when the Body category color was recolored. The silhouettes were unchanged. v86 keeps the original v85 exact RGB and full structural matching paths first, then uses a second structural fingerprint that ignores just those five shade-equality checks, while preserving alpha, all other neighboring color checks, item-specific pre-write target/source alpha guards, and current-swatch sampling. The relaxed match is permitted ONLY for Furry Body (item 7) or Werewolf Body (item 10).
 - Preserved: All 12 item correction templates and their native target/source pixels; the verified 24 firearm IDs/25 alpha-mask variants; visible firearm priority; v80 Cape/Back-aware hand-color correction and native call order; original Unity assets, idle preview/export, custom naming, disabled animations, and all other WASM functions. Only corrective helper 71935 differs from v85.
 - Known limitations: Other swatch combinations that change shape or non-whitelisted color boundaries may still fail closed. Unrelated outfits and unsupported combinations are not certified. Dracula Armor's experimental nondefault-color highlight estimate remains unchanged. These two real exported frames test native helper behavior with source-aligned fixtures, not a live interactive v86 Unity session.
 - Validation: Both real v85 failed sprites reproduced status -3 in the old native helper and returned corrected 5007/5010 statuses using the new compiled helper; expected 4/6 correction sites changed while all other atlas bytes and firearm artwork were unchanged. 16 checks in this real-PNG native harness, 1,802 inherited synthetic swatch cases, 305 inherited multi-firearm fixture cases, and 23 native hand tests passed. Full WASM compiles; browser mock, ZIP/launcher parity tests run independently. Interactive v86 Unity, Windows GUI, and actual browser-saved download basenames NOT TESTED in this environment.
-- Windows/Web packaging: Pixel Hero Maker [v.86].zip and Pixel Hero Maker [v.86] (Web).zip; flat archive roots, freshly rebuilt identical-content Windows launcher, exact game title Pixel Hero Maker [v.86], default export SpriteSheet.png.
+- Windows/Web packaging: MUTTS Pixel Generator [v.86].zip and MUTTS Pixel Generator [v.86] (Web).zip; flat archive roots, freshly rebuilt identical-content Windows launcher, exact game title MUTTS Pixel Generator [v.86], default export SpriteSheet.png.
 
-Pixel Hero Maker [v.85] — Experimental palette-aware corrective underlays
+MUTTS Pixel Generator [v.85] — Experimental palette-aware corrective underlays
 - Changed (native first-idle underlay): Retains the v.84 exact-color match and 25-mask firearm recognition first. Adds a guarded, swatch-aware fallback for all 12 item templates based on character alpha and neighboring equal-color boundaries outside the union of gun artwork, rather than requiring literal default RGB values. Apache/Alien and Cape/Dracula are further distinguished by source-layer alpha at a known item-specific position. Item patches sample live palette-adjusted character pixels; visible firearm artwork is never overwritten. A successful fallback returns 5000 + weaponID*100 + itemID, separate from unchanged exact-match codes.
 - Dracula note: One added highlight pixel does not exist as a sample in the visible armed source. For changed swatches only, the experimental fallback estimates that highlight by applying the reference shade-channel ratios to the current darker red sample. This is NOT proven to match Unity's exact swatch transform and needs live visual review. Original/default-color Dracula remains on the unchanged v.84 exact pixel path.
 - Preserved: v.80 Cape/Back-aware automatic hand-color algorithms and call order; v.84's 24 firearm IDs/25 verified alpha variants, 12 correction definitions, first-idle framing, animation-disabled state, static export, original Unity data/framework/loader, and all native functions except existing underlay helper 71935.
 - Known limitations: Palette-invariant recognition requires the underlying shape and neighboring color-boundary relationships to remain consistent; unusual swatches that merge previously different shades, overlapping outfits, or unknown characters may fail closed. Exact swatch colors and the single Dracula highlight need in-game approval. These tests are synthetic, not actual selectable Unity swatches.
 - Validation: Compiled-native 1,802 fixture checks (6 channel permutations x 25 source alpha variants x 12 items plus 2 adversarial guards), 305 inherited native multi-firearm cases, 23 inherited native hand-color tests, full game WASM validation, browser mock export, ZIP integrity/Windows-Web parity. Native Windows live gameplay, actual Unity swatches, and client-saved download basenames: NOT TESTED in this environment.
-- Windows/Web packaging: Pixel Hero Maker [v.85].zip and Pixel Hero Maker [v.85] (Web).zip, flat roots, freshly rebuilt identical-content Windows launcher, exact title Pixel Hero Maker [v.85], default export SpriteSheet.png.
+- Windows/Web packaging: MUTTS Pixel Generator [v.85].zip and MUTTS Pixel Generator [v.85] (Web).zip, flat roots, freshly rebuilt identical-content Windows launcher, exact title MUTTS Pixel Generator [v.85], default export SpriteSheet.png.
 
-Pixel Hero Maker [v.84] — Experimental Crossbow and Shotgun mask recognition
+MUTTS Pixel Generator [v.84] — Experimental Crossbow and Shotgun mask recognition
 - Changed (native first-idle underlay): Adds two exact, source-verified alpha silhouettes omitted in v.83: the Crossbow texture named `Сrossbow` (initial Cyrillic capital Es, in sharedassets0.assets) and the live-marked Shotgun variant from sharedassets0.assets. The original v.83 resource Shotgun silhouette stays recognized as a separate compatible variant.
 - Cause: Both user-supplied v.83 native traces reported experimentalUnderlay status -2 while correct native hand references remained active. v.83's 23-mask registry omitted Crossbow and registered only resources.assets/Shotgun (59 alpha-255 pixels), whereas the game also has a second Shotgun texture with the same opaque shape but seven alpha-254 hand markers and one alpha-252 material pixel. The user exports confirm hand markers and source artwork consistent with this discrepancy.
 - Preserved: All previously recognized weapon masks, Bolt's 12 user-confirmed item corrections, v.83's 12 existing item rules and per-pixel firearm priority, v.80 automatic hand-color correction, all other native WASM functions, and unchanged Unity data/loader/framework. Only underlay native function 71935 changed. The firearm-mask union remains 255 pixels; no geometry rules, offsets, color samplers or erase operations changed.
 - Known limitations: Exact appearance and current swatches still required; original reference images are Bolt-only. Live Crossbow/marked Shotgun corrective exports have NOT YET been accepted by the user. Other user-described working firearms are unchanged but not exhaustively retested here. Tail and animation geometry remain out of scope.
 - Validation: 305 isolated compiled-WASM fixture checks across 25 exact source masks and 12 item references plus five adversarial tests; full game WASM validates; inherited hand-color and JS preview/export regression tests; Windows/Web packaging verified independently. Live GUI/Unity tests, Windows native execution, and client-saved ZIP basenames: NOT TESTED unless explicitly documented elsewhere.
-- Windows/Web packaging: Pixel Hero Maker [v.84].zip and Pixel Hero Maker [v.84] (Web).zip; flat archive roots, rebuilt Windows launcher embedding the same Web files, exact Pixel Hero Maker [v.84] title, default SpriteSheet.png export.
+- Windows/Web packaging: MUTTS Pixel Generator [v.84].zip and MUTTS Pixel Generator [v.84] (Web).zip; flat archive roots, rebuilt Windows launcher embedding the same Web files, exact MUTTS Pixel Generator [v.84] title, default SpriteSheet.png export.
 
-Pixel Hero Maker [v.83] — Experimental cross-firearm extension of accepted Bolt item underlays
+MUTTS Pixel Generator [v.83] — Experimental cross-firearm extension of accepted Bolt item underlays
 - Added: Recognizes the exact 64x64 first-idle alpha masks of 22 further Unity firearm textures, alongside the accepted Bolt mask. Each of the 12 item-specific corrections now has a guarded, first-idle-only native correction route for these firearms. Hand-marker colors and original firearm pixels remain untouched.
 - Compositing: Preserves the v.82 Bolt native code path. Other weapons use a normalized character fingerprint over 3,841 pixels transparent in every known firearm source, then prevalidate the exposed correction pixels and expected color-source pixels. Hidden target pixels are not modified. The same layer-stage supports additions, replacements and Apache's erase.
 - Scope/limitations: All twelve Bolt item cases were live-confirmed by the user in v.82. All non-Bolt cases remain EXPERIMENTAL and require actual Unity selection/export tests. The source reference examples only show Bolt; mask-aware fixture checks are not evidence that every non-Bolt pose/outfit matches. Other equipment, modified palettes/swatches, animation frames and tails are not claimed fixed. A recognized item may intentionally skip due to geometry or source mismatch.
 - Diagnostics: Positive non-Bolt status = firearm ID × 100 + item ID (codes documented in README). Negative -6 means all sites covered by weapon; -7 means target geometry mismatch. Earlier status meanings preserved for Bolt.
 - Validation: 281 compiled WebAssembly helper fixture checks passed for all 23 weapon masks and 12 item references (142 non-Bolt item/weapon cases had exposed targets, 122 were fully covered). Full WASM changes only native method 71935; original v.80 hand-color routines and native builder unchanged. Synthetic browser checks, launcher parity and ZIP integrity are reported separately. Live non-Bolt gameplay, native Windows execution, actual download basenames: NOT TESTED.
-- Windows/Web packaging: Pixel Hero Maker [v.83].zip and Pixel Hero Maker [v.83] (Web).zip; flat archive roots, rebuilt matching Windows launcher, exact Pixel Hero Maker [v.83] title, SpriteSheet.png export default, full historical changelog retained.
+- Windows/Web packaging: MUTTS Pixel Generator [v.83].zip and MUTTS Pixel Generator [v.83] (Web).zip; flat archive roots, rebuilt matching Windows launcher, exact MUTTS Pixel Generator [v.83] title, SpriteSheet.png export default, full historical changelog retained.
 
-Pixel Hero Maker [v.82] — Expand accepted Bolt underlay experiment to all twelve reference items
+MUTTS Pixel Generator [v.82] — Expand accepted Bolt underlay experiment to all twelve reference items
 - Added: Extended native function 71935's first-idle corrective underlay from the user-accepted v.81 Cape, Fire Lizard and Apache Armor cases to the nine remaining items in Items-For-Fix.zip: Alien Armor (4 adds), Angel Armor (7 replacements), Dracula Armor (16 adds), Furry Body (3 adds/1 replacement), Lizard Body (5 replacements), Merman Body (4 adds), Werewolf Body (6 adds), Hellsing Helmet (1 add) and Snow Rider Helmet (1 add). The three accepted original cases and their statuses 1/2/3 are retained.
 - Corrected reference alignment: Dracula's Current and Fix images use different crops; mapping each to the same Unity Bolt idle atlas establishes sixteen genuine underlay additions. Alpha-254 firearm hand markers are excluded from all layer changes, including PNG alpha discrepancies.
 - Safety: The native correction runs behind the live Bolt firearm before Unity merges the layers and checks its entire 64x64 source alpha mask. All twelve cases require an exact normalized current sprite fingerprint, otherwise fail closed. It reads existing source colors wherever available (Dracula has one fixed missing color not present elsewhere in Current). New outfit/swatch combinations and other firearms intentionally skip rather than receiving unverified edits.
 - Preserved: Accepted v.80 Cape/Back-aware hand-color correction and native routine order, accepted v.81 Cape/Fire Lizard/Apache native logic, original builder call placement and all other preexisting WASM functions, Unity assets, outfit inventory, swatches, original weapon art, static first idle export, custom filename, title rules, and disabled animations. No browser geometry patchers returned.
 - Validation: All twelve item fixtures passed 37 isolated WebAssembly tests including exact expected pixels, untouched firearm, non-idle memory, unsupported appearance and non-Bolt fail-closed checks. Compiled full WASM validates. All prior live confirmation applies only to the three v.81 cases, not the nine new cases. JavaScript/browser mocks and Windows/Web package checks are separately reported; native Windows gameplay, downloaded ZIP basenames and actual Unity exports for the nine new items are NOT TESTED in this environment.
-- Windows/Web packaging: Pixel Hero Maker [v.82].zip and Pixel Hero Maker [v.82] (Web).zip, flat-root, identical embedded runtime contents, rebuilt v.82 Windows executable and exact Pixel Hero Maker [v.82] window/browser title.
+- Windows/Web packaging: MUTTS Pixel Generator [v.82].zip and MUTTS Pixel Generator [v.82] (Web).zip, flat-root, identical embedded runtime contents, rebuilt v.82 Windows executable and exact MUTTS Pixel Generator [v.82] window/browser title.
 
-Pixel Hero Maker [v.81] — Experimental native three-case firearm corrective underlay
+MUTTS Pixel Generator [v.81] — Experimental native three-case firearm corrective underlay
 - Experimental, NOT YET a verified gameplay fix: integrated one new native WebAssembly correction stage into CharacterBuilder.Rebuild after the unchanged v.80 hand-color routines and before the final texture layer merge. Test targets are naked Human + Bolt with example-matching Cape (add one pixel), Fire Lizard (replace five colored pixels) and Apache Armor (erase one pixel). All corrections are limited to the first 64x64 idle tile and cannot overwrite visible Bolt firearm pixels.
 - Guard conditions: the live firearm Color32[] must match Bolt's verified first-idle alpha mask, the final source list must have expected managed array identities/lengths and the current first-idle composite must exactly match one of the three normalized supplied Current PNG fingerprints. Otherwise it skips without edits. Palette changes/other equipped items may cause an intentional skip; no universal item-ID or swatch support is claimed. No arbitrary outfit selector, guessed skin color or transparent-over erase is used.
 - Native status: added exported phm_underlay_status and included the result in the read-only automatic idle trace/system report; statuses 1/2/3 indicate attempted targeted patches, -1 through -5 are fail-closed reasons. Native status does not substitute for checking the actual exported PNG.
 - Preserved: the live-user-confirmed v.80 hand-color behavior and both native routines, Cape/Back hand-reference exclusions, Unity original assets/inventory/swatch controls, firearm art and alpha markers, disabled animations, static preview, default SpriteSheet.png export, custom filenames, and absence of legacy browser geometry writers.
 - Known limitations: only three of the twelve user-supplied item pairs are included; remaining item pairs, tail geometry and broader weapon/outfit swatches are not repaired. Live Unity browser gameplay, Windows execution, actual saved ZIP basenames and real exported sprite outputs remain unverified until tested by the user. This remains an experimental release.
 - Validation: native helper executed against managed-array/full-atlas fixture and source Bolt mask for all three examples; firearm buffers unchanged, exact target pixel changes and non-Bolt rejection verified. Previous 19 standalone underlay tests, six hand-color-order tests, 17 Cape/Back tests and WebGL preview/export mock pass; full WebAssembly validates/compiles and active JS passes syntax check. Windows/Web release content parity and ZIP CRC/root layout are separate packaging checks.
-- Windows/Web packaging: exact names Pixel Hero Maker [v.81].zip / Pixel Hero Maker [v.81] (Web).zip, flat ZIP roots and rebuilt Windows launcher with identical embedded Web game content.
+- Windows/Web packaging: exact names MUTTS Pixel Generator [v.81].zip / MUTTS Pixel Generator [v.81] (Web).zip, flat ZIP roots and rebuilt Windows launcher with identical embedded Web game content.
 
-Pixel Hero Maker [v.80] — Correct native hand-color overwrite order
+MUTTS Pixel Generator [v.80] — Correct native hand-color overwrite order
 - Fixed (targeted native call-order correction): The v79 Cape/Back-excluded hand resolver (native function 71934) was called BEFORE the older Unity recolorer (71933). In the user's gray-backpack/green-body PNG, the latter routine overwrote all seven corrected pixels with the backpack gray, even though the native trace correctly reported green and seven markers changed. CharacterBuilder.Rebuild now runs the unchanged older recolorer FIRST and the unchanged Cape/Back-aware helper SECOND, giving the verified body/glove color the final write. Only the 27-byte WASM builder call sequence at 0x158897 changed; no native algorithm/asset/geometry changes.
 - Changed (read-only diagnostics): The automatic idle trace now includes a current observed GPU atlas alpha-254 marker color comparison to the native selected reference. Observation may be from a different rebuild and does not replace visual export checks. All diagnostic outputs and application-facing labels use v80.
 - Preserved: The v79 Back tag101 and Cape tag111 exclusions, native source104 / optional source108, exact 7/9 idle marker safeguards, original native routine's other behavior, outfits, swatches, full Unity asset data, game UI, unmodified browser atlas uploads, static preview, 20x cropped idle SpriteSheet.png export, custom filenames, disabled animations, and original read-only layer diagnostics.
 - Known limitations: This is NOT a firearm-geometry or tail repair; unknown weapon/outfit combinations remain unverified. The user-reported v79 defect has been reproduced in a two-function native synthetic harness and addressed by changing call order, but a running Unity gameplay session has NOT yet validated the v80 live output. Browser-saved ZIP basenames and native Windows GUI/title/download behavior were not tested in a real Windows browser.
 - Validation: Six combined native function-order fixtures passed for Back only, Cape only, both, black body, glove source108, and no excluded items; original-then-helper output has the target marker RGB while helper-then-original produces the reported overwrite. The 17 v79 individual native helper fixtures still pass; full WebAssembly compiled/validated; JavaScript syntax and simulated idle export regressions pass. Archive integrity, filename/root structure and embedded Windows/Web byte parity checked separately. No live Unity game acceptance test claimed.
-- Windows/Web packaging: Windows and Web release ZIPs have canonical literal-spaced v80 filenames and flat roots. The Windows launcher is freshly rebuilt from the v80 Web game. Game/browser/console title exactly Pixel Hero Maker [v.80]; default export SpriteSheet.png.
+- Windows/Web packaging: Windows and Web release ZIPs have canonical literal-spaced v80 filenames and flat roots. The Windows launcher is freshly rebuilt from the v80 Web game. Game/browser/console title exactly MUTTS Pixel Generator [v.80]; default export SpriteSheet.png.
 
-Pixel Hero Maker [v.79] — Cape / Back exclusion from native hand-color reference
+MUTTS Pixel Generator [v.79] — Cape / Back exclusion from native hand-color reference
 - Fixed (targeted native correction): When choosing the automatic first-idle firearm hand-marker color at (28,20), ignore only current Back and Cape category source arrays, identified by native builder append tags 101 and 111 plus verified array-pointer identity. Recompose the same sample with body/armor/other layers and current palette-adjusted arm source104 and optional overlay108. Cape and Back are NOT removed from the visible character or original sprite merge.
 - Preserved: Original Unity inventory, outfits, armor, glove/hand/swatch palettes, user customizations, native v76 optional-source guard, 7/9 alpha-254 marker rules and marker-only RGB recoloring, native static idle preview/export, default SpriteSheet.png, custom filename handling, disabled animations, and all read-only comparison diagnostics. No browser texture replacement, geometry underlay, tail restoration or animation-frame changes were introduced.
 - Safety: If category source pointers or the unfiltered reference cannot be verified, or the remaining sample is transparent, skip the hand-marker edit instead of using a guessed skin color. The original unfiltered full-atlas comparison remains available in diagnostics.
 - Validation: Full patched WebAssembly module compiled; 17 isolated native helper fixtures passed, covering Back-only, Cape-only, both, current swatches/black/gloves, 7/9 marker recoloring, unrelated categories, mismatched source pointers, transparent reference and untouched character/other firearm pixels. Passed available JavaScript syntax, mock WebGL pass-through/idle export, ZIP checks and Windows content embedding checks. These fixture tests do NOT prove live Unity selection combinations.
 - Known limitations / NOT TESTED: Interactive Unity gameplay with actual Cape/Back/firearm combinations, all 23 firearms, Windows GUI title/execution on Windows, actual native Export dialog and browser-saved ZIP names were not independently tested. Pre-existing firearm-dependent geometry gaps/tail defects remain. The accepted v76 glove/bare-arm live evidence is historical, not new v79 live acceptance.
-- Windows/Web packaging: Pixel Hero Maker [v.79].zip and Pixel Hero Maker [v.79] (Web).zip with flat archive roots; rebuilt matching Pixel Hero Maker [v.79].exe; browser/application title Pixel Hero Maker [v.79].
+- Windows/Web packaging: MUTTS Pixel Generator [v.79].zip and MUTTS Pixel Generator [v.79] (Web).zip with flat archive roots; rebuilt matching MUTTS Pixel Generator [v.79].exe; browser/application title MUTTS Pixel Generator [v.79].
 
-Pixel Hero Maker [v.78] — Clean layer-aware development baseline
+MUTTS Pixel Generator [v.78] — Clean layer-aware development baseline
 - Changed (cleanup, not a new geometry repair): Promoted v.77's disabled-geometry state to the permanent baseline. Removed 19 obsolete JavaScript/CSS/JSON artifacts rather than leaving their disabled repair functions loaded, and removed the historical pre-v76 native diagnostic reader. No JavaScript firearm/arm/tail geometry restorer, cached-skin guesser, legacy manual hand writer, or repair upload bridge is loaded in normal gameplay.
 - Changed (preview/export): Simplified the static idle preview to read the unmodified Unity-produced atlas cell directly, without a bypass flag or fallback compositor. Preserved the existing browser-based preview, native SpriteRenderer draw suppression for that preview, 20x nearest-neighbor cropped-square idle PNG export and default SpriteSheet.png filename. This is intentionally NOT a completely native Unity display or uncropped raw 64x64 export.
 - Preserved (accepted behavior): WebGL.wasm, WebGL.data and WebGL.framework.js are byte-for-byte identical to v.77. This preserves the verified v.76 native first-idle hand-color algorithm, 7/9 marker rules, optional arm source108 detection for bare arms, swatch-aware glove/skin colors, Unity firearm-induced arm omission/masks, original customization inventory and palettes, and disabled animations. Other animation frames are not targeted.
 - Changed (diagnostics): Retained read-only WebGL atlas/renderer observation and the v.76 native automatic idle status and optional unarmed-versus-equipped layer/arm/full-atlas comparison. Replaced obsolete session/legacy-restorer reports and manual hand editing controls with a compact native-system report. Diagnostic downloads now carry v78 names; recorded internal native function names retain their v76 lineage.
-- Documentation: Added PixelHero-v78-Technical-Reference.md and PixelHero-v78-Build-Manifest.json to the Web bundle and the reference markdown to the Windows ZIP root. The documentation maps the active files and native source, explains verified v76 behavior and remaining tail/firearm geometry work, and specifies release/rebuild verification procedures for future project chats.
+- Documentation: Added MUTTS-v78-Technical-Reference.md and MUTTS-v78-Build-Manifest.json to the Web bundle and the reference markdown to the Windows ZIP root. The documentation maps the active files and native source, explains verified v76 behavior and remaining tail/firearm geometry work, and specifies release/rebuild verification procedures for future project chats.
 - Known limitations: The existing browser preview/export modifications remain intentional; tail issues and native firearm geometry gaps remain uncorrected by JavaScript. The Unity WASM still includes its original engine behavior and historical compiled helper code; removing such compiled content is not part of this cleanup because it would require unverified native surgery. Native Windows GUI and live Unity gameplay were not independently tested in this environment.
 - Validation: Checked removed-module load graph, active-script syntax and mock direct idle preview, read-only WebGL pass-through and download paths, unchanged original Unity binaries, JS diagnostic bindings, both ZIP layouts/integrity, Windows executable embedded-asset consistency and local server response. Live WebGL behavior and browser-saved ZIP basenames remain acceptance tests.
-- Windows/Web packaging: Canonical flat root archives Pixel Hero Maker [v.78].zip and Pixel Hero Maker [v.78] (Web).zip, exact Windows executable and game/browser title Pixel Hero Maker [v.78].
+- Windows/Web packaging: Canonical flat root archives MUTTS Pixel Generator [v.78].zip and MUTTS Pixel Generator [v.78] (Web).zip, exact Windows executable and game/browser title MUTTS Pixel Generator [v.78].
 
-Pixel Hero Maker [v.77] — Raw firearm geometry review (v.76 idle hand color retained)
+MUTTS Pixel Generator [v.77] — Raw firearm geometry review (v.76 idle hand color retained)
 - Changed (visual review, not a new geometry repair): Disabled browser-side firearm geometry fixing in the normal idle preview and SpriteSheet.png export. The final-frame source-mask restorer and its v53/v54 pose/reference correction chain are bypassed on the export path; native armed layer/mask changes are left exposed for visual comparison.
 - Changed (WebGL pass-through): Disabled the v59 upload bridge's geometry/mipmap repainting, legacy arm/body restoration, idle stock/outline fix, and preview-lock edits for this review build. This also temporarily bypasses JavaScript tail repair during the review, so previously hidden tail or unrelated geometry defects may be visible. Code is retained for a future layer-aware replacement; no Unity layer/asset data is changed.
 - Locked in: Native v76 WASM is byte-for-byte unchanged, including its accepted automatic first-idle hand-color correction. The user's AK-47 exports confirmed both gray gloves and bare green arms, with seven alpha-254 markers recolored from the actual current firearm-free reference. The retired JS skin-color guessing system remains inactive.
 - Preserved: Static single idle Export, default SpriteSheet.png, palette swatches, original customization, compiled Unity firearm-dependent layer choices, disabled animations and current diagnostics. Optional normal unarmed versus AK-47 source-layer PNG/JSON comparisons remain available.
 - Known limitations: Diagnostic/review release, NOT a new universal geometry solution. JavaScript tail/arm fixes are intentionally bypassed to reveal raw native geometry. Other animation frames remain out of scope and tail issues are still outstanding. Real WebGL gameplay, Windows native GUI, browser download basenames and actual export dialog not independently tested here.
 - Validation: Exact v76-to-v77 WebGL.wasm hash match, source inspections, synthetic WebGL atlas/mipmap pass-through and idle preview bypass, JavaScript syntax, paired ZIP structure/integrity, Windows-embedded versus Web asset parity, and launcher local-serve check where available.
-- Windows/Web packaging: Canonical root-level v77 ZIPs and Windows executable. Exact game/browser title Pixel Hero Maker [v.77].
+- Windows/Web packaging: Canonical root-level v77 ZIPs and Windows executable. Exact game/browser title MUTTS Pixel Generator [v.77].
 
-Pixel Hero Maker [v.76] — Correct optional-arm absence notification outside Unity branch guard
+MUTTS Pixel Generator [v.76] — Correct optional-arm absence notification outside Unity branch guard
 - Fixed the exact v.75 control-flow error exposed by the user's second AK-47 no-outfit test: the optional source108 absent notification was inside a nested block skipped by the outer Content guard. The second source remained unavailable and the native correction reported status 2 with optionalArm108Absent=false, leaving all seven alpha-254 hand markers peach.
 - Builder function 5031 now reports tag 310 on the FALSE outcome of Unity's own optional-content presence check (native 609, field +40), immediately before that guard exits the block, and only with a Firearm field (+52) present. This covers null and Unity-defined absent content without treating source-generation failures as absent. The original branch target, original generation path, visible character, and selected firearm are preserved. Removed the unreachable v.75 nested notification so there is one authoritative absence signal.
 - The existing native helper (function 71934) remains byte-identical to v.75. It still requires a fresh source104; source108 must be fresh, OR the same rebuild must explicitly confirm source108 is absent. Non-null overlay failures and transparent references still skip correction; valid dark colors are allowed.
@@ -133,7 +138,7 @@ Pixel Hero Maker [v.76] — Correct optional-arm absence notification outside Un
 - Verified: WebAssembly validates and compiles; only function 5031 differs from v.75; native gray glove, bare-arm green, black clothing, missing-source, marker-count and non-idle synthetic tests pass. Windows and Web archives share embedded assets and preserve canonical filenames and extraction structure.
 - Still unverified: actual v.76 AK-47 no-outfit and glove exports, all firearm/outfit combinations, native Windows GUI, and user-facing browser-saved archive basenames. Outstanding tail-related issues are not changed.
 
-Pixel Hero Maker [v.75] — Optional arm overlay handled in automatic idle hand colors
+MUTTS Pixel Generator [v.75] — Optional arm overlay handled in automatic idle hand colors
 - Fixed v.74 no-outfit regression: when a character has no clothing/arm-override source, the native automatic hand resolver no longer skips merely because the optional source 108 is absent. The Unity builder explicitly reports a null optional source with diagnostic tag 310; the native helper includes current source 104 and treats missing source 108 as transparent ONLY in that proven null-field case.
 - Source generation failure is still fail-closed: if the optional source object exists but its pixels were not captured or valid, hand-marker recoloring is skipped. Required source 104 must always be fresh and valid. No inferred skin colors, guessing, cached unarmed references, or recursive rebuilds.
 - Only the verified 7/9 alpha-254 firearm marker pixels in the first 64x64 idle export tile are recolored. Preserve the marker alpha, weapon art, other atlas frames, animation-disabled state, and the original no-outfit character. Do not alter swatch selection or layer visibility.
@@ -142,7 +147,7 @@ Pixel Hero Maker [v.75] — Optional arm overlay handled in automatic idle hand 
 - Windows/Web package parity and ZIP layout checked. Actual game behavior and exported bare-arm image, native Windows GUI, and browser-saved ZIP basenames remain unverified; this is an experimental release pending user acceptance.
 - Tail-related issues remain outstanding and animations remain disabled.
 
-Pixel Hero Maker [v.74] — Automatic native hand-color correction for static idle export
+MUTTS Pixel Generator [v.74] — Automatic native hand-color correction for static idle export
 - Experimental functional fix: the native rebuild now automatically generates both current-swatch arm source buffers while a firearm is equipped, without recursion, without toggling the selected item and without a manual unarmed capture. The two buffers and the regular non-firearm layers reconstruct the real firearm-free character color in native memory.
 - Automatic correction: sample the exact original Unity reference pixel (27,19 zero-based = 28,20 one-based) from the independent firearm-free first idle tile. If opaque, recolor only the 7 or 9 source-confirmed alpha-254 firearm hand markers in that first 64x64 tile, preserving alpha and every other pixel. Preserve genuine black and clothing-adjusted gray colors; never infer from skin tones.
 - Fail closed: skip if either fresh arm buffer is absent, firearm layer order is unexpected, reference transparent, or hand marker count does not match 7/9 source registry. Every normal armed rebuild recomputes from current swatches, so stale unarmed caches are not used.
@@ -152,7 +157,7 @@ Pixel Hero Maker [v.74] — Automatic native hand-color correction for static id
 - Validation: 23 firearm source registry first idle marker counts verified; native standalone tests passed for 7/9 markers, swatch changes including black, fail-closed cases, weapon artwork and all other atlas tiles untouched. Compiled 21 MB WebAssembly validated; only helper 71934 changed. Windows/Web embedded content, ZIP root layout and naming checked. Native Windows gameplay, actual WebGL Unity gameplay, sprite export and downloaded ZIP basenames were NOT independently tested. This release is experimental until confirmed by user in-game.
 - Windows/Web packaging: Exact canonical ZIP/executable/title/version names, flat archive roots and full changelog history retained.
 
-Pixel Hero Maker [v.73] — Full-atlas independent firearm-free reconstruction diagnostic
+MUTTS Pixel Generator [v.73] — Full-atlas independent firearm-free reconstruction diagnostic
 - Diagnostic build — not a gameplay fix.
 - Added: Native read-only reconstruction of the complete 576x928 Color32 atlas from a normal no-firearm build and an independently reconstructed atlas from the current armed builder's shared layers plus its separately generated, live swatch-adjusted site 104/108 arm-source buffers. Nothing is appended to Unity's visible layer list.
 - Added: Full 534,528-pixel byte-by-byte atlas comparison with native hashes, mismatch count, first mismatch array index, and independently computed JavaScript validation. The Diagnostics panel offers PixelHero-v73-FullAtlasComparison.png (genuine unarmed left, shadow-armed reconstruction right) and PixelHero-v73-BuilderProvenance.json.
@@ -162,7 +167,7 @@ Pixel Hero Maker [v.73] — Full-atlas independent firearm-free reconstruction d
 - Validation: Full WebAssembly compiled; original CharacterBuilder function 5031 and native hand-color function 71933 preserved byte-identically; native synthetic tests passed for complete atlas equality, a distant-frame mismatch, legitimate black reference color, missing/stale arm buffers and firearm geometry preservation. Simulated diagnostic UI tests passed. Windows/Web embedded asset parity and ZIP structural checks separately verified. Actual Unity browser gameplay, native Windows execution and sprite exports were NOT tested.
 - Windows/Web packaging: Exact canonical ZIP/executable/game-title names, flat archive roots, current README, changelog history maintained.
 
-Pixel Hero Maker [v.72] — Isolated armed arm-source reconstruction experiment
+MUTTS Pixel Generator [v.72] — Isolated armed arm-source reconstruction experiment
 - Diagnostic build — not a gameplay fix.
 - Added: User-requested, bounded native shadow probes (up to 16 armed rebuilds) that attempt to generate the two v71-verified arm-buffer inputs using the live armed builder's Body/Armor source fields, palette lookup, and original GetPixels/clone functions. The generated Color32[] pixel arrays are copied into diagnostic memory only; they are never appended to the visible character's Unity merge list.
 - Added: A separate Prepare bounded armed shadow test button in the Diagnostics panel. Capture the normal unarmed state, prepare the probe BEFORE equipping AK-47, then record the regular armed rebuild. JSON records whether the request was consumed, site 104/108 output pixels, a reference color, and first-frame byte-exact comparison against the unarmed source buffers. The ArmSources.png bottom row shows the armed generated buffers if captured.
@@ -171,7 +176,7 @@ Pixel Hero Maker [v.72] — Isolated armed arm-source reconstruction experiment
 - Validation: Full 21 MB WebAssembly compiled; native one-shot request and snapshot helper passed isolated tests; diagnostic PNG/JSON simulated; static inspection confirms original Unity merge appends and native hand-recolor method unchanged; Windows/Web embedded content and ZIP structure checked. Live Unity browser and Windows gameplay and sprite exports NOT tested.
 - Windows/Web packaging: Exact canonical ZIP/executable/title/version names maintained with root-level README and complete changelog.
 
-Pixel Hero Maker [v.71] — Builder arm-source output capture
+MUTTS Pixel Generator [v.71] — Builder arm-source output capture
 - Diagnostic build — not a gameplay fix.
 - Added: Read-only native capture of the actual Color32[] source outputs at unarmed-only builder append sites 104 (original instruction 0x157628) and 108 (0x15780c). Captures occur immediately before Unity appends them, while the live source arrays remain available.
 - Added: First-frame 64x64 exact RGBA copies of both source arrays, with source-array pointer, observed length, FNV-1a checksum, sample values and byte-for-byte comparison against every final-merge input. The new PixelHero-v71-ArmSources.png displays source-site 104/108 outputs for both normal unarmed and armed states; accompanying JSON identifies any matching merge slots.
@@ -180,7 +185,7 @@ Pixel Hero Maker [v.71] — Builder arm-source output capture
 - Validation: Native instrumentation passed isolated WASM tests with both source arrays, invalid-pointer and reset cases; the full WebAssembly compiled; UI two-state PNG/JSON output and image bytes passed simulated tests. Windows and Web packaging and embedded asset parity checked. Live Unity WebGL and native Windows GUI gameplay and sprite exports have not been verified.
 - Windows/Web packaging: Canonical ZIP filenames, root layout, README, changelog, window/browser title metadata, and built-in Windows Web asset copies maintained.
 
-Pixel Hero Maker [v.70] — Signed WebAssembly provenance event correction
+MUTTS Pixel Generator [v.70] — Signed WebAssembly provenance event correction
 - Diagnostic build — not a gameplay fix.
 - Fixed (instrumentation only): Corrected the signed LEB128 encoding of all 18 i32.const builder append-site event tags (101–116, 118–119). In v69 they were emitted as unsigned one-byte encodings and appeared negative to Unity, so the native provenance logger discarded them. This release records valid positive event-tag values when the corresponding code paths execute.
 - Added: The unarmed and AK-47 capture status displays how many provenance events were recorded; the JSON explicitly warns if no events were observed. The same three comparison downloads remain available under v70 filenames.
@@ -189,63 +194,63 @@ Pixel Hero Maker [v.70] — Signed WebAssembly provenance event correction
 - Validation: Patched full WebAssembly compiled; static function-body comparison confirms only CharacterBuilder.Rebuild was changed. Signed-constant decoding test and isolated native event helper tests passed; simulated two-state UI/PNG/JSON tests passed. Live Unity gameplay, Windows GUI, native sprite export, and actual client-side saved ZIP names were not independently tested.
 - Windows/Web packaging: Both canonical v70 ZIPs, Windows executable, game/browser title, root-layout rules, README, and changelog are version-aligned, with matching embedded Web content.
 
-Pixel Hero Maker [v.69] — Unity builder input provenance
+MUTTS Pixel Generator [v.69] — Unity builder input provenance
 - Added (diagnostic only): Read-only probes at 18 compiled CharacterBuilder pixel-array append sites, with their original code addresses, execution records, optional list size and array identity, and match against final MergeLayers input positions. Distinguishes where the two missing arm-related inputs enter the normal unarmed build, without pretending that a numeric input is automatically a named UI category.
 - Added: A builder-provenance JSON alongside the unchanged 192x64 three-frame comparison PNG and 256-pixel-wide per-input RGBA tile PNG. Captures ordinary, manually selected unarmed and AK-47 states; source layer colors still reflect the current item and swatch choices.
 - Preserved: Non-recursive v68-style native captures; actual Firearm selections, all original builder append calls, original final MergeLayers, v62 experimental native marker recolor, geometry, swatches, static sprite Export, and disabled animations. No retired color guessing, synthetic arm reconstruction, or stale unarmed-cache fallback was introduced.
 - Known limitations: This is an instrumentation-only release, NOT a hand-color fix. It does not yet generate the two arm-related buffers during an armed rebuild. Pointer matches must be verified in live gameplay, and the recorded unarmed and armed configurations must match except Firearm. Tail issues remain outstanding.
 - Validation: Patched WASM validated and compiled; isolated native tests cover read-only provenance events, reset, input identities, malformed-pointer guards, and arm/weapon composites. Simulated UI tests cover both recording states and RGBA/JSON output. Full Unity gameplay, native Windows GUI, and download-client filenames not independently tested.
-- Windows/Web packaging: Both packages use version v.69, exact canonical filenames and root layout, matching embedded Web assets and the game title Pixel Hero Maker [v.69]. The native export default remains SpriteSheet.png.
+- Windows/Web packaging: Both packages use version v.69, exact canonical filenames and root layout, matching embedded Web assets and the game title MUTTS Pixel Generator [v.69]. The native export default remains SpriteSheet.png.
 
-Pixel Hero Maker [v.68] — Normal-rebuild firearm-independent layer comparison
+MUTTS Pixel Generator [v.68] — Normal-rebuild firearm-independent layer comparison
 - Added (diagnostic only): Non-recursive native snapshot of Unity's normal final Color32 layer merge. The diagnostic helper now handles a genuine no-Firearm builder state (without discarding any merge buffer) and an AK-47-equipped state (with gun buffer identified and omitted for comparison). The diagnostic snapshots all individual 64x64 input-layer tiles in merge order, as well as the composite, while the arrays remain valid.
 - Added: Two user-driven recording buttons. First record a normal no-firearm character with all body/arm/clothing choices and swatches in place; then equip the AK-47 without changing those choices. Three-frame RGBA comparison PNG, exact per-layer source-tile PNG, and JSON trace with checksums, layer counts, references and pixel differences are downloadable. No recursive Unity calls, hidden selectors, or automatic changes to items.
 - Fixed (diagnostic architecture): The v66-v67 experimental recursive builder call could leave an unarmed-mode global stuck. v68 starts from the non-recursive v65 baseline and does not contain those globals or recursive logic. This is NOT yet an automatic hand-color fix.
 - Preserved: The existing v62 native hand-marker color attempt is unchanged; no retired skin-color guesses or palette fallbacks were restored. Firearm geometry, swatches, 20x idle sprite Export, animation-disabled behavior and tail-related code stay as before.
 - Known limitations: The user must temporarily select NO Firearm item (not just hide its renderer) and record two states manually; normal no-firearm arm integrity and reference-color correctness must be verified in live gameplay before an automatic repair is implemented. A selected firearm may change layer construction earlier than the final merge. Tail issues remain unresolved.
 - Validation: Patched full WASM validated/compiled; isolated native tests verified absent/present firearm cases, individual RGBA layers, ordered merging, missing arm contrast and invalid input rejection. Simulated UI verified two-state capture, raw PNG output and JSON. ZIP/launcher integration and browser and Windows gameplay assessed separately; live game behavior not yet tested.
-- Windows/Web packaging: Windows and Web packages use version v.68, canonical ZIP and EXE names, root-level contents, and title Pixel Hero Maker [v.68]. Export default remains SpriteSheet.png.
+- Windows/Web packaging: Windows and Web packages use version v.68, canonical ZIP and EXE names, root-level contents, and title MUTTS Pixel Generator [v.68]. Export default remains SpriteSheet.png.
 
-Pixel Hero Maker [v.65] — Diagnostic PNG download isolation
+MUTTS Pixel Generator [v.65] — Diagnostic PNG download isolation
 - Fixed (diagnostic only): The v64 static-idle export bridge intercepted every HTMLAnchorElement PNG download, including the firearm-free native layer diagnostic PNG. It replaced the correctly generated 64×64 RGBA frame with the normal cropped 20× sprite export, typically 340×340, while retaining the diagnostic filename. The new interceptor handles only the known Unity export basenames PixelHero-Idle-20x.png and SpriteSheet.png, and never replaces unrelated PNG downloads.
 - Preserved: v64 in-Rebuild firearm-free native snapshot; its 64×64 PNG/JSON encoding, Firearm exclusion, Unity layer overwrite order and v62 reference sampling; native Unity WASM binary unchanged. Other PNG downloads (diagnostic captures and tests) now keep their original bytes and names.
 - Known limitations: Diagnostic build — not a completed hand-color fix. The sampled zero-based (27,19) is transparent and (28,20) is black for the tested green AK-47 outfit; correct reference coordinate still requires proof. Animations remain disabled; outstanding tail issues remain untouched.
 - Validation: Static-idle PNG interception tested with known native basenames and diagnostic arbitrary PNG names; 64×64 byte-exact diagnostic PNG output tested in a simulated browser; JS syntax, native snapshot tests, package integrity and Windows/Web embedded parity checked. Actual Windows/browser gameplay, native export and receiving-client ZIP filenames not independently verified.
-- Windows/Web packaging: Canonical paired v65 ZIPs; root-level entry points and current title Pixel Hero Maker [v.65]; native sprite-sheet export default SpriteSheet.png remains unchanged.
+- Windows/Web packaging: Canonical paired v65 ZIPs; root-level entry points and current title MUTTS Pixel Generator [v.65]; native sprite-sheet export default SpriteSheet.png remains unchanged.
 
-Pixel Hero Maker [v.64] — Synchronized firearm-free frame diagnostic
+MUTTS Pixel Generator [v.64] — Synchronized firearm-free frame diagnostic
 - Fixed (diagnostic mechanism only): v63 sampled Unity Color32[][] arrays later from a recorded pointer, after the native rebuild had returned. These temporary arrays may be garbage-collected or reused, leading to "Native layer array has changed since the trace". v64 captures an exact 64×64 firearm-free composite synchronously during the final Unity CharacterBuilder.Rebuild hook.
 - Added: Native snapshot helper excludes the exact current Firearm array, applies Unity's nonzero-alpha layer overwrite order, and copies the 64×64 tile to a persistent, separately allocated WebAssembly buffer. Diagnostics downloads a pixel-exact PNG and JSON showing both sampled positions, their contributing array slots, layer count and Firearm slot. No stale layer-array pointers are dereferenced by JavaScript.
 - Preserved: v62 hand marker replacement code and source-verified firearm geometry. No speculative reference selection, heuristic skin sampling, palette-cache fallback, animation enabling or tail changes.
 - Known limitations: Diagnostic build — not a confirmed gameplay or firearm-color fix. The memory snapshot only becomes available after a Unity character rebuild once its buffer is allocated (select a firearm or change a swatch). First-frame atlas offset and reference coordinate convention still require confirmation from the captured image. Animations remain disabled and tail-related issues are outstanding.
 - Validation: Full game WASM validated and compiled, isolated native snapshot helper tested for 64×64 layer ordering, Firearm exclusion and invalid inputs. Browser-side persistent-snapshot PNG/JSON logic tested synthetically. Windows/Web ZIP packaging and embedded content checked separately. Live Unity gameplay and Windows GUI, actual sprite export, and receiving-client download filenames not independently tested.
-- Windows/Web packaging: Paired v64 ZIPs with canonical names, root-level game entry points, matching embedded WASM and title Pixel Hero Maker [v.64]. Native export default remains SpriteSheet.
+- Windows/Web packaging: Paired v64 ZIPs with canonical names, root-level game entry points, matching embedded WASM and title MUTTS Pixel Generator [v.64]. Native export default remains SpriteSheet.
 
-Pixel Hero Maker [v.63] — Firearm-free native layer frame capture
+MUTTS Pixel Generator [v.63] — Firearm-free native layer frame capture
 - Added: Read-only Diagnostics capture of the 64×64 idle-frame pixel composite reconstructed directly from Unity's current ordered, swatch-adjusted Color32 layer arrays, excluding the exact Firearm buffer. A magnified preview, pixel-exact PNG, and JSON trace expose coordinates, layer ordering, alpha, and color provenance.
 - Added: Strict cross-check against the original and shifted v62 native reference values, the first four native layer-slot samples, Firearm array identity and array sizes. Missing or changed buffers are rejected rather than sampled heuristically.
 - Changed: Diagnostics capture workflow only. Unity WebGL.wasm remains byte-for-byte identical to v62; the v62 experimental native recolor and safety skips are preserved unchanged. Retired color guessing is still disabled.
 - Known limitations: Diagnostic build — not a gameplay fix. Current native layer arrays may no longer be valid when requested; the capture will report this instead of exporting unverified pixels. The first-frame atlas offset and user coordinate convention still need visual confirmation. Animations remain disabled; tail-related issues are outstanding.
 - Validation: 64x64 native-array compositor and rejection logic tested with synthetic ordered layer buffers; JavaScript syntax, WebAssembly parity, archive integrity, embedded Windows assets and launcher delivery checked. Live Unity gameplay, Windows GUI, actual native export and downloaded ZIP filenames not independently tested.
-- Windows/Web packaging: Both packages contain the same unchanged v62 WASM and updated v63 diagnostic. Titles Pixel Hero Maker [v.63], no ZIP wrapper folder. Native export basename remains SpriteSheet.
+- Windows/Web packaging: Both packages contain the same unchanged v62 WASM and updated v63 diagnostic. Titles MUTTS Pixel Generator [v.63], no ZIP wrapper folder. Native export basename remains SpriteSheet.
 
-Pixel Hero Maker [v.62] — Original Unity reference-coordinate experiment with dual-reference native trace
+MUTTS Pixel Generator [v.62] — Original Unity reference-coordinate experiment with dual-reference native trace
 - Changed: Native firearm-free layer resolver now uses the same flat sheet index as Unity's original compiled reference (486171; zero-based first-tile coordinate 27,19). Prior experimental v60/v61 native patch sampled index 485596 (zero-based 28,20). If (28,20) is intended as a one-based user coordinate, Unity's original index is the matching pixel; in-game correctness is not yet verified.
 - Added: Read-only simultaneous trace of both pixel positions across the ordered, swatch-adjusted character layers, excluding the Firearm buffer. Logs the composite RGBA and source array position for each coordinate, values in the first four layer slots, excluded Firearm slot, marker count and native recoloring status. The old shifted reference is diagnostic only and is never a fallback.
 - Preserved: Retired skin/face/palette guessing remains disabled. Original source textures, Unity assets, outfit palettes, weapon materials, alpha-254 marker alpha, geometry safeguards, and export implementation unchanged. Animations remain disabled. No tail correction is claimed.
 - Known limitations: Experimental correction, not a verified fix. The user-supplied v61 trace conclusively showed black ([0,0,0,255]) used for the AK-47 from layer-array slot 0. v62 may still sample black or another incorrect pixel until real gameplay confirms the position and layer ordering. Black swatches are valid; the patch does not guess around them.
 - Validation: WASM compiled and validated. An isolated executable WebAssembly harness passed 29 synthetic scenarios, including all 23 source-real firearm marker coordinate arrays, layer order, alpha preservation, black selected swatches, transparent sample fail-closed, and counter resets. Source/Web packaging, JS syntax, and Windows embedded asset parity tested separately. Interactive gameplay, native Windows GUI, actual save/export and downloaded filenames were not independently tested.
-- Windows/Web packaging: Both v62 ZIPs contain game files at archive root; Windows executable was rebuilt from the same v62 Web assets. Game/browser title Pixel Hero Maker [v.62]; intended export basename SpriteSheet.
+- Windows/Web packaging: Both v62 ZIPs contain game files at archive root; Windows executable was rebuilt from the same v62 Web assets. Game/browser title MUTTS Pixel Generator [v.62]; intended export basename SpriteSheet.
 
-Pixel Hero Maker [v.61] — Native compositor hand-color instrumentation (diagnostic build — not a gameplay fix)
+MUTTS Pixel Generator [v.61] — Native compositor hand-color instrumentation (diagnostic build — not a gameplay fix)
 - Added: Native WebAssembly tracing at the v60 firearm-free composite resolver. Read-only exported globals record invocation count, input pointers, validated layer-array count, firearm array length, exact RGBA of the (28,20) sampled composite, source array index/pointer, whether firearm was excluded, marker count, the initial marker RGBA and the resulting reference RGBA.
 - Diagnostic interface: Diagnostic mode displays the latest native sample and provides a Download native layer trace button. The exported JSON includes recent observed rebuild states and distinguishes missing native calls, validation skips, and black-reference recoloring. The UI array index is not a confirmed outfit/category name.
 - Behavior: Original v60 hand recoloring algorithm, retired v59 skin guessing, all original game assets, palettes, customizations and tail-related behavior remain unchanged. Animations stay disabled; not re-enabled by this release.
 - Known limitations: Diagnostic build, NOT a gameplay fix. The provided black-hand SpriteSheet.png remains an unresolved v60 regression. Native live rebuilds and UI were not tested in a running browser/Windows Unity session. If status says recolored with a nonblack reference but export is black, later rendering/export stages require tracing.
 - Validation: Full patched WASM validated and compiled, exported 13 trace globals; standalone synthetic native helper trace tests verify layer precedence, source array index, nontransparent/black references, marker count, and skip conditions. JavaScript syntax and ZIP-integrity tests. Windows executable rebuilt with byte-identical embedded Web files.
-- Windows/Web packaging: Both v61 archives use canonical filenames and root layout. Game/browser title Pixel Hero Maker [v.61]. Default SpriteSheet.png export unchanged in implementation; interactive dialog unverified.
+- Windows/Web packaging: Both v61 archives use canonical filenames and root layout. Game/browser title MUTTS Pixel Generator [v.61]. Default SpriteSheet.png export unchanged in implementation; interactive dialog unverified.
 
-Pixel Hero Maker [v.60] — Experimental native firearm-free layer composite hand recoloring
+MUTTS Pixel Generator [v.60] — Experimental native firearm-free layer composite hand recoloring
 - Experimental repair: Patched IL2CPP CharacterBuilder.Rebuild to capture the current firearm layer pointer and inspect Unity's final ordered layer arrays before TextureHelper.MergeLayers. Samples exactly (28,20) of the firearm-excluded layer stack using Unity's nonzero-alpha overwrite semantics, then changes only the source-confirmed firearm hand markers to the actual current RGBA reference RGB while preserving alpha.
 - Compatibility: Marker identification supports source alpha 254 after arbitrary palette/swatches (RGB may have changed), plus exact original RGB for opaque legacy markers; all other firearm pixels remain untouched. The patch uses no face/forearm/skin guessing or historical color caches.
 - Retired: The native compiled Armor/Body-only sample replacement branch, previously using (27,19), now yields to the firearm-free composite. The legacy JavaScript guessing remained retired from v59.
@@ -254,7 +259,7 @@ Pixel Hero Maker [v.60] — Experimental native firearm-free layer composite han
 - Known limitations: Diagnostic/experimental change, NOT a fully verified gameplay fix. Real Unity final-array object identities, normal gameplay, all-poses visual behavior, native Windows execution and user-facing download saved basenames remain unverified. If native arrays cannot be validated, marker pixels are left unchanged instead of guessing.
 - Windows/Web packaging: Paired v60 ZIP archives, exact canonical names, no nested wrapper folders; rebuilt native Windows launcher from updated Web files.
 
-Pixel Hero Maker [v.59] — Retire legacy firearm hand-color guessing
+MUTTS Pixel Generator [v.59] — Retire legacy firearm hand-color guessing
 - Removed: The v14/v19 histogram and face-tone skin sampler implementation (PHMSkinRepair), its automatic GPU-upload entry point, and its cached-palette fallback. The legacy sampler file remains as an unloaded explanatory stub, with no active recoloring functions.
 - Removed: The independent face/forearm color guess formerly used by the first-idle weapon guard to recolor unresolved hand markers.
 - Preserved: Unity assets/WASM, native customization and swatches, source-verified firearm/arm/body geometry and mip corrections, the final-frame (28,20) firearm-hidden layer resolver, v56 manual capture, and v58 passive independent-source verification.
@@ -263,7 +268,7 @@ Pixel Hero Maker [v.59] — Retire legacy firearm hand-color guessing
 - Validation: JavaScript syntax, legacy-path absence, mock WebGL GPU-upload marker-preservation, ZIP integrity and asset parity checked. Native Windows GUI and full interactive Unity gameplay were not verified.
 - Windows/Web packaging: Paired v59 archives, rebuilt Windows launcher with matching Web game content; no nested release folder.
 
-Pixel Hero Maker [v.58] — Strict source classification and renderer-draw evidence
+MUTTS Pixel Generator [v.58] — Strict source classification and renderer-draw evidence
 - Changed: The automatic hand resolver no longer categorizes active final armed-avatar atlas uploads as unarmed sources. The v57 source evidence demonstrated false candidates from the active texture with black at (28,20). v58 counts and excludes those uploads separately.
 - Changed: Independent uploaded character images must also have proof of a real Unity SpriteRenderer draw and satisfy current character, source-firearm and no-secondary-armed-composite checks. Unverified sources fail closed; never sample the armed black overlap pixel or guess a color from skin/hair.
 - Added: A bounded read-only record of SpriteRenderer texture IDs used in actual draw calls, independent of the optional short renderer-trace recording. The two-second renderer diagnostic capture button downloads PixelHero-v58-RendererTrace.json when draw activity occurs.
@@ -271,18 +276,18 @@ Pixel Hero Maker [v.58] — Strict source classification and renderer-draw evide
 - Preserved: v56 manual hidden/isolated capture fallback, marker-only hand recolor, original Unity runtime, v53/v54 geometry safeguards, native UI, eye icons, preview, naked Human startup, 20x square first-idle SpriteSheet.png output and exact title.
 - Automated tests: Five actual v57 misclassified images were rejected without recoloring; the pink and gray outfit real-layer fixtures each changed only seven Bolt marker RGB pixels when fed a simulated independently drawn unarmed source; stale/manual fallback cases rejected. JavaScript syntax, browser UI controls, ZIP CRC, Windows/Web data parity, and localhost offline delivery verified.
 - Known limitations: v58 is an evidence and source-validation experiment, NOT a proven invisible firearm-off capture. The actual compiled Unity runtime may never upload or draw such an independent character texture in a normal equipped state. Browser-interactive Unity startup and Windows native GUI remain unverified. Tail-root synthesis and automatic firearm-hand matching in all outfits remain outstanding.
-- Windows and Web release archives use exactly Pixel Hero Maker [v.58] filenames and flat-root packaging; v57 source game assets are retained with no binary Unity changes.
+- Windows and Web release archives use exactly MUTTS Pixel Generator [v.58] filenames and flat-root packaging; v57 source game assets are retained with no binary Unity changes.
 
-Pixel Hero Maker [v.57] — Passive independent-layer hand-color discovery (experimental)
+MUTTS Pixel Generator [v.57] — Passive independent-layer hand-color discovery (experimental)
 - Added: Opt-in-capable, enabled-by-default passive reader that observes independent complete 576x928 Unity WebGL atlas uploads and extracts the first-idle 64x64 source cell. No Unity eye toggles or input simulation; original texture upload buffers are never modified by this reader. Only source candidates whose 64x64 geometry independently verifies against the CURRENT armed character and a source-exact isolated firearm are eligible.
 - Added: Cross-checks for full current unarmed character and hand pixel (28,20), non-firearm head/lower-body witnesses, 23 exact original firearm silhouettes with seven/nine alpha-254 hand markers, surviving firearm material colors, separate source texture identity, stale-input rejection, conflicting sources and firearm ambiguity. Unknown, unavailable or stale sources fail closed without guessed hand RGB.
 - Integrated: Upon an independently verified current source pair, the established v56 final-frame hand resolver receives the exact current (28,20) color and isolated firearm markers automatically, with no per-weapon hand-coordinate guesses. It changes only verified marker RGB; preview/Export share the corrected full idle frame. Existing v56 manual eye-icon captures remain a fallback if independent sources are unavailable.
-- Diagnostics: Layer capture lab now includes automatic source status, toggle and PixelHero-v57-AutoSources.json evidence download. Existing session trace and diagnostics include the automatic sampler's match/reject/pixel counters. Existing UI controls, native Unity Export, first-idle-only square 20x PNG default SpriteSheet.png, naked Human startup and exact title Pixel Hero Maker [v.57] remain unchanged.
+- Diagnostics: Layer capture lab now includes automatic source status, toggle and PixelHero-v57-AutoSources.json evidence download. Existing session trace and diagnostics include the automatic sampler's match/reject/pixel counters. Existing UI controls, native Unity Export, first-idle-only square 20x PNG default SpriteSheet.png, naked Human startup and exact title MUTTS Pixel Generator [v.57] remain unchanged.
 - Tests: Node-based simulated independent GPU uploads against all 23 source firearm fixtures (21 seven-marker and two nine-marker examples), plus exact pink-body/gray-glove v55 capture frames. All changes restricted to matching hand markers; repeated frame and stale-source/UI interaction rejection tests. Browser-level diagnostic panel, source toggle, evidence JSON, regular diagnostic JSON and existing manual-capture controls verified separately. Full Unity in-game source availability could not be validated because localhost navigation was blocked in the environment.
 - Known limitations: v57 is not a guarantee of hands updating across every live color/outfit state: the unarmed first-idle layer must ACTUALLY be present as an independent Unity upload. Original WebGL trace reports did not prove such a source exists. When absent, manual v56 capture is still required. No semantic C# item IDs, automatic invisible eye toggling, tail reconstruction, weapon-stock repair or removal of legacy geometry logic in v57. Live preview/export in actual Unity and actual Windows GUI still require user testing.
-- Windows/Web packaging: Exact Pixel Hero Maker [v.57] filenames and flat ZIP roots, Windows launcher embeds the same Web assets, unchanged original Unity data/framework/WASM/loader, complete historical changelog preserved.
+- Windows/Web packaging: Exact MUTTS Pixel Generator [v.57] filenames and flat ZIP roots, Windows launcher embeds the same Web assets, unchanged original Unity data/framework/WASM/loader, complete historical changelog preserved.
 
-Pixel Hero Maker [v.56] — Verified fixed-coordinate hand-color resolver
+MUTTS Pixel Generator [v.56] — Verified fixed-coordinate hand-color resolver
 - Added: An experimental live/export HAND RGB resolver using the independently verified current Firearm-hidden pixel at exact original-idle coordinate (28,20). No material inference from hair, skin shade or face and no historical colored-body snapshot is used to determine the hand's color. Corrects only the seven or nine original source firearm hand-marker positions, with full source-shape verification. Does not modify pixel opacity, geometry, stock materials, tails or weapons.
 - Integrated: The existing v55 native eye-toggle layer lab now automatically reads (28,20) and supplies its source-color evidence when "Capture firearm-hidden" is pressed, and supplies the isolated gun's exact marker positions when "Capture firearm-only" is pressed. A separate manual color click is no longer needed. Once current hidden and isolated captures are established, the new resolver corrects the visible first-idle preview and the regular SpriteSheet.png export through the shared final-frame compositor. The lab includes a live status readout and a toggle to disable this new correction.
 - Fail-closed: Refuse uncertain firearm silhouettes/material signatures, absent/invalid sources, transparent marker positions and changes to previously validated non-firearm character witness pixels. The operator must re-capture the current Firearm-hidden state if the outfit/body changes while armed and no valid current-state reference can be verified. No synthetic Unity eye clicks are issued. Do not claim that an invisible Unity layer render or every outfit-change sequence is fully automatic. This is a current-state layer capture system, not a live Unity dropdown-state reader.
@@ -291,7 +296,7 @@ Pixel Hero Maker [v.56] — Verified fixed-coordinate hand-color resolver
 - Remaining: This does not implement invisible automatic Unity eye-state capture, per-item auto identity under every possible recolored firearm, tail-root reconstruction, full hand/glove ownership when color changes while already armed and the hand color is otherwise invisible, or complete legacy GPU repair retirement. In uncertain cases the game may retain the older hand-color result until a fresh firearm-hidden capture is taken. Testing in the real Unity browser and actual Windows GUI still required.
 - Windows/Web: Equal game assets, canonical exact literal release ZIP/exe names, flat ZIP roots and full historical changelog preserved.
 
-Pixel Hero Maker [v.55] — Experimental live-current-state layer capture lab
+MUTTS Pixel Generator [v.55] — Experimental live-current-state layer capture lab
 - Added a browser diagnostic lab under Diagnostic mode to capture the exact current 64x64 idle-frame RGBA with FIREARM hidden, FIREARM isolated (all other Unity eyes OFF), and the complete armed composite. The player toggles Unity eyes manually; the lab never fakes Unity clicks or alters selections.
 - Source proof: Detect the isolated firearm using a >=96% exact source silhouette Jaccard agreement with a >=5% margin over the runner-up, using the 23 original source-geometry registry items. From the exact isolated firearm RGB(246,202,159)/alpha-254 pixels, derive hand-marker-only coordinates (7 markers on 21 firearms, 9 on 2 firearms, verified against the 23 files in user [TEST].zip).
 - Experimental hand preview: Manually sample an opaque visible hand/sleeve pixel from the CURRENT firearm-hidden character. In a separate downloadable 20x square test PNG, recolor only the source-confirmed firearm hand-marker positions already opaque in the captured armed composite. Existing weapon materials, stock, body geometry and tails are not edited. The original SpriteSheet.png export is unaffected.
@@ -300,9 +305,9 @@ Pixel Hero Maker [v.55] — Experimental live-current-state layer capture lab
 - Preserved: v54 geometry/pose/stale-reference safeguards, Unity eye icons, native selection and Export button, naked Human default, static first-idle preview, pixel-perfect 20x crop and SpriteSheet.png, Windows offline launcher and byte-identical original compiled Unity assets.
 - Limitations: Manual eye-toggle workflow and manual color selection are required. Native Unity item IDs, safe programmatic visibility toggles, automatic hand-material ownership, actual live hand recolor and unseen tail-root synthesis are not implemented. The separate test image is NOT a gameplay repair.
 - Validation: 23 exact isolated-source samples from the supplied test ZIP recognized, all 21 seven-marker and 2 nine-marker sets confirmed; mock-browser 3-stage capture/7-marker color sample/JSON+PNG download tests; structural source/JS, Windows/Web parity and offline HTTP checks. Real Unity game rendering and user-facing ZIP download names not yet independently verified.
-- Both packages use the exact Pixel Hero Maker [v.55] basename, literal spaces/brackets, and flat archive roots with full historical changelog intact.
+- Both packages use the exact MUTTS Pixel Generator [v.55] basename, literal spaces/brackets, and flat archive roots with full historical changelog intact.
 
-Pixel Hero Maker [v.54] — Conservative stale-armor/restoration safeguards
+MUTTS Pixel Generator [v.54] — Conservative stale-armor/restoration safeguards
 - Experimental correction: Added a post-v53 final-frame reference guard that rejects proposed pixel restoration when the stored unarmed appearance disagrees with the current armed sprite. Requires a >=99% stable reference witness (or independently confirmed v53 pose rebase), and source-backed material colors occurring locally in the CURRENT frame. Entire proposed addition batches are vetoed on uncertainty, rather than partially painting obsolete sleeves/outfits.
 - Historical-reference protection: When identical raw sprite bytes produce different independently validated patches due to changing references, a later conflicting patch is suppressed. Earlier unknown/unrecognized frames remain untrusted, so they do not block a later perfect source witness. No invented layer labels, weapon pixels, outlines or guessed colors are painted.
 - Regression evidence: On 412 raw sprite frames from the latest user v53 session, the new guard rejected 13 sub-99% witness restorations and 11 unsupported-material batches, preventing 313 attempted pixel additions in replay. Specifically the Dracula-to-Bolt stale-reference sequences at 233.1s, 238.2s and 247.5s were rejected. Earlier v52 (552 frames) and v53 (284 frames) traces were also replayed; known v53 Bolt arm suppression remains active. Results are offline replay only, not interactive Unity tests.
@@ -310,9 +315,9 @@ Pixel Hero Maker [v.54] — Conservative stale-armor/restoration safeguards
 - Preserved: Original Unity WebGL binaries, item assets, native UI, naked Human startup, static in-frame preview, native Export control, one first idle frame, exact 20x scaling, transparent square crop and default SpriteSheet.png filename. Existing v53 guard remains installed before new v54 guard.
 - Known limitations: The new guard does not discover actual current Unity item IDs or true pixel ownership; valid but unprovable missing geometry may remain absent. Hidden tail-root reconstruction, complete glove/outfit hand-color resolver, and universal opaque firearm corrections are NOT fixed. The original v51 compositor may count attempted pixels later vetoed by v54; inspect new guard counters for the actual effect.
 - Validation: JavaScript syntax, deterministic mock guards, three real session recording replays (552+284+412 frames), source/ZIP compiled Unity byte parity, Windows embedded-file parity and offline local HTTP smoke check. Actual Unity gameplay/GUI, exports and user-facing downloaded filename remain NOT TESTED.
-- Windows/Web packaging: Both releases rebuilt under the exact Pixel Hero Maker [v.54] names, flat ZIP roots, identical embedded Web payload and full historical changelog.
+- Windows/Web packaging: Both releases rebuilt under the exact MUTTS Pixel Generator [v.54] names, flat ZIP roots, identical embedded Web payload and full historical changelog.
 
-Pixel Hero Maker [v.53] — Conservative Bolt arm and palette-reference geometry safeguards
+MUTTS Pixel Generator [v.53] — Conservative Bolt arm and palette-reference geometry safeguards
 - Experimental gameplay correction: Added v53 pose guard after v51 final-idle compositor. Prevents only the known extra five/eight idle-arm pixel patterns restored by the compositor for Bolt; all unknown or unmatched edits are preserved.
 - Experimental palette sync: Reuses a previously validated armed pose's missing-pixel patch on palette-only changes when exact 64x64 alpha geometry matches and the color transition is bounded, unambiguous and source-derived. Changed geometry remains unmodified.
 - Diagnostic updates: Kept optional native diagnostic buttons and recorder; Download diagnostics now includes v53 pose-guard counters. Session trace and diagnostic filenames and format tags use v53.
@@ -321,17 +326,17 @@ Pixel Hero Maker [v.53] — Conservative Bolt arm and palette-reference geometry
 - Validation: Replayed all 552 actual v52 trace frames against the source-kit guard in Node; suppressed 49 proven Bolt false-arm patches (356 pixel operations), recovered five safely palette-rebased frames (12 pixel operations), changed zero unrecognized-weapon frames. Ran guard unit tests, script syntax, compiled Unity asset byte equality, ZIP CRC/root checks and offline localhost HTTP smoke test. Interactive Unity gameplay, native PNG exports, and actual Windows GUI/download filename behavior NOT TESTED.
 - Windows/Web packaging: Rebuilt matching offline launcher with v53 Web assets, exact literal names, original ZIP roots, and complete historical changelog.
 
-Pixel Hero Maker [v.52] — Integrated continuous diagnostic session recorder
+MUTTS Pixel Generator [v.52] — Integrated continuous diagnostic session recorder
 - Diagnostic build — not a gameplay fix. The native Unity editor, item defaults, sprite pixels, firearm restoration, preview layout, native Export control, 20x square crop and existing geometry rules remain unchanged from v51.
 - Added: A temporary browser diagnostic mode directly below the 960x600 Unity canvas. Use Start recording, Stop, Mark, Download session trace, and Download diagnostics buttons. It can be closed while recording and reopened without losing the trace. No DevTools snippets or separate JavaScript downloads are required.
 - Added: The opt-in recorder observes calls to the complete 64x64 final-frame compositor before/after correction, records changed RGBA-frame fingerprints and miniature raw/corrected PNG snapshots, Unity-canvas pointer/scroll/keyboard input coordinates, export counter changes, compositor reports, restoration reasons and manual test labels.
 - Added: One-click JSON diagnostic snapshot of existing firearm/source/renderer and exporter reports, separate from the complete session trace. New session filename PixelHero-v52-SessionTrace.json; snapshot filename PixelHero-v52-Diagnostics.json. These are temporary debug filenames, not game or ZIP release names.
-- Preserved: v51 native naked Human startup, all character assets and color swatches, the body-aware experimental firearm compositor, exact title Pixel Hero Maker [v.52] and SpriteSheet.png default. No Unity data/wasm/framework/loader change and no game geometry fixes in this diagnostic build.
+- Preserved: v51 native naked Human startup, all character assets and color swatches, the body-aware experimental firearm compositor, exact title MUTTS Pixel Generator [v.52] and SpriteSheet.png default. No Unity data/wasm/framework/loader change and no game geometry fixes in this diagnostic build.
 - Known limitations: Unity selected dropdown item IDs and true hand-layer ownership are not exposed; session labels and recorded canvas coordinates help identify combinations. Frames are sampled when the existing compositor runs (~220ms) and may miss faster transitions; capped event/frame memory means unusually long sessions may drop samples. Interactive Unity behavior, actual Windows runtime UI and browser-saved release ZIP filenames require user validation.
 - Validation: JavaScript syntax, simulated recorder start/stop/mark/trace/download and UI-button event checks, unchanged Unity runtime payload hashes, Windows embedded Web-file parity, local offline HTTP response checks, ZIP integrity/root layout, and literal release filenames. No interactive Unity gameplay or actual external download-name test claimed.
-- Windows/Web packaging: Pixel Hero Maker [v.52].exe rebuilt with the same complete v52 Web files as the Web ZIP; flat ZIP roots, historical changelog preserved.
+- Windows/Web packaging: MUTTS Pixel Generator [v.52].exe rebuilt with the same complete v52 Web files as the Web ZIP; flat ZIP roots, historical changelog preserved.
 
-Pixel Hero Maker [v.51] — Final-frame firearm geometry and bare Human startup
+MUTTS Pixel Generator [v.51] — Final-frame firearm geometry and bare Human startup
 - Changed (startup): The ORIGINAL Unity level0 startup selection component (pathId 3831) has its PirateCostume, Hair2, and ShortDagger selections cleared. Human Body/Head/Eyes and all other UI settings and swatches are preserved. This is a native serialized-scene default, not simulated UI clicks; no other Unity scene object was changed. Rebuilt UnityFS/WebGL.data indexes verified by extracting the modified scene and matching all seven other WebGL.data resources byte-for-byte.
 - Changed (firearm compositor): Geometry source matching now compares the completed 64x64 single idle-frame silhouette to a matching full unarmed frame instead of comparing independent Unity head/torso/weapon atlas uploads. All 23 registered source firearm shapes can be recognized by the exterior alpha differences in the provided four-body export matrix, without relying on hidden hand-marker pixels in the final image. This specifically addresses the cause of 0 successful v49/v50 reference validations.
 - Changed (body/tail restoration): Only original, reference-backed opaque body pixels missing from the composed armed frame and TRANSPARENT in the original selected firearm geometry may be restored; the exact source firearm's opaque pixels and all existing nontransparent character/weapon pixels are preserved. Actual source RGBA is copied; no generic black silhouettes or assumed skin colors. Full-frame reference captures require a complete character including head, torso, and lower-body pixels; stale/ambiguous composite and unknown firearm sources fail closed.
@@ -339,9 +344,9 @@ Pixel Hero Maker [v.51] — Final-frame firearm geometry and bare Human startup
 - Preserved: Unity-native selectors and item inventory, preview placement and controls, square alpha crop, exact 20x output, Export button, output basename SpriteSheet.png, other Unity assets and shaders, compiled Unity WASM/framework/loader. Web and Windows embedded files match.
 - Offline tests: All 92 armed PNGs across Human, Werewolf, Furry and Merman recognized by original source geometry with validated references, 212 missing-body candidate pixels restored, zero existing opaque weapon/body pixels overwritten. Fake head-only references rejected; JavaScript syntax, original UnityFS scene extraction, HTTP launcher parity, ZIP CRC and root layout independently checked.
 - Known limitations: Testing is based on user exports and mock JavaScript; actual Unity first launch, native default labels, complete-frame capture timing, per-outfit swatches and all weapons in the running v51 browser/Windows game still need visual verification. Source identity cannot be guaranteed for arbitrary overlapping accessories or if equipment changes while already armed. When uncertain v51 skips restoration. Windows browser-saved ZIP basename was not directly verified in the user interface.
-- Windows/Web packaging: Canonical Pixel Hero Maker [v.51] filenames and a flat ZIP root, with full historical changelog retained and no edition suffix in application-facing titles.
+- Windows/Web packaging: Canonical MUTTS Pixel Generator [v.51] filenames and a flat ZIP root, with full historical changelog retained and no edition suffix in application-facing titles.
 
-Pixel Hero Maker [v.50] — Diagnostic build — not a gameplay fix
+MUTTS Pixel Generator [v.50] — Diagnostic build — not a gameplay fix
 - Added (diagnostic only): PHMFirearmDiagnostics wraps the v49 reference-backed compositor restore function to record first-idle marker-match scores and candidates, reason-code transitions, capture and validation counters, original/reference/outgoing 64x64 fingerprints, and color/alpha mismatch examples. The original v49 restore() is called exactly once with unchanged arguments, and its output and decision are returned unmodified.
 - Added (diagnostic only): Bounded event history (160 records), unarmed and armed phase labels, independent last-reference summaries, available SpriteRenderer/texture metadata, and a downloadable JSON report named PixelHero-v50-Diagnostics.json. Reports explicitly state that WebGL texture metadata does not prove Unity Body/Armor/dropdown selection or actual hand material ownership.
 - Preserved: All v49 firearm geometry guards, source registry, legacy hand/outfit correction, Unity assets, native static preview and Export button, square alpha crop with exact 20x scaling, 480-unit dropdowns, and default SpriteSheet.png export. No firearm or hand pixels are intentionally changed by v50.
@@ -349,80 +354,80 @@ Pixel Hero Maker [v.50] — Diagnostic build — not a gameplay fix
 - Validation: Existing 23-weapon synthetic geometry tests passed unchanged with diagnostic wrapper installed; new mock test verified bounded events, top-five candidate scores, reference witness evidence and unchanged original restoration decisions. JavaScript syntax, original compiled Unity data/wasm/framework/loader integrity, Windows offline-embedded Web file parity, and final ZIP root/integrity checks performed separately; interactive Unity/Windows rendering and saved ZIP basenames not verified.
 - Windows/Web packaging: Rebuilt Windows executable with exactly matching v50 Web files; canonical literal filenames and root layout; preserved full historical changelog.
 
-Pixel Hero Maker [v.49] — Experimental source-aware firearm geometry compositor
+MUTTS Pixel Generator [v.49] — Experimental source-aware firearm geometry compositor
 - Added (experimental): Generated a source registry for all 23 firearm items from the original Unity v48 Texture2D artwork. The registry records full-atlas hand-marker footprints and each first-idle weapon silhouette, rather than identifying weapons by a few barrel pixels.
 - Added (experimental): A shared, reference-backed first-idle geometry compositor. While no firearm is equipped, it captures the actual visible 64×64 body/outfit/skin colors. When a firearm is later selected and its source marker geometry is confidently recognized, it verifies the unchanged body/head witnesses and restores only pixels that were present in the reference, deleted in the armed composite, and transparent in the original firearm source. No guessed RGB or generic black pixels are introduced.
 - Preserved: When the reference is absent, stale, or ambiguous, the compositor makes no edits and existing v48 source-guard behavior remains active. All nine existing specialized stock/skin corrections, the native live-preview and Export button, square alpha crop, 20× scale, native dropdowns, and all Unity assets remain unchanged.
 - Known limitations: EXPERIMENTAL — an unarmed reference must have been captured for the current body/outfit before firearm use. Changing clothes, body, gloves, or swatches while already armed can invalidate that reference or leave invisible hand material changes undetectable; user should unequip the firearm and re-equip it to recapture the visible body if needed. A legacy Shotgun Texture2D variant has no alpha-254 marker and cannot be positively identified; its alternative marked variant is registered. A correct first-idle restore still depends on original source layer ordering; in-game verification is required for all 23 and outfits. Existing v48 repairs are a fallback, not proven universally correct.
 - Validation: Original v48 Unity assets extracted; all 23 source firearm patterns inspected (24 source variants, one unmarked). Source marker signature collisions handled by shape checks; 23/23 synthetic first-idle restores passed with no weapon-pixel overwrite, no stale-reference changes, and idempotent second passes. No real interactive Unity or Windows game validation; all tests are offline JS and binary/ZIP/launcher parity checks.
-- Windows/Web packaging: Rebuilt the Windows offline launcher to embed the exact matching Web assets; kept ZIP roots flat and exact canonical versioned names; preserved full historical changelog. Web/browser/app title remains exactly Pixel Hero Maker [v.49]; default output remains SpriteSheet.png.
+- Windows/Web packaging: Rebuilt the Windows offline launcher to embed the exact matching Web assets; kept ZIP roots flat and exact canonical versioned names; preserved full historical changelog. Web/browser/app title remains exactly MUTTS Pixel Generator [v.49]; default output remains SpriteSheet.png.
 
-Pixel Hero Maker [v.48] — Bare-creature firearm junction repair and preview alignment
+MUTTS Pixel Generator [v.48] — Bare-creature firearm junction repair and preview alignment
 - Changed: Shifted the in-frame static preview exactly four Unity-canvas pixels farther left (156 to 152 px from canvas left; 16.25% to 15.833333%) while keeping its original 230px top position, scale, and ground-line alignment.
 - AK-47 Werewolf: Reinstated the three original-black torso/tail edge pixels at idle coordinates (26,18), (26,19), (26,20) only when the selected bare Werewolf shape is confidently recognized, the exact AK-47 source silhouette matches, the gun is transparent at these coordinates, and the destination pixels were lost. Human/unknown body cases are not given the three-pixel extension.
 - SAWN-OFF Werewolf and Furry: Added strictly body-source-backed restoration for the remaining bare-creature tail/grip and right-torso defects. Recognize the two separate bodies using 330 far-head/left-tail alpha witnesses outside the gun instead of v47's occlusion-sensitive full-body classifier; require at least 306 matching witnesses and a 25-pixel separation from the other body profile. Body-source donor shades are independently checked for the grip at (27,18) and right torso at (36,20); the right outline at (36,21) is restored only when the original gun texture is transparent and the current pixels are unpainted or black. A uniquely supported original source color or conservative recolor consensus is required; unknown outfits/shapes/colors fail closed.
 - Corrected validation fixtures: Earlier v47 SAWN-OFF test-image names swapped the blue Werewolf and gray Furry. v48 correctly identifies Werewolf as SpriteSheet (2).png and Furry as SpriteSheet (3).png, and re-runs real-image tests on all four v47 exports.
-- Preserved: v47 firearm wood-marker recoloring, handgun and unknown-weapon fail-closed logic, sprite opacity elsewhere, native Unity UI and static preview bridge, 480-unit scrolling dropdowns, in-Unity Export button, tight centered square PNG crop with exact 20x nearest-neighbor scaling, title Pixel Hero Maker [v.48], and default SpriteSheet.png.
+- Preserved: v47 firearm wood-marker recoloring, handgun and unknown-weapon fail-closed logic, sprite opacity elsewhere, native Unity UI and static preview bridge, 480-unit scrolling dropdowns, in-Unity Export button, tight centered square PNG crop with exact 20x nearest-neighbor scaling, title MUTTS Pixel Generator [v.48], and default SpriteSheet.png.
 - Engine safety: No UnityFS modifications, no source Texture2D edits, no WASM/framework/loader changes, no HTML preview relocation beyond the CSS left offset. Original Windows and Web game contents remain parity-matched.
 - Known limitations: These are source/PNG and JavaScript mock tests, not verified running Unity images. The rule only repairs known bare Werewolf/Furry poses with recognized firearm and donor colors; other outfitted bodies or uncertain swatches deliberately remain unchanged. Browser-saved ZIP basenames, Windows GUI title and interactive Unity appearance remain NOT TESTED.
 - Validation: New test fixtures from supplied current v47 output and nine original firearm sprites, per-pixel changed-coordinate and idempotency checks, guarded source-alpha rejection, recolor donor consistency and unknown outfit rejection; all-nine weapon geometry pass/reject test, JS syntax, byte-identical Unity runtime, Web/Windows embedded asset parity, offline HTTP and ZIP CRC/flat roots.
-- Windows/Web packaging: Rebuilt both releases with exact canonical Pixel Hero Maker [v.48] filenames, 25 original Web asset layout members, and full previous Changelog.txt history preserved.
+- Windows/Web packaging: Rebuilt both releases with exact canonical MUTTS Pixel Generator [v.48] filenames, 25 original Web asset layout members, and full previous Changelog.txt history preserved.
 
-Pixel Hero Maker [v.47] — Source-backed firearm/body idle-frame mask and preview alignment
+MUTTS Pixel Generator [v.47] — Source-backed firearm/body idle-frame mask and preview alignment
 - Changed: Replaced v43's unconditional five-black-pixel AK-47 outline painting with a guarded source-body restoration. It now restores only the two boundary endpoints for known bare Human/Werewolf profiles, avoiding the three-pixel black stock extension. Tail-specific restoration for a matching Furry profile remains guarded by source body geometry.
 - Changed: For source-matched SAWN-OFF, Shotgun, and other identifiable firearms, missing body pixels are restored only where the ORIGINAL firearm alpha is transparent, the original body part is opaque, and one of three audited bare-body profiles matches the visible sprite. Non-black body pixels are recolored only from a sufficient set of actual neighboring head/tail donor colors; unresolved colors, outfits, and unknown assets are left unchanged.
 - Changed: The native-preview overlay is approximately 10px left and 5px lower than v46, to align the corrected idle frame with Unity's ground line. Body and firearm renderers and the native Export button remain unchanged.
-- Preserved: v46 square alpha crop, exact 20x scaling, the 480-unit dropdown templates, preview-in-Unity appearance, title Pixel Hero Maker [v.47] and default SpriteSheet.png export, and existing stock-marker/hand-skin correction safeguards.
+- Preserved: v46 square alpha crop, exact 20x scaling, the 480-unit dropdown templates, preview-in-Unity appearance, title MUTTS Pixel Generator [v.47] and default SpriteSheet.png export, and existing stock-marker/hand-skin correction safeguards.
 - Known limitations: EXPERIMENTAL body-aware firearm fix. User screenshots are only Human/Werewolf AK-47 and Furry/Werewolf SAWN-OFF; garment/glove combos and all asset/body mixes are not verified. Short or ambiguous firearms fail closed. Real in-game viewport alignment, browser export output, Windows launcher UI title, and downloaded ZIP basenames require user verification.
 - Validation: Extracted 9 firearm sprites and 3 original body-type torso components directly from v46 Unity Texture2D assets. Pixel tests on 4 supplied v46 first-idle PNGs, 9 source weapon identities/masks, unknown-fail-closed and color donor checks. JavaScript syntax, unchanged Unity runtime hash, Web/Windows embedded-file parity, offline local HTTP, CRC/layout and literal archive filenames checked. No interactive Unity/Windows gameplay test.
-- Windows/Web packaging: Both ZIPs have exact literal Pixel Hero Maker [v.47] names with files at archive roots. Windows launcher rebuilt to embed the SAME v47 Web files; complete prior changelog is retained.
+- Windows/Web packaging: Both ZIPs have exact literal MUTTS Pixel Generator [v.47] names with files at archive roots. Windows launcher rebuilt to embed the SAME v47 Web files; complete prior changelog is retained.
 
-Pixel Hero Maker [v.46] — Square cropped idle PNG, larger dropdowns, in-frame preview repair experiment
+MUTTS Pixel Generator [v.46] — Square cropped idle PNG, larger dropdowns, in-frame preview repair experiment
 - Changed (PNG export): Find the complete alpha-visible first-idle character+items bounding box in the existing 64x64 source cell. Create the smallest SxS square where S=max(visible width,visible height), centering the shorter dimension with transparent pixels only on its shorter sides. If the width and height match there is no extra transparent margin; if the difference is odd, the additional transparent pixel goes to the right or bottom. Alpha, every item pixel and exact nearest-neighbor 20x scaling are preserved. Empty source cells return transparent 64x64. Default filename remains SpriteSheet.png. No fixed 80-pixel margins.
 - Changed (native Unity dropdowns): Restored 16 native item-selection dropdown Template RectTransforms from 240 to 480 UI units (original height 540) with existing scrollbars, anchor positions, item entries and category color swatches unchanged. The existing 16px browser top spacing remains.
 - Experimental (live first-idle preview): Stopped v45's ineffective duplication of the first idle sprite into every animation atlas slot. A small, non-interactive 64x64 preview surface is positioned INSIDE the original gray Unity preview region. When the corrected first idle frame is available, the WebGL SpriteRenderer draw is suppressed while the rest of the native Unity UI and underlying background keep drawing. The in-frame surface displays the exact RGBA pixels used by the normal Export bridge. This is a browser-assisted in-frame rendering bridge, not an edit to the compiled native Unity SpriteRenderer or a second external preview panel. The original Unity preview remains if atlas capture is unavailable (fail-open). Preview placement/layering must be visually checked in-game.
-- Preserved: v43/v44 source-backed AK-47 wood stock/outline and tail fixes, clothing/skin swatches, fixed first idle pose, native Export button, all Unity body/outfit/weapon inventory assets, and exact title Pixel Hero Maker [v.46]. No new firearm source/material mask guesses. Previous preview-only tiling removed without changing the corrected export first-idle pixels.
+- Preserved: v43/v44 source-backed AK-47 wood stock/outline and tail fixes, clothing/skin swatches, fixed first idle pose, native Export button, all Unity body/outfit/weapon inventory assets, and exact title MUTTS Pixel Generator [v.46]. No new firearm source/material mask guesses. Previous preview-only tiling removed without changing the corrected export first-idle pixels.
 - Known limitations: Native preview and its pixel alignment, firearm glove combinations and 480-unit dropdown scrolling need a user's in-game visual test. The bridge may not completely suppress a shader/program unrecognized as Unity SpriteRenderer; unknown combinations are left unchanged rather than guessed. Browser-saved ZIP filenames and full Windows/Unity gameplay cannot be tested in this environment. Keep user-verified v45 as fallback.
 - Validation: Source-backed UnityFS repack changed exactly 16 native RectTransform float values (240->480) with untouched other UnityWebData members and 16-byte block alignment; no Unity WASM/framework/loader changes. Alpha/square cropping tests passed for wide/tall/equal/odd/single-pixel/empty sprites and the original AK-47 idle fixture. Exact 20x PNG canvas dimensions, preview refresh on changed swatch under identical texture hash, native Export click, GPU-preview suppression/Unity UI passthrough and original v43 five-outline-pixel guard tests passed in mocks. Windows/Web embedded asset byte parity and offline server checks; ZIP CRC/flat-root/layout/filename checked. Interactive Unity startup/preview layout and actual downloaded basenames NOT TESTED.
-- Windows/Web packaging: Pixel Hero Maker [v.46].exe and matching Web files, literal canonical flat-root filenames, full historical changelog retained.
+- Windows/Web packaging: MUTTS Pixel Generator [v.46].exe and matching Web files, literal canonical flat-root filenames, full historical changelog retained.
 
-Pixel Hero Maker [v.45] — Native dropdown fit, first-idle preview sync, cropped PNG output
+MUTTS Pixel Generator [v.45] — Native dropdown fit, first-idle preview sync, cropped PNG output
 - Changed (native Unity UI): All 16 original item Dropdown Template RectTransforms have a maximum 240-UI-unit viewport height instead of 540. The existing scrollbar/viewport, labels, item choices, icon art, scroll behavior and row color swatches are unchanged. This lets menus including Armor fit within the 600-unit Unity canvas without clipping above it. The 16px browser top margin remains as visual spacing only.
 - Changed (PNG export): Export only the first idle 64x64 source frame at nearest-neighbor 20x, but crop the outer transparent atlas padding to the nontransparent bounding rectangle and add four fully transparent source pixels (80 output pixels) on EACH edge, including when the sprite touches an original cell border. PNG output dimensions are now character-dependent instead of fixed 1280x1280. Default basename remains SpriteSheet.png.
 - Changed (native live preview, experimental): On source-recognized complete firearm composites only, the GPU-upload copy now repeats the first corrected idle cell across the texture's other animation cells. This prevents the native SpriteRenderer's still-selected firearm pose/side frames from showing a different hand pose or outdated colors while the Export continues using the untouched first idle cell. Only source-matched AK-47, SVD, SAWN-OFF, PowerBazuka, 2-Shotgun, Shotgun, and Crossbow are eligible; ambiguous Pistol/Revolver, unsupported weapons, and noncomposed source textures are left alone. The original Unity CPU/asset data and WASM are not modified by this normalization. All user-facing animation controls remain disabled.
-- Preserved: v43/v44 AK-47 stock material, skin-marker and five-pixel outline/tail corrections, native Export button, single Unity frame/UI, original body/outfit/item inventory and circular swatches, exact window/tab/product title Pixel Hero Maker [v.45], and default SpriteSheet.png filename.
+- Preserved: v43/v44 AK-47 stock material, skin-marker and five-pixel outline/tail corrections, native Export button, single Unity frame/UI, original body/outfit/item inventory and circular swatches, exact window/tab/product title MUTTS Pixel Generator [v.45], and default SpriteSheet.png filename.
 - Known limitations: v45 live-preview pose/hand correction is experimental until visually confirmed in Unity. Full GPU copies are guarded by an exact source firearm signature and composite-visibility threshold; unsupported guns are unchanged. Native UI dropdown scroll behavior, in-game Unity visuals and user-facing saved ZIP basenames could not be automatically verified in an interactive browser/Windows session. v44 remains a working fallback if preview behavior regresses.
 - Validation: Independent UnityFS decode/repack and exact 16 RectTransform height-field changes with unchanged other Unity data nodes; native default Export button unchanged; pixel-perfect alpha-aware bounding box and 4px transparent padding tests; exact 20x GPU/HTML canvas scaling; native click hitbox; known and unknown firearm fail-closed GPU upload integration tests; all Unity WASM/framework/loader files identical to v44; offline HTTP byte-for-byte Windows/Web payload parity, ZIP CRC/layout/naming and complete historical changelog checks.
-- Windows/Web packaging: Rebuilt Pixel Hero Maker [v.45].exe with identical Web assets; canonical literal flat-root ZIP names and no unwanted wrapper folders. Historical changelog preserved.
+- Windows/Web packaging: Rebuilt MUTTS Pixel Generator [v.45].exe with identical Web assets; canonical literal flat-root ZIP names and no unwanted wrapper folders. Historical changelog preserved.
 
-Pixel Hero Maker [v.44] — Fixed stale idle export after recoloring; add top margin
+MUTTS Pixel Generator [v.44] — Fixed stale idle export after recoloring; add top margin
 - Changed: Added 16px of vertical padding above the original 960x600 native Unity editor canvas (Web and Windows embedded Web), without shifting any controls relative to Unity's canvas. Kept the native Export button and color-selection UI.
 - Fixed in export bridge code: Previous `refresh()` trusted an atlas fingerprint sampled at ~1024 points across 576x928 pixels and could reuse an old idle frame after a small weapon recolor, even though the GPU texture ID and sampled hash were unchanged. The new code always compares the complete first-idle 64x64 RGBA cell (x=0..63, y=64..127) on export/refresh, updating the cached sprite whenever actual pixels differ.
 - Evidence: Both v42 pink human and pink werewolf AK-47 gray-to-green 20-pixel swatch changes produce identical sampled full-atlas fingerprints in a source-cell reconstruction. The new refresh comparison catches both without changing game artwork.
 - Preserved: v43 source-backed five-pixel AK-47 human/werewolf outline recovery and two weapon stock pixels; unchanged Unity data/framework/loader/WASM and other firearm outfits; native static preview and Export button, hidden top rainbow strip, original color swatches; transparent 1280x1280 PNG exactly 20x with default SpriteSheet.png.
 - Known limitations: This addresses an export cache/freshness defect and UI padding, NOT a general fix for unresolved live firearm hand/glove colors or all firearm/body combinations. Exact preview-to-export consistency in Unity, actual Windows gameplay, and ZIP browser-saved names require user validation.
 - Validation: Real exported PNG comparisons and sampled-fingerprint collision reproduction; mock first-idle export/swatch-change test with identical texture ID/hash; unchanged AK-47 source guard fixtures and original Unity runtime hashes; offline Windows launcher Web-file parity and final ZIP integrity/layout checks. No automated interactive Unity gameplay verification.
-- Windows/Web packaging: Pixel Hero Maker [v.44].exe and canonical literal flat-root Windows/Web ZIP names, exact game/window title, current default SpriteSheet.png; full historical changelog preserved.
+- Windows/Web packaging: MUTTS Pixel Generator [v.44].exe and canonical literal flat-root Windows/Web ZIP names, exact game/window title, current default SpriteSheet.png; full historical changelog preserved.
 
-Pixel Hero Maker [v.43] — Guarded single-idle firearm materials and outline
-- Changed: The browser tab title and Unity WebGL productName are exactly "Pixel Hero Maker [v.43]" without an edition name. The native Unity Export button now saves "SpriteSheet.png" by default; the existing 64×64 first-idle source cell and 20× PNG scaling are unchanged.
+MUTTS Pixel Generator [v.43] — Guarded single-idle firearm materials and outline
+- Changed: The browser tab title and Unity WebGL productName are exactly "MUTTS Pixel Generator [v.43]" without an edition name. The native Unity Export button now saves "SpriteSheet.png" by default; the existing 64×64 first-idle source cell and 20× PNG scaling are unchanged.
 - Experimental repair: Added a first-idle source-backed firearm guard, operating only on GPU-upload copies, before the Unity preview renders. Original 576×928 firearm Texture2D data were extracted from the attached v42 UnityFS source and verified against the original alpha-252 wooden stock markers. For a uniquely recognized firearm shape, alpha-252 weapon-material pixels use the current weapon's color-matched neighboring stock pixels rather than the body's skin tone. Ambiguous marker ownership and weapon shapes fail closed.
 - Experimental repair: When the original AK-47 silhouette and exact five transparent first-idle outline slots match the user-supplied human/werewolf fixtures, restore only those five black outline pixels. Does not apply an unrestricted tail or arm mask to other body shapes, outfits or firearms.
 - Experimental preview hand fallback: The first-idle source hand markers can receive reliable local skin colors only if the legacy sampler left alpha-254 markers unresolved and adjacent face/forearm colors agree; possible gloves and unsupported color combinations are left unchanged. No unverified sleeve/glove replacements.
 - Preserved: Native Unity item/color swatches, hidden top color strip, stationary first-idle character preview, Unity Export button, transparent 1280×1280 PNG exactly 20× per pixel, and original UnityFS scene/WASM/loader/framework. No changes to old animation content.
 - Known limitations: Actual in-game live hand colors, every glove/outfit combination, alternative firearms and all non-human shapes have not been verified interactively. Source-donor matching currently handles recognized wooden stock markers but may skip unknown or ambiguous firearm geometry. This release is an experimental targeted repair, not a claim of complete firearm correctness.
 - Validation: Ten attached 20× user sprites checked for exact nearest-neighbor scaling; eight AK-47 human/werewolf fixtures validated for seven guarded corrected source positions and idempotence; non-firearm/covered-outline/unknown-silhouette safety checks; original UnityFS firearm marker data extracted and matched; JS static checks; offline Windows launcher and Web payload checks; both archive ZIP CRC/root checks. No interactive Unity/bare-hands/gloves gameplay testing. Browser-saved ZIP basenames not independently tested.
-- Windows/Web packaging: Pixel Hero Maker [v.43].exe and literal Windows/Web ZIP names at archive root, complete historical changelog retained.
+- Windows/Web packaging: MUTTS Pixel Generator [v.43].exe and literal Windows/Web ZIP names at archive root, complete historical changelog retained.
 
-Pixel Hero Maker [v.42] — Hide top Unity color strip (native UI)
+MUTTS Pixel Generator [v.42] — Hide top Unity color strip (native UI)
 - Changed: Disabled the separate, full-width Unity Canvas Palette GameObject that renders the unused rainbow color strip above the editor. The character selection grid and the Body/Head/Hair/Weapon/etc. individual color swatches remain active and unchanged.
 - Preserved: v41 user-confirmed native static idle preview and in-Unity Export button, 64x64 row-1 first idle sprite, transparent 1280x1280 PNG output at exact 20x scale, and native outfit/weapon/color customization. No firearm repair change in this UI-only release.
 - Scene safety: Reconstructed the UnityFS bundle from the same known-good original Unity data with the v41 native changes plus one additional GameObject m_IsActive byte for Palette. Preserved UnityFS 16-byte block alignment. No change to original WASM, loader, framework, or other UnityWebData files.
 - Known limitations: Only the top UI strip was changed; the outstanding firearm hand/glove color and body/weapon masking issues in the single idle pose are not addressed. Actual v42 Unity gameplay and downloaded ZIP basenames are not independently tested; v41 preview and Export were user-verified.
 - Validation: UnityFS/level0 byte reconstruction, one-byte v41-to-v42 scene delta, inherited PNG and native-button bridge tests, rebuilt offline Windows launcher, Web/Windows asset parity and ZIP root layout/integrity checks. In-game visual check of the hidden strip remains outstanding.
-- Windows/Web packaging: Updated Windows executable Pixel Hero Maker [v.42].exe and Web files, exact literal filenames at archive roots, full historical changelog retained.
+- Windows/Web packaging: Updated Windows executable MUTTS Pixel Generator [v.42].exe and Web files, exact literal filenames at archive roots, full historical changelog retained.
 
-Pixel Hero Maker [v.41] — Experimental native Unity preview and Export control
+MUTTS Pixel Generator [v.41] — Experimental native Unity preview and Export control
 - Changed (experimental): Re-enabled the original Unity scene Save button in the gray preview panel and changed its native Text label from "Save PNG" to "Export". The original Unity Controls animation-shortcut legend is disabled.
 - Changed (experimental): Disabled the Character and Firearm Renderer Animator components in Unity's scene to test a fixed native idle pose. Original SpriteRenderer and all editor selection controls remain enabled; the native preview position is unchanged.
 - Changed: Removed the separate browser preview and export UI. The only visible editor is Unity's original 960x600 canvas. An invisible WebGL download bridge uses the first idle atlas cell (x=0,y=64) for a transparent 1280x1280 PNG, exact nearest-neighbor 20x.
@@ -431,7 +436,7 @@ Pixel Hero Maker [v.41] — Experimental native Unity preview and Export control
 - Validation: Independently reconstructed UnityFS bundle, node table, and exact changed scene bytes; PNG crop/20x scaling mock tests; JavaScript syntax; Web and Windows parity/offline HTTP checks; ZIP CRC and root layout. No verified native Unity gameplay or browser-saved basename.
 - Windows/Web packaging: New v41 offline Windows launcher with matching Web assets, exact literal filenames, complete prior changelog preserved.
 
-Pixel Hero Maker [v.40] — Correct first idle cell; preserve known-good Unity runtime
+MUTTS Pixel Generator [v.40] — Correct first idle cell; preserve known-good Unity runtime
 - Fixed (source cell selection): Static preview and 20x PNG export now extract atlas column 0, row 1 (x=0..63, y=64..127) instead of row 0, which contained the wrong portrait/part graphic in the v39 user export.
 - Preserved: Transparent 1280x1280 nearest-neighbor PNG output (each 64x64 source pixel becomes exactly 20x20), no animation playback UI, native Unity character/item/outfit/color selection, and suppression of animated SpriteRenderer drawing.
 - Runtime unchanged: Original compiled Unity data, wasm, framework and loader retained byte-for-byte from v39 / v37. No UnityFS repacking.
@@ -439,7 +444,7 @@ Pixel Hero Maker [v.40] — Correct first idle cell; preserve known-good Unity r
 - Validation: User v39 exported PNG has exactly uniform 20x blocks and 64x64 source position (7..21,10..22); original 576x928 character sheets show the complete first idle pose in row 1, not row 0. Script mock tests verify correct first-idle extraction, row 0 exclusion, exact 20x pixel output, alpha retention, static preview and export path. Windows/Web archive and embedded runtime integrity checked separately. Actual Windows gameplay, browser-saved ZIP basename and in-game appearance unverified.
 - Windows/Web packaging: Windows launcher rebuilt embedding v40 Web files; canonical ZIP filename and root-folder rules preserved; full historical changelog retained.
 
-Pixel Hero Maker [v.39] — Restore Unity startup; retain single idle preview/export
+MUTTS Pixel Generator [v.39] — Restore Unity startup; retain single idle preview/export
 - Fixed in packaged assets: Restored Build/WebGL.data byte-for-byte from the known-working v37 Unity data bundle after the v38 UnityFS scene repack caused the game to fail at globalgamemanagers/PlayerSettings startup.
 - Preserved: The browser-side first-idle 64x64 static preview, animated SpriteRenderer draw suppression, 1280x1280 transparent PNG export at exact 20x nearest-neighbor, and original inventory/body/item/color choices.
 - Changed: Removed the unsafe Unity scene asset edit. The original Unity Controls shortcut legend may be visible again inside the Unity editor, but keyboard animation shortcuts are blocked by the browser layer. There are no animation controls in the added HTML interface.
@@ -447,7 +452,7 @@ Pixel Hero Maker [v.39] — Restore Unity startup; retain single idle preview/ex
 - Validation: All four Unity runtime files SHA256-identical to v37; UnityWebData entry table integrity; existing v38 first-idle and 20x pixel RGBA mock tests; Web/Windows embedded asset parity and offline HTTP checks; ZIP CRC and flat-root filename checks. Browser-saved ZIP basenames and Windows gameplay remain unverified.
 - Windows/Web packaging: Rebuilt v39 launcher embedding exactly the same Web files, literal required versioned filenames, flat ZIP roots, full historical changelog preserved.
 
-Pixel Hero Maker [v.38] — Single Idle Frame Edition (major UI simplification)
+MUTTS Pixel Generator [v.38] — Single Idle Frame Edition (major UI simplification)
 - Changed: Preview now reads only the first idle frame, the 64x64 atlas cell at row 1, frame 1.
 - Changed: Exports only a transparent 1280x1280 first-idle PNG, with every source pixel replicated into an exact 20x20 block (nearest neighbor).
 - Changed: Removes old sprite-sheet export, manual fixes, animation UI and diagnostics controls from the HTML. The Unity scene Controls legend is also disabled. Mouse customization selectors are preserved.
@@ -457,7 +462,7 @@ Pixel Hero Maker [v.38] — Single Idle Frame Edition (major UI simplification)
 - Validation: Exact first-cell/20x RGBA unit tests, scene byte patch and decompression checks, JavaScript syntax, archive CRC/layout, Windows/Web embedded parity and offline local-server bytes. Interactive Unity gameplay, display placement and browser download names not verified.
 - Windows/Web packaging: Exact flat-root names with complete release history; Windows executable rebuilt with same Web files.
 
-Pixel Hero Maker [v.37] — Guarded Sword and MagicWand white slash correction (exports only)
+MUTTS Pixel Generator [v.37] — Guarded Sword and MagicWand white slash correction (exports only)
 - Added: separate source-derived 63-pixel Sword and 91-pixel MagicWand slash masks for animation row 9, frame 3. Full original-pixel geometry, source-shifted weapon shape witnesses, and transparent-boundary samples must match before tint-independent correction to solid white.
 - Safety: complete opaque/uniform effect checked; unexpected downstream edits, uncertain weapon identity, missing witnesses, unknown orientation or partial silhouettes are refused without changes. Sword checks include additional distinct silhouette points that separate it from similar Broadsword source art.
 - Scope: game-normal SpriteSheet.png export and optional manual PNG repair only. Live GPU/animation viewer deliberately unchanged. Existing v36 Axe 60-pixel and prior 75-pixel slash protections remain separate.
@@ -465,15 +470,15 @@ Pixel Hero Maker [v.37] — Guarded Sword and MagicWand white slash correction (
 - Preserved: original Unity data/framework/WASM/loader, all previous body, Werewolf-tail and firearm marker repair code, and complete changelog history.
 - Packaging: rebuilt current v37 Windows executable containing exactly the standalone v37 Web files; literal filenames and flat ZIP roots.
 
-Pixel Hero Maker [v.36] — Guarded Axe slash export white-effect correction
+MUTTS Pixel Generator [v.36] — Guarded Axe slash export white-effect correction
 - Added: exact 60-pixel Axe slash correction to solid white in row 9, frame 3, for both original skin-pale Axe art and recolored Axe. This corrects a source-art color and the downstream swatch tint, rather than treating the default pale color as correct.
 - Safeguards: original Axe alpha-witness geometry in surrounding animation frames and clear regions must match, the complete effect must be uniformly colored and opaque, and the outgoing PNG pixels must still match the incoming effect or already be white. Unknown weapons, partial patterns and changed downstream pixels fail closed. The effect is idempotent.
 - Scope: game-normal SpriteSheet.png export, optional native save button, and the manual fixed-PNG input only. Live animation GPU uploads intentionally unchanged until export defects are fully resolved.
 - Preserved: existing 75-pixel white slash rule, v35 Human/Werewolf arm masks, v34 Werewolf tail, v31 firearm-stock exclusions, all previous protected body/outfit/weapon logic and original Unity game files.
 - Diagnostics: new export-only repairStats.axeSlashExport counters, added to compositor JSON. No claim of actual browser gameplay verification.
-- Packaging: current Windows executable Pixel Hero Maker [v.36].exe and Web files in flat ZIP roots, complete v23-v35 history kept, original Unity bytes untouched.
+- Packaging: current Windows executable MUTTS Pixel Generator [v.36].exe and Web files in flat ZIP roots, complete v23-v35 history kept, original Unity bytes untouched.
 
-Pixel Hero Maker [v.35] — Guarded Human and Werewolf missing-arm recovery (experimental)
+MUTTS Pixel Generator [v.35] — Guarded Human and Werewolf missing-arm recovery (experimental)
 - Added: narrowly scoped 101-pixel default Human arm-hole and 87-pixel original Werewolf arm-hole completion for 2-Shotgun and AK-47, using the original Unity body-layer RGBA values at the exact transparent pixels in six existing arm frames plus row-13 frame 2. The four original Human pixels deliberately transparent in row 12 frame 2 remain transparent.
 - Safeguards: each of seven 64x64 animation frame cells is validated byte-for-byte outside the approved holes; each target must be either transparent or already restored; whole equipment-row alpha shape identifies body/weapon pair. No opaque artwork is overwritten. Unknown colors, outfits, body/weapon shapes and partial/mismatched imagery are rejected.
 - Integration: native SpriteSheet.png auto download and manual PNG correction, plus bottom-up GPU texture upload, with phase-specific repairStats.bodyArms counters. Existing tail, slash, blue-body arm and brown weapon-pixel rules stay in place.
@@ -481,7 +486,7 @@ Pixel Hero Maker [v.35] — Guarded Human and Werewolf missing-arm recovery (exp
 - Validation: pixel-accurate source-and-export fixtures, mock GPU orientation, idempotence, wrong-outfit and wrong-weapon rejection, retained v34 regression suite, local-server asset parity and release ZIP checks. No interactive Unity gameplay, direct Windows execution or browser-saved download basename test.
 - Windows/Web packaging: literal versioned filenames, flat-root ZIPs, rebuilt executable embedding identical Web content; unchanged original Unity assets and full historical changelog.
 
-Pixel Hero Maker [v.34] — Experimental Werewolf tail-connection repair from matched unequipped composite
+MUTTS Pixel Generator [v.34] — Experimental Werewolf tail-connection repair from matched unequipped composite
 - Fixed in tested PNG fixtures: v33 repaired only opaque black gun overlaps and left the Werewolf tail disconnected where body pixels had become transparent. Compared supplied v33 1.png (2-Shotgun), 2.png (AK-47), and matching unequipped 3.png, mapping 70 and 119 exact transparent holes in animation rows 2–14 (1-based; 13 animation rows), at local x=24–28, y=14–22 within 64×64 cells. Restore only the precisely validated original composed RGBA at those coordinates.
 - Changed: previously patched opaque collision points in animation rows now use exact final unequipped-composite colors rather than raw source colors. No new tail overpaint is permitted in the bottom weapon/equipment row; safely recognized pre-v34 manual outputs may undo the v33 bottom-row edits.
 - Safeguards: unchanged 155 Werewolf and 108 weapon witness samples plus full expected bytes for all target holes/overlaps must match. Unknown weapon, outfit, altered palette, unrelated body or partial signature fails closed without any modifications. Applied through normal SpriteSheet.png download, manual PNG correction, and live GPU atlas-upload path; per-path and per-kind counters distinguish transparent holes from opaque overlaps and equipment cleanup.
@@ -490,7 +495,7 @@ Pixel Hero Maker [v.34] — Experimental Werewolf tail-connection repair from ma
 - Validation: exact PNG pixel fixture tests, bottom-up mock GPU uploads, wrong-body/wrong-weapon rejection, idempotence, previous regression suite, CRC and flat-root ZIP integrity, localhost embedded-file parity; no direct Windows/Unity gameplay or final browser download basename verification.
 - Windows/Web packaging: rebuild the Windows executable with identical Web files; exact literal filenames and flat root archives; full changelog history maintained.
 
-Pixel Hero Maker [v.33] — Experimental exact-source Werewolf tail occlusion repair
+MUTTS Pixel Generator [v.33] — Experimental exact-source Werewolf tail occlusion repair
 - Added: conservative Werewolf tail-overdraw correction for the precisely matched original Werewolf palette with 2-Shotgun or AK-47 only, built from 30 supplied v32 tail/gun collision coordinates (21 shotgun, 9 AK-47). Restores the exact original Werewolf RGB at these coordinates instead of leaving the opaque firearm-black overpaint.
 - Safeguards: all 155 unchanged Werewolf body witnesses and 108 weapon witnesses must match the original Unity source at exact positions. Target positions must be either the known black overpaint or already restored exact Werewolf pixel. Unknown bodies, altered colors, weapon geometries and already-correct sheets fail closed. No generic nonhuman/human mask or sprite-layer inversion.
 - Integrations: normal SpriteSheet.png Save, manual fixed-PNG option, and GPU full-atlas uploads use the same source-validated rule, with dedicated path-separated diagnostic counters. No underlying Unity assets, textures, or sprites are changed.
@@ -499,7 +504,7 @@ Pixel Hero Maker [v.33] — Experimental exact-source Werewolf tail occlusion re
 - Validation: source-to-export exact RGBA tests on two Werewolf and two human sheets, top-down/bottom-up GPU fixture tests, rejection/idempotence/regression checks, ZIP integrity and embedded Windows server parity; no independent interactive Unity or direct Windows gameplay verification.
 - Windows/Web packaging: flat root ZIPs with literal spaces/brackets and complete identical embedded Web contents; original Unity assets untouched.
 
-Pixel Hero Maker [v.32] — Blue-body AK-47 / 2-Shotgun arm repair (experimental)
+MUTTS Pixel Generator [v.32] — Blue-body AK-47 / 2-Shotgun arm repair (experimental)
 - Added: conservative top-down PNG and bottom-up WebGL atlas repair for the user's verified naked bright-blue outfit with 2-Shotgun or AK-47; exact six damaged row-10/12 frames and two row-13 frames.
 - Changed: match 2-Shotgun or AK-47 using distinct complete alpha silhouettes in the last sprite row, then require byte-exact unaffected body pixels and the full 155+17 known missing/altered target pixel pattern. Do not infer glove/sleeve colors or alter other weapons.
 - Preserved: v31 source-verified brown firearm marker exclusions; v30 white slash and red-sleeve AK-47 fixes; original Unity assets and game behavior.
@@ -508,7 +513,7 @@ Pixel Hero Maker [v.32] — Blue-body AK-47 / 2-Shotgun arm repair (experimental
 - Validation: exact RGBA fixture comparisons, guard rejection and orientation tests, JS syntax, launcher/server parity, and Windows/Web ZIP integrity; no interactive Unity gameplay test.
 - Windows/Web packaging: exact literal artifact filenames, flat ZIP roots, Windows launcher rebuilt with the same Web game contents.
 
-Pixel Hero Maker [v.31] — Experimental source-backed gun stock marker exclusion
+MUTTS Pixel Generator [v.31] — Experimental source-backed gun stock marker exclusion
 - Added/changed: Indexed 282 original alpha-252 brown marker pixels across nine original ranged-weapon textures into a machine-readable per-weapon manifest; added a strict complete-footprint validator to firearm PNG and GPU repairs.
 - Fixed (targeted regression): A verified 2-Shotgun brown stock pixel in frame 2 remains wood brown instead of becoming blue when its exact audited original marker footprint is present. Other audited alpha-252 brown positions receive the same protection, while alpha-254 hand pixels remain recolorable.
 - Safeguards: Unrecognized, partial, or changed weapon marker footprints use the original v30 path (no inferred weapon exclusion); no generic color-only replacement of opaque gun art. Preserves existing AK-47 row-13, six-frame arm and white slash handling.
@@ -516,7 +521,7 @@ Pixel Hero Maker [v.31] — Experimental source-backed gun stock marker exclusio
 - Validation: Exact source scans and 23 synthesized export fixtures; source-geometry guard tests; GPU orientation fixtures, JavaScript syntax; archived asset integrity and launcher HTTP parity. Interactive Unity/WebGL, direct Windows gameplay and downloaded ZIP basenames have not been tested.
 - Windows/Web packaging: ZIP root files use literal spaces/brackets, no enclosing folder; Windows executable rebuilt with identical Web content.
 
-Pixel Hero Maker [v.30] — automatic native export correction and row-13 diagnostic separation
+MUTTS Pixel Generator [v.30] — automatic native export correction and row-13 diagnostic separation
 - Changed: Intercepts the game's own SpriteSheet.png data-URL or blob-URL downloads, even when the separate Export Sprite Sheet button was not used. Other filenames and downloads are untouched.
 - Changed: The guarded six-frame and row-13 repair groups independently validate either unaltered source pixels or the exact already-normalized outgoing buffer, without guessing colors or broadening the accepted target pixel signature.
 - Added: Dedicated GPU row-13 restored-pixel/frame counters, per-path targeted counters (GPU, native PNG, manual PNG), and per-path skip reasons in compositor diagnostics. Native export attempts and failures also appear separately.
@@ -525,7 +530,7 @@ Pixel Hero Maker [v.30] — automatic native export correction and row-13 diagno
 - Validation: Regression fixtures, simulated WebGL uploads, native PNG decode/re-encode and ordinary Unity-style anchor downloads; package and embedded local HTTP asset parity checked separately.
 - Windows/Web packaging: Exact v30 names, flat archive roots, same Web content embedded in offline Windows launcher.
 
-Pixel Hero Maker [v.29] — Arm/Slash Pixel Guard and Manual PNG Repair (experimental)
+MUTTS Pixel Generator [v.29] — Arm/Slash Pixel Guard and Manual PNG Repair (experimental)
 - Evidence: The supplied v28 white/green exported sheets differ by exactly 75
   pure-white slash-effect pixels in animation row 9, frame 3, recolored green.
   In the six known AK-47 arm frames, 172 pixels differ and 100 become empty;
@@ -556,7 +561,7 @@ Pixel Hero Maker [v.29] — Arm/Slash Pixel Guard and Manual PNG Repair (experim
 - Windows/Web packaging: Windows executable rebuilt with the complete v29
   Web content embedded; both archives use the exact project naming convention.
 
-Pixel Hero Maker [v.28] — AK-47 Animation Row 13 Targeted Repair (experimental)
+MUTTS Pixel Generator [v.28] — AK-47 Animation Row 13 Targeted Repair (experimental)
 - Added/changed: Repair the 13th animation row, middle and following frames
   (grid row index 13, columns 1 and 2). The verified v27 equipped PNG
   differs at exactly 13 and 5 pixels respectively from the matching unequipped
@@ -581,7 +586,7 @@ Pixel Hero Maker [v.28] — AK-47 Animation Row 13 Targeted Repair (experimental
 - Windows/Web packaging: Same v28 Web content in both releases; Windows
   launcher rebuilt with the updated embedded Web content.
 
-Pixel Hero Maker [v.27] — Primary Sprite Atlas Diagnostic Correction
+MUTTS Pixel Generator [v.27] — Primary Sprite Atlas Diagnostic Correction
 - Fixed: The optional extra-texture PNG export no longer selects the primary
   cached sprite atlas when no separate SpriteRenderer texture was observed.
   It now reports that no distinct secondary texture was captured instead.
@@ -596,7 +601,7 @@ Pixel Hero Maker [v.27] — Primary Sprite Atlas Diagnostic Correction
   gameplay and actual browser download filenames were not tested.
 - Windows/Web packaging: Both contain identical v27 Web content.
 
-Pixel Hero Maker [v.26] — Two-Layer Renderer Diagnostic and AK-47 Guard
+MUTTS Pixel Generator [v.26] — Two-Layer Renderer Diagnostic and AK-47 Guard
 - Added/changed: Identify the second drawn sprite texture (v25 ID 1064),
   record texture source and dimensions from multiple upload APIs, and
   offer user-triggered readback to a PNG with framebuffer/pack state restore.
@@ -613,7 +618,7 @@ Pixel Hero Maker [v.26] — Two-Layer Renderer Diagnostic and AK-47 Guard
 - Windows/Web packaging: Both contain identical v26 Web code and Unity assets;
   Windows launcher embeds the new v26 content.
 
-Pixel Hero Maker [v.25] — One-Click Outfit Reference (experimental test)
+MUTTS Pixel Generator [v.25] — One-Click Outfit Reference (experimental test)
 - Added/changed: Opt-in capture of the currently drawn unequipped avatar into
   the existing exact-match arm reference pipeline, avoiding a separate PNG
   file for eligible outfits. The observer buffers at most 12 recent atlases.
@@ -632,7 +637,7 @@ Pixel Hero Maker [v.25] — One-Click Outfit Reference (experimental test)
 - Windows/Web packaging: Both v25 packages contain identical game/repair code;
   the Windows exe embeds the entire v25 Web content.
 
-Pixel Hero Maker [v.24] — Compositor Probe 2 (diagnostic build, not a gameplay fix)
+MUTTS Pixel Generator [v.24] — Compositor Probe 2 (diagnostic build, not a gameplay fix)
 - Added/changed: The read-only WebGL probe now observes the final data actually
   passed to the GPU upload pipeline by the unchanged v23 repair wrapper.
   Full-source hashes are explicitly treated as exact matches only; modified
@@ -653,14 +658,14 @@ Pixel Hero Maker [v.24] — Compositor Probe 2 (diagnostic build, not a gameplay
   behavior on a real Windows machine/browser is not independently verified.
 - Windows/Web packaging: Both contain the same v24 Web game and diagnostic code.
 
-Pixel Hero Maker [v.23] — Compositor Diagnostic (test distribution)
+MUTTS Pixel Generator [v.23] — Compositor Diagnostic (test distribution)
 - Added/changed: Read-only rendering capture button and trace generation.
 - Fixed: No additional gameplay fixes; v23 repairs remain unchanged.
 - Known limitations: Firearm/clothing/swatch rendering issues remain under investigation.
 - Validation: Package integrity and structure checked; actual Unity gameplay not verified.
 - Windows/Web packaging: Both variants use canonical v23 names and archive-root layouts.
 
-Pixel Hero Maker v.23 — outfit-aware missing-arm repair (experimental)
+MUTTS Pixel Generator v.23 — outfit-aware missing-arm repair (experimental)
 
 * Restores red-sleeve/gray-glove outfit exactly using an outfit-specific arm
   template derived from the matching unequipped PNG, rather than skin colors.
@@ -676,7 +681,7 @@ Pixel Hero Maker v.23 — outfit-aware missing-arm repair (experimental)
 Verified with pixel-level reference and PNG-simulation tests. Interactive
 Unity/real GPU gameplay was not independently verified.
 
-Pixel Hero Maker v.22 — missing-arm reconstruction (experimental)
+MUTTS Pixel Generator v.22 — missing-arm reconstruction (experimental)
 
 The six affected AK-47 animation poses (Jab row 10, Bow Shot row 12)
 are reconstructed pixel-by-pixel from validated reference silhouettes
@@ -688,10 +693,10 @@ The separate v19 firearm-hand marker correction remains.
 Confirmed via supplied exports and simulated WebGL2/PNG pipeline tests.
 Interactive Unity gameplay has NOT been independently verified.
 
-Pixel Hero Maker [v.21]
+MUTTS Pixel Generator [v.21]
 CHANGELOG
 
-Pixel Hero Maker [v.21] — Scoped Jab/Bow Shot arm repair (experimental)
+MUTTS Pixel Generator [v.21] — Scoped Jab/Bow Shot arm repair (experimental)
 - Reverted v.20's unsafe complete-frame replacement and broad AK-47 color masks.
 - Added an arm-only repair mask for Jab (row 10, four frames) and Bow Shot
   (row 12, two frames), derived from two user-supplied paired exports.
@@ -717,10 +722,10 @@ If no matching unarmed snapshot exists, unsafe arm restoration is skipped.
 
 The previous version details are retained below.
 
-Pixel Hero Maker [v.19]
+MUTTS Pixel Generator [v.19]
 CHANGELOG
 
-Pixel Hero Maker [v.19] — Corrected live skin-sampler orientation (test build)
+MUTTS Pixel Generator [v.19] — Corrected live skin-sampler orientation (test build)
 - Diagnosed why v.18 skipped all 41 marked atlas uploads: the skin reference
   coordinates were measured from top-down PNG exports, while WebGL texture
   uploads use bottom-up pixel rows. The same sampler rejected all tested
@@ -736,7 +741,7 @@ Pixel Hero Maker [v.19] — Corrected live skin-sampler orientation (test build)
   synthetic tests; live Unity rendering still requires user verification.
 - Preserved all 493 items, palettes, and standalone/offline functionality.
 
-Pixel Hero Maker [v.18] — Targeted live firearm-hand color repair (test build)
+MUTTS Pixel Generator [v.18] — Targeted live firearm-hand color repair (test build)
 - Corrects alpha-marked firearm hand pixels in a temporary RGBA8 copy at the
   576x928 WebGL2 composite texture upload. Uses the current character's skin
   shades identified by the unchanged v.14 sampler. Skips uncertain palettes.
@@ -754,7 +759,7 @@ Pixel Hero Maker [v.18] — Targeted live firearm-hand color repair (test build)
 - Preserved all 493 alphabetized items, original assets, palettes, reset
   controls, and offline standalone operation.
 
-Pixel Hero Maker [v.17] — Read-only AK-47 color-flow investigation
+MUTTS Pixel Generator [v.17] — Read-only AK-47 color-flow investigation
 - Added PHMColorFlow to trace palette-colored texture pixels and per-vertex
   colors as Unity renders the AK-47. The capture compares a default-skin
   animation with a pink-skin animation during one continuous recording.
@@ -777,15 +782,15 @@ Capture steps:
      Upload the downloaded PHM-v17-color-flow.json file for analysis.
      Or run JSON.stringify(PHMColorFlow.report(), null, 2) and paste it.
 
-Pixel Hero Maker [v.16]
+MUTTS Pixel Generator [v.16]
 CHANGELOG
 
-Pixel Hero Maker [v.16] — Read-only firearm rendering diagnostics
+MUTTS Pixel Generator [v.16] — Read-only firearm rendering diagnostics
 - Diagnostic-only build. Removed experimental live texture/shader corrections;
-  the native Unity renderer is unchanged from Pixel Hero Maker [v.11].
+  the native Unity renderer is unchanged from MUTTS Pixel Generator [v.11].
 - Added read-only WebGL instrumentation to identify actual firearm draws,
   texture bindings, sprite shaders, color attributes and skin-layer samples.
-- Kept Pixel Hero Maker [v.14]'s better-performing PNG export correction
+- Kept MUTTS Pixel Generator [v.14]'s better-performing PNG export correction
   unchanged; v.15's export regression is not included.
 - Run PHMDiagnostics.capture("default skin") and
   PHMDiagnostics.capture("custom skin") in the browser console, then
@@ -794,9 +799,9 @@ Pixel Hero Maker [v.16] — Read-only firearm rendering diagnostics
   original game assets, and offline operation.
 - This is not a visual firearm-color fix; diagnostics require user testing.
 
-Pixel Hero Maker [v.14]
+MUTTS Pixel Generator [v.14]
 
-Pixel Hero Maker [v.14] — Immutable firearm-hand color correction (test build)
+MUTTS Pixel Generator [v.14] — Immutable firearm-hand color correction (test build)
 - Replaced in-place Unity texture edits with a temporary GPU upload copy;
   Unity's original sprite data is never modified by the live correction.
 - Reworked skin-color detection using multiple independent animation-sheet
@@ -806,16 +811,16 @@ Pixel Hero Maker [v.14] — Immutable firearm-hand color correction (test build)
 - Preserved the 493 alphabetized items, original assets, palettes, reset
   swatches, and native sprite-sheet exporter. Requires in-game testing.
 
-Pixel Hero Maker [v.13] — Adaptive firearm-hand colors (experimental)
-- Replaced Pixel Hero Maker [v.12]'s fixed Human export color with sampled colors from the
+MUTTS Pixel Generator [v.13] — Adaptive firearm-hand colors (experimental)
+- Replaced MUTTS Pixel Generator [v.12]'s fixed Human export color with sampled colors from the
   character's own current sprite sheet, including custom skin palettes.
 - Added native WebGL texture-upload correction for merged character textures,
   preserving hand colors independently of firearm colors in the live preview.
 - Added markers for selected darker hand pixels in existing firearm assets.
 - Preserved all 493 alphabetized items, palettes, reset swatches and exporter.
-- This build requires interactive validation; Pixel Hero Maker [v.11] remains the safe fallback.
+- This build requires interactive validation; MUTTS Pixel Generator [v.11] remains the safe fallback.
 
-Pixel Hero Maker [v.12] — Unsuccessful firearm color attempt
+MUTTS Pixel Generator [v.12] — Unsuccessful firearm color attempt
 - Attempted to fix the native sprite tint shader to leave marked hand pixels unchanged
   when recoloring firearms; live preview was not fixed.
 - Attempted to correct the same hand pixels in native sprite-sheet PNG exports, without
@@ -823,56 +828,56 @@ Pixel Hero Maker [v.12] — Unsuccessful firearm color attempt
 - Preserved all 493 alphabetized items, original assets, native color palettes,
   reset swatches, and standalone offline operation.
 
-Pixel Hero Maker [v.11] — Alphabetical item lists and first firearm-color attempt
+MUTTS Pixel Generator [v.11] — Alphabetical item lists and first firearm-color attempt
 - Sorted all 493 selectable items across 16 categories alphabetically,
   using natural number order (e.g., Hair2 before Hair10). Empty stays first.
 - Marked original hand pixels in all 23 firearm sheets; the first
   HSV-based protection did not stop palette tinting.
-- Preserved native palette resets, sprite-sheet export, and all Pixel Hero Maker [v.10] items.
+- Preserved native palette resets, sprite-sheet export, and all MUTTS Pixel Generator [v.10] items.
 - Used only the existing game's artwork and code; no external assets.
 
-Pixel Hero Maker [v.10] — Expanded items and functional palette reset
+MUTTS Pixel Generator [v.10] — Expanded items and functional palette reset
 - Enabled 134 previously unavailable item entries already bundled with the game,
   including firearms, Gas Mask equipment, armor, bracers, weapons and accessories.
 - Added a native original-color reset swatch to all 13 color palettes.
 - Retained native sprite-sheet export and offline operation.
 
-Pixel Hero Maker [v.9] — First palette reset prototype (superseded in Pixel Hero Maker [v.10])
+MUTTS Pixel Generator [v.9] — First palette reset prototype (superseded in MUTTS Pixel Generator [v.10])
 - Added native reset controls beside the palettes. Their original HSV reset
   handlers did not restore colors after selecting a palette swatch.
 
-Pixel Hero Maker [v.8] — Native color palettes
+MUTTS Pixel Generator [v.8] — Native color palettes
 - Replaced HSV sliders with Unity's existing fixed-color swatches for Eyes,
   Mask, Armor, Helmet, Weapon, Firearm, Shield, Cape and Back.
 
-Pixel Hero Maker [v.7] — Streamlined editor
+MUTTS Pixel Generator [v.7] — Streamlined editor
 - Removed experimental Reset and Randomize controls; kept sprite-sheet export.
 - Retained audio suppression, browser compatibility and local save support.
 
-Pixel Hero Maker [v.6] — Controls and browser compatibility
+MUTTS Pixel Generator [v.6] — Controls and browser compatibility
 - Experimented with character Reset and Randomize controls.
 - Improved browser persistence, audio suppression and WebGL compatibility.
 
-Pixel Hero Maker [v.5] — Native interface cleanup
+MUTTS Pixel Generator [v.5] — Native interface cleanup
 - Disabled unused Rebuild, Save, Links and Promo UI elements in Unity itself.
 - Removed HTML masks and the fullscreen control.
 
-Pixel Hero Maker [v.4] — Silent offline editor
+MUTTS Pixel Generator [v.4] — Silent offline editor
 - Muted game audio and improved dropdown access around covered UI controls.
 
-Pixel Hero Maker [v.3] — Standalone offline edition
+MUTTS Pixel Generator [v.3] — Standalone offline edition
 - Introduced the self-contained Windows launcher; no Python required.
 - Restricted game network access to locally served resources.
 
-Pixel Hero Maker [v.2] — Clean offline editor and native export
+MUTTS Pixel Generator [v.2] — Clean offline editor and native export
 - Added native sprite-sheet export and hid unused online-only controls.
 - Kept the local PNG screenshot exporter during this development stage.
 
-Pixel Hero Maker [v.1] — Initial local export
+MUTTS Pixel Generator [v.1] — Initial local export
 - Added a local PNG screenshot exporter with optional cropping.
 
 NOTES
-- Every item and texture comes from the original Pixel Hero Maker assets.
+- Every item and texture comes from the original MUTTS Pixel Generator assets.
   External asset packs were not imported.
-- Windows: run "Pixel Hero Maker [v.78].exe"; the editor opens in your browser.
+- Windows: run "MUTTS Pixel Generator [v.78].exe"; the editor opens in your browser.
 - Web: serve the extracted files using a local HTTP server.

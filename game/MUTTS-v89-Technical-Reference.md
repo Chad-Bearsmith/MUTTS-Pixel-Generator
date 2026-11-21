@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.89] — Technical reference
+# MUTTS Pixel Generator [v.89] — Technical reference
 
 ## Scope and baseline
 Derived from unchanged v88 with only native helper 71935 replaced. The v80

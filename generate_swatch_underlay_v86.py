@@ -124,7 +124,7 @@ source=source.replace(' if(!item)return -3; /* unknown structural appearance */'
    else if(relaxed==0x{were_hash:08x}u)item=10;
  }}
  if(!item)return -3; /* unknown structural appearance */''')
-source=source.replace('Pixel Hero Maker v.85 experimental','Pixel Hero Maker v.86 experimental')
+source=source.replace('MUTTS Pixel Generator v.85 experimental','MUTTS Pixel Generator v.86 experimental')
 source=source.replace('replaces v84 helper 71935','replaces v85 helper 71935')
 DEST.write_text(source)
 (R/'firearms/swatch-signatures-v86.json').write_text(json.dumps({

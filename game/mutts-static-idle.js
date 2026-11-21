@@ -1,9 +1,7 @@
-/* Pixel Hero Maker [v.90] — static idle presentation, direct native atlas.
- * Scene level0 draws the ORIGINAL Unity preview with both body/weapon Animator
- * components disabled and exposes its existing native Save button as "Export".
- * Unity's native controls, not an HTML overlay, are visible inside the canvas.
- * This bridge reads the 64x64 first-idle cell (x=0,y=64), encodes 20x exact
- * nearest-neighbor RGBA, and handles click/download within the Unity canvas.
+/* Draw the static idle preview from Unity's combined character atlas.
+ * The native Unity controls include the existing Save button labeled "Export".
+ * This bridge paints the 64x64 first-idle cell (x=0,y=64) and saves it at 20x
+ * nearest-neighbor scale through that button.
  * It never modifies the compiled Unity WASM or supplies animated frames.
  */
 (()=>{'use strict';
@@ -33,7 +31,7 @@ function cropIdle(frame){
 function paintNativePreview(frame){
  // The overlay lives INSIDE #unity-container, in the exact area of the
  // original preview SpriteRenderer. It is not an external browser editor.
- const preview=document.getElementById('phm-native-preview-surface');
+ const preview=document.getElementById('mutts-native-preview-surface');
  if(!preview)return false;
  const ctx=preview.getContext('2d',{alpha:true});if(!ctx)return false;
  ctx.clearRect(0,0,CELL,CELL);
@@ -41,7 +39,7 @@ function paintNativePreview(frame){
  return true;
 }
 function refresh(){
- const frame=window.PHMSpriteAtlas.idleFrame();
+ const frame=window.MUTTSSpriteAtlas.idleFrame();
  if(!frame)return false;
  if(!current||!frame.every((v,i)=>v===current[i])){
   if(!paintNativePreview(frame))return false;
@@ -123,6 +121,6 @@ document.addEventListener('keydown',ev=>{
  }
 },true);
 function init(){setupNativeExportHitbox();setInterval(refresh,220);}
-window.PHMIdleFrame={ready:()=>current!==null,onUnityReady:()=>{setTimeout(refresh,100);setTimeout(refresh,800);}};
+window.MUTTSIdleFrame={ready:()=>current!==null,onUnityReady:()=>{setTimeout(refresh,100);setTimeout(refresh,800);}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

@@ -161,7 +161,7 @@ section=section.replace(needle_end,'  return gun_id*100+item; /* original v84 ex
 old=old[:start]+section+old[end:]
 old=old.replace('    else return -3;\n    /* Guard ALL modified target sites',
                 '    else return cross_gun_underlay(slots,n,gp,weapon_hash); /* original Bolt exact-match guard failed: try recolor */\n    /* Guard ALL modified target sites')
-old=old.replace('Pixel Hero Maker v.84 experimental','Pixel Hero Maker v.85 experimental')
+old=old.replace('MUTTS Pixel Generator v.84 experimental','MUTTS Pixel Generator v.85 experimental')
 old=old.replace('replaces v83 helper 71935','replaces v84 helper 71935')
 assert 'return swatch_underlay' in old and 'else return cross_gun_underlay' in old
 (R/'prototype/native_underlay_v85.c').write_text(old)

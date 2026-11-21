@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.86] — Native underlay: real Furry/Werewolf swatch correction
+# MUTTS Pixel Generator [v.86] — Native underlay: real Furry/Werewolf swatch correction
 
 **Starting game:** v85, WASM SHA256 `0830cef642be81c02ac40336363f598f762a88070ef73cf1af8b0eb7ac2a321e`. v84 remains the accepted default-color base; user reported all v85 recolored items working except Furry and Werewolf Body. v86 changes only existing native underlay function **71935**. The original native builder function **5031** and hand-color functions **71933/71934** are unchanged. Original `WebGL.data`, loader, framework and browser preview/export remain unchanged.
 

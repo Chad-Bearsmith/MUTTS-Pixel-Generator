@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.81] — Experimental three-case native underlay technical reference
+# MUTTS Pixel Generator [v.81] — Experimental three-case native underlay technical reference
 
 **Baseline:** v.80, accepted by the user on 2026-11-19 as working for the Cape/Back hand-color issue. v.80 WebGL.wasm SHA-256: `ca81e969c6cb6ea0c6cde67bf5006d526e948143583f2981d494082947d84cf4`. This reference supersedes v.80 only as the **experimental code branch**, not as a user-accepted replacement. Retain both distributions.
 
@@ -40,4 +40,4 @@ Note: even though this stage behaves visually as an underlay, it **modifies narr
 
 ## Release discipline
 
-Read `PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md` before making follow-on changes. Deliver exact literal filenames with flat player ZIP roots, `Pixel Hero Maker [v.81]` launcher and browser title, `SpriteSheet.png` export default and unchanged user-named files. Keep `Changelog.txt` history intact. Windows launcher is compiled from the included Go source embedding the SAME `game/` tree as the Web ZIP. For all subsequent work, keep v.80 as accepted fall-back until actual v.81 gameplay confirms the underlay effect.
+Read `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md` before making follow-on changes. Deliver exact literal filenames with flat player ZIP roots, `MUTTS Pixel Generator [v.81]` launcher and browser title, `SpriteSheet.png` export default and unchanged user-named files. Keep `Changelog.txt` history intact. Windows launcher is compiled from the included Go source embedding the SAME `game/` tree as the Web ZIP. For all subsequent work, keep v.80 as accepted fall-back until actual v.81 gameplay confirms the underlay effect.

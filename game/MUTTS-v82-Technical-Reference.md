@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.82] — Bolt underlay twelve-item handoff
+# MUTTS Pixel Generator [v.82] — Bolt underlay twelve-item handoff
 
 **Status:** Experimental extension of live-user-confirmed v.81 (Cape, Fire Lizard and Apache); the nine new cases require gameplay confirmation. **Scope:** only the first 64x64 idle sprite, naked Human base + Bolt + original colors; no other firearms, equipment combinations, swatches or frames are claimed fixed.
 
@@ -40,4 +40,4 @@ Source ZIP contains `previous-v81.wasm`, `prototype/native_underlay_v82.c`, `pro
 
 Tests completed: 12 exact-native-fixture output matches excluding deliberate source PNG alpha hand-marker discrepancies, 12 unmatched-outfit safe skips, 12 non-Bolt mask skips, and invalid managed slot skip (37). Browser/export/hand-color synthetic regression and binary verification are separate; they cannot prove actual live Unity selection combinations. Original three cases were accepted by user on v81, while nine are newly experimental. Windows runtime on Windows, real human-clicked Save dialog, and actual browser-saved ZIP basenames are NOT TESTED if unavailable. Other firearms and tails remain outside this release scope.
 
-Release formatting follows `PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md`: exact `Pixel Hero Maker [v.82]` title, flat archives with literal spaces/brackets, `SpriteSheet.png` default, historical changelog preserved, Windows/Web embeds identical runtime files. Do not assume this twelve-item rule set is universal for arbitrary gear.
+Release formatting follows `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md`: exact `MUTTS Pixel Generator [v.82]` title, flat archives with literal spaces/brackets, `SpriteSheet.png` default, historical changelog preserved, Windows/Web embeds identical runtime files. Do not assume this twelve-item rule set is universal for arbitrary gear.

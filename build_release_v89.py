@@ -3,8 +3,8 @@ from pathlib import Path
 from zipfile import ZipFile,ZIP_DEFLATED
 import hashlib,json,subprocess,os
 R=Path(__file__).resolve().parent; OUT=R.parent; G=R/'game'
-VERSION='v.89';TITLE=f'Pixel Hero Maker [{VERSION}]'
-WINZIP=OUT/(TITLE+'.zip'); WEBZIP=OUT/(TITLE+' (Web).zip'); DEVZIP=OUT/'PixelHero-v89-Development-Source.zip'
+VERSION='v.89';TITLE=f'MUTTS Pixel Generator [{VERSION}]'
+WINZIP=OUT/(TITLE+'.zip'); WEBZIP=OUT/(TITLE+' (Web).zip'); DEVZIP=OUT/'MUTTS-v89-Development-Source.zip'
 
 def sha(p):
  h=hashlib.sha256()
@@ -50,15 +50,15 @@ def build():
       'nativeWebAssembly':'PASS','liveV88Unity':'NOT TESTED','handStatus2Fix':'NOT FIXED',
       'nativeWindowsLiveExecution':'NOT TESTED','browserSavedZipBasename':'NOT TESTED'}
  }
- (G/'PixelHero-v89-Build-Manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ (G/'MUTTS-v89-Build-Manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
  exe=R/(TITLE+'.exe')
  subprocess.run(['go','build','-trimpath','-ldflags=-s -w','-o',str(exe),'.'],cwd=R,env={**os.environ,'GOOS':'windows','GOARCH':'amd64','CGO_ENABLED':'0'},check=True)
  assert exe.read_bytes()[:2]==b'MZ'
  game_members=[(p.relative_to(G).as_posix(),p) for p in sorted(G.rglob('*')) if p.is_file()]
  make_zip(WEBZIP,game_members)
- docs=['README-START-HERE.txt','Changelog.txt','PixelHero-v89-Technical-Reference.md','PixelHero-v89-Build-Manifest.json']
+ docs=['README-START-HERE.txt','Changelog.txt','MUTTS-v89-Technical-Reference.md','MUTTS-v89-Build-Manifest.json']
  make_zip(WINZIP,[(TITLE+'.exe',exe)]+[(n,G/n) for n in docs])
- source_files=['main.go','console_windows.go','console_other.go','go.mod','README-DEVELOPER.txt','PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md','Items-For-Fix.zip',
+ source_files=['main.go','console_windows.go','console_other.go','go.mod','README-DEVELOPER.txt','MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md','Items-For-Fix.zip',
     'previous-v88.wasm','previous-v87.wasm','previous-v86.wasm','previous-v85.wasm','previous-v84.wasm','previous-v83.wasm','previous-v82.wasm','previous-v81.wasm','previous-v80.wasm',
     'patch_source_companions_v89.py','patch_native_underlay_v89.py','generate_source_layer_underlay_v88.py','update_v89_release.py','build_release_v89.py','verify_release_v89.py',
     'build_release_v87.py','verify_release_v87.py','patch_native_underlay_v87.py','generate_swatch_underlay_v87.py',

@@ -11,9 +11,8 @@ const source = name => fs.readFileSync(path.join(game, name), 'utf8');
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    assert.deepEqual(scripts, ['offline-ui.js', 'phm-static-idle.js', 'phm-sprite-atlas.js']);
-    const version = process.argv[2] || 'v.90';
-    assert(index.includes(`<title>Pixel Hero Maker [${version}]</title>`));
+    assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js']);
+    assert(index.includes('<title>MUTTS Pixel Generator [v.92]</title>'));
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
     assert(index.includes('name="referrer" content="no-referrer"'));
@@ -26,20 +25,25 @@ async function main() {
     const listeners = new Map(), downloads = [], requests = [];
     const context2D = { clearRect() {}, putImageData() {}, drawImage() {} };
     class WebGL {
-        constructor() {
+        constructor(id = 'unity-canvas') {
+            this.canvas = { id };
             this.TEXTURE0 = 33984;
             this.TEXTURE_2D = 3553;
+            this.FRAMEBUFFER = 36160;
+            this.DRAW_FRAMEBUFFER = 36009;
             this.RGBA = 6408;
             this.UNSIGNED_BYTE = 5121;
+            this.draws = 0;
         }
         activeTexture() {}
         bindTexture() {}
+        bindFramebuffer() {}
         useProgram() {}
-        getProgramParameter() { return 2; }
-        getActiveUniform(_program, index) { return { name: ['_Flip', '_RendererColor'][index] }; }
+        getProgramParameter(program) { return program.uniforms.length; }
+        getActiveUniform(program, index) { return { name: program.uniforms[index] }; }
         texImage2D(...args) { this.lastUpload = args; return 'uploaded'; }
         texSubImage2D(...args) { this.lastUpload = args; return 'uploaded'; }
-        drawArrays() {}
+        drawArrays() { this.draws++; }
     }
     class XHR {
         constructor() { this.withCredentials = false; }
@@ -58,7 +62,7 @@ async function main() {
         readyState: 'loading',
         addEventListener(name, listener) { listeners.set(name, listener); },
         getElementById(id) {
-            if (id === 'phm-native-preview-surface') return { getContext: () => context2D };
+            if (id === 'mutts-native-preview-surface') return { getContext: () => context2D };
             return null;
         },
         createElement() {
@@ -112,19 +116,41 @@ async function main() {
     assert(blocked, 'external anchor click');
 
     const gl = new WebGL();
+    const sprite = { uniforms: ['_Flip', '_RendererColor'] };
+    const atlas = {};
     const raw = new Uint8Array(576 * 928 * 4);
     const offset = ((927 - 64 - 19) * 576 + 27) * 4;
     raw.set([37, 91, 205, 255], offset);
     gl.activeTexture(gl.TEXTURE0);
-    gl.bindTexture(gl.TEXTURE_2D, {});
-    gl.useProgram({});
+    gl.bindTexture(gl.TEXTURE_2D, atlas);
+    gl.useProgram(sprite);
     assert.equal(gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 576, 928, 0, gl.RGBA, gl.UNSIGNED_BYTE, raw), 'uploaded');
     assert.equal(gl.lastUpload[8], raw);
     gl.drawArrays();
+    assert.equal(gl.draws, 1, 'native sprite draws while the idle surface is starting');
     refresh();
-    assert(window.PHMIdleFrame.ready());
+    assert(window.MUTTSIdleFrame.ready());
+    gl.drawArrays();
+    assert.equal(gl.draws, 1, 'combined body draw is suppressed');
+    gl.bindTexture(gl.TEXTURE_2D, {});
+    gl.drawArrays();
+    assert.equal(gl.draws, 1, 'separate firearm draw is suppressed');
+    gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER, {});
+    gl.drawArrays();
+    assert.equal(gl.draws, 2, 'offscreen sprite draws are preserved');
+    gl.bindFramebuffer(gl.FRAMEBUFFER, undefined);
+    gl.drawArrays();
+    assert.equal(gl.draws, 2, 'Unity may omit the binding when restoring the screen framebuffer');
+    gl.useProgram({ uniforms: ['_Flip', '_RendererColor', '_ClipRect'] });
+    gl.drawArrays();
+    assert.equal(gl.draws, 3, 'Unity UI draws are preserved');
+    const other = new WebGL('other-canvas');
+    other.useProgram(sprite);
+    other.drawArrays();
+    assert.equal(other.draws, 1, 'other canvases keep their sprite draws');
     const spriteIndex = (19 * 64 + 27) * 4;
-    assert.deepEqual(Array.from(window.PHMSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [37, 91, 205, 255]);
+    assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [37, 91, 205, 255]);
+    gl.bindTexture(gl.TEXTURE_2D, atlas);
     raw.set([50, 60, 70, 255], offset);
     gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 576, 928, gl.RGBA, gl.UNSIGNED_BYTE, raw);
     assert.equal(gl.lastUpload[8], raw);
@@ -134,7 +160,7 @@ async function main() {
     assert.deepEqual(downloads.at(-1), { name: 'SpriteSheet.png', url: 'data:image/png;base64,dGVzdA==' });
     Object.assign(new Anchor(), { download: 'MySprite.png', href: 'blob:custom-export' }).click();
     assert.deepEqual(downloads.at(-1), { name: 'MySprite.png', url: 'blob:custom-export' });
-    console.log('PASS player browser mock, native module exports, local-only asset reads, and sprite PNG handling');
+    console.log('PASS player browser mock, native module exports, local-only asset reads, preview draw suppression, and sprite PNG handling');
 }
 
 main().catch(error => {

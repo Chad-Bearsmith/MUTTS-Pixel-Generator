@@ -3,7 +3,7 @@ from pathlib import Path
 from zipfile import ZipFile
 import hashlib,json,sys
 R=Path(__file__).resolve().parent;G=R/'game';D=R.parent
-TITLE='Pixel Hero Maker [v.87]';WIN=D/(TITLE+'.zip');WEB=D/(TITLE+' (Web).zip');DEV=D/'PixelHero-v87-Development-Source.zip'
+TITLE='MUTTS Pixel Generator [v.87]';WIN=D/(TITLE+'.zip');WEB=D/(TITLE+' (Web).zip');DEV=D/'PixelHero-v87-Development-Source.zip'
 for p in [WIN,WEB,DEV]:
  assert p.is_file(),p
  assert not any(k in p.name for k in ['%20','%5b','%5B','_']),p
@@ -21,7 +21,7 @@ with ZipFile(WEB) as z:
  print('PASS Web ZIP matches source game exactly',len(files),'files')
 with ZipFile(WIN) as z:
  assert z.read(TITLE+'.exe')[:2]==b'MZ'
- for n in ['README-START-HERE.txt','Changelog.txt','PixelHero-v87-Technical-Reference.md','PixelHero-v87-Build-Manifest.json']:
+ for n in ['README-START-HERE.txt','Changelog.txt','MUTTS-v87-Technical-Reference.md','MUTTS-v87-Build-Manifest.json']:
   assert z.read(n)==(G/n).read_bytes()
  print('PASS Windows executable and current docs at ZIP root')
 with ZipFile(DEV) as z:
@@ -33,7 +33,7 @@ assert 'productVersion: "v.87"' in (G/'index.html').read_text()
 assert TITLE in (R/'main.go').read_text()
 assert 'SpriteSheet.png' in (G/'phm-static-idle.js').read_text()
 assert (G/'Changelog.txt').read_text().startswith(TITLE)
-manifest=json.loads((G/'PixelHero-v87-Build-Manifest.json').read_text())
+manifest=json.loads((G/'MUTTS-v87-Build-Manifest.json').read_text())
 assert len(manifest['weaponMasks'])==25 and manifest['uniqueWeaponIds']==24 and len(manifest['itemStatuses'])==12
 for k in ['unityAssets','activeScripts','activeCss']:
  for n,digest in manifest[k].items():assert hashlib.sha256((G/n).read_bytes()).hexdigest()==digest,n

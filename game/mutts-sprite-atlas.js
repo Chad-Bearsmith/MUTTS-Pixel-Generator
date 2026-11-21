@@ -7,7 +7,7 @@
   let activeTexture = null;
 
   function state(gl) {
-    if (!contexts.has(gl)) contexts.set(gl, { unit: 0, bound: new Map(), sprite: false });
+    if (!contexts.has(gl)) contexts.set(gl, { unit: 0, bound: new Map(), sprite: false, screen: true });
     return contexts.get(gl);
   }
 
@@ -59,6 +59,9 @@
       if (target === ctx.TEXTURE_2D) state(ctx).bound.set(state(ctx).unit, texture);
     });
     observe('deleteTexture', (_ctx, [texture]) => { frames.delete(texture); });
+    observe('bindFramebuffer', (ctx, [target, framebuffer]) => {
+      if (target === ctx.FRAMEBUFFER || target === ctx.DRAW_FRAMEBUFFER) state(ctx).screen = !framebuffer;
+    });
     observe('useProgram', (ctx, [program]) => { state(ctx).sprite = isSpriteProgram(ctx, program); });
     observe('texImage2D', (ctx, args) => recordUpload(ctx, args, false));
     observe('texSubImage2D', (ctx, args) => recordUpload(ctx, args, true));
@@ -68,17 +71,17 @@
       if (!draw) continue;
       gl[name] = function (...args) {
         const s = state(this);
-        if (s.sprite) {
+        if (s.sprite && s.screen && this.canvas.id === 'unity-canvas') {
           const texture = s.bound.get(0);
-          if (frames.has(texture)) {
-            activeTexture = texture;
-            if (window.PHMIdleFrame.ready()) return;
-          }
+          if (frames.has(texture)) activeTexture = texture;
+          // The scene has two SpriteRenderers: Body and a separate firearm.
+          // The idle surface already paints both from the character atlas.
+          if (frames.has(activeTexture) && window.MUTTSIdleFrame.ready()) return;
         }
         return draw.apply(this, args);
       };
     }
   }
 
-  window.PHMSpriteAtlas = { idleFrame: () => frames.get(activeTexture) };
+  window.MUTTSSpriteAtlas = { idleFrame: () => frames.get(activeTexture) };
 })();

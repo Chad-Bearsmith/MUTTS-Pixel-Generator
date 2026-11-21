@@ -1,8 +1,8 @@
-# Pixel Hero Maker — firearm corrective underlay, phase-one native proof
+# MUTTS Pixel Generator — firearm corrective underlay, phase-one native proof
 
-**Status: isolated compiled-WebAssembly proof of concept, NOT a Pixel Hero Maker player release.**
+**Status: isolated compiled-WebAssembly proof of concept, NOT a MUTTS Pixel Generator player release.**
 
-This package contains the first test of a native corrective compositing *stage* for the current accepted `Pixel Hero Maker [v.80]` code baseline. It does **not** patch `Build/WebGL.wasm`, game assets, or the Windows/Web releases. The original v.80 native hand-color correction is not changed.
+This package contains the first test of a native corrective compositing *stage* for the current accepted `MUTTS Pixel Generator [v.80]` code baseline. It does **not** patch `Build/WebGL.wasm`, game assets, or the Windows/Web releases. The original v.80 native hand-color correction is not changed.
 
 ## Objective
 
@@ -53,4 +53,4 @@ The optional Python image regeneration script `render_outputs.py` requires Pillo
 
 The current v.80 diagnostic interface can record native append-site provenance and first-idle layer inputs (the `PixelHero-v80-BuilderProvenance.json` comparison); a **Bolt-equipped** capture with each of the three items would help establish the missing live selection/source identity evidence. Its UI text refers historically to the AK-47, but the `readSnapshot` check accepts a present firearm; this has not yet been verified live with Bolt.
 
-**Do not distribute this archive as `Pixel Hero Maker [v.81]`: it contains a standalone research module, not a modified game.**
+**Do not distribute this archive as `MUTTS Pixel Generator [v.81]`: it contains a standalone research module, not a modified game.**

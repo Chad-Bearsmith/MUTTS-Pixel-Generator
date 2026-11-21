@@ -1,6 +1,8 @@
-# Pixel Hero Maker — preservation and Codex development repository
+# MUTTS Pixel Generator — preservation and Codex development repository
 
-**Current player build: `Pixel Hero Maker [v.91]`.**
+**Current player build: `MUTTS Pixel Generator [v.92]`.**
+
+[Play on GitHub Pages](https://chad-bearsmith.github.io/MUTTS-Pixel-Generator/)
 
 This repository captures the project's supplied **compiled Unity WebGL game**, custom native WASM patch sources, launcher source, scripts, test fixtures, visual references, and native diagnostics. **It is not a Unity Editor project and does not contain the original Unity C# source/project hierarchy.** Future development will mainly modify the WASM/JavaScript build pipeline and verify actual Unity sprite exports.
 
@@ -8,7 +10,7 @@ This repository captures the project's supplied **compiled Unity WebGL game**, c
 
 1. [`AGENTS.md`](AGENTS.md): rules for Codex and code changes.
 2. [`docs/CODEX_HANDOFF.md`](docs/CODEX_HANDOFF.md): factual project history, implementation architecture, accepted fixes, unresolved issues, and suggested first task.
-3. [`PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md`](PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md): mandatory canonical release naming, ZIP layout, changelog, titles, and export filename.
+3. [`MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md`](MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md): mandatory canonical release naming, ZIP layout, changelog, titles, and export filename.
 4. [`docs/BUILD_AND_TEST.md`](docs/BUILD_AND_TEST.md): commands, prerequisites, and caveats.
 5. [`docs/GITHUB_SETUP.md`](docs/GITHUB_SETUP.md): beginner-friendly publishing and Codex setup.
 
@@ -16,7 +18,7 @@ This repository captures the project's supplied **compiled Unity WebGL game**, c
 
 | Path | Meaning |
 |---|---|
-| `game/` | **v.91 player** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
+| `game/` | **v.92 player** Web build including `Build/WebGL.wasm`, `Build/WebGL.data`, JavaScript, HTML, assets and historical technical references |
 | `previous-v80.wasm` ... `previous-v88.wasm` | Imported SHA-pinned previous native builds, **not** evidence that all versions were user-accepted |
 | `prototype/` | Native C correction helpers, compiled helper WASMs, and regression tests |
 | `tests/` | Unity native fixtures, Javascript probes, hand-color regression tests, and release test helpers |

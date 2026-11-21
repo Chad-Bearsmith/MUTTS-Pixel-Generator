@@ -54,7 +54,7 @@ insert='''  /* v84: exact Unity sharedassets0 masks missing from the v83 resourc
   if(alpha_hash==0xcc087534u)gun_id=19; /* Shotgun: marked alpha254/252 source variant */
 '''
 src=src.replace(needle,insert+needle)
-src=src.replace('Pixel Hero Maker v.83 experimental','Pixel Hero Maker v.84 experimental')
+src=src.replace('MUTTS Pixel Generator v.83 experimental','MUTTS Pixel Generator v.84 experimental')
 src=src.replace('replaces v82 helper 71935','replaces v83 helper 71935')
 (R/'prototype/native_underlay_v84.c').write_text(src)
 print('PASS 23 original masks unchanged; added two exact Unity source variants')

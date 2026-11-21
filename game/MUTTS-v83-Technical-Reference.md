@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.83] — Cross-firearm underlay development handoff
+# MUTTS Pixel Generator [v.83] — Cross-firearm underlay development handoff
 
 **Status:** Experimental. The user accepted all 12 Bolt corrections in v.82. No live Unity exports have yet confirmed this cross-firearm extension. **Baseline:** exact v.82 release, not v.80 or v.81. **Scope:** first 64x64 idle frame, naked Human/reference colors. No animation/tail/complex outfit support claimed.
 
@@ -28,10 +28,10 @@
 - `prototype/test_native_v83_integrated.js`: 281 compiled-WASM fixture checks: 23 source firearm masks x 12 reference character frames plus five adversarial tests, checking final target bytes, unchanged firearms, untouched non-target/non-idle atlas content, true erase, skips, and memory provenance. Synthetic fixtures do not recreate every live Unity selection.
 - Inherited accepted v.82 functional behavior is preserved in source and synthetic regression. User live acceptance is established for all twelve **Bolt** cases, not the other guns. Multiple layers, swatches, user-defined colors, special poses and tail defects are outside this release; other firearms could select different underlying Unity inputs and rightfully skip.
 - Main game WASM is compiled and validated. JS syntactic/browser-mock tests are separate from actual browser gameplay. Windows/Web packaged game content must remain identical; Windows exe is rebuilt from Go `//go:embed game`. Running it on Linux (through an equivalent smoke server) does not establish real Windows browser integration.
-- Final downloaded artifact filenames via the receiving client cannot be guaranteed by filesystem names alone; follow `PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md` §7 and report `NOT TESTED` if the user-facing download could not be performed.
+- Final downloaded artifact filenames via the receiving client cannot be guaranteed by filesystem names alone; follow `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md` §7 and report `NOT TESTED` if the user-facing download could not be performed.
 
 ## Future tests
 
 In the game, select naked Human + one of the twelve reference items, equip a non-Bolt firearm (e.g. AK-47, Shotgun, GoldenEagle). Trigger a native rebuild, capture `SpriteSheet.png` and diagnostic `PixelHero-v83-IdleAutoHandTrace.json`, and compare to the expected underlay *visible through the actual gun mask*. No new `Fix` PNG exists for these other guns; verify against original weapon sprite and item silhouette. If status -3 or -7 appears with an intended setup, inspect actual native source layers before expanding the guard. Do not disable checks or synthesize claimed live acceptance.
 
-Release invariants: both `Pixel Hero Maker [v.83].zip` and `Pixel Hero Maker [v.83] (Web).zip` have flat roots, game/browser/launcher title exactly `Pixel Hero Maker [v.83]`, sprite export default `SpriteSheet.png` and historical changelog unchanged.
+Release invariants: both `MUTTS Pixel Generator [v.83].zip` and `MUTTS Pixel Generator [v.83] (Web).zip` have flat roots, game/browser/launcher title exactly `MUTTS Pixel Generator [v.83]`, sprite export default `SpriteSheet.png` and historical changelog unchanged.

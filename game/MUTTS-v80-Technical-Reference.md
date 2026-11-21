@@ -1,6 +1,6 @@
-# Pixel Hero Maker [v.80] — Current Technical Reference and Future-Chat Handoff
+# MUTTS Pixel Generator [v.80] — Current Technical Reference and Future-Chat Handoff
 
-**Current authoritative player baseline:** `Pixel Hero Maker [v.80]` (derived from v.79 on November 19, 2026). Keep this file, the release rules, the root changelog, the Windows/Web ZIPs, and the v80 developer source together for further work. Earlier v78 and v79 references remain valuable historical evidence, but **do not restart from them** after v80.
+**Current authoritative player baseline:** `MUTTS Pixel Generator [v.80]` (derived from v.79 on November 19, 2026). Keep this file, the release rules, the root changelog, the Windows/Web ZIPs, and the v80 developer source together for further work. Earlier v78 and v79 references remain valuable historical evidence, but **do not restart from them** after v80.
 
 ## 1. Purpose and confirmed source of the v79 hand-color failure
 
@@ -59,10 +59,10 @@ The complete v78 browser geometry/skin/tail patchers were physically removed and
 
 ## 6. Release reproducibility, integrity and filenames
 
-Always read `PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md` and `Changelog.txt` before editing. Canonical player archives:
+Always read `MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md` and `Changelog.txt` before editing. Canonical player archives:
 
-- Windows: **`Pixel Hero Maker [v.80].zip`**, root includes **`Pixel Hero Maker [v.80].exe`** plus README/changelog/reference/manifest. Executable is compiled with Go and embeds the exact v80 Web files. The launcher opens localhost and its console remains open.
-- Web: **`Pixel Hero Maker [v.80] (Web).zip`**, root contains `index.html`, `Build/`, `TemplateData/`, active JS/CSS, README, changelog, manifest and this reference. No outer wrapper directory.
+- Windows: **`MUTTS Pixel Generator [v.80].zip`**, root includes **`MUTTS Pixel Generator [v.80].exe`** plus README/changelog/reference/manifest. Executable is compiled with Go and embeds the exact v80 Web files. The launcher opens localhost and its console remains open.
+- Web: **`MUTTS Pixel Generator [v.80] (Web).zip`**, root contains `index.html`, `Build/`, `TemplateData/`, active JS/CSS, README, changelog, manifest and this reference. No outer wrapper directory.
 - Developer: `PixelHero-v80-Development-Source.zip` contains `game/`, Go source, v79 baseline WASM (`previous-v79.wasm`), the v80 patch, tests and reproducibility instructions. The development ZIP intentionally has a `game/` subdirectory.
 
-Window/tab title EXACTLY `Pixel Hero Maker [v.80]`; default sprite export `SpriteSheet.png`, preserving custom user filenames. Deliver literal (not URL-encoded/underscored) filenames. Inspect actual final ZIP contents, ZIP CRCs, source hashes and Windows embedded Web parity; separately report saved basename testing as PASS, FAIL or NOT TESTED. For exact hashes see `PixelHero-v80-Build-Manifest.json`.
+Window/tab title EXACTLY `MUTTS Pixel Generator [v.80]`; default sprite export `SpriteSheet.png`, preserving custom user filenames. Deliver literal (not URL-encoded/underscored) filenames. Inspect actual final ZIP contents, ZIP CRCs, source hashes and Windows embedded Web parity; separately report saved basename testing as PASS, FAIL or NOT TESTED. For exact hashes see `MUTTS-v80-Build-Manifest.json`.

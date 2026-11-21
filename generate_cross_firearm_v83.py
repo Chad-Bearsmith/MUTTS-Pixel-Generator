@@ -136,7 +136,7 @@ src=src.replace(needle,helper+'\n'+needle)
 needle='    if(weapon_hash!=BOLT_ALPHA_FNV) return -2;'
 assert src.count(needle)==1
 src=src.replace(needle,'    if(weapon_hash!=BOLT_ALPHA_FNV) return cross_gun_underlay(slots,n,gp,weapon_hash);')
-src=src.replace('Pixel Hero Maker v.82 experimental','Pixel Hero Maker v.83 experimental')
+src=src.replace('MUTTS Pixel Generator v.82 experimental','MUTTS Pixel Generator v.83 experimental')
 src=src.replace('This function is injected into the v.80 WebGL Wasm module','This function replaces v82 helper 71935 in the game Wasm module')
 (ROOT/'prototype/native_underlay_v83.c').write_text(src)
 print('Generated',len(src),'C source bytes, v82 Bolt original branch retained')

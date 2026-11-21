@@ -1,4 +1,4 @@
-# Pixel Hero Maker [v.88] — Source-aware corrective layer and hand overlay evidence
+# MUTTS Pixel Generator [v.88] — Source-aware corrective layer and hand overlay evidence
 
 **Baseline:** Accepted v87, original WebAssembly SHA-256 `0c47dc29fec0446fa5e8a632f24ec6d663e0c33eabfccb1d9e3322980e698486`.
 

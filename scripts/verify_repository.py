@@ -20,9 +20,9 @@ for name,prefix in EXPECTED.items():
  actual=H(p)
  assert actual.startswith(prefix),f'Imported baseline mismatch {name}: {actual}'
  print('PASS pinned',name,actual[:20])
-for name in ['AGENTS.md','PIXEL_HERO_MAKER_PROJECT_RELEASE_RULES.md','docs/CODEX_HANDOFF.md','docs/GITHUB_SETUP.md','prototype/native_underlay_v89.c','prototype/native_underlay_v89.wasm','tests/v89-uploaded-layer-fixtures.json','references/Fix/Armor;Dracula.png','game/index.html','game/Changelog.txt']:
+for name in ['AGENTS.md','MUTTS_PIXEL_GENERATOR_PROJECT_RELEASE_RULES.md','docs/CODEX_HANDOFF.md','docs/GITHUB_SETUP.md','prototype/native_underlay_v89.c','prototype/native_underlay_v89.wasm','tests/v89-uploaded-layer-fixtures.json','references/Fix/Armor;Dracula.png','game/index.html','game/Changelog.txt']:
  assert (R/name).is_file(),f'Missing {name}'
-old=json.loads((R/'game/PixelHero-v89-Build-Manifest.json').read_text())
+old=json.loads((R/'game/MUTTS-v89-Build-Manifest.json').read_text())
 assert old['sourceV88WasmSHA256']==H(R/'previous-v88.wasm')
 baseline=tail.v89_baseline()
 assert old['newNativeWasmSHA256']==tail.sha256(baseline)
@@ -41,7 +41,10 @@ assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(old_bodies,new_bodies)
 assert new_bodies[71935-tail.v89.DEF_FUNCS]==tail.v89.body_from_helper(player.UNDERLAY_HELPER)
 assert new_bodies[-1]==player.optional_overlay_lookup(old_bodies[player.LOOKUP-tail.v89.DEF_FUNCS])
 print('PASS pinned v90 player, v91 underlay, and native function diff')
-m=json.loads((R/'game/PixelHero-v91-Build-Manifest.json').read_text())
+m=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
+v91=json.loads((R/'game/MUTTS-v91-Build-Manifest.json').read_text())
+assert m['unityAssets']==v91['unityAssets']
+assert m['sourceV91PlayerWasmSHA256']==v91['newNativeWasmSHA256']
 assert m['sourceV90PlayerWasmSHA256']==tail.sha256(baseline)
 assert m['underlayHelperWasmSHA256']==H(player.UNDERLAY_HELPER)
 assert m['newNativeWasmSHA256']==H(R/'game/Build/WebGL.wasm')
@@ -51,9 +54,13 @@ for group in ('unityAssets','activeScripts','activeCss'):
  for n,h in m[group].items():
   assert H(R/'game'/n)==h,f'Manifest mismatch {n}'
 assert H(R/'game/index.html')==m['entryHTMLSHA256']
-assert 'Pixel Hero Maker [v.91]' in (R/'game/index.html').read_text()
-assert (R/'game/Changelog.txt').read_text().startswith('Pixel Hero Maker [v.91]')
+title=f'MUTTS Pixel Generator [{m["version"]}]'
+assert f'<title>{title}</title>' in (R/'game/index.html').read_text()
+assert f'productName: "{title}"' in (R/'game/index.html').read_text()
+assert f'productTitle = "{title}"' in (R/'main.go').read_text()
+assert (R/'game/Changelog.txt').read_text().startswith(title)
+# Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v91 Web manifest, source references, and diagnostics')
+print('PASS v92 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

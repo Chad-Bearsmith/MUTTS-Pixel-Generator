@@ -17,11 +17,11 @@ import (
     "time"
 )
 
-const productTitle = "Pixel Hero Maker [v.91]"
+const productTitle = "MUTTS Pixel Generator [v.92]"
 
 // The complete verified Web package is embedded at build time; no external
 // assets, Python installation, or Internet connection are required.
-//go:embed game/index.html game/offline-ui.js game/phm-static-idle.js game/phm-sprite-atlas.js game/phm-static-idle.css game/Build game/TemplateData
+//go:embed game/index.html game/offline-ui.js game/mutts-static-idle.js game/mutts-sprite-atlas.js game/mutts-static-idle.css game/Build game/TemplateData
 var contents embed.FS
 
 func main() {

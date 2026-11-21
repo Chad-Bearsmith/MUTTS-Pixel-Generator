@@ -98,7 +98,7 @@ source=source.replace(needle,''' if(!item){ /* Narrow tested swatch variants onl
   else if(werewolf==0x{fingerprints[10]:08x}u)item=10;
 '''+''' }
 '''+needle)
-source=source.replace('Pixel Hero Maker v.86 experimental','Pixel Hero Maker v.87 experimental')
+source=source.replace('MUTTS Pixel Generator v.86 experimental','MUTTS Pixel Generator v.87 experimental')
 (P/'prototype/native_underlay_v87.c').write_text(source)
 (P/'firearms/swatch-signatures-v87.json').write_text(json.dumps({
  'format':'PixelHero-v87-PerItemGuardedSwatchSignatures-1',
