@@ -11,8 +11,11 @@ const source = name => fs.readFileSync(path.join(game, name), 'utf8');
 async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
-    assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js']);
-    assert(index.includes('<title>MUTTS Pixel Generator [v.96]</title>'));
+    const release = '?build=97';
+    assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js'].map(name => name + release));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.97]</title>'));
+    for (const asset of ['loader.js', 'framework.js', 'wasm', 'data']) assert(index.includes('/WebGL.' + asset + release));
+    assert(index.includes('window.MUTTSRandomize?.build === 97'));
     assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
@@ -116,30 +119,34 @@ async function main() {
         window, document, navigator, URL, Request, HTMLAnchorElement: Anchor,
         ImageData: MockImageData,
     });
-    for (const name of scripts) vm.runInContext(source(name), sandbox, { filename: name });
+    for (const name of scripts) {
+        document.currentScript = { src: new URL(name, location.href).href };
+        vm.runInContext(source(name.split('?')[0]), sandbox, { filename: name });
+    }
+    assert.equal(window.MUTTSRandomize.build, 97);
     listeners.get('DOMContentLoaded')();
     let tabHandled = false;
     windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
     assert(tabHandled, 'Unity cannot capture browser Tab navigation');
 
-    await window.fetch('Build/WebGL.data', { headers: { 'X-Test': 'private' } });
+    await window.fetch('Build/WebGL.data' + release, { headers: { 'X-Test': 'private' } });
     const xhr = new XHR();
-    xhr.open('HEAD', 'Build/WebGL.wasm');
+    xhr.open('HEAD', 'Build/WebGL.wasm' + release);
     xhr.withCredentials = true;
     xhr.send();
     assert.equal(xhr.withCredentials, false);
-    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', './index.html']) {
+    for (const target of ['https://other.test/', 'Build/WebGL.data?token=example', 'Build/WebGL.data?build=96', 'Build/WebGL.data', './index.html']) {
         await assert.rejects(window.fetch(target));
         assert.throws(() => xhr.open('GET', target));
     }
-    await assert.rejects(window.fetch('Build/WebGL.data', { method: 'POST', body: 'test' }));
+    await assert.rejects(window.fetch('Build/WebGL.data' + release, { method: 'POST', body: 'test' }));
     assert.throws(() => xhr.send('test'));
     assert.throws(() => xhr.setRequestHeader('X-Test', 'private'));
     assert.equal(window.open('https://other.test/'), null);
     assert.equal(navigator.sendBeacon('https://other.test/', 'test'), false);
     assert.deepEqual(requests, [
-        { method: 'GET', url: location.href + 'Build/WebGL.data' },
-        { method: 'HEAD', url: location.href + 'Build/WebGL.wasm' },
+        { method: 'GET', url: location.href + 'Build/WebGL.data' + release },
+        { method: 'HEAD', url: location.href + 'Build/WebGL.wasm' + release },
     ]);
     let blocked = false;
     const external = Object.assign(new Anchor(), { href: 'https://other.test/' });

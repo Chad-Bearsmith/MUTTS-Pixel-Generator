@@ -134,6 +134,8 @@
 
   function connect(module) {
     const a = module.asm;
+    const canvas = document.getElementById('unity-canvas');
+    if (!canvas || !a.mutts_random_button) return;
     let buttonObject = 0;
     const focusButton = () => {
       const events = a.mutts_event_system(0);
@@ -146,7 +148,6 @@
       }
       const button = createButton(module, a.mutts_editor.value);
       buttonObject = a.mutts_game_object(button, 0);
-      const canvas = document.getElementById('unity-canvas');
       canvas.addEventListener('focus', () => {
         if (canvas.matches(':focus-visible')) focusButton();
       });
@@ -174,5 +175,5 @@
     requestAnimationFrame(ready);
   }
 
-  window.MUTTSRandomize = { connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 97, connect, submit: key => submit(key) };
 })();

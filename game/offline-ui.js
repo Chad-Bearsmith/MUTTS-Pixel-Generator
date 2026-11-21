@@ -2,8 +2,10 @@
 (() => {
   'use strict';
 
+  // Use the release key from the packaged script URL, never the page URL.
+  const release = new URL(document.currentScript.src, window.location.href).search;
   const assetURLs = new Set(['WebGL.data', 'WebGL.wasm', 'WebGL.framework.js'].map(
-    file => new URL('Build/' + file, window.location.href).href
+    file => new URL('Build/' + file + release, window.location.href).href
   ));
 
   function assetURL(input, method) {

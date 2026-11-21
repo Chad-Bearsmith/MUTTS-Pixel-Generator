@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.96.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.97.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -33,7 +33,7 @@ python scripts/run_tests.py --full
 
 ## Rebuilding the native player
 
-The v.96 preview is anchored to the default naked Human's visible atlas bounds. The native Unity Randomize button clones Export's visuals and batches the original dropdown and swatch callbacks into one editor rebuild.
+The native Unity Randomize button clones Export's visuals and batches the original dropdown and swatch callbacks into one editor rebuild. Starting in v.97, the entry page and scripts share a build key in their asset URLs. Update that key in the entry page and Randomize script when cutting a new player version.
 
 Reproduce the checked-in helpers with Zig 0.17.1.
 
@@ -41,12 +41,13 @@ Reproduce the checked-in helpers with Zig 0.17.1.
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_tail_v90.wasm prototype/native_alien_body_tail_v90.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v91.wasm prototype/native_underlay_v89.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -DPHM_PROTECT_SMALL_BACKPACK -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v93.wasm prototype/native_underlay_v89.c
-python patch_native_player_v96.py
+zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_hand_fallback_v97.wasm prototype/native_hand_fallback_v97.c
+python patch_native_player_v97.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
 
-The v.96 patcher reconstructs the pinned v.95 module and routes the cloned button's `Button.Press` to Randomize. It exports the Unity methods used to clone, place, and label Export's twin. Use `--output <path>` to write the v.96 module elsewhere.
+The v.97 patcher reconstructs the pinned v.96 module and inserts the fallback between the original hand-color pass and the firearm underlay. When some equipment combinations make Unity append a copy of the firearm, the fallback finds the unique rendered layer by an exact first-idle match outside the hand-marker colors. It reads the current arm and glove from native captures and writes only the matched layer's marker RGB. Use `--output <path>` to write the module elsewhere.
 
 ## Packaging the historical v.89 candidate
 

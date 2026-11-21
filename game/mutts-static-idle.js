@@ -93,7 +93,7 @@ window.addEventListener('keydown',ev=>{
  if(!active||active===document.body||active.id==='unity-canvas'){
   if(ev.ctrlKey||ev.metaKey||ev.altKey||ev.key==='Escape')return;
   if(ev.key==='Tab'){ev.stopImmediatePropagation();return;}
-  if(active?.id==='unity-canvas'&&!ev.repeat)window.MUTTSRandomize?.submit(ev.key);
+  if(active?.id==='unity-canvas'&&!ev.repeat)window.MUTTSRandomize?.submit?.(ev.key);
   ev.preventDefault();ev.stopImmediatePropagation();
  }
 },true);

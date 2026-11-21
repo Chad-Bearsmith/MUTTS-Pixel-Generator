@@ -1,3 +1,9 @@
+MUTTS Pixel Generator [v.97] — Startup and firearm hand colors
+- The page requests versioned player assets and skips incompatible Randomize scripts during startup.
+- Firearm hand colors use the current arm or glove swatch when Unity renders a verified copy of the equipped firearm.
+- The hand fallback changes only recognized markers in the first idle frame and requires a verified arm or glove sample.
+- Chromium comparison verified 157 armed outfits across all 23 firearm options. Only hand-marker RGB changed. An intentionally stale Randomize script also stayed isolated while the player loaded and exported.
+
 MUTTS Pixel Generator [v.96] — Fixed preview anchor and native Randomize
 - Anchored the preview to the default naked Human’s visible bounds so equipment changes keep the same preview origin.
 - Made Randomize a Unity button above Export using Export’s own font, artwork, and button states.
