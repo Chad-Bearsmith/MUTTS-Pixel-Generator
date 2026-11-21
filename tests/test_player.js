@@ -12,7 +12,7 @@ async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js']);
-    assert(index.includes('<title>MUTTS Pixel Generator [v.92]</title>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.93]</title>'));
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
     assert(index.includes('name="referrer" content="no-referrer"'));

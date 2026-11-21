@@ -1,0 +1,92 @@
+{
+  "bolt": {
+    "target": [
+      137,
+      30,
+      43,
+      255
+    ],
+    "layers": [
+      {
+        "x": 24,
+        "y": 15,
+        "width": 9,
+        "height": 7,
+        "rgba": "AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/+oyPP/qMjz/xCQw/8QkMP/EJDD/xCQw/8QkMP8AAAD/AAAA/8QkMP/EJDD/iR4r/+oyPP+JHiv/iR4r/+oyPP8AAAD/AAAA/8QkMP/EJDD/iR4r/+oyPP+JHiv/iR4r/+oyPP8AAAD/AAAA/8QkMP/EJDD/iR4r/+oyPP+JHiv/iR4r/+oyPP8AAAD/AAAA/4keK/+JHiv/iR4r/4keK/+JHiv/iR4rAIkeK/8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAIkeKwAAAAAA"
+      },
+      {
+        "x": 28,
+        "y": 17,
+        "width": 8,
+        "height": 7,
+        "rgba": "AAAA/79vSv+/b0r/5pxp/+acaf/mnGn/v29K/wAAAP8AAAD/v29K/+acaf/2yp//9sqf//bKn//2yp//AAAA/wAAAP+/b0r/5pxp//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/5pxp/+acaf/mnGn/5pxp/wAAAP8AAAD/5pxp/+acaf8AAAD/AAAA/wAAAP/mnGn/AAAA/wAAAP/mnGn/AAAA/wAAAAAAAAAAAAAA/+acaf8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8="
+      },
+      {
+        "x": 27,
+        "y": 8,
+        "width": 10,
+        "height": 9,
+        "rgba": "AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAD/5pxp/+acaf/mnGn/5pxp/+acaf/mnGn/AAAA/wAAAAAAAAD/5pxp/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn//2yp//AAAA/wAAAP/mnGn/5pxp//bKn//2yp//9sqf//bKn//2yp//9sqf/wAAAP8AAAD/5pxp/+acaf/2yp//9sqf//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn//2yp//AAAA/wAAAP/mnGn/5pxp//bKn//2yp//9sqf//bKn//2yp//9sqf/wAAAP8AAAAAAAAA/+acaf/2yp//9sqf//bKn//2yp//9sqf//bKn/8AAAD/"
+      },
+      {
+        "x": 30,
+        "y": 14,
+        "width": 6,
+        "height": 2,
+        "rgba": "/////wAAAP8AAAAA////AP////8AAAD//////wAAAP8AAAAA////AP////8AAAD/"
+      },
+      {
+        "x": 30,
+        "y": 17,
+        "width": 13,
+        "height": 6,
+        "rgba": "AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP+FhYX/hYWF/7S0tP//////hYWF/4WFhf+0tLT/AAAA/7S0tP8AAAD/tLS0/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA//bKn/72yp/+9sqf/gAAAP+FhYX/AAAA/wAAAP/2yp/+9sqf/gAAAP8AAAAAAAAAAAAAAP/2yp/+9sqf/gAAAP8AAAD/hYWF/wAAAP8AAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    ]
+  },
+  "blue-bolt": {
+    "target": [
+      0,
+      24,
+      42,
+      255
+    ],
+    "layers": [
+      {
+        "x": 24,
+        "y": 15,
+        "width": 9,
+        "height": 7,
+        "rgba": "AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAoO/8AKDv/AB0v/wAdL/8AHS//AB0v/wAdL/8AAAD/AAAA/wAdL/8AHS//ABgq/wAoO/8AGCr/ABgq/wAoO/8AAAD/AAAA/wAdL/8AHS//ABgq/wAoO/8AGCr/ABgq/wAoO/8AAAD/AAAA/wAdL/8AHS//ABgq/wAoO/8AGCr/ABgq/wAoO/8AAAD/AAAA/wAYKv8AGCr/ABgq/wAYKv8AGCr/iR4rAAAYKv8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAIkeKwAAAAAA"
+      },
+      {
+        "x": 28,
+        "y": 17,
+        "width": 8,
+        "height": 7,
+        "rgba": "AAAA/79vSv+/b0r/5pxp/+acaf/mnGn/v29K/wAAAP8AAAD/v29K/+acaf/2yp//9sqf//bKn//2yp//AAAA/wAAAP+/b0r/5pxp//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/5pxp/+acaf/mnGn/5pxp/wAAAP8AAAD/5pxp/+acaf8AAAD/AAAA/wAAAP/mnGn/AAAA/wAAAP/mnGn/AAAA/wAAAAAAAAAAAAAA/+acaf8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8="
+      },
+      {
+        "x": 27,
+        "y": 8,
+        "width": 10,
+        "height": 9,
+        "rgba": "AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAD/5pxp/+acaf/mnGn/5pxp/+acaf/mnGn/AAAA/wAAAAAAAAD/5pxp/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn//2yp//AAAA/wAAAP/mnGn/5pxp//bKn//2yp//9sqf//bKn//2yp//9sqf/wAAAP8AAAD/5pxp/+acaf/2yp//9sqf//bKn//2yp//9sqf//bKn/8AAAD/AAAA/+acaf/mnGn/9sqf//bKn//2yp//9sqf//bKn//2yp//AAAA/wAAAP/mnGn/5pxp//bKn//2yp//9sqf//bKn//2yp//9sqf/wAAAP8AAAAAAAAA/+acaf/2yp//9sqf//bKn//2yp//9sqf//bKn/8AAAD/"
+      },
+      {
+        "x": 30,
+        "y": 14,
+        "width": 6,
+        "height": 2,
+        "rgba": "/////wAAAP8AAAAA////AP////8AAAD//////wAAAP8AAAAA////AP////8AAAD/"
+      },
+      {
+        "x": 30,
+        "y": 17,
+        "width": 13,
+        "height": 6,
+        "rgba": "AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP+FhYX/hYWF/7S0tP//////hYWF/4WFhf+0tLT/AAAA/7S0tP8AAAD/tLS0/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA//bKn/72yp/+9sqf/gAAAP+FhYX/AAAA/wAAAP/2yp/+9sqf/gAAAP8AAAAAAAAAAAAAAP/2yp/+9sqf/gAAAP8AAAD/hYWF/wAAAP8AAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    ]
+  }
+}

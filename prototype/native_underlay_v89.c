@@ -35,6 +35,33 @@ static inline u32 composite(u32* slots, u32 n, u32 p) {
 }
 static inline u32 hashbyte(u32 h, u32 v) {return (h ^ (v & 255u))*FNV_PRIME;}
 static inline int clean_source(u32 color){return (color >> 24)==255u;}
+
+#ifdef PHM_PROTECT_SMALL_BACKPACK
+/* Exact first-idle alpha mask from both SmallBackpack assets: sharedassets0
+   #319 and resources #148. No other stock item has this mask. */
+__attribute__((always_inline)) static inline int is_small_backpack(u32 layer){
+    const u32* src=pixels(layer);
+    if(!clean_source(src[index_for(27,17)]))return 0;
+    /* Pack seven 9-bit rows (fe, 1ff, 1ff, 1ff, 1ff, 1bf, 3e) as an
+       immediate so the injected function does not need a data section. */
+    const uint64_t mask=UINT64_C(0x0fb7fffffffffefe);
+    for(int y=0;y<SIDE;++y)for(int x=0;x<SIDE;++x){
+        const int expected=(y>=15 && y<=21 && x>=24 && x<=32) &&
+            ((mask>>((y-15)*9+x-24))&1u);
+        if(((src[index_for(x,y)]>>24)!=0u)!=expected)return 0;
+    }
+    return 1;
+}
+#endif
+
+__attribute__((always_inline)) static inline void erase_apache_pixel(u32* slots,u32 n,u32 p){
+    for(u32 j=0;j<n-1;++j){
+#ifdef PHM_PROTECT_SMALL_BACKPACK
+        if(is_small_backpack(slots[j]))continue;
+#endif
+        pixels(slots[j])[p]=0u;
+    }
+}
 /* Exported test signature (i32,i32,i32)->i32; ctx reserved for compatibility.
    Returns 1..12 if a patch was made, -1 invalid managed provenance,
    -2 non-Bolt alpha, -3 reference does not match, -4 source unavailable,
@@ -503,7 +530,7 @@ __attribute__((always_inline)) static inline int swatch_underlay(u32* slots,u32 
  }
  if(item==3){ /* Apache Armor */
   if((gp[index_for(27,17)]>>24)==0u){
-   for(u32 j=0;j<n-1;++j)pixels(slots[j])[index_for(27,17)]=0u;
+   erase_apache_pixel(slots,n,index_for(27,17));
   }
  }
  if(item==4){ /* Alien Armor */
@@ -1049,7 +1076,7 @@ __attribute__((always_inline)) static inline int cross_gun_underlay(u32* slots,u
   }
   if(item==3){
     if((gp[index_for(27,17)]>>24)==0u){
-      for(u32 j=0;j<n-1;++j)pixels(slots[j])[index_for(27,17)]=0u;
+      erase_apache_pixel(slots,n,index_for(27,17));
     }
   }
   if(item==4){
@@ -1755,7 +1782,7 @@ int phm_native_underlay(u32 list, u32 gun, u32 ctx) {
        dst[p1]=s1;dst[p2]=s1;dst[p3]=s2;dst[p4]=s3;dst[p5]=s3;
     } else if(which==3){
        if((gp[p0]>>24)!=0) return -5;
-       for(u32 j=0;j<n-1;++j)pixels(slots[j])[p0]=0;
+       erase_apache_pixel(slots,n,p0);
     } else if(which==4){ /* Alien Armor */
        if(((gp[index_for(27,18)]>>24)!=0) || ((gp[index_for(27,19)]>>24)!=0) || ((gp[index_for(27,20)]>>24)!=0) || ((gp[index_for(27,21)]>>24)!=0)) return -5;
        const u32 v0=composite(slots,n,index_for(28,19));

@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the v.91 compile flag, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the v.91 commands for current player builds.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.93.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -33,19 +33,20 @@ python scripts/run_tests.py --full
 
 ## Rebuilding the native player
 
-The v.92 player uses the native WebAssembly and Unity data from v.91. The rename and preview fix live in the Web and launcher sources.
+The v.93 player builds on v.92 and replaces only the native underlay function. The Unity data stays pinned.
 
 Reproduce the checked-in helpers with Zig 0.17.1.
 
 ```sh
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_tail_v90.wasm prototype/native_alien_body_tail_v90.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v91.wasm prototype/native_underlay_v89.c
-python patch_native_player_v91.py
+zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -DPHM_PROTECT_SMALL_BACKPACK -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v93.wasm prototype/native_underlay_v89.c
+python patch_native_player_v93.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
 
-The player patcher reconstructs the pinned v.90 player, installs the updated source-aware underlay in function 71935, and adds the scoped optional-overlay lookup used by the armed hand routine. It keeps the v.90 tail helper 71936, both v.80 hand routines, and the player export table. Use `--output <path>` to write the v.91 player somewhere else.
+The patcher reconstructs the pinned v.92 module and replaces function 71935. This keeps the tail helper, both hand routines, the armed optional-overlay lookup, and the player export table. Use `--output <path>` to write the v.93 module somewhere else.
 
 ## Packaging the historical v.89 candidate
 
