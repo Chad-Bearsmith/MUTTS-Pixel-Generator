@@ -1,3 +1,8 @@
+MUTTS Pixel Generator [v.96] — Fixed preview anchor and native Randomize
+- Anchored the preview to the default naked Human’s visible bounds so equipment changes keep the same preview origin.
+- Made Randomize a Unity button above Export using Export’s own font, artwork, and button states.
+- Verified in Chromium with keyboard and mouse rolls, equipment changes, window resizing, and SpriteSheet.png downloads.
+
 MUTTS Pixel Generator [v.95] — Centered preview and Randomize
 - Centered the visible sprite horizontally over Unity’s shadow and aligned its bottom to the shadow line.
 - Added a Randomize button above Export. It rolls an item and swatch for each visible category and follows Unity’s melee and firearm compatibility rules.

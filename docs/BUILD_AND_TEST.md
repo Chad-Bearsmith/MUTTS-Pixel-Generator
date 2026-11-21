@@ -18,7 +18,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.95.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.96.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -33,7 +33,7 @@ python scripts/run_tests.py --full
 
 ## Rebuilding the native player
 
-The v.95 preview centers the visible atlas pixels over Unity's shadow. The Randomize button calls the original dropdown and palette callbacks and batches them into one editor rebuild.
+The v.96 preview is anchored to the default naked Human's visible atlas bounds. The native Unity Randomize button clones Export's visuals and batches the original dropdown and swatch callbacks into one editor rebuild.
 
 Reproduce the checked-in helpers with Zig 0.17.1.
 
@@ -41,12 +41,12 @@ Reproduce the checked-in helpers with Zig 0.17.1.
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_alien_body_tail_v90.wasm prototype/native_alien_body_tail_v90.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v91.wasm prototype/native_underlay_v89.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -DPHM_PROTECT_SMALL_BACKPACK -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v93.wasm prototype/native_underlay_v89.c
-python patch_native_player_v95.py
+python patch_native_player_v96.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
 
-The v.95 patcher reconstructs the pinned v.94 module, captures the existing `CharacterEditor` in `Start`, and defers its `Rebuild` only while Randomize is applying native editor selections. It also exports a palette-button accessor copied from `LayerControls.Start`. Use `--output <path>` to write the v.95 module elsewhere.
+The v.96 patcher reconstructs the pinned v.95 module and routes the cloned button's `Button.Press` to Randomize. It exports the Unity methods used to clone, place, and label Export's twin. Use `--output <path>` to write the v.96 module elsewhere.
 
 ## Packaging the historical v.89 candidate
 

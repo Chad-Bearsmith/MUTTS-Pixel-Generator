@@ -12,8 +12,8 @@ async function main() {
     const index = source('index.html');
     const scripts = [...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match => match[1]);
     assert.deepEqual(scripts, ['offline-ui.js', 'mutts-static-idle.js', 'mutts-sprite-atlas.js', 'mutts-randomize.js']);
-    assert(index.includes('<title>MUTTS Pixel Generator [v.95]</title>'));
-    assert(index.includes('<button id="mutts-randomize" type="button" disabled>Randomize</button>'));
+    assert(index.includes('<title>MUTTS Pixel Generator [v.96]</title>'));
+    assert(!index.includes('<button'));
     assert.deepEqual([...index.matchAll(/<canvas id="([^"]+)"/g)].map(match => match[1]), ['unity-canvas']);
     assert(index.includes("form-action 'none'"));
     assert(index.includes("connect-src 'self'"));
@@ -24,7 +24,7 @@ async function main() {
         { name: 'phm_hand_scratch', kind: 'global' },
     ]);
 
-    const listeners = new Map(), downloads = [], requests = [];
+    const listeners = new Map(), windowEvents = new Map(), downloads = [], requests = [];
     const context2D = { clearRect() {}, putImageData() {}, drawImage() {} };
     const unityVAO = {};
     class WebGL {
@@ -53,7 +53,7 @@ async function main() {
         getActiveUniform(program, index) { return { name: program.uniforms[index] }; }
         createProgram() { return { preview: true }; }
         createShader() { return {}; }
-        shaderSource() {}
+        shaderSource(_shader, source) { if (source.includes('gl_Position')) this.vertexSource = source; }
         compileShader() {}
         attachShader() {}
         deleteShader() {}
@@ -62,7 +62,6 @@ async function main() {
         createVertexArray() { return {}; }
         getUniformLocation(_program, name) { return name; }
         uniform1f(name, value) { this[name] = value; }
-        uniform2f(name, ...values) { this[name] = values; }
         bindVertexArray(vao) { this.vao = vao; }
         getParameter() { return this.vao; }
         isEnabled() { return this.depth; }
@@ -104,6 +103,7 @@ async function main() {
     };
     const window = {
         navigator, location, WebGL2RenderingContext: WebGL, XMLHttpRequest: XHR,
+        addEventListener(name, listener) { windowEvents.set(name, listener); },
         fetch: async (url, options) => {
             requests.push({ method: options.method, url });
             assert.equal(options.credentials, 'omit');
@@ -118,6 +118,9 @@ async function main() {
     });
     for (const name of scripts) vm.runInContext(source(name), sandbox, { filename: name });
     listeners.get('DOMContentLoaded')();
+    let tabHandled = false;
+    windowEvents.get('keydown')({ key: 'Tab', stopImmediatePropagation() { tabHandled = true; } });
+    assert(tabHandled, 'Unity cannot capture browser Tab navigation');
 
     await window.fetch('Build/WebGL.data', { headers: { 'X-Test': 'private' } });
     const xhr = new XHR();
@@ -164,7 +167,7 @@ async function main() {
     assert.equal(gl.draws, 1, 'idle quad replaces the scene body draw');
     assert.equal(gl.previews, 1);
     assert.equal(gl.viewportAspect, 960 / 600);
-    assert.deepEqual(gl.previewOrigin, [158, 240]);
+    assert(gl.vertexSource.includes('vec2(144.0, 228.0)'));
     assert.equal(gl.currentProgram, sprite);
     assert.equal(gl.vao, unityVAO);
     assert.equal(gl.depth, true);
@@ -196,7 +199,7 @@ async function main() {
     gl.useProgram(sprite);
     gl.drawArrays();
     assert.equal(gl.viewportAspect, 720 / 600);
-    assert.deepEqual(gl.previewOrigin, [153, 228]);
+    assert(gl.vertexSource.includes('vec2(144.0, 228.0)'));
     assert.deepEqual(Array.from(window.MUTTSSpriteAtlas.idleFrame().slice(spriteIndex, spriteIndex + 4)), [50, 60, 70, 255]);
 
     const fallback = new WebGL();

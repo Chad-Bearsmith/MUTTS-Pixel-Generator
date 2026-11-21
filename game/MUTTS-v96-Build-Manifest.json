@@ -1,0 +1,34 @@
+{
+  "format": "MUTTS-v96-BuildManifest-1",
+  "version": "v.96",
+  "status": "player build",
+  "sourceV89WasmSHA256": "7472d295f8b917c1c445973958414c7c2b3a3c6bdc3ed701ef4b9b438cb9016a",
+  "newNativeWasmSHA256": "ee7748179c8cdc0a29e2ef0ac3142d4a55b13c83ea079a409ab682562d64cf2c",
+  "nativeChange": "Routes only the cloned Unity Randomize button through the v.95 editor randomization.",
+  "unityAssets": {
+    "Build/WebGL.wasm": "ee7748179c8cdc0a29e2ef0ac3142d4a55b13c83ea079a409ab682562d64cf2c",
+    "Build/WebGL.data": "4f5ca8b0a0fa4fc894ae25c434bf31c821da4360d6f3ff9e93d1b7e8bd8cfc62",
+    "Build/WebGL.framework.js": "1c986c65f12c62d83a53e51d1a31ecc991250ae831280a79fa8427792a49dc29",
+    "Build/WebGL.loader.js": "5d4dfe5b1b1748fc794365ea7b8f5ca4c713d6c3aea92078b712a4a87c233901"
+  },
+  "activeScripts": {
+    "mutts-randomize.js": "0d4b0fd86c60b8c159736993a98d2422cebd5514daf73ade656b71f7970657f0",
+    "mutts-sprite-atlas.js": "2b84c4d6074cf49d2262847d9562e354b0c94e8c986a8de346cb03c8e4f4fe48",
+    "mutts-static-idle.js": "d4477271aab7e03e7f831cd0a53355a4833b8540397c3b3b660873da2d767f2d",
+    "offline-ui.js": "1334bf03166525f7f921c53da8dc4a62ecc2d4f948ea52269cc7231222c30850"
+  },
+  "activeCss": {
+    "TemplateData/style.css": "516028e9b619fc17245a0de692ba617c70c3d0feb442b22e1b05b1082a21645a",
+    "mutts-static-idle.css": "e4025adac69d271399444e093c36faa0b4b91ebcdb52289cd57525ad49858b80"
+  },
+  "entryHTMLSHA256": "8a07ad74bf38093833609873a5f7db91fb3fb64811b3aa0397f65540ab4da7ba",
+  "sourceV90CandidateWasmSHA256": "ce947694821cffe11f53a7c0659face2534f9fff73a7791578a971b0fcae2ecd",
+  "sourceV90PlayerWasmSHA256": "95c4ec1e0d6d187868cd83ff671c71b0fcf721cb530f4d65255511d2630b5912",
+  "underlayHelperWasmSHA256": "a07de5b469dd2a232b42653a414e2c71e3f52bb170133582a3fde8f818759f53",
+  "previewChange": "Anchors the preview to the default naked Human\u2019s visible first-idle bounds.",
+  "sourceV91PlayerWasmSHA256": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+  "sourceV92PlayerWasmSHA256": "69138a434f9d14ff4d6274da99d9b0f2175e845a1ab4539288440e4b1a776cf4",
+  "sourceV93PlayerWasmSHA256": "388ccad1175d687d8885fccf5442c7bb9ed5baddc087a2d81ab3b96ac15adfe7",
+  "sourceV94PlayerWasmSHA256": "388ccad1175d687d8885fccf5442c7bb9ed5baddc087a2d81ab3b96ac15adfe7",
+  "sourceV95PlayerWasmSHA256": "5f0fba8a7a6f5b6aaa49334e4d5179ceedec88a92ee7da324d30e5e860ab402d"
+}

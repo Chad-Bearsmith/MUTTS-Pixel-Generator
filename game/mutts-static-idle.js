@@ -68,11 +68,11 @@ function exportIdle(){
 function isNativeExportPosition(event,canvas){
  const box=canvas.getBoundingClientRect();
  if(!box.width||!box.height)return false;
- // Built-in Save RectTransform: on the original preview Panel, bottom center.
- // Broad region absorbs Unity's canvas rescaling but never overlaps item controls.
- const x=(event.clientX-box.left)*960/box.width;
- const y=(event.clientY-box.top)*600/box.height;
- return x>=117&&x<=346&&y>=480&&y<=555;
+ // Unity centers its design coordinates and scales them by canvas height.
+ const scale=box.height/600;
+ const x=(event.clientX-box.left-box.width/2)/scale+480;
+ const y=(event.clientY-box.top)/scale;
+ return x>=150&&x<=330&&y>=498&&y<=537;
 }
 function setupNativeExportHitbox(){
  const canvas=document.getElementById('unity-canvas');if(!canvas)return;
@@ -86,12 +86,14 @@ function setupNativeExportHitbox(){
   },true);
  }
 }
-// Do not pass animation hotkeys to Unity. Body/item selection remains clickable.
-document.addEventListener('keydown',ev=>{
+// Capture before Unity's keyboard listener. Tab keeps browser focus traversal.
+window.addEventListener('keydown',ev=>{
  const active=document.activeElement;
  if(active&&/^(input|textarea|select)$/i.test(active.tagName))return;
  if(!active||active===document.body||active.id==='unity-canvas'){
-  if(ev.ctrlKey||ev.metaKey||ev.altKey||ev.key==='Tab'||ev.key==='Escape')return;
+  if(ev.ctrlKey||ev.metaKey||ev.altKey||ev.key==='Escape')return;
+  if(ev.key==='Tab'){ev.stopImmediatePropagation();return;}
+  if(active?.id==='unity-canvas'&&!ev.repeat)window.MUTTSRandomize?.submit(ev.key);
   ev.preventDefault();ev.stopImmediatePropagation();
  }
 },true);

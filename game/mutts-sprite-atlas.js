@@ -64,13 +64,14 @@
   function createPreview(gl) {
     // The preview slot is measured in the Unity canvas's 960×600 design space.
     // Its 192×192 quad shows the 64×64 idle cell at three design pixels per texel.
+    // The default naked Human occupies [26, 38) × [8, 24). This origin
+    // centers that reference at x=240 and grounds it on the y=300 shadow.
     const vertexSource = `#version 300 es
       uniform float viewportAspect;
-      uniform vec2 previewOrigin;
       out vec2 uv;
       void main() {
         uv = vec2(gl_VertexID & 1, gl_VertexID >> 1);
-        vec2 p = previewOrigin + uv * 192.0 - vec2(480.0, 300.0);
+        vec2 p = vec2(144.0, 228.0) + uv * 192.0 - vec2(480.0, 300.0);
         // Unity centers its design space and scales it by viewport height.
         vec2 clip = p / vec2(300.0 * viewportAspect, -300.0);
         gl_Position = vec4(clip, 0.0, 1.0);
@@ -103,7 +104,6 @@
     if (vao) return {
       program, vao,
       aspect: gl.getUniformLocation(program, 'viewportAspect'),
-      origin: gl.getUniformLocation(program, 'previewOrigin'),
     };
     gl.deleteProgram(program);
     return null;
@@ -125,9 +125,6 @@
       try {
         useProgram.call(ctx, s.preview.program);
         ctx.uniform1f(s.preview.aspect, ctx.drawingBufferWidth / ctx.drawingBufferHeight);
-        // Center the visible sprite on Unity's shadow at (240, 300).
-        ctx.uniform2f(s.preview.origin,
-          Math.round(240 - (bounds.left + bounds.right) * 1.5), 300 - bounds.bottom * 3);
         ctx.bindVertexArray(s.preview.vao);
         if (depthTest) ctx.disable(ctx.DEPTH_TEST);
         drawArrays.call(ctx, ctx.TRIANGLE_STRIP, 0, 4);
