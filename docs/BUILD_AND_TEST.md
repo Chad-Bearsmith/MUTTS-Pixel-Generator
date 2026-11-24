@@ -22,7 +22,7 @@ On Windows, run these from the project root in PowerShell with `py` or `python` 
 
 ## Native helper rebuild (only when deliberately modifying its C source)
 
-Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.106.
+Without the later compile flags, `prototype/native_underlay_v89.c` builds the historical helper represented by `prototype/native_underlay_v89.wasm`. Use the current player commands below for v.107.
 
 Example toolchain commands (Linux/macOS compatible shell, adjust for your Clang installation):
 
@@ -50,7 +50,7 @@ zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -W
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_armed_body_v99.wasm prototype/native_armed_body_v99.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_keyed_underlay_v106.wasm prototype/native_keyed_underlay_v106.c
 zig cc --target=wasm32-freestanding -O2 -fno-builtin -nostdlib -DPHM_EXACT_DRACULA_HIGHLIGHT -DPHM_PROTECT_SMALL_BACKPACK -DPHM_REQUIRE_SELECTED_ITEM -Wl,--no-entry -Wl,--import-memory -Wl,--strip-all -o prototype/native_underlay_v106.wasm prototype/native_underlay_v89.c
-python scripts/patch_native_player_v106.py
+python scripts/patch_native_player_v107.py
 python scripts/verify_repository.py
 python scripts/run_tests.py --full
 ```
@@ -72,6 +72,8 @@ In v.104 the loading screen stays visible while Unity initializes the editor and
 The v.105 patcher routes the Unity Export button to the local PNG exporter before Unity invokes the legacy Save callback. Mouse, touch, and keyboard submit use the same Unity button path. With the canvas focused, Up and Down select an action button, and Enter or Space activates it.
 
 The v.106 builder supplies the selected item keys and private pixel arrays to the first-idle underlay. The new pass accepts Unity's rendered firearm copy when it matches the source outside the hand-marker RGB and uses that rendered layer to guard each repair site. The compatibility pass requires the selected item, and Apache's erase is confined to its private Armor and verified shadow arrays. The Hellsing and Snow Rider fallback uses the verified Human Body template.
+
+In v.107 the startup code compacts the Armor and Helmet dropdowns. Unity keeps the compacted index for the displayed selection and passes the original item ID to its selection callback. This keeps each remaining item's swatches and layer corrections associated with the original asset.
 
 The guarded Apache Armor underlay preserves the Small Backpack pixel. The preview and PNG export both read the combined first idle tile. Randomize and Reset inherit Export's styling and apply changes using the native controls in one editor rebuild.
 

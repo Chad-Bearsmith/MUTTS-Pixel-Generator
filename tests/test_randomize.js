@@ -9,7 +9,7 @@ const script = fs.readFileSync(path.join(__dirname, '../game/mutts-randomize.js'
 const layers = ['Cape', 'Back', 'Shield', 'Body', 'Armor', 'Head', 'Horns',
     'Eyes', 'Mask', 'Hair', 'Ears', 'Helmet', 'Arms', 'Weapon', 'Firearm', 'Bracers'];
 const hidden = new Set(['Arms', 'Horns', 'Bracers']);
-const buffer = new ArrayBuffer(16384);
+const buffer = new ArrayBuffer(32768);
 const words = new Uint32Array(buffer), chars = new Uint16Array(buffer);
 const floats = new Float32Array(buffer);
 const write = (address, value) => { words[address / 4] = value; };
@@ -19,6 +19,13 @@ function writeText(address, value) {
     return address;
 }
 const rows = new Map();
+const catalogs = {
+    Armor: ['Empty', 'Farmer', 'Farmer Clothes', 'Guardian', 'Guardian Tunic',
+        'Ninja', 'Ninja Tunic', 'Pilot', 'Pilot Armor', 'Santa Helper', 'Santa Helper Tunic',
+        'Santa', 'Santa Tunic', 'Traveler Tunic'],
+    Helmet: ['Empty', 'Guardian', 'Guardian Helmet', 'Ninja', 'Ninja Mask', 'Pilot',
+        'Pilot Helment', 'Viking Helmet'],
+};
 write(100 + 16, 200); // CharacterEditor.Layers
 write(200 + 8, 300);
 write(200 + 12, layers.length);
@@ -30,7 +37,7 @@ for (const [i, label] of layers.entries()) {
     const dropdown = row + 144;
     const options = row + 192;
     const swatches = row + 240;
-    const count = 2 + i;
+    const count = catalogs[label]?.length ?? 2 + i;
     write(300 + 16 + i * 4, row);
     write(row + 8, name);
     write(row + 12, controls);
@@ -43,6 +50,18 @@ for (const [i, label] of layers.entries()) {
     write(swatches + 12, 3);
     for (let j = 0; j < 3; j++) write(swatches + 16 + j * 4, row + 320 + j * 4);
     rows.set(label, { controls, dropdown, count, options, swatches, row });
+}
+for (const [j, [label, names]] of Object.entries(catalogs).entries()) {
+    const {options, dropdown} = rows.get(label);
+    const items = 11008 + j * 4096;
+    write(options + 8, items);
+    write(dropdown + 204, items + 2048);
+    write(items + 12, names.length);
+    for (const [i, name] of names.entries()) {
+        const option = items + 96 + i * 96;
+        write(items + 16 + i * 4, option);
+        write(option + 8, writeText(option + 16, name));
+    }
 }
 
 const events = [], frames = [], activation = [], destroyed = [], captions = [], positions = [];
@@ -62,6 +81,8 @@ const inBatch = (event, ...args) => {
     events.push([event, ...args]);
 };
 const asm = {
+    mutts_armor_map: {value: 0},
+    mutts_helmet_map: {value: 0},
     mutts_editor: {value: 100},
     mutts_batch: batch,
     mutts_random_button: {value: 0},
@@ -111,7 +132,10 @@ const asm = {
         else if (pointer === 10240) resetPending.value++;
         else { assert.equal(pointer, 10224); pending.value++; }
     },
-    mutts_dropdown_value: dropdown => layers.indexOf([...rows].find(([, r]) => r.dropdown === dropdown)[0]),
+    mutts_dropdown_value: dropdown => {
+        const label = [...rows].find(([, r]) => r.dropdown === dropdown)[0];
+        return label in catalogs ? 0 : layers.indexOf(label);
+    },
     mutts_layer_index: (row, i) => write(row + 16, i),
     mutts_button_event: hide => hide,
     mutts_invoke: hide => write(hide - 384 + 36, 0),
@@ -148,9 +172,28 @@ vm.runInNewContext(script, {
     Math: {random: () => draws++ === 0 ? first : .999, floor: Math.floor, min: Math.min, max: Math.max},
     console: {error() {}},
 });
-const moduleMock = {asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats, _malloc: () => 9504, _free() {}};
+let nextMap = 23040;
+const moduleMock = {
+    asm, HEAPU32: words, HEAPU16: chars, HEAPF32: floats,
+    _malloc: size => size <= 16 ? 9504 : (nextMap += size) - size,
+    _free() {},
+};
 window.MUTTSRandomize.connect(moduleMock);
 frames.shift()();
+for (const [label, mapName, indices] of [
+    ['Armor', 'mutts_armor_map', [0, 1, 3, 5, 7, 9, 11, 13]],
+    ['Helmet', 'mutts_helmet_map', [0, 1, 3, 5, 7]],
+]) {
+    const {options, dropdown} = rows.get(label);
+    const array = words[(options + 8) / 4];
+    const map = asm[mapName].value / 4;
+    assert.deepEqual([...words.subarray(map, map + 2 + indices.length)],
+        [words[(dropdown + 204) / 4], indices.length, ...indices]);
+    assert.equal(words[(options + 12) / 4], indices.length);
+    assert.deepEqual([...words.subarray((array + 16) / 4, (array + 16) / 4 + indices.length)],
+        indices.map(i => array + 96 + i * 96));
+    rows.get(label).count = indices.length;
+}
 assert.deepEqual(activation, [[10096, 0]], 'only the preset grid is deactivated');
 assert.deepEqual(destroyed, [10096], 'only the preset grid is removed');
 assert.equal(asm.mutts_random_button.value, 10224);
@@ -212,7 +255,7 @@ assert.equal(resetPending.value, 1);
 frames.shift()();
 assert.equal(resetPending.value, 0);
 assert.deepEqual(events.filter(e => e[0] === 'select'),
-    [...rows.values()].map(({dropdown}, i) => ['select', dropdown, i]));
+    [...rows].map(([label, {dropdown}], i) => ['select', dropdown, label in catalogs ? 0 : i]));
 assert.equal(events.filter(e => e[0] === 'rebuild').length, 1);
 for (const [i, {row}] of [...rows.values()].entries()) {
     assert.equal(words[(row + 16) / 4], i);

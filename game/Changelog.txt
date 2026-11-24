@@ -1,3 +1,7 @@
+MUTTS Pixel Generator [v.107] — Armor and Helmet catalog
+- Consolidated six Armor pairs and three Helmet pairs under their shorter names.
+- Randomize draws from the same consolidated choices as their dropdowns.
+
 MUTTS Pixel Generator [v.106] — Corrections with layered equipment
 - Restores first-idle item repairs when equipment such as Blue Shield makes Unity render a separate firearm copy.
 - Uses the selected item and current swatch for Armor repairs and the Lizard and Fire Lizard Body repairs. Apache's erase targets its own layers so Small Backpack pixels survive.

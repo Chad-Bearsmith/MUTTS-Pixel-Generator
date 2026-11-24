@@ -7,6 +7,16 @@
     'Weapon', 'Firearm', 'Shield', 'Cape', 'Back',
   ]);
   const randomIndex = count => Math.floor(Math.random() * count);
+  const retiredOptions = [
+    ['Armor', 'mutts_armor_map', [
+      ['Farmer Clothes', 'Farmer'], ['Guardian Tunic', 'Guardian'],
+      ['Ninja Tunic', 'Ninja'], ['Pilot Armor', 'Pilot'],
+      ['Santa Helper Tunic', 'Santa Helper'], ['Santa Tunic', 'Santa'],
+    ]],
+    ['Helmet', 'mutts_helmet_map', [
+      ['Guardian Helmet', 'Guardian'], ['Ninja Mask', 'Ninja'], ['Pilot Helment', 'Pilot'],
+    ]],
+  ];
   let submit = () => {};
 
   function word(module, pointer, offset = 0) {
@@ -41,6 +51,43 @@
     }
     if ([...visibleLayers].some(label => !controls.has(label))) throw Error('Unity editor layers are unavailable.');
     return controls;
+  }
+
+  function consolidateOptions(module, layers) {
+    const a = module.asm;
+    for (const [label, exportName, aliases] of retiredOptions) {
+      const map = a[exportName];
+      if (!map) throw Error('Unity item index mapping is unavailable.');
+      if (map.value) continue;
+      const {controls} = layers.get(label);
+      const dropdown = word(module, controls, 20);
+      const changedEvent = word(module, dropdown, 204); // Dropdown.onValueChanged
+      const options = a.mutts_get_options(dropdown, 0);
+      const array = word(module, options, 8);
+      const count = word(module, options, 12);
+      if (!changedEvent || count > word(module, array, 12) || a.mutts_dropdown_value(dropdown, 0) !== 0) {
+        throw Error('Unexpected Unity item catalog state.');
+      }
+      const items = Array.from({length: count}, (_, i) => word(module, array, 16 + i * 4));
+      const names = items.map(item => text(module, word(module, item, 8)));
+      if (aliases.some(pair => pair.some(name => names.filter(entry => entry === name).length !== 1))) {
+        throw Error('Unexpected Unity item catalog.');
+      }
+      const removed = new Set(aliases.map(([name]) => names.indexOf(name)));
+      const kept = items.map((_, i) => i).filter(i => !removed.has(i));
+      const address = module._malloc(4 * (2 + kept.length));
+      if (!address) throw Error('Could not initialize the Unity item index mapping.');
+      const heap = module.HEAPU32;
+      heap.set([changedEvent, kept.length, ...kept], address / 4);
+      // Compact the existing managed list before the dropdown opens. The
+      // builder still uses its original item IDs, resolved by this table.
+      const first = (array + 16) / 4;
+      heap.set(kept.map(i => items[i]), first);
+      heap.fill(0, first + kept.length, first + count);
+      heap[(options + 12) / 4] = kept.length;
+      heap[(options + 16) / 4]++;
+      map.value = address;
+    }
   }
 
   function buildPlan(module, editor) {
@@ -198,6 +245,7 @@
       await new Promise(resolve => requestAnimationFrame(resolve));
     }
     const layers = controlsFor(module, a.mutts_editor.value);
+    consolidateOptions(module, layers);
     const defaults = startupOptions(module, layers);
     const [randomButton, resetButton] = createButtons(module, layers);
     a.mutts_random_button.value = randomButton;
@@ -257,5 +305,5 @@
     requestAnimationFrame(poll);
   }
 
-  window.MUTTSRandomize = { build: 106, connect, submit: key => submit(key) };
+  window.MUTTSRandomize = { build: 107, connect, submit: key => submit(key) };
 })();

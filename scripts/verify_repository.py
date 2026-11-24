@@ -17,12 +17,13 @@ import patch_native_player_v101 as reset_editor
 import patch_native_player_v103 as remove_presets
 import patch_native_player_v105 as export_button
 import patch_native_player_v106 as keyed_underlay
+import patch_native_player_v107 as compact_catalog
 R=Path(__file__).resolve().parents[1]
 H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 EXPECTED={
   'baselines/previous-v87.wasm':'0c47dc29fec0446fa5e8',
   'baselines/previous-v88.wasm':'12e3640b5f08041ed6fc',
-  'game/Build/WebGL.wasm':'81b83e58943dba46',
+  'game/Build/WebGL.wasm':'03c112f15db713c',
   'game/Build/WebGL.data':'4f5ca8b0a0fa4fc894ae',
 }
 for name,prefix in EXPECTED.items():
@@ -129,17 +130,26 @@ v105_bodies=tail.v89.code_bodies(v105_sections[10])
 assert len(v105_bodies)==len(v104_bodies)
 assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v104_bodies,v105_bodies)) if a!=b]==[export_button.BUTTON_PRESS]
 print('PASS v105 changes only Unity Button.Press and adds Export globals and exports')
-active=(R/'game/Build/WebGL.wasm').read_bytes()
-assert active==keyed_underlay.build()
-active_sections=dict(tail.v89.sections(active))
-assert active_sections.keys()==v105_sections.keys()
-assert all(active_sections[sid]==v105_sections[sid] for sid in v105_sections if sid not in (1,3,10))
-active_bodies=tail.v89.code_bodies(active_sections[10])
-assert len(active_bodies)==len(v105_bodies)+1
-assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v105_bodies,active_bodies)) if a!=b]==[keyed_underlay.BUILDER,tail.v89.FUNC]
-assert active_bodies[-1]==tail.v89.body_from_helper(keyed_underlay.HELPER)
+v106_native=keyed_underlay.build()
+v106_sections=dict(tail.v89.sections(v106_native))
+assert v106_sections.keys()==v105_sections.keys()
+assert all(v106_sections[sid]==v105_sections[sid] for sid in v105_sections if sid not in (1,3,10))
+v106_bodies=tail.v89.code_bodies(v106_sections[10])
+assert len(v106_bodies)==len(v105_bodies)+1
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v105_bodies,v106_bodies)) if a!=b]==[keyed_underlay.BUILDER,tail.v89.FUNC]
+assert v106_bodies[-1]==tail.v89.body_from_helper(keyed_underlay.HELPER)
 print('PASS v106 changes the builder and underlay only, plus one new keyed helper')
-m=json.loads((R/'game/MUTTS-v106-Build-Manifest.json').read_text())
+active=(R/'game/Build/WebGL.wasm').read_bytes()
+assert active==compact_catalog.build()
+active_sections=dict(tail.v89.sections(active))
+assert active_sections.keys()==v106_sections.keys()
+assert all(active_sections[sid]==v106_sections[sid] for sid in v106_sections if sid not in (6,7,10))
+active_bodies=tail.v89.code_bodies(active_sections[10])
+assert len(active_bodies)==len(v106_bodies)
+assert [i+tail.v89.DEF_FUNCS for i,(a,b) in enumerate(zip(v106_bodies,active_bodies)) if a!=b]==[compact_catalog.INT_EVENT_INVOKE]
+print('PASS v107 changes only UnityEvent<int>.Invoke and adds catalog mapping globals')
+m=json.loads((R/'game/MUTTS-v107-Build-Manifest.json').read_text())
+v106=json.loads((R/'game/MUTTS-v106-Build-Manifest.json').read_text())
 v105=json.loads((R/'game/MUTTS-v105-Build-Manifest.json').read_text())
 v104=json.loads((R/'game/MUTTS-v104-Build-Manifest.json').read_text())
 v103=json.loads((R/'game/MUTTS-v103-Build-Manifest.json').read_text())
@@ -157,6 +167,7 @@ v92=json.loads((R/'game/MUTTS-v92-Build-Manifest.json').read_text())
 assert v94['unityAssets']==v93['unityAssets']
 assert v102['unityAssets']==v101['unityAssets']
 assert v104['unityAssets']==v103['unityAssets']
+assert m['sourceV106PlayerWasmSHA256']==tail.sha256(v106_native)==v106['newNativeWasmSHA256']
 assert m['sourceV105PlayerWasmSHA256']==tail.sha256(v105_native)==v105['newNativeWasmSHA256']
 assert m['keyedUnderlayWasmSHA256']==H(keyed_underlay.HELPER)
 assert m['selectedLegacyUnderlayWasmSHA256']==H(keyed_underlay.SELECTED_LEGACY)
@@ -190,5 +201,5 @@ assert (R/'game/Changelog.txt').read_text().startswith(title)
 # Imported traces retain their original producer identity.
 for f in (R/'diagnostics/v88').glob('PixelHero-v88-IdleAutoHandTrace*.json'):
  assert json.loads(f.read_text())['result']['build']=='Pixel Hero Maker [v.88]'
-print('PASS v106 Web manifest, product titles, source references, and diagnostics')
+print('PASS v107 Web manifest, product titles, source references, and diagnostics')
 print('NOTE: no user/gameplay or Windows GUI testing performed by this script')

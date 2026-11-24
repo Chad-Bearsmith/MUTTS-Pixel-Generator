@@ -6,14 +6,14 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MUTTS Pixel Generator [v.106]</title>
+  <title>MUTTS Pixel Generator [v.107]</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css?build=106">
-  <link rel="stylesheet" href="mutts-static-idle.css?build=106">
-  <script src="offline-ui.js?build=106"></script>
-  <script src="mutts-static-idle.js?build=106"></script>
-  <script src="mutts-sprite-atlas.js?build=106"></script>
-  <script src="mutts-randomize.js?build=106"></script>
+  <link rel="stylesheet" href="TemplateData/style.css?build=107">
+  <link rel="stylesheet" href="mutts-static-idle.css?build=107">
+  <script src="offline-ui.js?build=107"></script>
+  <script src="mutts-static-idle.js?build=107"></script>
+  <script src="mutts-sprite-atlas.js?build=107"></script>
+  <script src="mutts-randomize.js?build=107"></script>
 </head>
 <body>
   <div id="unity-container" class="unity-desktop">
@@ -54,15 +54,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js?build=106";
+      var loaderUrl = buildUrl + "/WebGL.loader.js?build=107";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data?build=106",
-        frameworkUrl: buildUrl + "/WebGL.framework.js?build=106",
-        codeUrl: buildUrl + "/WebGL.wasm?build=106",
+        dataUrl: buildUrl + "/WebGL.data?build=107",
+        frameworkUrl: buildUrl + "/WebGL.framework.js?build=107",
+        codeUrl: buildUrl + "/WebGL.wasm?build=107",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Hippo Games",
-        productName: "MUTTS Pixel Generator [v.106]",
-        productVersion: "v.106",
+        productName: "MUTTS Pixel Generator [v.107]",
+        productVersion: "v.107",
         // Unity 2021.3: automatically persist IndexedDB changes, avoiding the
         // deprecated manual JS_FileSystem_Sync() synchronization warning.
         autoSyncPersistentDataPath: true,
@@ -104,7 +104,7 @@
           if (!scratch) throw new Error("Could not initialize native sprite colors.");
           module.HEAPU8.fill(0, scratch, scratch + scratchBytes);
           module.asm.phm_hand_scratch.value = scratch;
-          if (window.MUTTSRandomize?.build !== 106) {
+          if (window.MUTTSRandomize?.build !== 107) {
             throw new Error("Editor assets could not be loaded. Refresh the page.");
           }
           await window.MUTTSRandomize.connect(module);
